@@ -1,6 +1,6 @@
 import Icon from '../components/Icon'
 import { useMemo, useState } from 'react'
-import { go } from '../router'
+import { go, useRoute } from '../router'
 import { useStore } from '../store'
 import TableShell from '../components/TableShell'
 import { Badge, Btn, Certainty, KV, Meter, PageHead, Stamp, Tabs } from '../components/ui'
@@ -31,7 +31,8 @@ function drivers(l) {
 
 export default function BomReview() {
   const { state, decide } = useStore()
-  const [sel, setSel] = useState(null)
+  const { query } = useRoute()
+  const [sel, setSel] = useState(query.line || null)
   const [tab, setTab] = useState('Summary')
   const [searched, setSearched] = useState(null)
   const line = sel && siBom.find((l) => l.bom_line_id === sel)

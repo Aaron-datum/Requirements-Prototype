@@ -10,6 +10,11 @@ const initial = {
   density: 'default', // System settings: default row density for all tables
   view: 'table', // System settings: default table layout ('table' | 'thumbnail')
   prefs: {}, // confirmed-action settings, e.g. prefs.cad
+  signedIn: true,
+  user: { name: 'Aaron Keller', email: 'aaron@datum.co' },
+  recent: {}, // search key -> { title, mode, href, requirements, results, ts }  (this session)
+  saved: {}, // search key -> same shape + project
+  requests: {}, // locked workflow -> 'requested'
   surrogate: {}, // bom_line_id -> 'confirmed'
   costModel: {}, // part_id -> 'confirmed' | 'overridden'
   sourced: {}, // part_id -> supplier_id
@@ -47,7 +52,7 @@ function reducer(s, a) {
     case 'saveView':
       return { ...s, views: { ...s.views, [a.table]: [...(s.views[a.table] || []).filter((v) => v.name !== a.view.name), a.view] } }
     case 'reset':
-      return { ...initial, theme: s.theme }
+      return { ...initial, theme: s.theme, user: s.user }
     default:
       return s
   }

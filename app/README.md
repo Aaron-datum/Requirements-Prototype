@@ -15,6 +15,9 @@ npm run build    # static build in dist/ (hash routing, works from any path)
 
 | Route | Screen |
 |---|---|
+| `#/login`, `#/home` | **Login** and the **Launchpad** (Navigate sidebar, search box, 3D Search / Create / Saved searches cards, Recent-this-session strip). The app opens on Home. |
+| `#/search`, `#/search/source/:mode`, `#/search/results` | **New Search** (Part→Part, Part→Assembly, Assembly→Assembly, Part-in-Assy→Part), source picker with match criteria, and a results table that runs against the dataset. Find Duplicates / Find Revisions are presets of Part→Part. |
+| `#/saved`, `#/workflows` | Saved & recent searches; the Create page (BOM Creation starts the RFQ flow; locked workflows open the Unlock modal) |
 | `#/dashboard` | **Project overview / Output overview** — action boxes, status bar, data-viz slot (zoom × metric × form), filterable overflow table (closes gap 2a) |
 | `#/intake` → `#/tree` | RFQ intake, assembly tree → Create BOM |
 | `#/bom` | BOM review: shared table shell (Filters / Columns / Manage, subfolders), row panel with Summary / Similarity / Costing / PLM, Accept as surrogate |
@@ -44,6 +47,10 @@ npm run build    # static build in dist/ (hash routing, works from any path)
 | 2f severity | The dataset's placeholder Critical/High/Medium/Low scale, shown everywhere owner is. |
 | Due dates | Inherited from the RFQ scope (`2026-10-09`), not per action. |
 | Duplicates | Stay as Similarity-tab provenance text rather than a new Certainty tier. |
+
+## Search
+
+Search runs on the dataset, not on CAD geometry: uploads are matched to a catalog record by filename. Scores use the BOM Similarity components (geometry, manufacture complexity, material, supplier/location, order of magnitude), and where the dataset already has a breakdown for a pair it is used as-is so Search agrees with the BOM tab. Executed searches land in Recent; Save search pins one to the Civic Si project. Feedback (top bar) and Unlock-workflow requests go through the same toast + audit path as other decisions.
 
 ## Known limits
 

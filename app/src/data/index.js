@@ -21,7 +21,8 @@ export const SCOPE = {
   bomId: 'BOM-CIV-26 rev 1',
   sources: 'SOR-CIV-15 · ES-CIV-0150',
   planId: 'TP-CIV26-0007',
-  user: 'A. Novak',
+  user: 'Aaron Keller',
+  email: 'aaron@datum.co',
 }
 
 const by = (arr, k) => Object.fromEntries(arr.map((x) => [x[k], x]))

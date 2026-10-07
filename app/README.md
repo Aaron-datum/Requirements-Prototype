@@ -52,6 +52,10 @@ npm run build    # static build in dist/ (hash routing, works from any path)
 
 Search runs on the dataset, not on CAD geometry: uploads are matched to a catalog record by filename. Scores use the BOM Similarity components (geometry, manufacture complexity, material, supplier/location, order of magnitude), and where the dataset already has a breakdown for a pair it is used as-is so Search agrees with the BOM tab. Executed searches land in Recent; Save search pins one to the Civic Si project. Feedback (top bar) and Unlock-workflow requests go through the same toast + audit path as other decisions.
 
+## Density and the filter sidebar
+
+System → Info density is a global UI scale (Comfortable 112% · Default 100% · Compact 88%): text, controls and spacing scale together via CSS `zoom` on the app root, so it works for eyesight or monitor size; table row height follows it too. The table sidebar is `components/FilterSidebar.jsx`, built to the design system's Filter sidebar card (grouped, collapsible sections with data-type controls, Columns and Manage tabs, resize handle). The dark-mode pass green is deliberately softer than the design-system token (`#5CF0A5`), which glares on dark surfaces; see the override near the end of `app.css`.
+
 ## Known limits
 
 - State is client-side only (decisions persist in `localStorage`; "Reset demo state" is in the user menu). No backend.

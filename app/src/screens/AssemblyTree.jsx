@@ -1,3 +1,4 @@
+import Icon from '../components/Icon'
 import { useMemo, useState } from 'react'
 import { go } from '../router'
 import { Badge, Btn, PageHead } from '../components/ui'
@@ -24,7 +25,7 @@ export default function AssemblyTree() {
           {groups.map(({ g, parts }) => (
             <div key={g}>
               <div className="row" style={{ padding: '8px 12px', background: 'var(--bg-subtle)', cursor: 'pointer', borderTop: '1px solid var(--border-default)' }} onClick={() => setOpen({ ...open, [g]: !open[g] })}>
-                <span aria-hidden>{open[g] ? '▾' : '▸'}</span><span className="h3">{g}</span><span className="muted">{parts.filter((p) => incl[p.part_id]).length}/{parts.length} parts</span>
+                <Icon n={open[g] ? 'down' : 'right'} /><span className="h3">{g}</span><span className="muted">{parts.filter((p) => incl[p.part_id]).length}/{parts.length} parts</span>
                 <button className="linkbtn right" onClick={(e) => { e.stopPropagation(); const all = parts.every((p) => incl[p.part_id]); setIncl({ ...incl, ...Object.fromEntries(parts.map((p) => [p.part_id, !all])) }) }}>Toggle all</button>
               </div>
               {open[g] && parts.map((p) => (

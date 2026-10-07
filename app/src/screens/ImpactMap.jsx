@@ -108,8 +108,8 @@ export default function ImpactMap({ reqId }) {
               return (
                 <g key={n.id} transform={`translate(${x - 62},${y - 20})`} onClick={() => setSel(n.id)} style={{ cursor: 'pointer' }} tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && setSel(n.id)}>
                   <rect width="124" height="40" rx="5" fill="var(--bg-card)" stroke={on ? 'var(--border-selected)' : hit?.flag === 'RE-REVIEW' ? 'var(--status-fail-fg)' : 'var(--border-strong)'} strokeWidth={on || hit ? 2 : 1} />
-                  <text x="8" y="14" className="mono" style={{ fontSize: 9 }}>{n.kind}{hit ? ` · ${hit.flag}` : ''}</text>
-                  <text x="8" y="30" style={{ fontSize: 10.5, fill: 'var(--fg-primary)' }}>{n.name.length > 20 ? n.name.slice(0, 19) + '…' : n.name}</text>
+                  <text x="8" y="14" className="mono" style={{ fontSize: 10 }}>{n.kind}{hit ? ` · ${hit.flag}` : ''}</text>
+                  <text x="8" y="30" style={{ fontSize: 11, fill: 'var(--fg-primary)' }}>{n.name.length > 20 ? n.name.slice(0, 19) + '…' : n.name}</text>
                 </g>)
             })}
           </svg>

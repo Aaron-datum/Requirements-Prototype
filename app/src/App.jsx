@@ -1,3 +1,4 @@
+import Icon from './components/Icon'
 import { useState } from 'react'
 import { go, back, useRoute } from './router'
 import { useStore } from './store'
@@ -58,13 +59,13 @@ function Crumbs({ r }) {
   if (r.sub) items.push([r.sub, null])
   return (
     <>
-      <button className="btn sm ghost" onClick={back} aria-label="Back" title="Back (browser history)">←</button>
+      <button className="btn sm ghost icon" onClick={back} aria-label="Back" title="Back (browser history)"><Icon n="back" /></button>
       {items.map(([l, p], i) => {
         const last = i === items.length - 1
         const stale = !last && i < items.length - 1 && i > 0 && false
         return (
           <span key={i} className="row" style={{ gap: 6 }}>
-            {i > 0 && <span className="sep">›</span>}
+            {i > 0 && <span className="sep"><Icon n="right" size={14} /></span>}
             {last ? <span className="cur">{l}</span> : <a className={stale ? 'stale' : ''} onClick={() => go(p)}>{l}</a>}
           </span>
         )
@@ -92,7 +93,7 @@ export default function App() {
         </nav>
         <div className="right row" style={{ position: 'relative' }}>
           <span className="muted">{SCOPE.rfq} · {open} open</span>
-          <Btn size="sm" onClick={() => setMenu(!menu)} aria-expanded={menu}>{SCOPE.user} ▾</Btn>
+          <Btn size="sm" onClick={() => setMenu(!menu)} aria-expanded={menu}>{SCOPE.user}<Icon n="down" size={14} /></Btn>
           {menu && (
             <div className="pop" role="menu">
               <div className="col"><span className="caps">Theme</span>

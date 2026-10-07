@@ -1,7 +1,8 @@
 import Icon from './Icon'
 import { Fragment, useMemo, useState } from 'react'
 import { useStore } from '../store'
-import { Btn, Modal, Seg, Tabs, useLocal } from './ui'
+import { Btn, Modal, useLocal } from './ui'
+import FilterSidebar from './FilterSidebar'
 
 /**
  * Shared table shell — one component for the BOM table, the requirement trace table (and any future table).
@@ -14,7 +15,7 @@ import { Btn, Modal, Seg, Tabs, useLocal } from './ui'
  * column: { key, label, group, get(row), render?(row), type: 'enum'|'text'|'range'|'none', visible?, pinned?, align? }
  */
 export default function TableShell({
-  id, columns, rows, rowId, selectedId, onSelect, rowClass, groupOptions = [], folderMeta, toolbar, empty = 'No rows match these filters.', defaultGroup, card,
+  id, columns, rows, rowId, selectedId, onSelect, rowClass, groupOptions = [], folderMeta, toolbar, empty = 'No rows match these filters.', defaultGroup, card, noun = 'rows',
 }) {
   const { state, dispatch } = useStore()
   const [tab, setTab] = useLocal(id + ':tab', 'Filters')
@@ -111,6 +112,7 @@ export default function TableShell({
     dispatch({ type: 'saveView', table: id, view: { name, note: `${visible.length} cols · ${activeKeys.length} filters`, fieldSet, visible, filters, density, group } })
     setViewName('')
   }
+  const deleteView = (name) => dispatch({ type: 'deleteView', table: id, name })
   const loadView = (v) => { setFieldSet(v.fieldSet); setVisible(v.visible); setFilters(v.filters); setDensity(v.density); setGroup(v.group) }
 
   const optionsFor = (c) => {
@@ -122,119 +124,10 @@ export default function TableShell({
 
   return (
     <>
-      {collapsed ? (
-        <aside className="side collapsed" aria-label="Table sidebar (collapsed)">
-          <div className="bd" style={{ alignItems: 'center' }}>
-            <Btn size="sm" className="icon" onClick={() => setCollapsed(false)} aria-label="Expand sidebar"><Icon n="dright" /></Btn>
-            {activeKeys.length > 0 && <span className="badge b-info">{activeKeys.length}</span>}
-          </div>
-        </aside>
-      ) : (
-        <aside className="side" aria-label="Table sidebar">
-          <div className="hd">
-            <Tabs value={tab} tabs={['Filters', 'Columns', 'Manage']} onChange={setTab} />
-          </div>
-          <div className="bd">
-            {tab === 'Filters' && (
-              <>
-                <div className="row">
-                  <span className="caps">Filters</span>
-                  {activeKeys.length > 0 && <span className="badge b-info">{activeKeys.length} active</span>}
-                  <button className="linkbtn right" onClick={() => setFilters({})} disabled={!activeKeys.length}>Clear all</button>
-                </div>
-                {filterKeys.map((k) => {
-                  const c = col(k)
-                  const f = filters[k]
-                  return (
-                    <div className="fgroup" key={k}>
-                      <div className="row">
-                        <span className="h3">{c.label}</span>
-                        {!fieldSet.includes(k) && <span className="muted" style={{ fontSize: 13 }}>column removed · filter active</span>}
-                        {isActive(f) && <button className="linkbtn right" onClick={() => setF(k, c.type === 'enum' ? [] : c.type === 'range' ? {} : '')}>Clear</button>}
-                      </div>
-                      {c.type === 'enum' && (() => {
-                        const opts = optionsFor(c)
-                        return opts.map(([v, n]) => (
-                          <label className="opt" key={v}>
-                            <input type="checkbox" checked={(f || []).includes(v)} onChange={(e) => setF(k, e.target.checked ? [...(f || []), v] : (f || []).filter((x) => x !== v))} />
-                            <span className="grow trunc">{v}</span><span className="muted mono">{n}</span>
-                          </label>
-                        ))
-                      })()}
-                      {c.type === 'text' && <input type="search" placeholder={`Search ${c.label.toLowerCase()}…`} value={f || ''} onChange={(e) => setF(k, e.target.value)} />}
-                      {c.type === 'range' && (
-                        <div className="row">
-                          <input type="text" inputMode="numeric" placeholder="min" style={{ width: 80 }} value={f?.min ?? ''} onChange={(e) => setF(k, { ...f, min: e.target.value })} />
-                          <span className="muted">–</span>
-                          <input type="text" inputMode="numeric" placeholder="max" style={{ width: 80 }} value={f?.max ?? ''} onChange={(e) => setF(k, { ...f, max: e.target.value })} />
-                        </div>
-                      )}
-                    </div>
-                  )
-                })}
-              </>
-            )}
-            {tab === 'Columns' && (
-              <>
-                <div className="row">
-                  <span className="caps">Columns</span>
-                  <button className="linkbtn right" onClick={() => setVisible(fieldSet)}>Show all</button>
-                  <button className="linkbtn" onClick={() => setVisible(columns.filter((c) => c.pinned).map((c) => c.key))}>Hide all</button>
-                </div>
-                <div className="muted" style={{ fontSize: 13 }}>Hiding a column here keeps its filter. Use Manage to add or remove columns.</div>
-                {colGroups.map((g) => (
-                  <div className="fgroup" key={g}>
-                    <span className="caps">{g}</span>
-                    {columns.filter((c) => (c.group || 'Other') === g && fieldSet.includes(c.key)).map((c) => (
-                      <label className="opt" key={c.key}>
-                        <input type="checkbox" checked={c.pinned || visible.includes(c.key)} disabled={c.pinned}
-                          onChange={(e) => setVisible(e.target.checked ? [...visible, c.key] : visible.filter((x) => x !== c.key))} />
-                        <span className="grow">{c.label}</span>
-                        {c.pinned && <span className="muted" style={{ fontSize: 13 }}>pinned</span>}
-                      </label>
-                    ))}
-                  </div>
-                ))}
-              </>
-            )}
-            {tab === 'Manage' && (
-              <>
-                {card && (
-                  <div className="fgroup">
-                    <span className="caps">Layout</span>
-                    <Seg value={layout} onChange={setLayout} options={[['table', 'Table'], ['thumbnail', 'Thumbnail']]} />
-                  </div>
-                )}
-                <div className="fgroup">
-                  <span className="caps">Row density</span>
-                  <Seg value={density} onChange={setDensity} options={[['compact', 'Compact'], ['default', 'Default'], ['comfy', 'Comfy']]} />
-                </div>
-                {groupOptions.length > 0 && (
-                  <div className="fgroup">
-                    <span className="caps">Group into subfolders</span>
-                    <Seg value={group} onChange={setGroup} options={[...groupOptions.map((g) => [g.key, g.label]), ['none', 'None']]} />
-                  </div>
-                )}
-                <div className="fgroup">
-                  <span className="caps">Columns</span>
-                  <Btn onClick={openColModal}>Add / Remove Columns</Btn>
-                  <span className="muted" style={{ fontSize: 13 }}>Adding a column adds its filter — even if the column stays hidden.</span>
-                </div>
-                <div className="fgroup">
-                  <span className="caps">Saved views</span>
-                  {views.map((v) => (
-                    <button key={v.name} className="btn" style={{ justifyContent: 'space-between' }} onClick={() => loadView(v)}>
-                      <span>{v.name}</span><span className="muted" style={{ fontWeight: 400 }}>{v.note}</span>
-                    </button>
-                  ))}
-                  <div className="row"><input type="text" className="grow" placeholder="View name" value={viewName} onChange={(e) => setViewName(e.target.value)} /><Btn onClick={saveView}>Save Current View</Btn></div>
-                </div>
-              </>
-            )}
-          </div>
-          <div className="ft"><Btn size="sm" className="ghost" onClick={() => setCollapsed(true)}><Icon n="dleft" />Collapse</Btn></div>
-        </aside>
-      )}
+      <FilterSidebar id={id} columns={columns} fieldSet={fieldSet} visible={visible} setVisible={setVisible} filters={filters} setF={setF} setFilters={setFilters}
+        isActive={isActive} optionsFor={optionsFor} noun={noun} total={rows.length} shownCount={shown.length} collapsed={collapsed} setCollapsed={setCollapsed}
+        density={density} setDensity={setDensity} layout={layout} setLayout={setLayout} card={card} group={group} setGroup={setGroup} groupOptions={groupOptions}
+        openColModal={openColModal} views={views} saveView={saveView} loadView={loadView} deleteView={deleteView} viewName={viewName} setViewName={setViewName} />
 
       <div className="fill" data-density={density === 'default' ? undefined : density}>
         <div className="row wrap" style={{ padding: '8px 16px', borderBottom: '1px solid var(--border-default)', minHeight: 40 }}>

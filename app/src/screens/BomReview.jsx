@@ -56,7 +56,7 @@ export default function BomReview() {
     { key: 'supplier', label: 'Supplier', group: 'Sourcing', type: 'enum', get: (r) => r.supplier.name },
     { key: 'region', label: 'Region', group: 'Sourcing', type: 'enum', visible: false, get: (r) => r.region },
     { key: 'lead', label: 'Lead (wk)', group: 'Sourcing', type: 'range', align: 'right', visible: false, get: (r) => r.part.lead_time_wk, render: (r) => <span className="num">{r.part.lead_time_wk}</span> },
-    { key: 'certainty', label: 'Certainty', group: 'Sourcing', type: 'enum', get: (r) => r.certainty,
+    { key: 'certainty', label: 'Certainty', group: 'Sourcing', type: 'enum', levels: ['Actual', 'Surrogate', 'Estimated', 'No match'], get: (r) => r.certainty,
       render: (r) => <span className="row"><Certainty v={r.certainty} />{r.certainty === 'Surrogate' && state.surrogate[r.bom_line_id] && <Badge tone="pass">Confirmed</Badge>}</span> },
     { key: 'match', label: 'Match %', group: 'Sourcing', type: 'range', align: 'right', get: (r) => r.surrogate_match_pct, render: (r) => <span className="num">{r.surrogate_match_pct == null ? '—' : r.surrogate_match_pct + '%'}</span> },
     { key: 'used', label: 'Used on', group: 'Sourcing', type: 'enum', get: (r) => programUsage(r.part_id).map(progShort).join(' · '), visible: false },
@@ -86,7 +86,7 @@ export default function BomReview() {
         <div className="row"><span className="sec">Surrogates confirmed <b className="mono">{confirmed}</b> · Unresolved <b className="mono">{unresolved}</b></span></div>
       </div>
       <div className="stage" style={{ minHeight: 0 }}>
-        <TableShell id="bom" columns={columns} card={(r) => ({ img: `./cad-preview-${r.part_id.charCodeAt(r.part_id.length - 1) % 2 ? 2 : 4}.png`, title: r.name, sub: r.part_id, meta: money(r.unit_price_usd), badge: <Certainty v={r.certainty} /> })} rows={siBom} rowId={(r) => r.bom_line_id} selectedId={sel} onSelect={(id) => { setSel(id); setTab('Summary') }}
+        <TableShell id="bom" noun="lines" columns={columns} card={(r) => ({ img: `./cad-preview-${r.part_id.charCodeAt(r.part_id.length - 1) % 2 ? 2 : 4}.png`, title: r.name, sub: r.part_id, meta: money(r.unit_price_usd), badge: <Certainty v={r.certainty} /> })} rows={siBom} rowId={(r) => r.bom_line_id} selectedId={sel} onSelect={(id) => { setSel(id); setTab('Summary') }}
           groupOptions={[{ key: 'sub', label: 'Subassembly', get: (r) => r.subassembly }]}
           folderMeta={(rs) => money(sum(rs, (r) => r.ext_price)) + ' · ' + rs.filter((r) => r.certainty === 'Actual').length + ' carryover'} />
         {line && <LinePanel line={line} tab={tab} setTab={setTab} onClose={() => setSel(null)} />}

@@ -51,6 +51,8 @@ function reducer(s, a) {
       return { ...s, audit: [a.entry, ...s.audit].slice(0, 200) }
     case 'saveView':
       return { ...s, views: { ...s.views, [a.table]: [...(s.views[a.table] || []).filter((v) => v.name !== a.view.name), a.view] } }
+    case 'deleteView':
+      return { ...s, views: { ...s.views, [a.table]: (s.views[a.table] || []).filter((v) => v.name !== a.name) } }
     case 'reset':
       return { ...initial, theme: s.theme, user: s.user }
     default:
@@ -75,6 +77,10 @@ export function StoreProvider({ children }) {
   useEffect(() => {
     document.documentElement.dataset.theme = state.theme
   }, [state.theme])
+  // Info density is a global UI scale (text, controls, spacing), not only table row height.
+  useEffect(() => {
+    document.documentElement.dataset.scale = state.density
+  }, [state.density])
 
   const dismiss = useCallback((id) => setToasts((t) => t.filter((x) => x.id !== id)), [])
 

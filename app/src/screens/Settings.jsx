@@ -8,7 +8,7 @@ export const CAD_PRESETS = {
   nx: { Rotate: ['Middle', 'None'], Pan: ['Middle', 'Shift'], Zoom: ['Scroll', 'None'], Select: ['Left', 'None'], 'Context Menu': ['Right', 'None'] },
 }
 const DEFAULT_CUSTOM = { Rotate: ['Middle', 'None'], Pan: ['Middle', 'None'], Zoom: ['Scroll', 'None'], Select: ['Left', 'None'], 'Context Menu': ['Right', 'None'] }
-const DENSITY_META = { comfy: '8 results / page · 48px rows', default: '10 results / page · 40px rows', compact: '15 results / page · 32px rows' }
+const DENSITY_META = { comfy: 'UI scale 112% · larger text and controls · 48px rows', default: 'UI scale 100% · 10 results / page · 40px rows', compact: 'UI scale 88% · denser text and controls · 32px rows' }
 
 export const bindingOf = ([mouse, mod]) => (mod === 'None' ? mouse : `${mod} + ${mouse}`)
 export const activeCad = (prefs) => {
@@ -53,7 +53,7 @@ export default function Settings() {
           </section>
           <section className="setcard">
             <div className="t">Info density</div>
-            <div className="d">Default row density for all tables.</div>
+            <div className="d">Scales text, controls and spacing across the whole app — pick what suits your eyesight and monitor.</div>
             <div style={{ marginTop: 12 }}><Seg value={state.density} onChange={(v) => set('density', v)} options={[['comfy', 'Comfortable'], ['default', 'Default'], ['compact', 'Compact']]} /></div>
             <div className="mono muted" style={{ marginTop: 12 }}>{DENSITY_META[state.density]}</div>
           </section>

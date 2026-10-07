@@ -39,7 +39,7 @@ export default function Trace() {
     { key: 'test', label: 'Test', group: 'Evidence', type: 'enum', get: (r) => r.proposedTest.test_id, render: (r) => <span className="mono">{r.proposedTest.test_id}</span> },
     { key: 'status', label: 'Status', group: 'Evidence', type: 'enum', get: (r) => statusOf(r, state), render: (r) => <Badge tone={STATUS_TONE[statusOf(r, state)]}>{statusOf(r, state)}</Badge> },
     { key: 'hops', label: 'Carryover', group: 'Evidence', type: 'range', align: 'right', get: (r) => new Set(r.events.map((e) => e.program_id)).size, render: (r) => <span className="num">{r.events.length ? new Set(r.events.map((e) => e.program_id)).size + ' prog' : '—'}</span> },
-    { key: 'severity', label: 'Severity', group: 'Action', type: 'enum', get: (r) => r.severity, render: (r) => <Severity v={r.severity} /> },
+    { key: 'severity', label: 'Severity', group: 'Action', type: 'enum', levels: ['Critical', 'High', 'Medium', 'Low'], get: (r) => r.severity, render: (r) => <Severity v={r.severity} /> },
     { key: 'owner', label: 'Owner', group: 'Action', type: 'enum', get: (r) => state.owners[r.req_id] || r.owner, render: (r) => <Owner v={state.owners[r.req_id] || r.owner} /> },
     { key: 'due', label: 'Due', group: 'Action', type: 'none', visible: false, get: () => SCOPE.due, render: () => <span className="mono muted">{SCOPE.due}</span> },
   ], [state])
@@ -51,7 +51,7 @@ export default function Trace() {
         <Btn onClick={() => go('/carryover')}>Carryover Review · {open} open</Btn>
       </div>
       <div className="stage" style={{ minHeight: 0 }}>
-        <TableShell id="trace" columns={columns} card={(r) => ({ title: r.title, sub: r.req_id, meta: r.severity, badge: <TextStatus v={r.text_status} /> })} rows={requirements} rowId={(r) => r.req_id} selectedId={sel} onSelect={setSel}
+        <TableShell id="trace" noun="requirements" columns={columns} card={(r) => ({ title: r.title, sub: r.req_id, meta: r.severity, badge: <TextStatus v={r.text_status} /> })} rows={requirements} rowId={(r) => r.req_id} selectedId={sel} onSelect={setSel}
           rowClass={(r) => (r.dangerous ? 'danger' : '')}
           groupOptions={[{ key: 'subsystem', label: 'Subsystem', get: (r) => r.subsystem }, { key: 'category', label: 'Category', get: category }, { key: 'source', label: 'Source', get: (r) => r.source_type }]}
           folderMeta={(rs) => `${rs.filter((r) => r.dangerous).length ? rs.filter((r) => r.dangerous).length + ' dangerous · ' : ''}${rs.filter((r) => r.flagged).length} open`}

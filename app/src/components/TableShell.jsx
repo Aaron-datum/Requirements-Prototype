@@ -14,7 +14,7 @@ import { Btn, Modal, Seg, Tabs, useLocal } from './ui'
  * column: { key, label, group, get(row), render?(row), type: 'enum'|'text'|'range'|'none', visible?, pinned?, align? }
  */
 export default function TableShell({
-  id, columns, rows, rowId, selectedId, onSelect, rowClass, groupOptions = [], folderMeta, toolbar, empty = 'No rows match these filters.', defaultGroup,
+  id, columns, rows, rowId, selectedId, onSelect, rowClass, groupOptions = [], folderMeta, toolbar, empty = 'No rows match these filters.', defaultGroup, card,
 }) {
   const { state, dispatch } = useStore()
   const [tab, setTab] = useLocal(id + ':tab', 'Filters')
@@ -22,7 +22,11 @@ export default function TableShell({
   const [fieldSet, setFieldSet] = useLocal(id + ':fields', columns.map((c) => c.key))
   const [visible, setVisible] = useLocal(id + ':visible', columns.filter((c) => c.visible !== false).map((c) => c.key))
   const [filters, setFilters] = useLocal(id + ':filters', {})
-  const [density, setDensity] = useLocal(id + ':density', 'default')
+  // Density and layout default to the System settings; a per-table choice in Manage overrides them.
+  const [dOver, setDensity] = useLocal(id + ':density', null)
+  const [lOver, setLayout] = useLocal(id + ':layout', null)
+  const density = dOver ?? state.density
+  const layout = card ? lOver ?? state.view : 'table'
   const [group, setGroup] = useLocal(id + ':group', defaultGroup ?? (groupOptions[0]?.key || 'none'))
   const [sort, setSort] = useLocal(id + ':sort', null)
   const [closed, setClosed] = useState({})
@@ -195,6 +199,12 @@ export default function TableShell({
             )}
             {tab === 'Manage' && (
               <>
+                {card && (
+                  <div className="fgroup">
+                    <span className="caps">Layout</span>
+                    <Seg value={layout} onChange={setLayout} options={[['table', 'Table'], ['thumbnail', 'Thumbnail']]} />
+                  </div>
+                )}
                 <div className="fgroup">
                   <span className="caps">Row density</span>
                   <Seg value={density} onChange={setDensity} options={[['compact', 'Compact'], ['default', 'Default'], ['comfy', 'Comfy']]} />
@@ -234,6 +244,7 @@ export default function TableShell({
           <div className="right row">{toolbar}</div>
         </div>
         <div style={{ flex: 1, overflow: 'auto' }}>
+          {layout === 'thumbnail' ? <Thumbs folders={folders} card={card} rowId={rowId} selectedId={selectedId} onSelect={onSelect} rowClass={rowClass} closed={closed} setClosed={setClosed} folderMeta={folderMeta} empty={shown.length === 0 && empty} /> : (
           <table className="tbl">
             <thead>
               <tr>
@@ -270,7 +281,7 @@ export default function TableShell({
                 </Fragment>
               ))}
             </tbody>
-          </table>
+          </table>)}
         </div>
       </div>
 
@@ -294,5 +305,38 @@ export default function TableShell({
         </Modal>
       )}
     </>
+  )
+}
+
+// Thumbnail layout: icon-card tiles instead of rows; clicking a tile opens the same right-hand detail panel.
+function Thumbs({ folders, card, rowId, selectedId, onSelect, rowClass, closed, setClosed, folderMeta, empty }) {
+  if (empty) return <div className="empty">{empty}</div>
+  return (
+    <div>
+      {folders.map((f) => (
+        <section key={f.name ?? '_'}>
+          {f.name != null && (
+            <div className="row folderbar" onClick={() => setClosed({ ...closed, [f.name]: !closed[f.name] })}>
+              <Icon n={closed[f.name] ? 'right' : 'down'} /><b>{f.name}</b>
+              <span className="muted"> · {f.rows.length} {f.rows.length === 1 ? 'row' : 'rows'}{folderMeta ? ' · ' + folderMeta(f.rows) : ''}</span>
+            </div>
+          )}
+          {!closed[f.name] && (
+            <div className="thumbs">
+              {f.rows.map((r) => {
+                const c = card(r), rid = rowId(r)
+                return (
+                  <button key={rid} className={`thumb ${selectedId === rid ? 'picked' : ''} ${rowClass ? rowClass(r) : ''}`} onClick={() => onSelect?.(rid)}>
+                    <div className="pic">{c.img ? <img src={c.img} alt="" /> : <span className="mono muted">{c.sub}</span>}</div>
+                    <div className="cap"><span className="n">{c.title}</span>{c.badge}</div>
+                    <div className="cap sub"><span className="mono muted">{c.sub}</span><span className="mono">{c.meta}</span></div>
+                  </button>
+                )
+              })}
+            </div>
+          )}
+        </section>
+      ))}
+    </div>
   )
 }

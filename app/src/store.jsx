@@ -7,6 +7,9 @@ const KEY = 'datum-prototype-v1'
 const initial = {
   theme: 'white',
   planLabel: 'Test plan',
+  density: 'default', // System settings: default row density for all tables
+  view: 'table', // System settings: default table layout ('table' | 'thumbnail')
+  prefs: {}, // confirmed-action settings, e.g. prefs.cad
   surrogate: {}, // bom_line_id -> 'confirmed'
   costModel: {}, // part_id -> 'confirmed' | 'overridden'
   sourced: {}, // part_id -> supplier_id

@@ -51,7 +51,7 @@ export default function Trace() {
         <Btn onClick={() => go('/carryover')}>Carryover Review · {open} open</Btn>
       </div>
       <div className="stage" style={{ minHeight: 0 }}>
-        <TableShell id="trace" columns={columns} rows={requirements} rowId={(r) => r.req_id} selectedId={sel} onSelect={setSel}
+        <TableShell id="trace" columns={columns} card={(r) => ({ title: r.title, sub: r.req_id, meta: r.severity, badge: <TextStatus v={r.text_status} /> })} rows={requirements} rowId={(r) => r.req_id} selectedId={sel} onSelect={setSel}
           rowClass={(r) => (r.dangerous ? 'danger' : '')}
           groupOptions={[{ key: 'subsystem', label: 'Subsystem', get: (r) => r.subsystem }, { key: 'category', label: 'Category', get: category }, { key: 'source', label: 'Source', get: (r) => r.source_type }]}
           folderMeta={(rs) => `${rs.filter((r) => r.dangerous).length ? rs.filter((r) => r.dangerous).length + ' dangerous · ' : ''}${rs.filter((r) => r.flagged).length} open`}

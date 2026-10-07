@@ -17,6 +17,7 @@ import ImpactMap from './screens/ImpactMap'
 import Trace from './screens/Trace'
 import TestDetail from './screens/TestDetail'
 import Approve from './screens/Approve'
+import Settings from './screens/Settings'
 
 // The stitched workflow, in order. Sub-screens hang off a parent step in the crumb trail.
 const FLOW = [
@@ -48,12 +49,23 @@ function resolve(path) {
     case 'trace': return { el: <Trace />, flow: 5, sub: 'Requirement trace' }
     case 'test': return { el: <TestDetail testId={b} />, flow: 5, sub: 'Test detail' }
     case 'approve': return { el: <Approve />, flow: 6 }
+    case 'settings': return { el: <Settings />, crumbs: [['Dashboard', '/dashboard'], ['Settings', null], ['System']], nav: 'My Projects' }
     default: return { el: <Dashboard />, crumbs: [['Dashboard']], nav: 'My Projects' }
   }
 }
 
 function Crumbs({ r }) {
-  if (r.crumbs) return <>{r.crumbs.map(([l], i) => <span key={i} className="cur">{l}</span>)}</>
+  if (r.crumbs) return (
+    <>
+      {r.crumbs.length > 1 && <button className="btn sm ghost icon" onClick={back} aria-label="Back" title="Back (browser history)"><Icon n="back" /></button>}
+      {r.crumbs.map(([l, p], i) => (
+        <span key={i} className="row" style={{ gap: 6 }}>
+          {i > 0 && <span className="sep"><Icon n="right" size={14} /></span>}
+          {i === r.crumbs.length - 1 ? <span className="cur">{l}</span> : p ? <a onClick={() => go(p)}>{l}</a> : <span>{l}</span>}
+        </span>
+      ))}
+    </>
+  )
   const items = [['Dashboard', '/dashboard']]
   FLOW.slice(0, r.flow + 1).forEach(([p, l]) => items.push([l, p]))
   if (r.sub) items.push([r.sub, null])
@@ -96,8 +108,7 @@ export default function App() {
           <Btn size="sm" onClick={() => setMenu(!menu)} aria-expanded={menu}>{SCOPE.user}<Icon n="down" size={14} /></Btn>
           {menu && (
             <div className="pop" role="menu">
-              <div className="col"><span className="caps">Theme</span>
-                <Seg value={state.theme} onChange={(v) => set('theme', v)} options={[['white', 'White'], ['tan', 'Tan'], ['dark', 'Dark']]} /></div>
+              <Btn onClick={() => { go('/settings'); setMenu(false) }}>System settings</Btn>
               <div className="col"><span className="caps">Plan label</span>
                 <Seg value={state.planLabel} onChange={(v) => set('planLabel', v)} options={['Test plan', 'ADV P&R']} /></div>
               <hr className="hr" />

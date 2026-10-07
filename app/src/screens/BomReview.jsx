@@ -85,7 +85,7 @@ export default function BomReview() {
         <div className="row"><span className="sec">Surrogates confirmed <b className="mono">{confirmed}</b> · Unresolved <b className="mono">{unresolved}</b></span></div>
       </div>
       <div className="stage" style={{ minHeight: 0 }}>
-        <TableShell id="bom" columns={columns} rows={siBom} rowId={(r) => r.bom_line_id} selectedId={sel} onSelect={(id) => { setSel(id); setTab('Summary') }}
+        <TableShell id="bom" columns={columns} card={(r) => ({ img: `./cad-preview-${r.part_id.charCodeAt(r.part_id.length - 1) % 2 ? 2 : 4}.png`, title: r.name, sub: r.part_id, meta: money(r.unit_price_usd), badge: <Certainty v={r.certainty} /> })} rows={siBom} rowId={(r) => r.bom_line_id} selectedId={sel} onSelect={(id) => { setSel(id); setTab('Summary') }}
           groupOptions={[{ key: 'sub', label: 'Subassembly', get: (r) => r.subassembly }]}
           folderMeta={(rs) => money(sum(rs, (r) => r.ext_price)) + ' · ' + rs.filter((r) => r.certainty === 'Actual').length + ' carryover'} />
         {line && <LinePanel line={line} tab={tab} setTab={setTab} onClose={() => setSel(null)} />}

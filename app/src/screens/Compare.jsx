@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { go, back } from '../router'
 import { useStore } from '../store'
+import { activeCad, bindingOf, cadConflicts } from './Settings'
 import { Badge, Btn, Certainty, Meter, PageHead, Result, Seg, Severity } from '../components/ui'
 import { bomLineById, money, partById, programById, progShort, requirements, supplierById } from '../data'
 
@@ -44,6 +45,10 @@ export default function Compare({ lineId }) {
                 <figcaption className="muted" style={{ padding: '4px 8px' }}>{cap}</figcaption>
               </figure>))}
           </div>
+          {(() => { const c = activeCad(state.prefs); return (
+            <div className="row wrap small"><span className="caps">CAD controls · {c.preset === 'custom' ? 'Custom' : c.preset.toUpperCase()}</span>
+              {Object.entries(c.map).map(([a, v]) => <span key={a} className="muted">{a} <b className="mono" style={{ color: 'var(--fg-primary)' }}>{bindingOf(v)}</b></span>)}
+              <a onClick={() => go('/settings')}>Change</a></div>) })()}
           <div className="row wrap"><Badge tone="fail">BOM line only</Badge><Badge tone="pass">Overlap</Badge><Badge tone="info">Surrogate only</Badge><span className="muted">Preview imagery is a placeholder — the CAD viewer is out of scope.</span></div>
         </div>
         <div className="card col">

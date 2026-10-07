@@ -23,6 +23,7 @@ npm run build    # static build in dist/ (hash routing, works from any path)
 | `#/mapping` | Requirement → test mapping with Accept / Reject / Undo, bulk accept by threshold |
 | `#/carryover` | Carryover review; Undetermined → ranked candidates, manual search, Upload Proof (tagged *asserted*) |
 | `#/trace`, `#/impact/:reqId`, `#/test/:testId` | Requirement trace (+ carryover-chain drawer), Impact map, Test detail |
+| `#/settings` | **System settings** — theme, default table view (table / thumbnail), info density, 3D CAD controls (CATIA / NX / Custom with conflict detection). Open it from the user menu. |
 | `#/approve` | Approve and create plan; Export TDM (CSV) |
 
 ## Standing decisions implemented

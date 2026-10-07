@@ -1,3 +1,4 @@
+import Icon from './Icon'
 import { Fragment, useMemo, useState } from 'react'
 import { useStore } from '../store'
 import { Btn, Modal, Seg, Tabs, useLocal } from './ui'
@@ -120,7 +121,7 @@ export default function TableShell({
       {collapsed ? (
         <aside className="side collapsed" aria-label="Table sidebar (collapsed)">
           <div className="bd" style={{ alignItems: 'center' }}>
-            <Btn size="sm" onClick={() => setCollapsed(false)} aria-label="Expand sidebar">»</Btn>
+            <Btn size="sm" className="icon" onClick={() => setCollapsed(false)} aria-label="Expand sidebar"><Icon n="dright" /></Btn>
             {activeKeys.length > 0 && <span className="badge b-info">{activeKeys.length}</span>}
           </div>
         </aside>
@@ -143,8 +144,8 @@ export default function TableShell({
                   return (
                     <div className="fgroup" key={k}>
                       <div className="row">
-                        <span className="h3" style={{ fontSize: 12 }}>{c.label}</span>
-                        {!fieldSet.includes(k) && <span className="muted" style={{ fontSize: 10 }}>column removed · filter active</span>}
+                        <span className="h3">{c.label}</span>
+                        {!fieldSet.includes(k) && <span className="muted" style={{ fontSize: 13 }}>column removed · filter active</span>}
                         {isActive(f) && <button className="linkbtn right" onClick={() => setF(k, c.type === 'enum' ? [] : c.type === 'range' ? {} : '')}>Clear</button>}
                       </div>
                       {c.type === 'enum' && (() => {
@@ -176,7 +177,7 @@ export default function TableShell({
                   <button className="linkbtn right" onClick={() => setVisible(fieldSet)}>Show all</button>
                   <button className="linkbtn" onClick={() => setVisible(columns.filter((c) => c.pinned).map((c) => c.key))}>Hide all</button>
                 </div>
-                <div className="muted" style={{ fontSize: 11 }}>Hiding a column here keeps its filter. Use Manage to add or remove columns.</div>
+                <div className="muted" style={{ fontSize: 13 }}>Hiding a column here keeps its filter. Use Manage to add or remove columns.</div>
                 {colGroups.map((g) => (
                   <div className="fgroup" key={g}>
                     <span className="caps">{g}</span>
@@ -185,7 +186,7 @@ export default function TableShell({
                         <input type="checkbox" checked={c.pinned || visible.includes(c.key)} disabled={c.pinned}
                           onChange={(e) => setVisible(e.target.checked ? [...visible, c.key] : visible.filter((x) => x !== c.key))} />
                         <span className="grow">{c.label}</span>
-                        {c.pinned && <span className="muted" style={{ fontSize: 10 }}>pinned</span>}
+                        {c.pinned && <span className="muted" style={{ fontSize: 13 }}>pinned</span>}
                       </label>
                     ))}
                   </div>
@@ -207,7 +208,7 @@ export default function TableShell({
                 <div className="fgroup">
                   <span className="caps">Columns</span>
                   <Btn onClick={openColModal}>Add / Remove Columns</Btn>
-                  <span className="muted" style={{ fontSize: 11 }}>Adding a column adds its filter — even if the column stays hidden.</span>
+                  <span className="muted" style={{ fontSize: 13 }}>Adding a column adds its filter — even if the column stays hidden.</span>
                 </div>
                 <div className="fgroup">
                   <span className="caps">Saved views</span>
@@ -221,14 +222,14 @@ export default function TableShell({
               </>
             )}
           </div>
-          <div className="ft"><Btn size="sm" className="ghost" onClick={() => setCollapsed(true)}>« Collapse</Btn></div>
+          <div className="ft"><Btn size="sm" className="ghost" onClick={() => setCollapsed(true)}><Icon n="dleft" />Collapse</Btn></div>
         </aside>
       )}
 
       <div className="fill" data-density={density === 'default' ? undefined : density}>
         <div className="row wrap" style={{ padding: '8px 16px', borderBottom: '1px solid var(--border-default)', minHeight: 40 }}>
           <span className="muted">{shown.length} of {rows.length}</span>
-          {pills.map((p, i) => <span className="pill" key={i}>{p.label}<button onClick={p.clear} aria-label={`Remove filter ${p.label}`}>✕</button></span>)}
+          {pills.map((p, i) => <span className="pill" key={i}>{p.label}<button onClick={p.clear} aria-label={`Remove filter ${p.label}`}><Icon n="x" /></button></span>)}
           {pills.length > 0 && <button className="linkbtn" onClick={() => setFilters({})}>Clear all</button>}
           <div className="right row">{toolbar}</div>
         </div>
@@ -237,10 +238,10 @@ export default function TableShell({
             <thead>
               <tr>
                 {visCols.map((c) => (
-                  <th key={c.key} className="sortable" style={{ textAlign: c.align || 'left' }}
+                  <th key={c.key} className={`sortable ${sort?.key === c.key ? 'sorted' : ''}`} style={{ textAlign: c.align || 'left' }}
                     onClick={() => setSort(sort?.key === c.key ? (sort.dir === 'asc' ? { key: c.key, dir: 'desc' } : null) : { key: c.key, dir: 'asc' })}
                     aria-sort={sort?.key === c.key ? (sort.dir === 'asc' ? 'ascending' : 'descending') : 'none'}>
-                    {c.label}{sort?.key === c.key ? (sort.dir === 'asc' ? ' ↑' : ' ↓') : ''}
+                    <span className="th-in">{c.label}{sort?.key === c.key && <Icon n={sort.dir === 'asc' ? 'up' : 'down'} />}{isActive(filters[c.key]) && <i style={{ width: 6, height: 6, borderRadius: 99, background: 'var(--accent)' }} />}</span>
                   </th>
                 ))}
               </tr>
@@ -252,7 +253,7 @@ export default function TableShell({
                   {f.name != null && (
                     <tr className="folder" onClick={() => setClosed({ ...closed, [f.name]: !closed[f.name] })}>
                       <td colSpan={visCols.length}>
-                        <span aria-hidden>{closed[f.name] ? '▸' : '▾'}</span> {f.name}
+                        <span aria-hidden style={{ display: "inline-flex", verticalAlign: "middle" }}><Icon n={closed[f.name] ? 'right' : 'down'} /></span> {f.name}
                         <span className="muted" style={{ fontWeight: 400 }}> · {f.rows.length} {f.rows.length === 1 ? 'row' : 'rows'}{folderMeta ? ' · ' + folderMeta(f.rows) : ''}</span>
                       </td>
                     </tr>
@@ -262,7 +263,7 @@ export default function TableShell({
                     return (
                       <tr key={rid} className={`rowhover ${selectedId === rid ? 'picked' : ''} ${rowClass ? rowClass(r) : ''}`} onClick={() => onSelect?.(rid)} tabIndex={0}
                         onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), onSelect?.(rid))}>
-                        {visCols.map((c) => <td key={c.key} style={{ textAlign: c.align || 'left' }}>{c.render ? c.render(r) : c.get(r)}</td>)}
+                        {visCols.map((c) => <td key={c.key} className={sort?.key === c.key ? 'col-sorted' : ''} style={{ textAlign: c.align || 'left' }}>{c.render ? c.render(r) : c.get(r)}</td>)}
                       </tr>
                     )
                   })}
@@ -285,7 +286,7 @@ export default function TableShell({
                     onChange={(e) => setDraft(e.target.checked ? [...draft, c.key] : draft.filter((x) => x !== c.key))} />
                   <span className="grow">{c.label}</span>
                   {c.pinned && <span className="muted">pinned</span>}
-                  {c.type !== 'none' && <span className="muted" style={{ fontSize: 10 }}>filter: {c.type}</span>}
+                  {c.type !== 'none' && <span className="muted" style={{ fontSize: 13 }}>filter: {c.type}</span>}
                 </label>
               ))}
             </div>

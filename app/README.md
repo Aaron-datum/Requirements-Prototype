@@ -27,7 +27,7 @@ npm run build    # static build in dist/ (hash routing, works from any path)
 
 ## Standing decisions implemented
 
-- Shell is `ui-design-current` (tokens copied to `src/styles/tokens.css`; White / Tan / Dark in the user menu). No second nav sidebar.
+- Shell is `ui-design-current` (tokens in `src/styles/tokens.css`, taken from the current design-system export — the newer scale: 15px body, 13px floor, IBM Plex Mono for data, 36px buttons, 40px rows, status tokens with borders; the copy under `datum-requirements-workflow-handoff/prototype/_ds` is an older version; White / Tan / Dark in the user menu). No second nav sidebar.
 - One `TableShell` serves BOM and requirement trace. Adding a column adds its filter even when hidden; removing a column drops its filter unless it is actively applied; visibility toggles never touch filters.
 - Right-hand panel is the detail view everywhere; the bottom drawer is only for the chronological carryover chain.
 - Every decision goes through one confirmed-action path (`decide` in `src/store.jsx`): state change + toast + user/timestamp audit record + Undo (gap 2g).

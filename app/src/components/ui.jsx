@@ -1,3 +1,4 @@
+import Icon from './Icon'
 import { useState } from 'react'
 import { useStore } from '../store'
 
@@ -84,7 +85,7 @@ export function Modal({ title, onClose, children, footer }) {
   return (
     <div className="scrim" onClick={onClose}>
       <div className="modal" onClick={(e) => e.stopPropagation()} role="dialog" aria-label={title}>
-        <div className="hd"><span className="h3 grow">{title}</span><Btn size="sm" className="ghost" onClick={onClose} aria-label="Close">✕</Btn></div>
+        <div className="hd"><span className="h3 grow">{title}</span><Btn size="sm" className="ghost icon" onClick={onClose} aria-label="Close"><Icon n="x" /></Btn></div>
         <div className="bd">{children}</div>
         {footer && <div className="ft">{footer}</div>}
       </div>
@@ -100,7 +101,7 @@ export function Toasts() {
         <div key={t.id} className="toast">
           <span className="grow">{t.text}</span>
           <button onClick={t.undo}>Undo</button>
-          <button onClick={() => dismiss(t.id)} aria-label="Dismiss">✕</button>
+          <button onClick={() => dismiss(t.id)} aria-label="Dismiss"><Icon n="x" /></button>
         </div>
       ))}
     </div>
@@ -111,7 +112,7 @@ export function Toasts() {
 export function Stamp({ audit, match }) {
   const e = audit.find((a) => match(a))
   if (!e) return null
-  return <span className="muted" style={{ fontSize: 11 }}>{e.user} · {new Date(e.ts).toLocaleString([], { dateStyle: 'short', timeStyle: 'short' })}</span>
+  return <span className="muted" style={{ fontSize: 13 }}>{e.user} · {new Date(e.ts).toLocaleString([], { dateStyle: 'short', timeStyle: 'short' })}</span>
 }
 
 export function useLocal(key, init) {

@@ -2,10 +2,13 @@
    Datum UI V1 — Design Tokens
    Three modes: White (default) · Tan · Dark
    Primary accent: Datum Dark Blue #1A3A5C
-   Radius: 5px · Type max: 16px · Weight max: 500
+   Radius: 5px · Weight max: 500
+   Type: two families — DM Sans (names, titles, chrome) and
+   IBM Plex Mono (numbers, PLM data, IDs — slashed zero).
+   Body 15-16px · absolute floor 13px (caps micro-labels only).
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root {
   /* ---------- Brand palette ---------- */
@@ -18,13 +21,16 @@
   --datum-blue-hover: #264C72;
   --datum-blue-tint:  #E3EEF8;
 
-  /* ---------- Status (semantic) ---------- */
-  --status-pass-fg: #1A6B3A; --status-pass-bg: #E6F4EC;
-  --status-warn-fg: #7A4F00; --status-warn-bg: #FFF3CD;
-  --status-fail-fg: #A8200D; --status-fail-bg: #FAE5E3;
-  --status-info-fg: var(--datum-blue); --status-info-bg: var(--datum-blue-tint);
-  --danger:      #C0392B;
-  --danger-dark: #E55C5C;
+  /* ---------- Status (semantic) ----------
+     Per-theme values live in the theme blocks below. Every fg/bg pair
+     clears 7:1 (AAA) so status text is never the weakest text on screen.
+     Raw hues kept here for charts/legends that need a bare color. */
+  --hue-pass: #14532B;
+  --hue-warn: #6B4400;
+  --hue-fail: #8E1A0A;
+  --hue-info: var(--datum-blue);
+  --danger:      #8E1A0A;
+  --danger-dark: #FFB0A5;
 
   /* ---------- CAD Compare · snap-overlay analysis ----------
      Red-green-blue geometric-difference readout. Shared geometry
@@ -35,23 +41,53 @@
   --overlay-a:      #A8200D;   /* unique to search part — red */
   --overlay-b:      #1A3A5C;   /* unique to result part — blue */
 
-  /* ---------- Type ---------- */
-  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
-  --font-mono: 'DM Mono', 'Fira Code', ui-monospace, monospace;
-  /* UI body scale — capped at 16px (page) */
-  --text-page: 16px;    --lh-page: 24px;
-  --text-section: 13px; --lh-section: 20px;
-  --text-body: 12px;    --lh-body: 16px;
-  --text-small: 11px;   --lh-small: 14px;
-  --text-button: 13px;  --lh-button: 16px;
-  --text-badge: 11px;   --lh-badge: 14px;
-  --text-mono: 11px;    --lh-mono: 16px;
-  /* Display scale — use on low-density / hero surfaces (home, auth, onboarding, modal headers, empty states). */
-  --text-display-lg: 32px; --lh-display-lg: 40px;
-  --text-display-md: 22px; --lh-display-md: 28px;
-  --text-display-sm: 18px; --lh-display-sm: 24px;
+  /* ---------- Type ----------
+     TWO FAMILIES, one job each.
+     --font-ui   DM Sans        — system titles, screen + part names, labels,
+                                  buttons, prose. Never used for a number a
+                                  user has to read precisely.
+     --font-data IBM Plex Mono  — every number, measurement, tolerance, PLM
+                                  field, part number, revision, path, hash,
+                                  timestamp. Chosen for an unmistakable
+                                  slashed 0 against O, and 1 / l / I that
+                                  stay distinct at 14px.
+     --font-sans / --font-mono remain as aliases. */
+  --font-ui:   'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-data: 'IBM Plex Mono', 'Fira Code', ui-monospace, monospace;
+  --font-sans: var(--font-ui);   /* alias */
+  --font-mono: var(--font-data); /* alias */
+
+  /* Body scale — readable-density.
+     Reading sizes sit at 15-16px; 14px is the floor for any sentence;
+     13px is the absolute floor and is reserved for uppercase micro-labels
+     and badges, where caps + letterspacing carry the legibility.
+     Nothing in the system is smaller than 13px. */
+  --text-page: 20px;    --lh-page: 28px;      /* screen / step titles */
+  --text-section: 16px; --lh-section: 24px;   /* panel + section titles */
+  --text-body: 15px;    --lh-body: 22px;      /* default reading size */
+  --text-small: 14px;   --lh-small: 20px;     /* secondary / helper text */
+  --text-button: 15px;  --lh-button: 20px;
+  --text-badge: 13px;   --lh-badge: 18px;     /* caps micro-labels · FLOOR */
+  --text-data: 15px;    --lh-data: 22px;      /* numbers + PLM values */
+  --text-data-sm: 14px; --lh-data-sm: 20px;   /* dense tables, chips */
+  --text-mono: var(--text-data); --lh-mono: var(--lh-data); /* alias */
+  /* Display scale — low-density / hero surfaces only. */
+  --text-display-lg: 34px; --lh-display-lg: 42px;
+  --text-display-md: 26px; --lh-display-md: 34px;
+  --text-display-sm: 20px; --lh-display-sm: 28px;
   --fw-regular: 400; /* @kind font */
   --fw-medium:  500; /* @kind font */
+
+  /* ---------- Alignment ----------
+     One rule per content class, no exceptions, tables and cards alike.
+     Numbers      → right, tabular figures, so decimals stack in a column.
+     Text + names → left, including the column header above left-aligned text.
+     Actions      → center, inside a button whose box is the hit target.
+     A numeric column's HEADER is right-aligned too — it labels the digits,
+     not the cell. */
+  --align-number: right; /* @kind other */
+  --align-text:   left;  /* @kind other */
+  --align-action: center; /* @kind other */
 
   /* ---------- Spacing ---------- */
   /* Component scale — padding, gap, internal rhythm */
@@ -61,29 +97,29 @@
   --layout-1: 24px; --layout-2: 32px; --layout-3: 40px; --layout-4: 56px; --layout-5: 80px;
 
   /* ---------- Sizing ---------- */
-  --sidebar-width: 320px;            /* default expanded width — user-resizable */
-  --sidebar-width-min: 240px;        /* resize floor */
-  --sidebar-width-max: 480px;        /* resize ceiling */
+  --sidebar-width: 340px;            /* default expanded width — user-resizable */
+  --sidebar-width-min: 260px;        /* resize floor */
+  --sidebar-width-max: 500px;        /* resize ceiling */
   --sidebar-width-collapsed: 56px;   /* collapsed (icons only) */
   --topbar-height: 48px;             /* Row 1 · global nav */
   --crumbbar-height: 36px;           /* Row 2 · breadcrumb strip */
   --header-height: 84px;             /* 48 + 36 · full sticky header */
   --drawer-height: 132px;            /* lower drawer / recent-activity strip — fixed */
   --drawer-handle-height: 36px;      /* drawer handle when minimized */
-  --btn-height: 32px;
-  --input-height: 28px;
-  --icon-btn: 24px;
-  --icon-md: 14px;
-  --icon-sm: 12px;
+  --btn-height: 36px;
+  --input-height: 32px;
+  --icon-btn: 28px;
+  --icon-md: 16px;
+  --icon-sm: 14px;
 
   /* ---------- Density ----------
      Default. Overridden by [data-density="compact" | "comfy"] below.
      Governs table row height + cell padding + default results-per-page.
      Thumbnail density is a distinct card layout, not a row-height change. */
-  --row-h: 36px;
-  --cell-py: 8px;
+  --row-h: 40px;
+  --cell-py: 9px;
   --cell-px: 12px;
-  --table-font: var(--text-body);   /* 12px */
+  --table-font: var(--text-body);   /* 15px */
   --rows-per-page: 10; /* @kind other */   /* default rows/page — read in app logic */
 
   /* ---------- Shape + motion ---------- */
@@ -104,13 +140,13 @@
    read in app logic; CSS drives row height + padding + font).
    ========================================================= */
 [data-density="compact"] {
-  --row-h: 28px;  --cell-py: 4px;  --cell-px: 8px;
-  --table-font: var(--text-small); /* 11px */
+  --row-h: 32px;  --cell-py: 5px;  --cell-px: 10px;
+  --table-font: var(--text-small); /* 14px */
   --rows-per-page: 15; /* @kind other */
 }
 [data-density="comfy"] {
-  --row-h: 44px;  --cell-py: 12px; --cell-px: 16px;
-  --table-font: var(--text-section); /* 13px */
+  --row-h: 48px;  --cell-py: 13px; --cell-px: 16px;
+  --table-font: var(--text-section); /* 16px */
   --rows-per-page: 8; /* @kind other */
 }
 
@@ -118,17 +154,18 @@
    WHITE MODE (default) — white canvas, Datum blue accents
    ========================================================= */
 :root, [data-theme="white"] {
+  /* Blocking: page + sidebars share one ground; cards lift off it. */
   --bg-page:         #FAFBFC;
-  --bg-sidebar:      #FFFFFF;
+  --bg-sidebar:      #FAFBFC;
   --bg-card:         #FFFFFF;
-  --bg-subtle:       #F4F6F9;
+  --bg-subtle:       #F1F4F8;
   --fg-primary:      var(--charcoal);
   --fg-secondary:    var(--storm);
-  --fg-muted:        #70869E;
+  --fg-muted:        #46586E;   /* AAA on page + card */
   --border-default:  #E6EAF0;
-  --border-strong:   #D6DCE3;
+  --border-strong:   #808A96;   /* 3:1 — input outlines, real boundaries */
   --border-focus:    var(--datum-blue);
-  --fill-hover:      #F4F6F9;
+  --fill-hover:      #F1F4F8;
   --fill-selected:   var(--datum-blue-tint);
   --border-selected: var(--datum-blue);
   --accent:          var(--datum-blue);
@@ -136,6 +173,10 @@
   --accent-tint:     var(--datum-blue-tint);
   --btn-primary-bg:  var(--datum-blue);
   --btn-primary-fg:  #FFFFFF;
+  --status-pass-fg: #14532B; --status-pass-bg: #E6F4EC; --status-pass-border: #B9DCC7;
+  --status-warn-fg: #6B4400; --status-warn-bg: #FFF3CD; --status-warn-border: #E8D296;
+  --status-fail-fg: #8E1A0A; --status-fail-bg: #FAE5E3; --status-fail-border: #EEBDB6;
+  --status-info-fg: #1A3A5C; --status-info-bg: #E3EEF8; --status-info-border: #B9D3EA;
 }
 
 /* =========================================================
@@ -143,16 +184,16 @@
    ========================================================= */
 [data-theme="tan"] {
   --bg-page:         var(--vanilla);
-  --bg-sidebar:      var(--oatmilk);
-  --bg-card:         var(--vanilla);
+  --bg-sidebar:      var(--vanilla);   /* was Oatmilk — sidebars now match page */
+  --bg-card:         #FFFCFA;
   --bg-subtle:       #EFE9E5;
   --fg-primary:      var(--charcoal);
   --fg-secondary:    var(--storm);
-  --fg-muted:        #70869E;
+  --fg-muted:        #46586E;
   --border-default:  var(--oatmilk);
-  --border-strong:   #C0B5B0;
+  --border-strong:   #948279;
   --border-focus:    var(--charcoal);
-  --fill-hover:      var(--ice-melt);
+  --fill-hover:      #EFE9E5;   /* warm neutral, mirrors White mode's neutral hover */
   --fill-selected:   var(--ice-melt);
   --border-selected: var(--charcoal);
   --accent:          var(--charcoal);
@@ -160,6 +201,10 @@
   --accent-tint:     var(--ice-melt);
   --btn-primary-bg:  var(--charcoal);
   --btn-primary-fg:  var(--vanilla);
+  --status-pass-fg: #14532B; --status-pass-bg: #E4EEDF; --status-pass-border: #BFD4B7;
+  --status-warn-fg: #6B4400; --status-warn-bg: #FBEFCC; --status-warn-border: #E3CE95;
+  --status-fail-fg: #8E1A0A; --status-fail-bg: #F7E2DC; --status-fail-border: #E6BAAE;
+  --status-info-fg: #1A3A5C; --status-info-bg: #DEE8F0; --status-info-border: #B4C8D9;
 }
 
 /* =========================================================
@@ -167,16 +212,16 @@
    ========================================================= */
 [data-theme="dark"] {
   --bg-page:         #2A2828;     /* lifted from #1B1A1A — less harsh */
-  --bg-sidebar:      #343232;     /* lifted from #252323 */
-  --bg-card:         #3D3B3B;     /* lifted from #2E2C2C */
-  --bg-subtle:       #484646;
+  --bg-sidebar:      #2A2828;     /* sidebars match page, as in the light modes */
+  --bg-card:         #322F2F;     /* the one lifted surface */
+  --bg-subtle:       #3A3737;
   --fg-primary:      var(--vanilla);
-  --fg-secondary:    #D9E5EF;     /* brighter than Ice Melt for body text */
-  --fg-muted:        #9AB0C4;     /* lifted mid-tone — AA on new bg */
+  --fg-secondary:    #E2E8EE;     /* AAA on page and card */
+  --fg-muted:        #B9C6D2;     /* dimmer than secondary, still AAA */
   --border-default:  #555252;     /* lifted for visibility */
-  --border-strong:   #6E6A6A;
+  --border-strong:   #7C7878;
   --border-focus:    var(--ice-melt);
-  --fill-hover:      #484646;
+  --fill-hover:      #3A3737;
   --fill-selected:   #2B4864;     /* lifted blue-tint */
   --border-selected: var(--ice-melt);
   --accent:          var(--ice-melt);        /* AAA on all lifted surfaces */
@@ -185,6 +230,10 @@
   --btn-primary-bg:  var(--ice-melt);
   --btn-primary-fg:  var(--charcoal);
   --danger:          var(--danger-dark);
+  --status-pass-fg: #5CF0A5; --status-pass-bg: #0F3320; --status-pass-border: #2F7A4C;
+  --status-warn-fg: #FFCB4D; --status-warn-bg: #3A2A08; --status-warn-border: #8A6813;
+  --status-fail-fg: #FF9C8E; --status-fail-bg: #4A1A14; --status-fail-border: #9E4034;
+  --status-info-fg: #8CCDFF; --status-info-bg: #10314F; --status-info-border: #3D74A8;
 }
 
 /* =========================================================
@@ -208,7 +257,9 @@ body { background: var(--bg-page); }
 .text-small    { font: var(--fw-regular) var(--text-small)/var(--lh-small) var(--font-sans); }
 .text-button   { font: var(--fw-medium)  var(--text-button)/var(--lh-button) var(--font-sans); }
 .text-badge    { font: var(--fw-medium)  var(--text-badge)/var(--lh-badge) var(--font-sans); }
-.text-mono     { font: var(--fw-regular) var(--text-mono)/var(--lh-mono) var(--font-mono); }
+.text-data     { font: var(--fw-regular) var(--text-data)/var(--lh-data) var(--font-data); font-variant-numeric: tabular-nums; }
+.text-data-sm  { font: var(--fw-regular) var(--text-data-sm)/var(--lh-data-sm) var(--font-data); font-variant-numeric: tabular-nums; }
+.text-mono     { font: var(--fw-regular) var(--text-data)/var(--lh-data) var(--font-data); font-variant-numeric: tabular-nums; }
 
 .text-muted    { color: var(--fg-muted); }
 .text-secondary{ color: var(--fg-secondary); }
@@ -220,6 +271,17 @@ body { background: var(--bg-page); }
   color: var(--fg-muted);
 }
 
+/* ---------- Alignment utilities ----------
+   .align-number also locks tabular figures — never set text-align on a
+   numeric cell without it, or the digits will not column up. */
+.align-number { text-align: var(--align-number); font-variant-numeric: tabular-nums; }
+.align-text   { text-align: var(--align-text); }
+.align-action { text-align: var(--align-action); }
+th.align-number, td.align-number { text-align: var(--align-number); font-variant-numeric: tabular-nums; }
+th.align-text,   td.align-text   { text-align: var(--align-text); }
+td.align-action  { text-align: var(--align-action); }
+
 :focus-visible { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
 
 button, input, select, textarea { border-radius: var(--radius); }
+button { text-align: var(--align-action); }

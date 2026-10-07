@@ -1,3 +1,4 @@
+import Icon from '../components/Icon'
 import { useState } from 'react'
 import { go } from '../router'
 import { useStore } from '../store'
@@ -60,7 +61,7 @@ export default function Mapping() {
       </div>
       {q && (
         <aside className="panel" aria-label="Requirement detail">
-          <div className="hd"><div className="grow"><div className="mono muted">{q.req_id}</div><div className="h3">{q.title}</div></div><Btn size="sm" className="ghost" onClick={() => setSel(null)} aria-label="Close panel">✕</Btn></div>
+          <div className="hd"><div className="grow"><div className="mono muted">{q.req_id}</div><div className="h3">{q.title}</div></div><Btn size="sm" className="ghost" onClick={() => setSel(null)} aria-label="Close panel"><Icon n="x" /></Btn></div>
           <div className="bd">
             <div className="col"><span className="caps">Requirement</span><span>{q.requirement_text}</span>
               <span className="row wrap"><SourceTag v={q.source_type} /><span className="muted">{q.citation}</span><TextStatus v={q.text_status} /></span></div>

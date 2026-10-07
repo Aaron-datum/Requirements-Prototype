@@ -1,3 +1,4 @@
+import Icon from '../components/Icon'
 import { useMemo, useState } from 'react'
 import { go } from '../router'
 import { useStore } from '../store'
@@ -109,7 +110,7 @@ function LinePanel({ line: l, tab, setTab, onClose }) {
     <aside className="panel" aria-label="BOM line detail">
       <div className="hd">
         <div className="grow"><div className="h3">{l.name}</div><div className="mono muted">{l.part_id} · {l.subassembly}</div></div>
-        <Certainty v={l.certainty} /><Btn size="sm" className="ghost" onClick={onClose} aria-label="Close panel">✕</Btn>
+        <Certainty v={l.certainty} /><Btn size="sm" className="ghost icon" onClick={onClose} aria-label="Close panel"><Icon n="x" /></Btn>
       </div>
       <div style={{ padding: '0 16px' }}><Tabs value={tab} tabs={['Summary', 'Similarity', 'Costing', 'PLM']} onChange={setTab} /></div>
       <div className="bd">

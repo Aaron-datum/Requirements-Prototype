@@ -1,3 +1,4 @@
+import Icon from '../components/Icon'
 import { useMemo, useState } from 'react'
 import { go, useRoute } from '../router'
 import { useStore } from '../store'
@@ -72,7 +73,7 @@ function ReqPanel({ r, onClose, setDrawer }) {
   return (
     <aside className="panel" aria-label="Requirement detail">
       <div className="hd"><div className="grow"><div className="mono muted">{r.req_id}</div><div className="h3">{r.title}</div></div>
-        <Badge tone={STATUS_TONE[statusOf(r, state)]}>{statusOf(r, state)}</Badge><Btn size="sm" className="ghost" onClick={onClose} aria-label="Close panel">✕</Btn></div>
+        <Badge tone={STATUS_TONE[statusOf(r, state)]}>{statusOf(r, state)}</Badge><Btn size="sm" className="ghost icon" onClick={onClose} aria-label="Close panel"><Icon n="x" /></Btn></div>
       <div className="bd">
         {r.dangerous && <div className="banner fail"><b>Dangerous case.</b> Text is unchanged but the driver changed. {r.notes}</div>}
         <div className="col"><span className="caps">Requirement</span><span>{r.requirement_text}</span>
@@ -106,7 +107,7 @@ function ChainDrawer({ r, open, setOpen }) {
   return (
     <div className={`drawer ${open ? '' : 'closed'}`}>
       <div className="row" style={{ padding: '8px 16px', height: 36, cursor: 'pointer' }} onClick={() => setOpen(!open)}>
-        <span aria-hidden>{open ? '▾' : '▴'}</span><span className="h3">Full carryover chain</span><span className="muted">{r.req_id} · {r.events.length} events</span></div>
+        <Icon n={open ? 'down' : 'up'} /><span className="h3">Full carryover chain</span><span className="muted">{r.req_id} · {r.events.length} events</span></div>
       {open && <div className="chain">
         {r.events.length === 0 && <span className="muted">No chain — new requirement.</span>}
         {r.events.map((e, i) => (

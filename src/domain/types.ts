@@ -232,10 +232,12 @@ export interface CostModelService {         // StubId: cost-model
 }
 export interface TraceInput { name: string; value: string; source: string; freshness: string; tag: 'CAD features' | 'PLM or contract' | 'Live feed' | 'Assumed' | 'Computed' }
 
-export interface TestMatcher { proposeTests(reqId: string): Promise<Array<{ testId: string; confidence: number; tags: string[]; reasoning: string[] }>> } // StubId: test-matcher
+export interface TestMatcher { proposeTests(reqId: string): Promise<Array<{ testId: string; confidence: number | null; tags: string[]; reasoning: string[] }>> } // StubId: test-matcher. confidence null = no score exists (new clause or new geometry)
 export interface DiffEngine { textDelta(reqId: string): { state: 'New' | 'Changed' | 'Unchanged'; delta?: string }; drivenBy(reqId: string): { interface: string; state: 'New' | 'Changed' | 'Unchanged'; score: number | null; confirmed: boolean } } // StubId: diff-engine
-export interface EvidenceEngine { candidates(reqId: string): Promise<Array<{ recordId: string; score: number; provenance: Provenance['origin'] }>> } // StubId: evidence-engine
-export interface ImpactGraph { neighbors(nodeId: string, hops: 1 | 2, direction: 'both' | 'back' | 'forward'): { nodes: Array<{ id: string; type: 'REQ' | 'DOC' | 'PRT' | 'TST' | 'PLN'; needsReview?: boolean }>; edges: Array<{ from: string; to: string; kind: 'depends-on' | 'donates-evidence' }> } } // StubId: impact-graph
+export interface EvidenceEngine { candidates(reqId: string): Promise<Array<{ recordId: string; score: number | null; provenance: Provenance['origin'] }>> } // StubId: evidence-engine. score null = added by a person
+/** D-10: Contradicts and Supersedes exist in the type union but are not rendered in v1. */
+export type ImpactEdgeKind = 'depends-on' | 'donates-evidence' | 'contradicts' | 'supersedes'
+export interface ImpactGraph { neighbors(nodeId: string, hops: 1 | 2, direction: 'both' | 'back' | 'forward'): { nodes: Array<{ id: string; type: 'REQ' | 'DOC' | 'PRT' | 'TST' | 'PLN'; needsReview?: boolean }>; edges: Array<{ from: string; to: string; kind: ImpactEdgeKind; label?: string }> } } // StubId: impact-graph. Edges point from the upstream node to the dependent one.
 
 export interface AutonomyGate { decide(certainty: string, severity?: string): 'carry-forward' | 'propose' | 'ask-human' } // StubId: autonomy-gate. Rule table: Actual -> carry-forward; Surrogate -> propose; others -> ask-human.
 export interface AuditService { record(e: Omit<AuditEntry, 'id' | 'at'>): AuditEntry; list(subject?: { type: string; id: string }): AuditEntry[] } // StubId: audit-trail. Prototype: in-memory, shown in UI.

@@ -10,6 +10,7 @@ import { toastSuccess } from '../../stores/toastStore'
 import { AuditEntryRow } from '../audit/Audit'
 import { Button, IconButton, Modal, TextInput, Toasts } from '../ui'
 import { DevToolbar } from '../../dev/DevToolbar'
+import { useSearchShortcut } from '../../features/home/useSearchShortcut'
 import s from './Shell.module.css'
 
 /** Feedback modal (decided): "What happened?", attachment dropzone, auto-attached context chips, Cancel / Submit ticket. Creates a Jira ticket in the beta. */
@@ -160,6 +161,7 @@ export function TopBar({ onFeedback }: { onFeedback: () => void }) {
 /** App frame: top bar, breadcrumb strip, left nav, outlet, toasts, dev toolbar. */
 export function AppShell() {
   const [feedback, setFeedback] = useState(false)
+  useSearchShortcut()
   return (
     <div className="app-frame">
       <TopBar onFeedback={() => setFeedback(true)} />

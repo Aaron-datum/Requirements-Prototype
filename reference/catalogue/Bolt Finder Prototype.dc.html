@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/colors_and_type.css">
+<script src="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/_ds_bundle.js"></script>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'DM Sans',system-ui,sans-serif}
+a{color:var(--accent)}a:hover{color:var(--accent);opacity:.88}
+button:focus-visible,input:focus-visible{outline:1.5px solid var(--accent);outline-offset:1px}
+</style>
+</helmet>
+<div data-theme="{{ theme }}" data-density="{{ density }}" data-screen-label="Bolt Finder" style="height:100vh;min-height:720px;display:flex;flex-direction:column;background:var(--bg-page);color:var(--fg-primary);font-family:var(--font-sans);overflow:hidden;position:relative">
+
+  <header style="height:48px;flex:0 0 48px;background:var(--bg-card);border-bottom:1px solid var(--border-default);display:flex;align-items:center;padding:0 16px;gap:24px">
+    <div style="display:flex;align-items:center;gap:8px"><img src="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/assets/datum-icon-transparent.png" alt="" style="height:22px;width:auto"><span style="font:500 15px/20px var(--font-sans)">Datum</span></div>
+    <span style="display:inline-flex;align-items:center;height:28px;padding:0 8px;border-left:1px solid var(--border-default);color:var(--fg-secondary);font:500 13px/16px var(--font-sans)">Adient</span>
+    <nav style="display:flex;align-items:center;gap:2px;height:48px;margin-left:8px">
+      <button onClick="{{ goHome }}" style="display:inline-flex;align-items:center;gap:6px;padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid var(--accent);color:var(--accent);font:500 13px/16px var(--font-sans);cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg>Search</button>
+      <button style="padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--fg-secondary);font:400 13px/16px var(--font-sans);cursor:pointer" style-hover="color:var(--fg-primary)">Create</button>
+      <button style="padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--fg-secondary);font:400 13px/16px var(--font-sans);cursor:pointer" style-hover="color:var(--fg-primary)">My Projects</button>
+    </nav>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      <button style="display:inline-flex;align-items:center;gap:8px;padding:0 8px 0 4px;height:28px;border-radius:var(--radius);background:transparent;border:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer" style-hover="background:var(--fill-hover)"><span style="width:22px;height:22px;border-radius:var(--radius);background:var(--accent-tint);color:var(--accent);font:500 13px/22px var(--font-sans);text-align:center">MA</span><span>m.alvarez@adient.com</span></button>
+    </div>
+  </header>
+
+  <div style="height:36px;flex:0 0 36px;background:var(--bg-page);border-bottom:1px solid var(--border-default);display:flex;align-items:center;gap:12px;padding:0 16px">
+    <button onClick="{{ back }}" disabled="{{ backDisabled }}" aria-label="Back" style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;padding:0;background:transparent;border:0;border-radius:var(--radius);color:var(--fg-secondary);cursor:pointer;opacity:{{ backOpacity }}" style-hover="background:var(--fill-hover)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M19 12H5"></path><path d="M12 19l-7-7 7-7"></path></svg></button>
+    <div style="display:flex;align-items:center;gap:8px">
+      <sc-for list="{{ crumbs }}" as="c" hint-placeholder-count="2">
+        <sc-if value="{{ c.sep }}"><span style="color:var(--fg-muted);font:400 13px/16px var(--font-sans)">›</span></sc-if>
+        <sc-if value="{{ c.link }}"><button onClick="{{ c.onClick }}" style="background:transparent;border:0;padding:0;font:400 13px/16px {{ c.font }};color:var(--fg-secondary);cursor:pointer" style-hover="color:var(--accent)">{{ c.label }}</button></sc-if>
+        <sc-if value="{{ c.current }}"><span style="font:500 13px/16px {{ c.font }};color:var(--fg-primary)">{{ c.label }}</span></sc-if>
+      </sc-for>
+    </div>
+    <sc-if value="{{ isBolts }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+        <button onClick="{{ saveView }}" style="height:28px;padding:0 12px;border:1px solid var(--border-default);background:transparent;border-radius:var(--radius);cursor:pointer;color:var(--fg-secondary);font:500 13px/16px var(--font-sans);display:inline-flex;align-items:center;gap:6px" style-hover="background:var(--fill-hover);color:var(--fg-primary)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>Save View</button>
+      </div>
+    </sc-if>
+  </div>
+
+  <div style="flex:1;min-height:0;display:flex">
+
+    <sc-if value="{{ showSidebar }}" hint-placeholder-val="{{ true }}">
+    <aside style="width:320px;flex:0 0 320px;background:var(--bg-sidebar);border-right:1px solid var(--border-default);display:flex;flex-direction:column;overflow:hidden">
+      <div style="padding:12px 16px;border-bottom:1px solid var(--border-default);display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <div><div style="font:500 15px/20px var(--font-sans)">Filters</div><div style="font:400 13px/16px var(--font-mono);color:var(--fg-muted);margin-top:2px">{{ filterSummary }}</div></div>
+        <button onClick="{{ clearAll }}" disabled="{{ noActive }}" style="background:transparent;border:0;padding:4px 8px;border-radius:var(--radius);font:500 13px/16px var(--font-sans);color:var(--accent);cursor:pointer;opacity:{{ clearOpacity }}" style-hover="background:var(--fill-hover)">Clear all</button>
+      </div>
+      <div style="display:flex;padding:0 8px;border-bottom:1px solid var(--border-default)">
+        <button style="padding:10px 12px;border:0;background:transparent;border-bottom:2px solid var(--accent);margin-bottom:-1px;font:500 13px/16px var(--font-sans);color:var(--accent);cursor:pointer">Filters</button>
+        <button style="padding:10px 12px;border:0;background:transparent;border-bottom:2px solid transparent;margin-bottom:-1px;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer" style-hover="color:var(--fg-primary)">Columns</button>
+        <button style="padding:10px 12px;border:0;background:transparent;border-bottom:2px solid transparent;margin-bottom:-1px;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer" style-hover="color:var(--fg-primary)">Manage</button>
+      </div>
+      <div style="flex:1;overflow-y:auto">
+        <sc-for list="{{ sections }}" as="s" hint-placeholder-count="5">
+          <div style="border-bottom:1px solid var(--border-default)">
+            <div style="display:flex;align-items:center;gap:8px;padding:0 12px 0 0">
+              <button onClick="{{ s.onToggle }}" aria-expanded="{{ s.open }}" style="flex:1;display:flex;align-items:center;gap:8px;padding:12px 0 12px 16px;border:0;background:transparent;font:500 13px/16px var(--font-sans);color:var(--fg-primary);cursor:pointer;text-align:left"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted);transition:transform .2s ease;transform:rotate({{ s.rot }})"><path d="M6 9l6 6 6-6"></path></svg>{{ s.title }}</button>
+              <sc-if value="{{ s.hasActive }}"><span style="font:500 13px/16px var(--font-mono);padding:0 6px;border-radius:99px;background:var(--accent);color:var(--btn-primary-fg)">{{ s.activeCount }}</span><button onClick="{{ s.onClear }}" style="border:0;background:transparent;padding:4px;border-radius:var(--radius);font:500 13px/16px var(--font-sans);color:var(--accent);cursor:pointer" style-hover="background:var(--fill-hover)">Clear</button></sc-if>
+            </div>
+            <sc-if value="{{ s.open }}">
+              <sc-if value="{{ s.isChips }}">
+                <div style="padding:0 16px 16px 38px;display:flex;gap:8px;flex-wrap:wrap">
+                  <sc-for list="{{ s.opts }}" as="o" hint-placeholder-count="6"><button onClick="{{ o.onClick }}" disabled="{{ o.disabled }}" aria-pressed="{{ o.active }}" style="height:28px;padding:0 12px;border:1px solid {{ o.border }};border-radius:99px;background:{{ o.bg }};color:{{ o.fg }};font:{{ o.font }};cursor:{{ o.cursor }};opacity:{{ o.opacity }};transition:background .15s ease,border-color .15s ease,color .15s ease">{{ o.label }}</button></sc-for>
+                </div>
+              </sc-if>
+              <sc-if value="{{ s.isChecks }}">
+                <div style="padding:0 16px 12px 38px;display:flex;flex-direction:column;gap:2px">
+                  <sc-for list="{{ s.opts }}" as="o" hint-placeholder-count="3"><button onClick="{{ o.onClick }}" disabled="{{ o.disabled }}" role="checkbox" aria-checked="{{ o.active }}" style="display:flex;align-items:center;gap:8px;width:100%;padding:4px 0;border:0;background:transparent;font:400 13px/18px var(--font-sans);color:var(--fg-primary);cursor:{{ o.cursor }};text-align:left;opacity:{{ o.opacity }}"><span style="width:14px;height:14px;flex:0 0 14px;border-radius:3px;border:1.5px solid {{ o.boxBorder }};background:{{ o.boxBg }};display:grid;place-items:center;transition:background .15s ease"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="{{ o.checkColor }}" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"></path></svg></span>{{ o.label }}<span style="margin-left:auto;font:400 13px/16px var(--font-mono);color:var(--fg-muted)">{{ o.count }}</span></button></sc-for>
+                </div>
+              </sc-if>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+      <div style="flex:0 0 auto;border-top:1px solid var(--border-default);padding:8px">
+        <button style="width:100%;height:28px;border:0;background:transparent;border-radius:var(--radius);color:var(--fg-secondary);display:inline-flex;align-items:center;justify-content:center;gap:6px;font:500 13px/16px var(--font-sans);cursor:pointer" style-hover="background:var(--fill-hover);color:var(--accent)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="m15 6-6 6 6 6"></path></svg>Collapse</button>
+      </div>
+    </aside>
+    </sc-if>
+
+    <main style="flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden">
+
+      <sc-if value="{{ isCatalogue }}" hint-placeholder-val="{{ true }}">
+        <div style="flex:1;overflow-y:auto;padding:24px 32px 32px">
+          <div class="text-display-sm" style="margin-bottom:4px">Parts Catalogue</div>
+          <div style="font:400 14px/20px var(--font-sans);color:var(--fg-secondary);margin-bottom:24px">Browse what the company already has by category and spec. No CAD upload needed.</div>
+          <label for="cat-q" style="display:block;font:500 13px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin-bottom:8px">Search Catalogue</label>
+          <div style="display:flex;align-items:center;gap:8px;max-width:880px">
+            <div style="flex:1;display:flex;align-items:center;gap:8px;height:36px;padding:0 12px;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted);flex:0 0 16px"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+              <input id="cat-q" type="text" value="{{ globalQ }}" onChange="{{ onGlobalQ }}" onKeyDown="{{ onGlobalKey }}" placeholder="Part number, description, or spec — e.g. M16 hex stainless" style="flex:1;min-width:0;height:34px;border:0;background:transparent;padding:0;font:400 14px/20px var(--font-sans);color:var(--fg-primary);outline:none">
+            </div>
+            <button onClick="{{ runGlobal }}" style="height:36px;padding:0 16px;border:1px solid var(--accent);background:var(--accent);color:var(--btn-primary-fg);border-radius:var(--radius);font:500 15px/20px var(--font-sans);cursor:pointer;transition:opacity .15s ease" style-hover="opacity:.88">Search</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0 32px">
+            <span style="font:400 13px/16px var(--font-sans);color:var(--fg-muted)">Recent</span>
+            <sc-for list="{{ examples }}" as="x" hint-placeholder-count="3"><button onClick="{{ x.onClick }}" style="height:28px;padding:0 12px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 13px/16px var(--font-mono);cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)">{{ x.label }}</button></sc-for>
+          </div>
+          <div style="font:500 13px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin-bottom:12px">Categories</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px">
+            <sc-for list="{{ catTiles }}" as="t" hint-placeholder-count="8">
+              <button onClick="{{ t.onClick }}" style="text-align:left;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);padding:16px;display:flex;flex-direction:column;gap:8px;min-height:128px;cursor:pointer;color:var(--fg-primary);font-family:var(--font-sans);transition:border-color .15s ease" style-hover="border-color:var(--accent)">
+                <span style="display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%"><span style="font:500 15px/20px var(--font-sans)">{{ t.name }}</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M9 18l6-6-6-6"></path></svg></span>
+                <span style="font:400 14px/20px var(--font-sans);color:var(--fg-secondary);flex:1">{{ t.desc }}</span>
+                <span style="width:100%;font:400 13px/16px var(--font-mono);color:var(--fg-muted);border-top:1px solid var(--border-default);padding-top:8px">{{ t.meta }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isFasteners }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;overflow-y:auto;padding:24px 32px 32px">
+          <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:24px"><div class="text-display-sm">Fasteners</div><span style="font:400 13px/16px var(--font-mono);color:var(--fg-muted)">{{ fastenerMeta }}</span></div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px">
+            <sc-for list="{{ fastTiles }}" as="t" hint-placeholder-count="6">
+              <button onClick="{{ t.onClick }}" style="text-align:left;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);padding:16px;display:flex;flex-direction:column;gap:8px;min-height:128px;cursor:pointer;color:var(--fg-primary);font-family:var(--font-sans);transition:border-color .15s ease" style-hover="border-color:var(--accent)">
+                <span style="display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%"><span style="font:500 15px/20px var(--font-sans)">{{ t.name }}</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M9 18l6-6-6-6"></path></svg></span>
+                <span style="font:400 14px/20px var(--font-sans);color:var(--fg-secondary);flex:1">{{ t.desc }}</span>
+                <span style="width:100%;font:400 13px/16px var(--font-mono);color:var(--fg-muted);border-top:1px solid var(--border-default);padding-top:8px">{{ t.meta }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isBoltsTiles }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;overflow-y:auto;padding:24px 32px 32px">
+          <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:16px"><div class="text-display-sm">Bolts</div><span style="font:400 13px/16px var(--font-mono);color:var(--fg-muted)">{{ boltsMeta }}</span></div>
+          <label for="bolt-q" style="display:block;font:500 13px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin-bottom:8px">Search Bolts</label>
+          <div style="display:flex;align-items:center;gap:8px;height:36px;padding:0 12px;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);max-width:880px;margin-bottom:8px">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted);flex:0 0 16px"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+            <input id="bolt-q" type="text" value="{{ q }}" onChange="{{ onQ }}" placeholder="Part number or standard — e.g. ISO 4014" style="flex:1;min-width:0;height:34px;border:0;background:transparent;padding:0;font:400 14px/20px var(--font-sans);color:var(--fg-primary);outline:none">
+          </div>
+          <div style="font:400 14px/20px var(--font-sans);color:var(--fg-secondary);margin-bottom:24px">Pick a Thread Size in Filters to see parts, or start from a bolt type.</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px">
+            <sc-for list="{{ headTiles }}" as="t" hint-placeholder-count="4">
+              <button onClick="{{ t.onClick }}" style="text-align:left;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);padding:0;display:flex;flex-direction:column;cursor:pointer;color:var(--fg-primary);font-family:var(--font-sans);overflow:hidden;transition:border-color .15s ease" style-hover="border-color:var(--accent)">
+                <span style="display:block;width:100%;height:120px;background:var(--bg-card);border-bottom:1px solid var(--border-default)"><img src="{{ t.img }}" alt="" style="width:100%;height:120px;object-fit:contain;display:block"></span>
+                <span style="display:flex;flex-direction:column;gap:8px;padding:16px;width:100%">
+                  <span style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="font:500 15px/20px var(--font-sans)">{{ t.name }}</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M9 18l6-6-6-6"></path></svg></span>
+                  <span style="font:400 14px/20px var(--font-sans);color:var(--fg-secondary)">{{ t.desc }}</span>
+                  <span style="font:400 13px/16px var(--font-mono);color:var(--fg-muted);border-top:1px solid var(--border-default);padding-top:8px">{{ t.meta }}</span>
+                </span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isBoltsTable }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--bg-sidebar);border-bottom:1px solid var(--border-default)">
+          <span style="font:500 15px/20px var(--font-sans)">{{ resultTitle }}</span>
+          <span style="font:400 13px/16px var(--font-mono);color:var(--fg-muted)">{{ resultMeta }}</span>
+          <div style="margin-left:auto;display:flex;align-items:center;gap:8px;height:28px;width:280px;max-width:40%;padding:0 8px;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted);flex:0 0 14px"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+            <input aria-label="Filter results" type="text" value="{{ q }}" onChange="{{ onQ }}" placeholder="Filter part numbers" style="flex:1;min-width:0;border:0;background:transparent;padding:0;font:400 13px/16px var(--font-sans);color:var(--fg-primary);outline:none">
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:8px 16px;border-bottom:1px solid var(--border-default);flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;flex:1;min-width:0">
+            <sc-for list="{{ pills }}" as="p" hint-placeholder-count="2"><span style="display:inline-flex;align-items:center;gap:4px;height:28px;padding:0 4px 0 12px;border-radius:99px;background:var(--accent-tint);color:var(--accent);font:500 13px/16px var(--font-sans)">{{ p.label }}<button onClick="{{ p.onRemove }}" aria-label="Remove filter" style="width:20px;height:20px;border:0;background:transparent;color:currentColor;border-radius:99px;display:grid;place-items:center;cursor:pointer" style-hover="background:var(--fill-hover)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></span></sc-for>
+          </div>
+          <span style="font:400 13px/16px var(--font-sans);color:var(--fg-muted)">{{ selHint }}</span>
+          <button onClick="{{ openCompare }}" disabled="{{ compareDisabled }}" style="height:32px;padding:0 12px;border:1px solid var(--accent);background:var(--accent);color:var(--btn-primary-fg);font:500 13px/16px var(--font-sans);border-radius:var(--radius);cursor:pointer;display:inline-flex;align-items:center;gap:6px;opacity:{{ compareOpacity }};transition:opacity .15s ease"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="3" y="4" width="7" height="16" rx="1"></rect><rect x="14" y="4" width="7" height="16" rx="1"></rect></svg>{{ compareLabel }}</button>
+          <button onClick="{{ exportCsv }}" style="height:32px;padding:0 12px;border:1px solid var(--border-default);background:transparent;color:var(--fg-secondary);font:500 13px/16px var(--font-sans);border-radius:var(--radius);cursor:pointer;display:inline-flex;align-items:center;gap:6px" style-hover="background:var(--fill-hover);color:var(--fg-primary)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>Export CSV</button>
+        </div>
+        <div style="flex:1;overflow:auto">
+          <sc-if value="{{ hasRows }}" hint-placeholder-val="{{ true }}">
+          <table style="width:100%;border-collapse:collapse">
+            <thead>
+              <tr>
+                <th style="position:sticky;top:0;z-index:1;background:var(--bg-subtle);width:36px;padding:8px 0 8px 12px;border-bottom:1px solid var(--border-default)"></th>
+                <sc-for list="{{ cols }}" as="c" hint-placeholder-count="8"><th style="position:sticky;top:0;z-index:1;background:{{ c.bg }};padding:0;border-bottom:1px solid var(--border-default);text-align:{{ c.align }}"><button onClick="{{ c.onClick }}" style="width:100%;display:flex;justify-content:{{ c.justify }};align-items:center;gap:4px;padding:8px var(--cell-px);border:0;background:transparent;color:{{ c.fg }};font:500 13px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;cursor:pointer;white-space:nowrap">{{ c.label }}<span style="font-family:var(--font-mono)">{{ c.arrow }}</span></button></th></sc-for>
+              </tr>
+            </thead>
+            <tbody>
+              <sc-for list="{{ pageRows }}" as="r" hint-placeholder-count="10">
+                <tr onClick="{{ r.onOpen }}" style="border-bottom:1px solid var(--border-default);background:{{ r.bg }};cursor:pointer;transition:background .15s ease" style-hover="background:var(--fill-hover)">
+                  <td style="padding:var(--cell-py) 0 var(--cell-py) 12px;border-left:2px solid {{ r.edge }}"><button onClick="{{ r.onToggle }}" role="checkbox" aria-checked="{{ r.checked }}" aria-label="Select row" style="width:20px;height:20px;padding:0;border:0;background:transparent;display:grid;place-items:center;cursor:pointer"><span style="width:14px;height:14px;border-radius:3px;border:1.5px solid {{ r.boxBorder }};background:{{ r.boxBg }};display:grid;place-items:center"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="{{ r.checkColor }}" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"></path></svg></span></button></td>
+                  <td style="padding:var(--cell-py) var(--cell-px);font:500 13px/18px var(--font-mono);white-space:nowrap">{{ r.pn }}</td>
+                  <td style="padding:var(--cell-py) var(--cell-px);font:400 13px/18px var(--font-mono);white-space:nowrap">{{ r.threadLabel }}</td>
+                  <td class="align-number" style="padding:var(--cell-py) var(--cell-px);text-align:right;font:500 13px/18px var(--font-mono);white-space:nowrap">{{ r.lengthLabel }}</td>
+                  <td style="padding:var(--cell-py) var(--cell-px);font:400 13px/18px var(--font-sans);white-space:nowrap">{{ r.head }}</td>
+                  <td style="padding:var(--cell-py) var(--cell-px);font:400 13px/18px var(--font-sans);white-space:nowrap">{{ r.material }}</td>
+                  <td style="padding:var(--cell-py) var(--cell-px);font:400 13px/18px var(--font-mono);color:var(--fg-secondary);white-space:nowrap">{{ r.standard }}</td>
+                  <td style="padding:var(--cell-py) var(--cell-px);font:400 13px/18px var(--font-sans);color:var(--fg-secondary);white-space:nowrap">{{ r.source }}</td>
+                  <td style="padding:var(--cell-py) var(--cell-px)"><span style="display:inline-block;font:500 13px/16px var(--font-sans);padding:2px 8px;border-radius:99px;background:{{ r.reuseBg }};color:{{ r.reuseFg }};white-space:nowrap">{{ r.reuse }}</span></td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+          </sc-if>
+          <sc-if value="{{ noRows }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:56px 32px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;max-width:520px">
+              <div style="font:500 15px/20px var(--font-sans)">No bolts match these filters</div>
+              <div style="font:400 14px/20px var(--font-sans);color:var(--fg-secondary)">Remove a filter or widen the length range to see more parts.</div>
+              <button onClick="{{ clearAll }}" style="height:32px;padding:0 12px;border:1px solid var(--border-default);background:transparent;color:var(--fg-primary);font:500 13px/16px var(--font-sans);border-radius:var(--radius);cursor:pointer" style-hover="background:var(--fill-hover)">Clear All Filters</button>
+            </div>
+          </sc-if>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 16px;border-top:1px solid var(--border-default);background:var(--bg-sidebar)">
+          <span style="font:400 13px/16px var(--font-mono);color:var(--fg-muted)">{{ pagerLabel }}</span>
+          <div style="display:flex;gap:4px">
+            <button onClick="{{ prevPage }}" disabled="{{ prevDisabled }}" aria-label="Previous page" style="min-width:28px;height:28px;padding:0 8px;border:1px solid var(--border-default);background:var(--bg-card);border-radius:var(--radius);font:400 13px/16px var(--font-mono);color:var(--fg-secondary);cursor:pointer;opacity:{{ prevOpacity }}">‹</button>
+            <sc-for list="{{ pages }}" as="pg" hint-placeholder-count="2"><button onClick="{{ pg.onClick }}" style="min-width:28px;height:28px;padding:0 8px;border:1px solid {{ pg.border }};background:{{ pg.bg }};border-radius:var(--radius);font:400 13px/16px var(--font-mono);color:{{ pg.fg }};cursor:pointer">{{ pg.n }}</button></sc-for>
+            <button onClick="{{ nextPage }}" disabled="{{ nextDisabled }}" aria-label="Next page" style="min-width:28px;height:28px;padding:0 8px;border:1px solid var(--border-default);background:var(--bg-card);border-radius:var(--radius);font:400 13px/16px var(--font-mono);color:var(--fg-secondary);cursor:pointer;opacity:{{ nextOpacity }}">›</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isCompare }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;overflow-y:auto;padding:24px 32px 32px">
+          <div style="max-width:1080px;display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+              <span style="font:500 20px/26px var(--font-sans)">Compare 2 Parts</span>
+              <span style="font:400 13px/16px var(--font-mono);color:var(--fg-muted)">{{ diffSummary }}</span>
+              <div role="group" aria-label="Rows shown" style="margin-left:auto;display:flex;border:1px solid var(--border-default);border-radius:var(--radius);overflow:hidden">
+                <button onClick="{{ showAllFields }}" style="height:28px;padding:0 12px;border:0;border-right:1px solid var(--border-default);background:{{ allBg }};color:{{ allFg }};font:500 13px/16px var(--font-sans);cursor:pointer">All Fields</button>
+                <button onClick="{{ showDiffFields }}" style="height:28px;padding:0 12px;border:0;background:{{ diffBg }};color:{{ diffFg }};font:500 13px/16px var(--font-sans);cursor:pointer">Differences Only</button>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:200px minmax(0,1fr) minmax(0,1fr);gap:0;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);overflow:hidden">
+              <div style="border-bottom:1px solid var(--border-default);padding:16px;display:flex;align-items:flex-end;font:500 13px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted)">Field</div>
+              <sc-for list="{{ cmpParts }}" as="cp" hint-placeholder-count="2">
+                <div style="border-bottom:1px solid var(--border-default);border-left:1px solid var(--border-default);padding:16px;display:flex;flex-direction:column;gap:12px">
+                  <div style="border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);height:160px;overflow:hidden"><img src="{{ cp.img }}" alt="" style="width:100%;height:158px;object-fit:contain;display:block"></div>
+                  <div style="display:flex;align-items:flex-start;gap:8px">
+                    <span style="font:500 13px/16px var(--font-mono);padding:2px 6px;border-radius:var(--radius);background:var(--bg-subtle);color:var(--fg-secondary)">{{ cp.tag }}</span>
+                    <div style="min-width:0"><div style="font:500 15px/20px var(--font-mono)">{{ cp.pn }}</div><div style="font:400 13px/16px var(--font-sans);color:var(--fg-muted);margin-top:2px">{{ cp.desc }}</div></div>
+                  </div>
+                  <div style="display:flex;gap:8px">
+                    <button onClick="{{ cp.onUse }}" style="flex:1;height:32px;border:1px solid var(--accent);background:var(--accent);color:var(--btn-primary-fg);border-radius:var(--radius);font:500 13px/16px var(--font-sans);cursor:pointer;transition:opacity .15s ease" style-hover="opacity:.88">Use This Part</button>
+                    <button onClick="{{ cp.onPlm }}" style="height:32px;padding:0 12px;border:1px solid var(--border-default);background:transparent;color:var(--fg-secondary);border-radius:var(--radius);font:500 13px/16px var(--font-sans);cursor:pointer;display:inline-flex;align-items:center;gap:6px" style-hover="background:var(--fill-hover);color:var(--fg-primary)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>Open in PLM</button>
+                  </div>
+                </div>
+              </sc-for>
+              <sc-for list="{{ cmpRows }}" as="cr" hint-placeholder-count="12">
+                <div style="padding:8px 16px;border-bottom:1px solid var(--border-default);background:{{ cr.bg }};display:flex;align-items:center;gap:8px;font:400 13px/18px var(--font-sans);color:var(--fg-secondary)"><span style="font:500 13px/16px var(--font-mono);width:16px;color:{{ cr.markFg }}">{{ cr.mark }}</span>{{ cr.k }}</div>
+                <div style="padding:8px 16px;border-bottom:1px solid var(--border-default);border-left:1px solid var(--border-default);background:{{ cr.bg }};font:400 13px/18px {{ cr.font }};color:{{ cr.fg }}">{{ cr.a }}</div>
+                <div style="padding:8px 16px;border-bottom:1px solid var(--border-default);border-left:1px solid var(--border-default);background:{{ cr.bg }};font:400 13px/18px {{ cr.font }};color:{{ cr.fg }}">{{ cr.b }}</div>
+              </sc-for>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;font:400 13px/16px var(--font-sans);color:var(--fg-secondary)">
+              <span style="display:inline-flex;align-items:center;gap:6px"><span style="font:500 13px/16px var(--font-mono);padding:0 6px;border-radius:var(--radius);background:var(--status-pass-bg);color:var(--status-pass-fg)">=</span>Matching value</span>
+              <span style="display:inline-flex;align-items:center;gap:6px"><span style="font:500 13px/16px var(--font-mono);padding:0 6px;border-radius:var(--radius);border:1px solid var(--border-default);color:var(--fg-primary)">Δ</span>Differs</span>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+    </main>
+
+    <sc-if value="{{ showDetail }}" hint-placeholder-val="{{ false }}">
+    <aside style="width:340px;flex:0 0 340px;background:var(--bg-sidebar);border-left:1px solid var(--border-default);display:flex;flex-direction:column;overflow:hidden">
+      <div style="padding:12px 16px;border-bottom:1px solid var(--border-default);display:flex;align-items:flex-start;gap:8px">
+        <div style="min-width:0"><div style="font:500 15px/20px var(--font-mono)">{{ d.pn }}</div><div style="font:400 13px/16px var(--font-sans);color:var(--fg-muted);margin-top:2px">{{ d.desc }}</div></div>
+        <button onClick="{{ closeDetail }}" aria-label="Close" style="margin-left:auto;width:28px;height:28px;border:0;background:transparent;border-radius:var(--radius);color:var(--fg-muted);display:grid;place-items:center;cursor:pointer" style-hover="background:var(--fill-hover)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+      </div>
+      <div style="flex:1;overflow-y:auto">
+        <div style="padding:12px 16px;border-bottom:1px solid var(--border-default)">
+          <div style="border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);height:168px;overflow:hidden"><img src="{{ d.img }}" alt="" style="width:100%;height:166px;object-fit:contain;display:block"></div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button onClick="{{ d.onViewer }}" style="flex:1;height:32px;border:1px solid var(--border-default);background:transparent;border-radius:var(--radius);font:500 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer" style-hover="background:var(--fill-hover);color:var(--fg-primary)">Open in Viewer</button>
+            <button onClick="{{ d.onPlm }}" style="flex:1;height:32px;border:1px solid var(--border-default);background:transparent;border-radius:var(--radius);font:500 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer" style-hover="background:var(--fill-hover);color:var(--fg-primary)">Open in PLM</button>
+          </div>
+        </div>
+        <div style="padding:12px 16px;border-bottom:1px solid var(--border-default)">
+          <div style="font:500 13px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin-bottom:8px">Specification</div>
+          <sc-for list="{{ d.specs }}" as="f" hint-placeholder-count="8">
+            <div style="display:flex;align-items:baseline;gap:12px;padding:4px 0;border-bottom:1px solid var(--border-default)"><span style="font:400 13px/18px var(--font-sans);color:var(--fg-secondary);width:112px;flex:0 0 112px">{{ f.k }}</span><span style="font:400 13px/18px {{ f.font }};color:var(--fg-primary)">{{ f.v }}</span></div>
+          </sc-for>
+        </div>
+        <div style="padding:12px 16px">
+          <div style="font:500 13px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin-bottom:8px">PLM Data</div>
+          <sc-for list="{{ d.plm }}" as="f" hint-placeholder-count="5">
+            <div style="display:flex;align-items:baseline;gap:12px;padding:4px 0;border-bottom:1px solid var(--border-default)"><span style="font:400 13px/18px var(--font-sans);color:var(--fg-secondary);width:112px;flex:0 0 112px">{{ f.k }}</span><span style="font:400 13px/18px {{ f.font }};color:var(--fg-primary)">{{ f.v }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="flex:0 0 auto;border-top:1px solid var(--border-default);padding:12px 16px;display:flex;gap:8px">
+        <button onClick="{{ d.onToggleCompare }}" style="flex:1;height:36px;border:1px solid var(--border-default);background:transparent;color:var(--fg-primary);border-radius:var(--radius);font:500 13px/16px var(--font-sans);cursor:pointer" style-hover="background:var(--fill-hover)">{{ d.compareLabel }}</button>
+        <button onClick="{{ d.onUse }}" style="flex:1;height:36px;border:1px solid var(--accent);background:var(--accent);color:var(--btn-primary-fg);border-radius:var(--radius);font:500 13px/16px var(--font-sans);cursor:pointer;transition:opacity .15s ease" style-hover="opacity:.88">Use This Part</button>
+      </div>
+    </aside>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ showGuide }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;right:16px;bottom:16px;width:300px;background:var(--bg-card);border:1px solid var(--border-strong);border-radius:var(--radius);z-index:5">
+      <div style="padding:12px 16px;border-bottom:1px solid var(--border-default);display:flex;align-items:center;gap:8px">
+        <div style="min-width:0"><div style="font:500 13px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted)">Scenario</div><div style="font:500 14px/20px var(--font-sans);margin-top:2px">Find an M16 stainless hex bolt for the seat track bracket</div></div>
+      </div>
+      <div style="padding:8px 16px 12px;display:flex;flex-direction:column;gap:4px">
+        <sc-for list="{{ guide }}" as="g" hint-placeholder-count="5">
+          <div style="display:flex;align-items:flex-start;gap:8px;padding:4px 0;font:{{ g.font }};color:{{ g.fg }}"><span style="width:16px;height:16px;flex:0 0 16px;margin-top:2px;border-radius:99px;border:1.5px solid {{ g.ring }};background:{{ g.dot }};display:grid;place-items:center"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="{{ g.check }}" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"></path></svg></span>{{ g.label }}</div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ hasToast }}" hint-placeholder-val="{{ false }}">
+    <div role="status" style="position:absolute;left:50%;bottom:24px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border-strong);border-radius:var(--radius);font:400 14px/20px var(--font-sans);color:var(--fg-primary);z-index:6;white-space:nowrap"><span style="width:20px;height:20px;border-radius:var(--radius);background:var(--status-pass-bg);color:var(--status-pass-fg);display:grid;place-items:center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"></path></svg></span>{{ toast }}</div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;white&quot;,&quot;tan&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;white&quot;,&quot;tsType&quot;:&quot;'white'|'tan'|'dark'&quot;},&quot;density&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;compact&quot;,&quot;default&quot;,&quot;comfy&quot;],&quot;default&quot;:&quot;default&quot;,&quot;tsType&quot;:&quot;'compact'|'default'|'comfy'&quot;},&quot;showGuide&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  IMG = '_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/assets/';
+  THREADS = [['M6',1.0,10,5],['M8',1.25,13,6],['M10',1.5,16,8],['M12',1.75,18,10],['M16',2.0,24,14],['M20',2.5,30,17],['M24',3.0,36,19]];
+  LENS = { M6:[16,20,25,30,40,50], M8:[20,25,30,40,50,60,80], M10:[25,30,40,50,60,80,100], M12:[30,40,50,60,80,100,120], M16:[40,50,60,80,100,110,120,130,140,160], M20:[60,80,100,120,140,160,200], M24:[80,100,120,160,200,240] };
+  BUCKETS = [['≤ 40 mm',0,40],['41–80 mm',41,80],['81–120 mm',81,120],['121–160 mm',121,160],['> 160 mm',161,9999]];
+  HEADS = {
+    'Hex': { code:'HX', mats:['8.8','A2-70','A4-80'], img:'cad-preview-2.png', desc:'Externally driven hex head, ISO 4014 / 4017.' },
+    'Socket head': { code:'SH', mats:['10.9','12.9','A2-70'], img:'cad-preview-3.png', desc:'Internal hex drive, ISO 4762.' },
+    'Flange': { code:'FL', mats:['8.8','10.9'], img:'cad-preview-4.png', desc:'Integrated washer face, DIN 6921.', maxD:16 },
+    'Countersunk': { code:'CS', mats:['10.9','A2-70'], img:'cad-preview-4.png', desc:'Flush-fit conical head, ISO 10642.', maxD:20, maxL:120 },
+  };
+  MATS = { '8.8':['Steel 8.8','88','800 MPa','Zinc flake'], '10.9':['Steel 10.9','109','1040 MPa','Zinc-nickel'], '12.9':['Steel 12.9','129','1220 MPa','Black oxide'], 'A2-70':['A2-70 Stainless','A2','700 MPa','Passivated'], 'A4-80':['A4-80 Stainless','A4','800 MPa','Passivated'] };
+  FACETS = [
+    { key:'thread', title:'Thread Size', kind:'chips', mono:true, pill:'Thread' },
+    { key:'length', title:'Length', kind:'chips', mono:true, pill:'Length' },
+    { key:'head', title:'Head Type', kind:'chips', pill:'Head' },
+    { key:'material', title:'Material', kind:'checks', pill:'Material' },
+    { key:'reuse', title:'Reuse Status', kind:'checks', pill:'Reuse' },
+    { key:'source', title:'Source', kind:'checks', pill:'Source' },
+  ];
+  parts = this.build();
+  emptyF() { return { thread:[], length:[], head:[], material:[], reuse:[], source:[] }; }
+  state = { view:'catalogue', f:this.emptyF(), q:'', globalQ:'', sel:[], detail:null, sort:{k:'length',d:1}, page:0, hist:[], closed:{source:true}, toast:null, diffOnly:false, used:null, visited:{} };
+
+  build() {
+    const out = []; let i = 0;
+    const h = (n) => { const x = Math.sin(n * 12.9898) * 43758.5453; return x - Math.floor(x); };
+    const owners = ['R. Nakamura','J. Okafor','L. Brandt','S. Iyer','T. Moreau'];
+    const sources = ['CAD Library','Teamcenter','SharePoint'];
+    this.THREADS.forEach(([t, pitch, af, key], ti) => {
+      const d = parseInt(t.slice(1));
+      this.LENS[t].forEach(len => {
+        Object.entries(this.HEADS).forEach(([head, H]) => {
+          if (H.maxD && d > H.maxD) return;
+          if (H.maxL && len > H.maxL) return;
+          H.mats.forEach(m => {
+            i++;
+            if (t !== 'M16' && h(i) > 0.55) return;
+            const M = this.MATS[m];
+            const r = h(i + 7);
+            const reuse = r < 0.38 ? 'Preferred' : r < 0.86 ? 'Approved' : 'Restricted';
+            const std = head === 'Hex' ? (len <= 50 ? 'ISO 4017' : 'ISO 4014') : head === 'Socket head' ? 'ISO 4762' : head === 'Flange' ? 'DIN 6921' : 'ISO 10642';
+            const drive = head === 'Hex' || head === 'Flange' ? `Wrench ${af} mm` : `Hex key ${head === 'Countersunk' ? Math.max(4, key - 4) : key} mm`;
+            out.push({
+              id: `${H.code}-${t}-${len}-${M[1]}`, pn: `${H.code}-${t}-${len}-${M[1]}`,
+              thread: t, d, pitch, length: len, head, mat: m, material: M[0], tensile: M[2], coating: M[3],
+              standard: std, drive, reuse, source: sources[Math.floor(h(i + 3) * 3)],
+              shank: head === 'Hex' && len <= 50 ? 'Full thread' : 'Partial',
+              plm: `TC-${String(1000 + Math.floor(h(i + 11) * 8999)).padStart(4,'0')}-${String(100 + (i % 900)).padStart(3,'0')}`,
+              rev: 'ABCD'[Math.floor(h(i + 5) * 4)], status: h(i + 9) < 0.9 ? 'Released' : 'In Work',
+              owner: owners[Math.floor(h(i + 13) * owners.length)],
+              lead: reuse === 'Preferred' ? 'Stock' : h(i + 17) < 0.5 ? '2 wk' : '4 wk',
+              img: this.IMG + H.img,
+            });
+          });
+        });
+      });
+    });
+    return out;
+  }
+
+  val(p, key) {
+    if (key === 'length') return (this.BUCKETS.find(b => p.length >= b[1] && p.length <= b[2]) || [''])[0];
+    if (key === 'material') return p.material;
+    return p[key];
+  }
+  match(p, f, q, skip) {
+    for (const k of Object.keys(f)) { if (k === skip || !f[k].length) continue; if (!f[k].includes(this.val(p, k))) return false; }
+    if (q) { const s = q.toLowerCase(); if (!(p.pn.toLowerCase().includes(s) || p.standard.toLowerCase().includes(s) || p.material.toLowerCase().includes(s))) return false; }
+    return true;
+  }
+  optionsFor(key) {
+    if (key === 'thread') return this.THREADS.map(t => t[0]);
+    if (key === 'length') return this.BUCKETS.map(b => b[0]);
+    if (key === 'head') return Object.keys(this.HEADS);
+    if (key === 'material') return Object.values(this.MATS).map(m => m[0]);
+    if (key === 'reuse') return ['Preferred','Approved','Restricted'];
+    if (key === 'source') return ['CAD Library','Teamcenter','SharePoint'];
+  }
+
+  snap(s) { return { view:s.view, f:s.f, q:s.q, detail:s.detail, page:s.page }; }
+  nav(view, patch = {}) {
+    this.setState(s => ({ hist:[...s.hist, this.snap(s)], view, page:0, ...patch, visited:{ ...s.visited, [view]:true } }));
+  }
+  back = () => this.setState(s => { if (!s.hist.length) return null; const prev = s.hist[s.hist.length - 1]; return { ...prev, hist:s.hist.slice(0, -1) }; });
+  setF(key, vals) { this.setState(s => ({ f:{ ...s.f, [key]:vals }, page:0 })); }
+  toggleF(key, v) { const cur = this.state.f[key]; this.setF(key, cur.includes(v) ? cur.filter(x => x !== v) : [...cur, v]); }
+  showToast(msg) { clearTimeout(this._t); this.setState({ toast:msg }); this._t = setTimeout(() => this.setState({ toast:null }), 3200); }
+  componentWillUnmount() { clearTimeout(this._t); }
+
+  parseQuery(text) {
+    const f = this.emptyF(); let rest = [];
+    text.toLowerCase().split(/[\s,]+/).filter(Boolean).forEach(tok => {
+      const th = tok.match(/^m(\d+)(x[\d.]+)?$/);
+      if (th && this.THREADS.some(t => t[0] === 'M' + th[1])) { f.thread.push('M' + th[1]); return; }
+      const n = tok.match(/^(\d+)(mm)?$/);
+      if (n) { const v = +n[1]; const b = this.BUCKETS.find(b => v >= b[1] && v <= b[2]); if (b && !f.length.includes(b[0])) f.length.push(b[0]); return; }
+      if (tok.startsWith('hex')) { f.head.push('Hex'); return; }
+      if (tok.startsWith('socket') || tok === 'shcs') { f.head.push('Socket head'); return; }
+      if (tok.startsWith('flange')) { f.head.push('Flange'); return; }
+      if (tok.startsWith('counters') || tok === 'csk') { f.head.push('Countersunk'); return; }
+      if (tok.startsWith('stainless') || tok === 'ss') { f.material.push('A2-70 Stainless', 'A4-80 Stainless'); return; }
+      if (tok === 'a2' || tok === 'a2-70') { f.material.push('A2-70 Stainless'); return; }
+      if (tok === 'a4' || tok === 'a4-80') { f.material.push('A4-80 Stainless'); return; }
+      if (['8.8','10.9','12.9'].includes(tok)) { f.material.push('Steel ' + tok); return; }
+      if (tok === 'bolt' || tok === 'bolts') return;
+      rest.push(tok);
+    });
+    return { f, q: rest.join(' ') };
+  }
+  runSearch(text) {
+    const { f, q } = this.parseQuery(text || '');
+    this.setState(s => ({ hist:[...s.hist, this.snap(s)], view:'bolts', f, q, page:0, detail:null, globalQ:text, visited:{ ...s.visited, bolts:true, fasteners:true } }));
+  }
+
+  renderVals() {
+    const s = this.state, P = this.parts;
+    const theme = this.props.theme ?? 'white';
+    const density = this.props.density ?? 'default';
+    const showGuide = this.props.showGuide ?? true;
+    const perPage = density === 'compact' ? 15 : density === 'comfy' ? 8 : 10;
+    const filtered = P.filter(p => this.match(p, s.f, s.q));
+    const activeCount = Object.values(s.f).reduce((a, v) => a + (v.length ? 1 : 0), 0) + (s.q ? 1 : 0);
+    const isBolts = s.view === 'bolts';
+    const tableMode = isBolts && activeCount > 0;
+    const scopeKeys = isBolts ? null : ['reuse','source'];
+
+    const sections = this.FACETS.filter(F => !scopeKeys || scopeKeys.includes(F.key)).map(F => {
+      const open = !s.closed[F.key];
+      const opts = this.optionsFor(F.key).map(label => {
+        const active = s.f[F.key].includes(label);
+        const count = P.filter(p => this.match(p, s.f, s.q, F.key) && this.val(p, F.key) === label).length;
+        const disabled = !active && count === 0;
+        return {
+          label, active, count: count.toLocaleString(), disabled,
+          onClick: () => this.toggleF(F.key, label),
+          bg: active ? 'var(--accent)' : 'var(--bg-card)', fg: active ? 'var(--btn-primary-fg)' : 'var(--fg-primary)',
+          border: active ? 'var(--accent)' : 'var(--border-default)',
+          font: `${active ? 500 : 400} 13px/16px ${F.mono ? 'var(--font-mono)' : 'var(--font-sans)'}`,
+          opacity: disabled ? 0.38 : 1, cursor: disabled ? 'not-allowed' : 'pointer',
+          boxBorder: active ? 'var(--accent)' : 'var(--border-strong)', boxBg: active ? 'var(--accent)' : 'var(--bg-card)',
+          checkColor: active ? 'var(--btn-primary-fg)' : 'transparent',
+        };
+      });
+      return {
+        title: F.title, open, rot: open ? '0deg' : '-90deg', isChips: F.kind === 'chips', isChecks: F.kind === 'checks', opts,
+        hasActive: s.f[F.key].length > 0, activeCount: s.f[F.key].length,
+        onToggle: () => this.setState(st => ({ closed:{ ...st.closed, [F.key]: open } })),
+        onClear: () => this.setF(F.key, []),
+      };
+    });
+
+    const pills = this.FACETS.filter(F => s.f[F.key].length).map(F => ({ label: `${F.pill}: ${s.f[F.key].join(', ')}`, onRemove: () => this.setF(F.key, []) }));
+    if (s.q) pills.push({ label: `Text: “${s.q}”`, onRemove: () => this.setState({ q:'', page:0 }) });
+
+    const sk = s.sort.k, sd = s.sort.d;
+    const sortVal = (p) => sk === 'thread' ? p.d * 1000 + p.length : sk === 'length' ? p.length * 100 + p.d : String(p[sk]);
+    const sorted = [...filtered].sort((a, b) => { const x = sortVal(a), y = sortVal(b); return (x > y ? 1 : x < y ? -1 : 0) * sd; });
+    const pageCount = Math.max(1, Math.ceil(sorted.length / perPage));
+    const page = Math.min(s.page, pageCount - 1);
+    const colDefs = [['Part Number','pn'],['Thread','thread'],['Length','length','right'],['Head Type','head'],['Material','material'],['Standard','standard'],['Source','source'],['Reuse','reuse']];
+    const cols = colDefs.map(([label, k, align]) => ({
+      label, align: align || 'left', justify: align === 'right' ? 'flex-end' : 'flex-start',
+      bg: sk === k ? 'var(--accent-tint)' : 'var(--bg-subtle)', fg: sk === k ? 'var(--accent)' : 'var(--fg-secondary)',
+      arrow: sk === k ? (sd > 0 ? '↑' : '↓') : '',
+      onClick: () => this.setState(st => ({ sort:{ k, d: st.sort.k === k ? -st.sort.d : 1 }, page:0 })),
+    }));
+    const reuseStyle = { Preferred:['var(--status-pass-bg)','var(--status-pass-fg)'], Approved:['var(--status-info-bg)','var(--status-info-fg)'], Restricted:['var(--status-warn-bg)','var(--status-warn-fg)'] };
+    const toggleSel = (id) => this.setState(st => ({ sel: st.sel.includes(id) ? st.sel.filter(x => x !== id) : [...st.sel, id] }));
+    const pageRows = sorted.slice(page * perPage, page * perPage + perPage).map(p => {
+      const checked = s.sel.includes(p.id), open = s.detail === p.id;
+      return {
+        ...p, checked, threadLabel: `${p.thread} × ${p.pitch.toFixed(p.pitch % 0.5 ? 2 : 1)}`, lengthLabel: `${p.length} mm`,
+        bg: open ? 'var(--fill-selected)' : checked ? 'var(--fill-selected)' : 'transparent',
+        edge: open ? 'var(--accent)' : 'transparent',
+        boxBorder: checked ? 'var(--accent)' : 'var(--border-strong)', boxBg: checked ? 'var(--accent)' : 'var(--bg-card)',
+        checkColor: checked ? 'var(--btn-primary-fg)' : 'transparent',
+        reuseBg: reuseStyle[p.reuse][0], reuseFg: reuseStyle[p.reuse][1],
+        onOpen: () => this.setState({ detail: p.id }),
+        onToggle: (e) => { e.stopPropagation(); toggleSel(p.id); },
+      };
+    });
+    const pages = Array.from({ length: pageCount }, (_, n) => n).filter(n => pageCount <= 7 || Math.abs(n - page) <= 2 || n === 0 || n === pageCount - 1).map(n => ({
+      n: n + 1, onClick: () => this.setState({ page:n }),
+      bg: n === page ? 'var(--accent)' : 'var(--bg-card)', fg: n === page ? 'var(--btn-primary-fg)' : 'var(--fg-secondary)', border: n === page ? 'var(--accent)' : 'var(--border-default)',
+    }));
+
+    const one = (k) => s.f[k].length === 1 ? s.f[k][0] : null;
+    const thread1 = one('thread');
+    const resultTitle = [thread1, one('head') === 'Hex' ? 'Hex' : one('head'), 'Bolts'].filter(Boolean).join(' ');
+    const sortName = colDefs.find(c => c[1] === sk)[0].toLowerCase();
+
+    const nSel = s.sel.length;
+    const byId = (id) => P.find(p => p.id === id);
+    const fmtThread = (p) => `${p.thread} × ${p.pitch.toFixed(p.pitch % 0.5 ? 2 : 1)}`;
+
+    const dp = s.detail && tableMode ? byId(s.detail) : null;
+    const usePart = (p) => { this.setState({ used:p.id }); this.showToast(`${p.pn} added to Seat Track Bracket · Rev C`); };
+    const d = dp ? {
+      pn: dp.pn, desc: `${dp.head} bolt · ${dp.thread} × ${dp.length} mm`, img: dp.img,
+      specs: [['Thread', fmtThread(dp), 1], ['Length', `${dp.length} mm`, 1], ['Head type', dp.head], ['Drive', dp.drive], ['Material', dp.material], ['Tensile strength', dp.tensile, 1], ['Coating', dp.coating], ['Shank', dp.shank], ['Standard', dp.standard, 1]].map(([k, v, m]) => ({ k, v, font: m ? 'var(--font-mono)' : 'var(--font-sans)' })),
+      plm: [['PLM ID', dp.plm, 1], ['Revision', dp.rev, 1], ['Status', dp.status], ['Reuse', dp.reuse], ['Owner', dp.owner], ['Lead time', dp.lead]].map(([k, v, m]) => ({ k, v, font: m ? 'var(--font-mono)' : 'var(--font-sans)' })),
+      compareLabel: s.sel.includes(dp.id) ? 'Remove from Compare' : 'Add to Compare',
+      onToggleCompare: () => toggleSel(dp.id), onUse: () => usePart(dp),
+      onPlm: () => this.showToast(`Opened ${dp.plm} in Teamcenter`), onViewer: () => this.showToast(`Opened ${dp.pn} in CAD Viewer`),
+    } : {};
+
+    const [ca, cb] = s.view === 'compare' ? s.sel.slice(0, 2).map(byId) : [null, null];
+    let cmpRows = [], cmpParts = [], diffCount = 0, fieldCount = 0;
+    if (ca && cb) {
+      const fields = [['Thread', fmtThread, 1], ['Length', p => `${p.length} mm`, 1], ['Head type', p => p.head], ['Drive', p => p.drive], ['Material', p => p.material], ['Tensile strength', p => p.tensile, 1], ['Coating', p => p.coating], ['Shank', p => p.shank], ['Standard', p => p.standard, 1], ['Reuse', p => p.reuse], ['Lead time', p => p.lead], ['Source', p => p.source], ['PLM ID', p => p.plm, 1], ['Revision', p => p.rev, 1], ['Status', p => p.status]];
+      fieldCount = fields.length;
+      const all = fields.map(([k, fn, m]) => { const a = fn(ca), b = fn(cb), same = a === b; if (!same) diffCount++; return {
+        k, a, b, same, mark: same ? '=' : 'Δ', font: m ? 'var(--font-mono)' : 'var(--font-sans)',
+        bg: same ? 'var(--status-pass-bg)' : 'transparent', fg: same ? 'var(--status-pass-fg)' : 'var(--fg-primary)', markFg: same ? 'var(--status-pass-fg)' : 'var(--fg-primary)' }; });
+      cmpRows = s.diffOnly ? all.filter(r => !r.same) : all;
+      cmpParts = [[ca, 'A'], [cb, 'B']].map(([p, tag]) => ({ ...p, tag, desc: `${p.head} bolt · ${p.material}`, onUse: () => usePart(p), onPlm: () => this.showToast(`Opened ${p.plm} in Teamcenter`) }));
+    }
+
+    const crumbsDef = [['Search', () => this.nav('catalogue', { f:this.emptyF(), q:'', detail:null })], ['Catalogue', () => this.nav('catalogue', { detail:null })]];
+    if (['fasteners','bolts','compare'].includes(s.view)) crumbsDef.push(['Fasteners', () => this.nav('fasteners', { detail:null })]);
+    if (['bolts','compare'].includes(s.view)) crumbsDef.push(['Bolts', () => this.nav('bolts', { f:{ ...s.f, thread:[] }, detail:null })]);
+    if (['bolts','compare'].includes(s.view) && thread1) crumbsDef.push([thread1, () => this.nav('bolts'), 1]);
+    if (s.view === 'compare') crumbsDef.push(['Compare']);
+    const crumbs = crumbsDef.map(([label, fn, mono], i) => ({ label, sep: i > 0, current: i === crumbsDef.length - 1, link: i !== crumbsDef.length - 1, onClick: fn, font: mono ? 'var(--font-mono)' : 'var(--font-sans)' }));
+
+    const boltCount = P.filter(p => this.match(p, { ...this.emptyF(), reuse:s.f.reuse, source:s.f.source }, '')).length;
+    const catTiles = [
+      ['Fasteners','Bolts, nuts, washers, screws, rivets, pins.', `${(2746 + boltCount).toLocaleString()} parts · 6 types`, true],
+      ['Bearings','Ball, roller, thrust, bushings.','2,310 parts · 4 types'],
+      ['Seals & Gaskets','O-rings, lip seals, flat gaskets.','1,864 parts · 5 types'],
+      ['Housings','Cast and machined enclosures, covers.','976 parts · 3 types'],
+      ['Electrical','Connectors, terminals, harness clips.','3,405 parts · 7 types'],
+      ['Fittings & Connectors','Hydraulic, pneumatic, quick-connect.','1,502 parts · 5 types'],
+      ['Springs','Compression, extension, torsion, wave.','712 parts · 4 types'],
+      ['Tooling & Fixtures','Jigs, clamps, locating pins.','388 parts · 3 types'],
+    ].map(([name, desc, meta, live]) => ({ name, desc, meta, onClick: live ? () => this.nav('fasteners') : () => this.showToast(`${name} opens the same browse flow — Fasteners is populated in this prototype`) }));
+    const fastTiles = [
+      ['Bolts','Hex, socket head, flange, countersunk.', `${boltCount.toLocaleString()} parts · 4 types`, true],
+      ['Nuts','Hex, nyloc, flange, weld.','1,120 parts · 5 types'], ['Washers','Flat, spring, serrated.','684 parts · 3 types'],
+      ['Screws','Machine, self-tapping, thread-forming.','742 parts · 4 types'], ['Rivets','Blind, solid, structural.','118 parts · 3 types'], ['Pins','Dowel, roll, clevis.','82 parts · 3 types'],
+    ].map(([name, desc, meta, live]) => ({ name, desc, meta, onClick: live ? () => this.nav('bolts') : () => this.showToast(`${name} opens the same browse flow — Bolts is populated in this prototype`) }));
+    const headTiles = Object.entries(this.HEADS).map(([name, H]) => {
+      const n = P.filter(p => this.match(p, s.f, s.q, 'head') && p.head === name).length;
+      return { name: name === 'Hex' ? 'Hex Bolts' : name === 'Socket head' ? 'Socket Head' : name + ' Bolts', desc: H.desc, meta: `${n} parts`, img: this.IMG + H.img, onClick: () => this.setF('head', [name]) };
+    });
+
+    const steps = [
+      ['Open Fasteners › Bolts', !!s.visited.bolts],
+      ['Set Thread Size to M16', s.f.thread.includes('M16') || !!s.visited.compare],
+      ['Narrow by Head Type and Material', (s.f.head.length > 0 && s.f.material.length > 0) || !!s.visited.compare],
+      ['Select 2 candidates and compare', !!s.visited.compare],
+      ['Use the part that fits', !!s.used],
+    ];
+    const cur = steps.findIndex(x => !x[1]);
+    const guide = steps.map(([label, done], i) => ({
+      label, font: `${i === cur ? 500 : 400} 13px/18px var(--font-sans)`, fg: done ? 'var(--fg-secondary)' : i === cur ? 'var(--fg-primary)' : 'var(--fg-muted)',
+      ring: done ? 'var(--status-pass-fg)' : i === cur ? 'var(--accent)' : 'var(--border-strong)', dot: done ? 'var(--status-pass-fg)' : 'transparent', check: done ? 'var(--status-pass-bg)' : 'transparent',
+    }));
+
+    return {
+      theme, density, showGuide, crumbs, sections, pills, cols, pageRows, pages, guide, catTiles, fastTiles, headTiles, d,
+      cmpRows, cmpParts,
+      isBolts, isCatalogue: s.view === 'catalogue', isFasteners: s.view === 'fasteners', isBoltsTiles: isBolts && !tableMode, isBoltsTable: tableMode, isCompare: s.view === 'compare',
+      showSidebar: s.view !== 'compare', showDetail: !!dp,
+      backDisabled: !s.hist.length, backOpacity: s.hist.length ? 1 : 0.38, back: this.back,
+      goHome: () => this.nav('catalogue', { detail:null }),
+      filterSummary: isBolts ? `${activeCount} active · ${filtered.length.toLocaleString()} of ${P.length.toLocaleString()}` : `${activeCount} active · catalogue-wide`,
+      noActive: activeCount === 0, clearOpacity: activeCount ? 1 : 0.38,
+      clearAll: () => this.setState({ f:this.emptyF(), q:'', page:0, detail:null }),
+      globalQ: s.globalQ, q: s.q,
+      onGlobalQ: (e) => this.setState({ globalQ: e.target.value }),
+      onGlobalKey: (e) => { if (e.key === 'Enter') this.runSearch(s.globalQ); },
+      runGlobal: () => this.runSearch(s.globalQ),
+      examples: ['M16 hex stainless', 'M10 socket 10.9', 'M8 flange 30'].map(x => ({ label:x, onClick: () => this.runSearch(x) })),
+      onQ: (e) => this.setState({ q: e.target.value, page:0 }),
+      fastenerMeta: `${(2746 + boltCount).toLocaleString()} parts · 6 types`,
+      boltsMeta: `${filtered.length.toLocaleString()} parts · 4 types`,
+      resultTitle, resultMeta: `${filtered.length} results · sorted by ${sortName}`,
+      hasRows: sorted.length > 0, noRows: sorted.length === 0,
+      selHint: nSel === 0 ? 'Select 2 rows to compare' : nSel === 1 ? '1 selected — pick 1 more' : nSel === 2 ? '' : `${nSel} selected — compare takes 2`,
+      compareLabel: nSel === 2 ? 'Compare 2 Selected' : 'Compare', compareDisabled: nSel !== 2, compareOpacity: nSel === 2 ? 1 : 0.38,
+      openCompare: () => this.nav('compare', { detail:null, diffOnly:false }),
+      exportCsv: () => this.showToast(`Exported ${filtered.length} rows to bolts-${(thread1 || 'all').toLowerCase()}.csv`),
+      saveView: () => this.showToast(`Saved view “${resultTitle}” to My Projects`),
+      pagerLabel: sorted.length ? `Showing ${page * perPage + 1}–${Math.min(sorted.length, (page + 1) * perPage)} of ${sorted.length} · ${perPage} per page` : 'No results',
+      prevPage: () => this.setState({ page: Math.max(0, page - 1) }), nextPage: () => this.setState({ page: Math.min(pageCount - 1, page + 1) }),
+      prevDisabled: page === 0, nextDisabled: page >= pageCount - 1, prevOpacity: page === 0 ? 0.38 : 1, nextOpacity: page >= pageCount - 1 ? 0.38 : 1,
+      closeDetail: () => this.setState({ detail:null }),
+      diffSummary: `${diffCount} of ${fieldCount} fields differ`,
+      showAllFields: () => this.setState({ diffOnly:false }), showDiffFields: () => this.setState({ diffOnly:true }),
+      allBg: s.diffOnly ? 'var(--bg-card)' : 'var(--accent)', allFg: s.diffOnly ? 'var(--fg-secondary)' : 'var(--btn-primary-fg)',
+      diffBg: s.diffOnly ? 'var(--accent)' : 'var(--bg-card)', diffFg: s.diffOnly ? 'var(--btn-primary-fg)' : 'var(--fg-secondary)',
+      hasToast: !!s.toast, toast: s.toast,
+    };
+  }
+}
+</script>
+</body>
+</html>

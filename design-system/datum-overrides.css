@@ -1,0 +1,9 @@
+/* App-level token overrides layered on colors_and_type.css (kept out of src/ so components stay hex-free).
+   1. Dark mode: the design-system pass green glares on dark surfaces; a calmer desaturated green.
+   2. Scrim for modal overlays. 3. Global UI scale (System → Info density). */
+[data-theme="dark"] {
+  --status-pass-fg: #8CCFA6; --status-pass-bg: #163524; --status-pass-border: #2F6A49; --hue-pass: #8CCFA6;
+}
+:root { --scrim: rgba(0, 0, 0, 0.5); --ui-zoom: 1; }
+html[data-scale="comfy"] { --ui-zoom: 1.125; }
+html[data-scale="compact"] { --ui-zoom: 0.875; }

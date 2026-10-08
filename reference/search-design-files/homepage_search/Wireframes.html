@@ -1,0 +1,1002 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Datum — Home wireframes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Kalam:wght@300;400;700&family=Gloria+Hallelujah&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper: #fbf8f3;
+    --paper-2:#f4ede2;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --ink-faint:#9b9690;
+    --rule: #1a1a1a;
+    --rule-soft: #c8bfb3;
+    --accent: #2f64d6;     /* annotation blue */
+    --accent-soft:#dde6fb;
+    --highlight:#ffe78a;   /* sticky-note yellow */
+    --strike:#d63a2f;      /* red pen */
+  }
+
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; padding:0; background: var(--paper); color: var(--ink); font-family: 'Kalam', 'Caveat', system-ui, sans-serif; font-weight: 300; }
+
+  /* paper texture using two crossed gradients */
+  body{
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(0,0,0,.025), transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(0,0,0,.03), transparent 60%),
+      repeating-linear-gradient(0deg, rgba(0,0,0,.012) 0 1px, transparent 1px 28px);
+  }
+
+  /* ───────── chrome ───────── */
+  .topbar{
+    position: sticky; top:0; z-index: 50;
+    display:flex; align-items:center; gap: 18px;
+    padding: 14px 22px;
+    background: var(--paper);
+    border-bottom: 1.5px solid var(--ink);
+  }
+  .brand{ font-family:'Caveat'; font-weight:600; font-size: 28px; letter-spacing:.5px; }
+  .brand .dot{ display:inline-block; width:14px; height:14px; background: var(--ink); margin-right:8px; transform: rotate(45deg) translateY(-2px); }
+  .crumbs{ font-family:'Kalam'; font-size: 14px; color: var(--ink-soft); }
+  .crumbs b{ color: var(--ink); font-weight:700; }
+
+  .tabs{ margin-left: auto; display:flex; gap: 6px; align-items:center; }
+  .tab{
+    appearance:none; border: 1.5px solid var(--ink); background: transparent;
+    padding: 8px 18px; border-radius: 22px 6px 22px 6px;
+    font-family: 'Caveat'; font-weight:500; font-size: 20px; cursor:pointer;
+    color: var(--ink); transform: rotate(-.4deg);
+  }
+  .tab + .tab{ transform: rotate(.5deg); }
+  .tab.active{ background: var(--ink); color: var(--paper); }
+  .tab:hover{ background: var(--accent-soft); }
+  .tab.active:hover{ background: var(--ink); }
+
+  /* page intro */
+  .intro{
+    max-width: 980px; margin: 22px auto 6px; padding: 0 28px;
+  }
+  .intro h1{
+    font-family:'Caveat'; font-size: 44px; margin: 0 0 6px; font-weight:600;
+  }
+  .intro p{
+    margin: 0; font-family:'Kalam'; font-weight:300; font-size: 16px; color: var(--ink-soft); max-width: 720px;
+  }
+  .intro .meta{
+    display:flex; gap: 14px; margin-top: 12px; font-family:'Caveat'; color: var(--accent); font-size: 18px;
+    align-items:center;
+  }
+  .intro .meta .pill{
+    border:1.5px solid var(--accent); padding: 2px 10px; border-radius: 20px;
+  }
+
+  /* ───────── canvas ───────── */
+  .canvas{
+    padding: 26px 28px 90px; overflow-x: auto;
+  }
+  .row{
+    display:flex; gap: 36px; padding-bottom: 22px;
+    align-items: flex-start;
+  }
+  .col-title{
+    font-family:'Caveat'; font-size: 26px; margin: 28px 0 14px; padding: 0 28px;
+    display:flex; align-items:center; gap: 12px; color: var(--ink);
+  }
+  .col-title::before{
+    content:""; width: 32px; height: 1.5px; background: var(--ink); display:inline-block;
+  }
+  .col-title::after{
+    content:""; flex:1; height: 1.5px;
+    background-image: linear-gradient(to right, var(--ink) 50%, transparent 50%);
+    background-size: 8px 1.5px;
+  }
+
+  /* frame card */
+  .frame{
+    flex: 0 0 auto;
+    width: 520px;
+    background: #fff;
+    border: 1.8px solid var(--ink);
+    border-radius: 4px;
+    box-shadow: 5px 6px 0 #1a1a1a14, 11px 14px 0 #1a1a1a08;
+    position: relative;
+    transform: rotate(var(--tilt, -.3deg));
+  }
+  .frame:nth-child(2){ --tilt: .35deg; }
+  .frame:nth-child(3){ --tilt: -.55deg; }
+  .frame:nth-child(4){ --tilt: .25deg; }
+
+  .frame .label{
+    position:absolute; top: -34px; left: 8px;
+    font-family:'Caveat'; font-size: 22px; font-weight:600;
+    color: var(--ink);
+    background: var(--highlight);
+    padding: 1px 10px;
+    border: 1.5px solid var(--ink);
+    transform: rotate(-1.5deg);
+  }
+  .frame .num{
+    position:absolute; top: -34px; right: 14px;
+    font-family:'Caveat'; font-size: 22px; color: var(--ink-soft);
+  }
+  .frame .caption{
+    position:absolute; bottom: -52px; left: 4px; right: 4px;
+    font-family:'Kalam'; font-size: 13.5px; color: var(--ink-soft); line-height: 1.35;
+  }
+  .frame .caption b{ color: var(--ink); font-weight:700; }
+
+  .frame .stage{
+    height: 360px;
+    background: var(--paper);
+    border-bottom: 1.5px dashed var(--rule-soft);
+    position: relative;
+    overflow: hidden;
+  }
+  .frame.tall .stage{ height: 420px; }
+
+  /* generic wireframe primitives */
+  .box{ border: 1.5px solid var(--ink); background: #fff; }
+  .box.dashed{ border-style: dashed; background: transparent; }
+  .box.fill{ background: var(--ink); color: #fff; }
+  .box.tan{ background: var(--paper-2); }
+  .box.accent{ background: var(--accent-soft); border-color: var(--ink); }
+  .placeholder{
+    border: 1.5px dashed var(--ink-faint);
+    background:
+      repeating-linear-gradient(135deg, transparent 0 8px, rgba(0,0,0,.04) 8px 9px);
+  }
+  .ph-text{
+    height: 8px; background: var(--ink); border-radius: 1px;
+  }
+  .ph-text.faint{ background: var(--ink-faint); }
+  .ph-text.short{ width: 40%; }
+  .ph-text.med{ width: 65%; }
+  .ph-text.long{ width: 90%; }
+
+  .btn{
+    border: 1.5px solid var(--ink); background:#fff; padding: 9px 14px;
+    font-family:'Kalam'; font-size: 14px; font-weight:400; color: var(--ink);
+    border-radius: 2px; display:inline-flex; align-items:center; gap:8px; justify-content:center;
+  }
+  .btn.primary{ background: var(--ink); color: #fff; }
+  .btn.ghost{ border-style: dashed; color: var(--ink-soft); }
+
+  .input{
+    border: 1.5px solid var(--ink); height: 34px;
+    background: #fff; display:flex; align-items:center; padding: 0 12px;
+    font-family:'Kalam'; font-size:13px; color: var(--ink-faint);
+    border-radius: 2px;
+  }
+
+  /* annotation styles (margin notes / arrows) */
+  .ann{
+    position: absolute;
+    font-family:'Caveat'; font-size: 18px; color: var(--accent);
+    line-height: 1.15; max-width: 220px;
+  }
+  .ann .arr{
+    display:block; color: var(--accent); font-family:'Caveat'; font-size: 22px;
+  }
+  .ann.left{ right: calc(100% + 12px); top: 20px; text-align: right; }
+  .ann.right{ left: calc(100% + 12px); top: 24px; }
+  .ann.below{ top: calc(100% + 6px); left: 14px; max-width: 460px; }
+
+  .scribble{
+    position:absolute; font-family:'Gloria Hallelujah'; font-size: 13px; color: var(--strike);
+    transform: rotate(-3deg);
+  }
+
+  body.no-annotations .ann,
+  body.no-annotations .scribble,
+  body.no-annotations .frame .caption{ display:none; }
+
+  /* ───────── LOGIN frames ───────── */
+  .stage-login-bg{
+    position:absolute; inset:0; background: var(--paper);
+  }
+  .login-card{
+    position:absolute; left:50%; top:50%; transform: translate(-50%,-50%);
+    width: 280px; padding: 22px 22px 18px;
+    background: #fff; border:1.5px solid var(--ink);
+    display:flex; flex-direction:column; gap: 12px;
+  }
+  .login-card .logo{
+    height: 30px; align-self:center; display:flex; align-items:center; gap: 8px;
+    font-family:'Caveat'; font-size: 22px; font-weight:600; margin-bottom:6px;
+  }
+  .login-card .logo .mark{
+    width: 18px; height: 18px; background: var(--ink); transform: rotate(45deg);
+  }
+  .login-card label{
+    font-family:'Kalam'; font-size: 13px; font-weight:700; color: var(--ink);
+  }
+  .login-card .footnote{
+    font-family:'Kalam'; font-size: 11px; color: var(--ink-soft); text-align:center; line-height:1.4;
+  }
+  .login-card .support{
+    font-family:'Kalam'; font-size: 12px; color: var(--ink-soft); text-align:center;
+  }
+
+  /* split-screen login */
+  .login-split-brand{
+    position:absolute; left:0; top:0; bottom:0; width: 50%;
+    background: var(--paper-2);
+    border-right: 1.5px solid var(--ink);
+    padding: 22px;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .login-split-brand .brandmark{
+    font-family:'Caveat'; font-weight:600; font-size: 26px; display:flex; align-items:center; gap: 8px;
+  }
+  .login-split-brand .brandmark .mark{ width:16px; height:16px; background: var(--ink); transform: rotate(45deg); }
+  .login-split-brand .quote{
+    font-family:'Caveat'; font-size: 22px; line-height: 1.15;
+  }
+  .login-split-brand .visual{
+    flex: 1; margin: 14px 0;
+    display:grid; place-items:center;
+  }
+  .login-split-brand .visual .cad{
+    width: 120px; height: 120px; border:1.5px dashed var(--ink); position:relative;
+    display:grid; place-items:center;
+  }
+  .login-split-brand .visual .cad::before,
+  .login-split-brand .visual .cad::after{
+    content:""; position:absolute; border:1.5px solid var(--ink);
+  }
+  .login-split-brand .visual .cad::before{ width: 70%; height:70%; transform: rotate(15deg); }
+  .login-split-brand .visual .cad::after{ width: 40%; height:40%; transform: rotate(-25deg); background: var(--accent-soft); }
+  .login-split-brand .footer{ font-family:'Kalam'; font-size: 11px; color: var(--ink-soft); }
+
+  .login-split-form{
+    position:absolute; right:0; top:0; bottom:0; width: 50%;
+    padding: 28px 28px;
+    display:flex; flex-direction:column; justify-content:center; gap: 10px;
+  }
+  .login-split-form h2{
+    font-family:'Caveat'; font-size: 24px; margin:0; font-weight:600;
+  }
+
+  /* minimal login */
+  .login-min{
+    position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center; gap: 14px; padding: 40px;
+  }
+  .login-min .mark{ width: 28px; height: 28px; background: var(--ink); transform: rotate(45deg); }
+  .login-min .row-input{
+    display:flex; gap: 8px; width: 320px;
+  }
+  .login-min .row-input .input{ flex:1; }
+  .login-min .tagline{
+    font-family:'Caveat'; font-size: 22px;
+  }
+
+  /* ───────── LANDING frames ───────── */
+  .lf-stage{
+    height: 470px;
+    background: var(--paper);
+    position: relative; overflow:hidden;
+  }
+  .frame.landing{ width: 720px; }
+  .frame.landing .stage{ height: 470px; }
+
+  .top-chrome{
+    height: 36px; border-bottom: 1.5px solid var(--ink);
+    display:flex; align-items:center; padding: 0 12px; gap: 8px; background:#fff;
+    font-family:'Kalam'; font-size: 12px;
+  }
+  .top-chrome .mark{ width:12px; height:12px; background: var(--ink); transform: rotate(45deg); }
+  .top-chrome .name{ font-family:'Caveat'; font-size: 18px; font-weight:600; }
+  .top-chrome .spacer{ flex:1; }
+  .top-chrome .pill{ border: 1.2px solid var(--ink); padding: 1px 8px; border-radius: 14px; font-size: 11px; }
+
+  .body-row{ display:flex; height: calc(100% - 36px); }
+
+  /* sidebar variants */
+  .sidebar{
+    width: 200px; flex: 0 0 200px;
+    border-right: 1.5px solid var(--ink);
+    background: var(--paper-2);
+    padding: 12px 10px;
+    display:flex; flex-direction:column; gap: 14px;
+    font-family:'Kalam'; font-size: 12px;
+  }
+  .sidebar .group .head{
+    text-transform: uppercase; letter-spacing: 1px; font-size: 10px;
+    color: var(--ink-soft); margin-bottom: 6px; font-weight:700;
+  }
+  .sidebar .item{
+    display:flex; align-items:center; gap: 8px; padding: 6px 8px;
+    border: 1.5px solid transparent; border-radius: 2px;
+    font-size: 12px;
+  }
+  .sidebar .item .ico{
+    width: 14px; height: 14px; border:1.3px solid var(--ink); flex-shrink: 0; background:#fff;
+  }
+  .sidebar .item.active{
+    background: #fff; border-color: var(--ink); font-weight:700;
+  }
+  .sidebar .item.nest{ padding-left: 20px; }
+  .sidebar .footer-item{ margin-top: auto; }
+  .sidebar.icon-only{ width: 56px; flex: 0 0 56px; align-items:center; padding: 12px 0; gap: 10px; }
+  .sidebar.icon-only .ico{ width: 22px; height: 22px; }
+  .sidebar.icon-only .group{ display:flex; flex-direction:column; gap: 8px; align-items:center; }
+  .sidebar.icon-only .group .head{ display:none; }
+  .sidebar.icon-only .item{ padding: 4px; }
+  .sidebar.icon-only .item span:not(.ico){ display:none; }
+  .sidebar.icon-only .item .ico{ width: 20px; height: 20px; }
+
+  .central{
+    flex: 1; padding: 22px; position: relative;
+    display:flex; flex-direction:column;
+    background: var(--paper);
+  }
+
+  /* hero logo */
+  .hero-logo{
+    display:flex; flex-direction:column; align-items:center; gap: 6px; margin-top: 18px;
+  }
+  .hero-logo .big-mark{
+    width: 46px; height: 46px; background: var(--ink); transform: rotate(45deg); margin-bottom: 4px;
+  }
+  .hero-logo .word{ font-family:'Caveat'; font-size: 38px; font-weight:600; }
+  .hero-logo .tag{ font-family:'Kalam'; font-size: 12px; color: var(--ink-soft); margin-top: 2px;}
+
+  .quick-actions{
+    display:flex; gap: 12px; justify-content:center; margin-top: 20px; flex-wrap:wrap;
+  }
+  .qa{
+    width: 130px; height: 92px; border:1.5px solid var(--ink); background:#fff;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap: 8px; padding: 10px;
+    font-family:'Kalam'; font-size: 12px; text-align:center; line-height:1.2;
+  }
+  .qa .ico{ width: 22px; height: 22px; border:1.5px solid var(--ink); background: var(--accent-soft); }
+  .qa.primary{ background: var(--ink); color:#fff; }
+  .qa.primary .ico{ background:#fff; border-color:#fff; }
+  .qa b{ font-weight:700; font-size:13px; }
+  .qa span.muted{ color: var(--ink-soft); font-size:10.5px; }
+
+  /* search bar variant */
+  .search-hero{
+    margin: 18px auto 0; width: 80%; max-width: 460px;
+    border: 1.5px solid var(--ink); background: #fff;
+    height: 50px; display:flex; align-items:center; padding: 0 14px; gap: 10px;
+    font-family:'Kalam'; font-size: 13px; color: var(--ink-faint);
+  }
+  .search-hero .ico{ width: 18px; height:18px; border:1.5px solid var(--ink); border-radius: 50%; }
+  .search-hero .cta{ margin-left:auto; padding: 4px 10px; background: var(--ink); color:#fff; font-size: 12px; }
+  .search-hero .or{
+    text-align:center; font-family:'Caveat'; font-size: 16px; color: var(--ink-soft); margin-top: 6px;
+  }
+  .upload-zone{
+    margin: 8px auto 0; width: 80%; max-width: 460px; height: 80px;
+    border: 1.6px dashed var(--ink); background: #fff;
+    display:flex; align-items:center; justify-content:center; gap: 10px;
+    font-family:'Kalam'; font-size: 13px; color: var(--ink-soft); text-align:center;
+  }
+
+  /* recent strip */
+  .recent-strip{
+    margin-top: auto; display:flex; gap: 10px; align-items:flex-end;
+  }
+  .recent-strip .lbl{ font-family:'Caveat'; font-size: 18px; margin-bottom: 4px; flex: 0 0 auto; }
+  .recent-strip .cards{ display:flex; gap: 8px; flex:1; }
+  .recent-strip .card{
+    flex: 1; height: 70px; border:1.5px solid var(--ink); background: #fff; padding: 6px;
+    display:flex; flex-direction:column; gap: 5px; font-family:'Kalam'; font-size: 11px;
+  }
+  .recent-strip .card .thumb{
+    height: 30px; background: repeating-linear-gradient(135deg, transparent 0 6px, rgba(0,0,0,.05) 6px 7px); border:1px dashed var(--ink-faint);
+  }
+  .recent-strip .card .title{ font-weight:700; font-size: 11px; }
+  .recent-strip .card .meta{ color: var(--ink-soft); font-size: 10px; }
+
+  /* dashboard grid */
+  .dash{
+    display:grid; grid-template-columns: 1.1fr 1fr; gap: 14px;
+    margin-top: 8px; flex: 1;
+  }
+  .dash .panel{
+    border:1.5px solid var(--ink); background:#fff; padding: 10px;
+    display:flex; flex-direction:column; gap: 8px;
+  }
+  .dash .panel h4{
+    margin:0; font-family:'Caveat'; font-size: 18px; font-weight:600;
+    display:flex; align-items:center; gap:8px;
+  }
+  .dash .panel h4 .more{
+    margin-left:auto; font-family:'Kalam'; font-size:11px; color: var(--ink-soft);
+  }
+  .dash .row-item{
+    display:flex; gap:8px; align-items:center; padding: 4px 0; border-bottom: 1px dashed var(--rule-soft);
+    font-family:'Kalam'; font-size: 11px;
+  }
+  .dash .row-item:last-child{ border-bottom: none; }
+  .dash .row-item .ico{ width: 14px; height: 14px; border:1.3px solid var(--ink); background: var(--accent-soft); flex-shrink:0; }
+  .dash .row-item .grow{ flex:1; }
+  .dash .row-item .meta{ color: var(--ink-soft); font-size: 10.5px; }
+
+  .qa-grid{
+    display:grid; grid-template-columns: repeat(2, 1fr); gap: 8px;
+  }
+  .qa-grid .qa{ width: auto; height: 74px; }
+
+  /* ───────── tweaks panel ───────── */
+  .tweaks{
+    position: fixed; right: 18px; bottom: 18px; z-index: 60;
+    background: #fff; border: 1.8px solid var(--ink);
+    padding: 12px 14px; width: 220px;
+    font-family:'Kalam'; font-size: 13px;
+    box-shadow: 4px 5px 0 #1a1a1a22;
+  }
+  .tweaks h3{
+    font-family:'Caveat'; font-size: 22px; margin: 0 0 8px; display:flex; align-items:center; justify-content:space-between;
+  }
+  .tweaks h3 button{ all: unset; cursor:pointer; font-family:'Caveat'; font-size: 18px; color: var(--ink-soft); }
+  .tweaks label{
+    display:flex; align-items:center; justify-content:space-between; padding: 4px 0;
+  }
+  .tweaks label input{ accent-color: var(--ink); }
+  .tweaks .swatches{ display:flex; gap: 6px; margin-top: 4px; }
+  .tweaks .swatch{
+    width: 22px; height: 22px; border:1.5px solid var(--ink); cursor:pointer;
+  }
+  .tweaks .swatch.active{ outline: 2px solid var(--ink); outline-offset: 2px; }
+
+  .tweaks-toggle{
+    position: fixed; right: 18px; bottom: 18px; z-index: 60;
+    background: var(--ink); color: #fff; border: 1.5px solid var(--ink);
+    padding: 8px 14px; font-family:'Caveat'; font-size: 18px; cursor:pointer;
+    border-radius: 2px;
+  }
+
+  /* tab content */
+  .pane{ display:none; }
+  .pane.active{ display:block; }
+
+  /* arrows drawn with svg overlays */
+  .arrow-svg{ position:absolute; pointer-events:none; }
+
+  /* hide scrollbar styling */
+  .canvas::-webkit-scrollbar{ height: 14px; }
+  .canvas::-webkit-scrollbar-thumb{ background: var(--ink); border-radius: 0; }
+  .canvas::-webkit-scrollbar-track{ background: var(--paper-2); }
+
+</style>
+</head>
+<body data-screen-label="Wireframe Canvas">
+  <div class="topbar">
+    <span class="brand"><span class="dot"></span>Datum</span>
+    <span class="crumbs">wireframes &nbsp;/&nbsp; <b>home + login</b> &nbsp;/&nbsp; v1</span>
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-tab="login">Login screen</button>
+      <button class="tab" data-tab="landing">Landing screen</button>
+      <button class="tab" data-tab="both">Both, side-by-side</button>
+    </div>
+  </div>
+
+  <!-- LOGIN -->
+  <section class="pane active" id="pane-login" data-screen-label="01 Login wireframes">
+    <div class="intro">
+      <h1>Screen 1 — Login</h1>
+      <p>Three takes on the entry point. They all keep email-only auth (matching the supplied reference) but differ in how much of the brand and product story is exposed before sign-in. Pick one and we'll spec it.</p>
+      <div class="meta">
+        <span class="pill">3 directions</span>
+        <span>↳ centered • split • minimal</span>
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="row" style="padding-left: 28px;">
+
+        <!-- A: centered card (matches reference) -->
+        <div class="frame">
+          <div class="label">A — Centered card</div>
+          <div class="num">01 / 03</div>
+          <div class="stage">
+            <div class="stage-login-bg" style="background: #4a4e57;"></div>
+            <div class="login-card">
+              <div class="logo"><span class="mark"></span>Datum</div>
+              <label>Work Email</label>
+              <div class="input">name@company.com</div>
+              <div class="btn primary" style="height:34px;">Login</div>
+              <div class="footnote">By signing in, you agree to our <u>Terms of&nbsp;Service</u> and <u>Privacy&nbsp;Policy</u>.</div>
+              <div class="support">Contact Support</div>
+            </div>
+            <div class="ann left" style="top: 130px;">
+              matches the reference<br>
+              <span class="arr">↘</span>
+            </div>
+            <div class="ann right" style="top: 90px;">
+              dark page bg makes the<br>card the only thing on screen
+              <span class="arr">↙</span>
+            </div>
+          </div>
+          <div class="caption"><b>Pros:</b> familiar, fast to ship, identical to the supplied mock. <b>Cons:</b> zero brand/product moment before sign-in — feels like an admin tool.</div>
+        </div>
+
+        <!-- B: split-screen brand -->
+        <div class="frame">
+          <div class="label">B — Split brand panel</div>
+          <div class="num">02 / 03</div>
+          <div class="stage">
+            <div class="login-split-brand">
+              <div class="brandmark"><span class="mark"></span>Datum</div>
+              <div class="visual"><div class="cad"></div></div>
+              <div class="quote">Search 3D&nbsp;parts<br>against real&nbsp;requirements.</div>
+              <div class="footer">v 1.0 · build 248</div>
+            </div>
+            <div class="login-split-form">
+              <h2>Sign in</h2>
+              <label style="font-family:'Kalam'; font-size:12px; font-weight:700;">Work Email</label>
+              <div class="input">name@company.com</div>
+              <div class="btn primary" style="height:34px;">Login</div>
+              <div style="font-family:'Kalam'; font-size: 11px; color: var(--ink-soft);">Terms · Privacy · Contact Support</div>
+            </div>
+            <div class="ann below">
+              left side carries the brand + a one-line product promise; right side is the form, identical fields to A. Good first impression for a trial demo.
+            </div>
+          </div>
+          <div class="caption"><b>Pros:</b> introduces the product, room for a hero CAD render or short tagline. <b>Cons:</b> twice the surface area to maintain; small screens collapse to A anyway.</div>
+        </div>
+
+        <!-- C: minimal stripped -->
+        <div class="frame">
+          <div class="label">C — Minimal, no card</div>
+          <div class="num">03 / 03</div>
+          <div class="stage">
+            <div class="login-min">
+              <div class="mark"></div>
+              <div class="tagline">Datum</div>
+              <div style="font-family:'Kalam'; font-size:12px; color: var(--ink-soft);">Sign in with your work email</div>
+              <div class="row-input">
+                <div class="input" style="flex:1;">name@company.com</div>
+                <div class="btn primary" style="height:34px; padding:0 16px;">→</div>
+              </div>
+              <div style="font-family:'Kalam'; font-size: 11px; color: var(--ink-soft); text-align:center;">Terms · Privacy · Support</div>
+            </div>
+            <div class="scribble" style="left: 30px; top: 30px; transform: rotate(-6deg);">no card chrome —<br>just the field</div>
+            <div class="ann right" style="top: 160px; max-width: 200px;">
+              feels closest to a quiet<br>workbench tool
+              <span class="arr">↙</span>
+            </div>
+          </div>
+          <div class="caption"><b>Pros:</b> quietest, fastest, nothing to overthink. <b>Cons:</b> no brand moment at all; relies on the wordmark + Vanilla bg to feel "Datum".</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LANDING -->
+  <section class="pane" id="pane-landing" data-screen-label="02 Landing wireframes">
+    <div class="intro">
+      <h1>Screen 2 — Landing / Home</h1>
+      <p>All four keep the spec'd left sidebar (CAD search → workflows → projects → settings) but differ in what the central canvas does. The question: how much should the home page <i>do</i> before the user picks an action?</p>
+      <div class="meta">
+        <span class="pill">4 directions</span>
+        <span>↳ launchpad • search-first • dashboard • feed</span>
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="row" style="padding-left: 28px;">
+
+        <!-- L1: Launchpad (matches spec) -->
+        <div class="frame landing tall">
+          <div class="label">L1 — Launchpad</div>
+          <div class="num">01 / 04</div>
+          <div class="stage">
+            <div class="top-chrome">
+              <span class="mark"></span><span class="name">Datum</span>
+              <span class="spacer"></span>
+              <span class="pill">⚙ settings</span>
+              <span class="pill">○ user</span>
+            </div>
+            <div class="body-row">
+              <aside class="sidebar">
+                <div class="group">
+                  <div class="head">Search</div>
+                  <div class="item active"><span class="ico"></span><span>3D CAD Search</span></div>
+                </div>
+                <div class="group">
+                  <div class="head">Workflows</div>
+                  <div class="item"><span class="ico"></span><span>BOM Creation</span></div>
+                  <div class="item"><span class="ico"></span><span>Warranty Analysis</span></div>
+                  <div class="item"><span class="ico"></span><span>Part Replacement</span></div>
+                </div>
+                <div class="group">
+                  <div class="head">My Projects</div>
+                  <div class="item"><span class="ico"></span><span>T3 Heat Exchanger</span></div>
+                  <div class="item nest"><span class="ico"></span><span>Saved searches (4)</span></div>
+                  <div class="item nest"><span class="ico"></span><span>Outputs (12)</span></div>
+                  <div class="item"><span class="ico"></span><span>Inlet Manifold rev2</span></div>
+                  <div class="item"><span class="ico"></span><span>+ New project</span></div>
+                </div>
+                <div class="footer-item item"><span class="ico"></span><span>Settings</span></div>
+              </aside>
+              <div class="central">
+                <div class="hero-logo">
+                  <div class="big-mark"></div>
+                  <div class="word">Datum</div>
+                  <div class="tag">3D CAD search & requirement matching</div>
+                </div>
+                <div class="quick-actions">
+                  <div class="qa primary">
+                    <span class="ico"></span>
+                    <b>3D Search</b>
+                    <span class="muted" style="color: #d4d4d4;">upload CAD files</span>
+                  </div>
+                  <div class="qa">
+                    <span class="ico"></span>
+                    <b>Create</b>
+                    <span class="muted">new project / search</span>
+                  </div>
+                  <div class="qa">
+                    <span class="ico"></span>
+                    <b>Resume</b>
+                    <span class="muted">last search · 14 min ago</span>
+                  </div>
+                </div>
+                <div class="ann right" style="top: 60px; left: calc(100% - 230px); max-width: 200px;">
+                  literal interpretation<br>of the brief
+                  <span class="arr">↗</span>
+                </div>
+                <div style="margin-top: auto; font-family:'Kalam'; font-size:11px; color: var(--ink-soft); text-align:center;">
+                  Tip · You have 4 saved searches across 2 projects.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="caption"><b>Pros:</b> dead simple, three big choices, hero brand moment. <b>Cons:</b> wastes a lot of central real-estate; no view into recent work without clicking.</div>
+        </div>
+
+        <!-- L2: Search-first -->
+        <div class="frame landing tall">
+          <div class="label">L2 — Search-first</div>
+          <div class="num">02 / 04</div>
+          <div class="stage">
+            <div class="top-chrome">
+              <span class="mark"></span><span class="name">Datum</span>
+              <span class="spacer"></span>
+              <span class="pill">⚙</span><span class="pill">○</span>
+            </div>
+            <div class="body-row">
+              <aside class="sidebar">
+                <div class="group">
+                  <div class="head">Search</div>
+                  <div class="item active"><span class="ico"></span><span>3D CAD Search</span></div>
+                </div>
+                <div class="group">
+                  <div class="head">Workflows</div>
+                  <div class="item"><span class="ico"></span><span>BOM Creation</span></div>
+                  <div class="item"><span class="ico"></span><span>Warranty Analysis</span></div>
+                  <div class="item"><span class="ico"></span><span>Part Replacement</span></div>
+                </div>
+                <div class="group">
+                  <div class="head">My Projects</div>
+                  <div class="item"><span class="ico"></span><span>T3 Heat Exchanger</span></div>
+                  <div class="item"><span class="ico"></span><span>Inlet Manifold rev2</span></div>
+                </div>
+                <div class="footer-item item"><span class="ico"></span><span>Settings</span></div>
+              </aside>
+              <div class="central">
+                <div class="hero-logo" style="margin-top: 4px;">
+                  <div class="word" style="font-size: 28px;">What are you looking for?</div>
+                </div>
+                <div class="search-hero">
+                  <span class="ico"></span>
+                  <span>Describe a part, paste a spec, or drop a STEP file…</span>
+                  <span class="cta">Search</span>
+                </div>
+                <div class="or">— or —</div>
+                <div class="upload-zone">
+                  <span style="border:1.5px solid var(--ink); padding: 4px 8px;">↥</span>
+                  Drop CAD files here · STEP, SLDPRT, IGES
+                </div>
+                <div class="quick-actions" style="margin-top: 24px;">
+                  <div class="qa">
+                    <span class="ico"></span>
+                    <b>Resume</b>
+                    <span class="muted">14 min ago</span>
+                  </div>
+                  <div class="qa">
+                    <span class="ico"></span>
+                    <b>BOM</b>
+                    <span class="muted">workflow</span>
+                  </div>
+                  <div class="qa">
+                    <span class="ico"></span>
+                    <b>Warranty</b>
+                    <span class="muted">workflow</span>
+                  </div>
+                  <div class="qa">
+                    <span class="ico"></span>
+                    <b>Replace</b>
+                    <span class="muted">workflow</span>
+                  </div>
+                </div>
+                <div class="ann right" style="top: 110px; left: calc(100% - 220px); max-width: 200px;">
+                  the home page IS the<br>search — workflows demoted<br>to chips
+                  <span class="arr">↙</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="caption"><b>Pros:</b> fastest path to the core action; users search 90% of the time. <b>Cons:</b> demotes the workflows; brand moment is muted.</div>
+        </div>
+
+        <!-- L3: Dashboard -->
+        <div class="frame landing tall">
+          <div class="label">L3 — Dashboard</div>
+          <div class="num">03 / 04</div>
+          <div class="stage">
+            <div class="top-chrome">
+              <span class="mark"></span><span class="name">Datum</span>
+              <span class="spacer"></span>
+              <span class="pill">⚙</span><span class="pill">○</span>
+            </div>
+            <div class="body-row">
+              <aside class="sidebar">
+                <div class="group">
+                  <div class="head">Search</div>
+                  <div class="item"><span class="ico"></span><span>3D CAD Search</span></div>
+                </div>
+                <div class="group">
+                  <div class="head">Workflows</div>
+                  <div class="item"><span class="ico"></span><span>BOM Creation</span></div>
+                  <div class="item"><span class="ico"></span><span>Warranty Analysis</span></div>
+                  <div class="item"><span class="ico"></span><span>Part Replacement</span></div>
+                </div>
+                <div class="group">
+                  <div class="head">My Projects</div>
+                  <div class="item active"><span class="ico"></span><span>T3 Heat Exchanger</span></div>
+                  <div class="item"><span class="ico"></span><span>Inlet Manifold rev2</span></div>
+                </div>
+                <div class="footer-item item"><span class="ico"></span><span>Settings</span></div>
+              </aside>
+              <div class="central">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
+                  <div style="width: 24px; height: 24px; background: var(--ink); transform: rotate(45deg);"></div>
+                  <div style="font-family:'Caveat'; font-size: 22px; font-weight:600;">Welcome back, Aaron</div>
+                  <div style="margin-left:auto; font-family:'Kalam'; font-size: 11px; color: var(--ink-soft);">Tue · 2:14 PM</div>
+                </div>
+                <div class="dash">
+                  <div class="panel" style="grid-row: span 2;">
+                    <h4>Quick actions <span class="more">3 shortcuts</span></h4>
+                    <div class="qa-grid">
+                      <div class="qa primary"><span class="ico"></span><b>3D Search</b></div>
+                      <div class="qa"><span class="ico"></span><b>Create</b></div>
+                      <div class="qa"><span class="ico"></span><b>Resume</b></div>
+                      <div class="qa"><span class="ico"></span><b>Import</b></div>
+                    </div>
+                    <h4 style="margin-top: 4px;">Recent searches <span class="more">view all →</span></h4>
+                    <div class="row-item"><span class="ico"></span><span class="grow">Heat exchanger inlet Ø74–78</span><span class="meta">14m</span></div>
+                    <div class="row-item"><span class="ico"></span><span class="grow">M8 flange variants</span><span class="meta">2h</span></div>
+                    <div class="row-item"><span class="ico"></span><span class="grow">Warranty: T3 cracked housings</span><span class="meta">yest.</span></div>
+                  </div>
+                  <div class="panel">
+                    <h4>Projects <span class="more">+ new</span></h4>
+                    <div class="row-item"><span class="ico"></span><span class="grow">T3 Heat Exchanger</span><span class="meta">4 saved</span></div>
+                    <div class="row-item"><span class="ico"></span><span class="grow">Inlet Manifold rev2</span><span class="meta">2 saved</span></div>
+                    <div class="row-item"><span class="ico"></span><span class="grow">Pump skid spec</span><span class="meta">1 saved</span></div>
+                  </div>
+                  <div class="panel">
+                    <h4>Pinned outputs</h4>
+                    <div class="row-item"><span class="ico"></span><span class="grow">BOM_T3_v4.csv</span><span class="meta">847 rows</span></div>
+                    <div class="row-item"><span class="ico"></span><span class="grow">Warranty_Q1.pdf</span><span class="meta">12p</span></div>
+                  </div>
+                </div>
+                <div class="ann right" style="top: 60px; left: calc(100% - 220px); max-width: 200px;">
+                  brand moment is small;<br>the work is the welcome
+                  <span class="arr">↙</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="caption"><b>Pros:</b> respects engineers' time, picks up exactly where they left off, surfaces real artifacts. <b>Cons:</b> heaviest to build; cold-start state needs its own design.</div>
+        </div>
+
+        <!-- L4: Hero + recent strip -->
+        <div class="frame landing tall">
+          <div class="label">L4 — Hero + recent strip</div>
+          <div class="num">04 / 04</div>
+          <div class="stage">
+            <div class="top-chrome">
+              <span class="mark"></span><span class="name">Datum</span>
+              <span class="spacer"></span>
+              <span class="pill">⚙</span><span class="pill">○</span>
+            </div>
+            <div class="body-row">
+              <aside class="sidebar icon-only">
+                <div class="group">
+                  <div class="item active"><span class="ico" style="background: var(--accent-soft);"></span></div>
+                </div>
+                <div class="group">
+                  <div class="item"><span class="ico"></span></div>
+                  <div class="item"><span class="ico"></span></div>
+                  <div class="item"><span class="ico"></span></div>
+                </div>
+                <div class="group">
+                  <div class="item"><span class="ico"></span></div>
+                  <div class="item"><span class="ico"></span></div>
+                </div>
+                <div class="footer-item item"><span class="ico"></span></div>
+              </aside>
+              <div class="central">
+                <div class="hero-logo" style="margin-top: 6px;">
+                  <div class="big-mark" style="width: 36px; height: 36px;"></div>
+                  <div class="word">Datum</div>
+                </div>
+                <div class="quick-actions" style="margin-top: 14px;">
+                  <div class="qa primary"><span class="ico"></span><b>3D Search</b><span class="muted" style="color:#d4d4d4;">↥ upload</span></div>
+                  <div class="qa"><span class="ico"></span><b>Create</b><span class="muted">new project</span></div>
+                  <div class="qa"><span class="ico"></span><b>Resume</b><span class="muted">14m ago</span></div>
+                </div>
+                <div style="text-align:center; font-family:'Caveat'; font-size: 16px; color: var(--ink-soft); margin-top: 18px;">— recent —</div>
+                <div class="recent-strip" style="margin-top: 8px;">
+                  <div class="cards">
+                    <div class="card"><div class="thumb"></div><span class="title">Inlet Ø74–78</span><span class="meta">14m · 23 results</span></div>
+                    <div class="card"><div class="thumb"></div><span class="title">M8 flange</span><span class="meta">2h · 47 results</span></div>
+                    <div class="card"><div class="thumb"></div><span class="title">T3 housings</span><span class="meta">yest · 11 results</span></div>
+                    <div class="card"><div class="thumb"></div><span class="title">Pump skid</span><span class="meta">3d · saved</span></div>
+                  </div>
+                </div>
+                <div class="ann left" style="top: 60px; right: calc(100% - 50px); max-width: 130px; text-align: right;">
+                  collapsed sidebar<br>= more canvas
+                  <span class="arr">↘</span>
+                </div>
+                <div class="ann right" style="top: 280px; left: calc(100% - 220px); max-width: 200px;">
+                  recent work as a strip,<br>not a full panel — peek<br>without commitment
+                  <span class="arr">↙</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="caption"><b>Pros:</b> brand hero <i>and</i> recent context; collapsed icon-rail demonstrates the collapse mechanic. <b>Cons:</b> recent strip can feel cramped at narrow widths.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTH: side-by-side compressed -->
+  <section class="pane" id="pane-both" data-screen-label="03 Both screens overview">
+    <div class="intro">
+      <h1>Side-by-side overview</h1>
+      <p>One pick from each screen as a starting flow. Use the Tweaks panel to change which login + landing combo is shown here.</p>
+    </div>
+    <div class="canvas">
+      <div class="row" id="combo-row" style="padding-left: 28px;">
+        <!-- Filled in by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Tweaks toggle + panel -->
+  <button class="tweaks-toggle" id="tweaks-toggle">✎ Tweaks</button>
+  <aside class="tweaks" id="tweaks-panel" style="display:none;">
+    <h3>Tweaks <button id="tweaks-close">×</button></h3>
+    <label>
+      <span>Margin notes</span>
+      <input type="checkbox" id="t-annotations" checked>
+    </label>
+    <label>
+      <span>Paper texture</span>
+      <input type="checkbox" id="t-texture" checked>
+    </label>
+    <div style="margin-top: 8px;">Accent</div>
+    <div class="swatches" id="swatches">
+      <div class="swatch active" data-c="#2f64d6" style="background:#2f64d6"></div>
+      <div class="swatch" data-c="#0f9b6e" style="background:#0f9b6e"></div>
+      <div class="swatch" data-c="#7a4f00" style="background:#7a4f00"></div>
+      <div class="swatch" data-c="#a8200d" style="background:#a8200d"></div>
+    </div>
+    <div style="margin-top: 10px; border-top: 1.2px dashed var(--rule-soft); padding-top: 8px;">
+      <div style="font-size:12px; color: var(--ink-soft); margin-bottom: 4px;">"Both" combo</div>
+      <label><span>Login</span>
+        <select id="combo-login">
+          <option value="A">A — Centered</option>
+          <option value="B" selected>B — Split</option>
+          <option value="C">C — Minimal</option>
+        </select>
+      </label>
+      <label><span>Landing</span>
+        <select id="combo-landing">
+          <option value="L1">L1 — Launchpad</option>
+          <option value="L2">L2 — Search-first</option>
+          <option value="L3" selected>L3 — Dashboard</option>
+          <option value="L4">L4 — Hero + strip</option>
+        </select>
+      </label>
+    </div>
+  </aside>
+
+<script>
+  // tab switcher
+  const panes = {
+    login: document.getElementById('pane-login'),
+    landing: document.getElementById('pane-landing'),
+    both: document.getElementById('pane-both'),
+  };
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      Object.values(panes).forEach(p => p.classList.remove('active'));
+      panes[btn.dataset.tab].classList.add('active');
+      if (btn.dataset.tab === 'both') renderCombo();
+    });
+  });
+
+  // combo render — reuses live frames from other panes by cloning
+  function renderCombo(){
+    const row = document.getElementById('combo-row');
+    const loginVal = document.getElementById('combo-login').value;
+    const landingVal = document.getElementById('combo-landing').value;
+    const loginIdx = {A:0, B:1, C:2}[loginVal];
+    const landingIdx = {L1:0, L2:1, L3:2, L4:3}[landingVal];
+    const loginFrame = panes.login.querySelectorAll('.frame')[loginIdx].cloneNode(true);
+    const landingFrame = panes.landing.querySelectorAll('.frame')[landingIdx].cloneNode(true);
+    row.innerHTML = '';
+    row.appendChild(loginFrame);
+    // arrow between
+    const arrow = document.createElement('div');
+    arrow.style.cssText = 'align-self:center; font-family: Caveat; font-size: 36px; color: var(--accent); padding: 0 8px;';
+    arrow.innerHTML = '→<br><span style="font-size:16px;">login</span>';
+    row.appendChild(arrow);
+    row.appendChild(landingFrame);
+  }
+
+  // tweaks
+  const toggle = document.getElementById('tweaks-toggle');
+  const panel = document.getElementById('tweaks-panel');
+  toggle.addEventListener('click', () => {
+    panel.style.display = 'block';
+    toggle.style.display = 'none';
+  });
+  document.getElementById('tweaks-close').addEventListener('click', () => {
+    panel.style.display = 'none';
+    toggle.style.display = 'block';
+    if (window.parent !== window) window.parent.postMessage({type:'__edit_mode_dismissed'},'*');
+  });
+  document.getElementById('t-annotations').addEventListener('change', e => {
+    document.body.classList.toggle('no-annotations', !e.target.checked);
+  });
+  document.getElementById('t-texture').addEventListener('change', e => {
+    document.body.style.backgroundImage = e.target.checked ? '' : 'none';
+  });
+  document.querySelectorAll('.swatch').forEach(s => s.addEventListener('click', () => {
+    document.querySelectorAll('.swatch').forEach(x => x.classList.remove('active'));
+    s.classList.add('active');
+    const c = s.dataset.c;
+    document.documentElement.style.setProperty('--accent', c);
+    // soft accent: low opacity version
+    const soft = c + '22';
+    document.documentElement.style.setProperty('--accent-soft', soft);
+  }));
+  document.getElementById('combo-login').addEventListener('change', renderCombo);
+  document.getElementById('combo-landing').addEventListener('change', renderCombo);
+
+  // edit-mode handshake (Tweaks toolbar toggle)
+  window.addEventListener('message', (ev) => {
+    if (!ev.data || typeof ev.data !== 'object') return;
+    if (ev.data.type === '__activate_edit_mode'){
+      panel.style.display = 'block';
+      toggle.style.display = 'none';
+    }
+    if (ev.data.type === '__deactivate_edit_mode'){
+      panel.style.display = 'none';
+      toggle.style.display = 'block';
+    }
+  });
+  if (window.parent !== window) window.parent.postMessage({type:'__edit_mode_available'},'*');
+</script>
+</body>
+</html>

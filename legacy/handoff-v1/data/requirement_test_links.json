@@ -1,0 +1,160 @@
+[
+  {
+    "req_id": "REC-20001",
+    "test_id": "DV-TC-210",
+    "match_confidence": null,
+    "why_matched": [
+      "RFQ",
+      "Internal"
+    ],
+    "reasoning": "Only test in the library that exercises burst-containment at overspeed; no confidence score shown because the driving geometry is new."
+  },
+  {
+    "req_id": "REC-20002",
+    "test_id": "DV-TC-211",
+    "match_confidence": 95,
+    "why_matched": [
+      "Carryover",
+      "PLM"
+    ],
+    "reasoning": "Same actuator family and test rig used on Sport; high confidence carryover."
+  },
+  {
+    "req_id": "REC-20003",
+    "test_id": "DV-TC-212",
+    "match_confidence": 93,
+    "why_matched": [
+      "Carryover",
+      "PLM"
+    ],
+    "reasoning": "Bearing architecture unchanged from Sport's ball-bearing CHRA; same thermal-cycle profile applies."
+  },
+  {
+    "req_id": "REC-20004",
+    "test_id": "DV-TC-213",
+    "match_confidence": 87,
+    "why_matched": [
+      "RFQ",
+      "CAD features"
+    ],
+    "reasoning": "Compressor wheel geometry is a scaled variant of Sport's; map data close enough to anchor the test plan, re-run required due to tightened margin."
+  },
+  {
+    "req_id": "REC-20005",
+    "test_id": "DV-TC-214",
+    "match_confidence": 92,
+    "why_matched": [
+      "Carryover",
+      "Supplier"
+    ],
+    "reasoning": "Same sensor family and supplier (Denso) as LX/Sport, wider pressure range only."
+  },
+  {
+    "req_id": "REC-20006",
+    "test_id": "DV-TC-215",
+    "match_confidence": null,
+    "why_matched": [
+      "RFQ"
+    ],
+    "reasoning": "New test written specifically for the air-to-water intercooler; no prior air-to-water test exists on this program."
+  },
+  {
+    "req_id": "REC-20007",
+    "test_id": "DV-TC-216",
+    "match_confidence": 82,
+    "why_matched": [
+      "Carryover",
+      "CAD features"
+    ],
+    "reasoning": "Same burst-pressure procedure as LX/Sport's charge pipe test; geometry and joint count differ enough to lower confidence below the duplicate threshold."
+  },
+  {
+    "req_id": "REC-20008",
+    "test_id": "DV-TC-217",
+    "match_confidence": 58,
+    "why_matched": [
+      "RFQ",
+      "CAD features"
+    ],
+    "reasoning": "Twin-scroll casting changes the flange and runner geometry enough that the LX/Sport thermal-fatigue result is only a rough anchor, not a direct carryover."
+  },
+  {
+    "req_id": "REC-20009",
+    "test_id": "DV-TC-218",
+    "match_confidence": 93,
+    "why_matched": [
+      "Carryover",
+      "Supplier"
+    ],
+    "reasoning": "Same injector platform and supplier (Denso), larger flow rating only."
+  },
+  {
+    "req_id": "REC-20010",
+    "test_id": "DV-TC-219",
+    "match_confidence": 75,
+    "why_matched": [
+      "RFQ",
+      "CAD features"
+    ],
+    "reasoning": "Forged piston shares the hypereutectic piston's bore/stroke geometry but a different manufacture process and material, lowering confidence from a true carryover."
+  },
+  {
+    "req_id": "REC-20011",
+    "test_id": "DV-TC-220",
+    "match_confidence": 100,
+    "why_matched": [
+      "Carryover",
+      "PLM"
+    ],
+    "reasoning": "Identical part (same PN) as LX/Sport \u2014 direct carryover, no re-test required."
+  },
+  {
+    "req_id": "REC-20012",
+    "test_id": "DV-TC-211",
+    "match_confidence": 95,
+    "why_matched": [
+      "Carryover",
+      "Supplier"
+    ],
+    "reasoning": "Shares the actuation-response rig and supplier family with REC-20002; cross-referenced from the same test."
+  },
+  {
+    "req_id": "REC-20013",
+    "test_id": "DV-TC-222",
+    "match_confidence": null,
+    "why_matched": [
+      "RFQ"
+    ],
+    "reasoning": "First-ever EGT sensor on this engine family \u2014 new test written against the new requirement, nothing to match against."
+  },
+  {
+    "req_id": "REC-20014",
+    "test_id": "DV-TC-223",
+    "match_confidence": 100,
+    "why_matched": [
+      "Carryover",
+      "PLM"
+    ],
+    "reasoning": "Identical part across all three trims \u2014 direct carryover."
+  },
+  {
+    "req_id": "REC-20015",
+    "test_id": "DV-TC-224",
+    "match_confidence": 100,
+    "why_matched": [
+      "Carryover",
+      "PLM"
+    ],
+    "reasoning": "Identical part, unaffected by the turbo change \u2014 direct carryover."
+  },
+  {
+    "req_id": "REC-20016",
+    "test_id": "DV-TC-225",
+    "match_confidence": 78,
+    "why_matched": [
+      "Carryover",
+      "CAD features"
+    ],
+    "reasoning": "Same physical coil as LX/Sport; re-validation driven by the higher in-cylinder pressure duty cycle, not a hardware change."
+  }
+]

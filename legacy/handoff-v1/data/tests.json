@@ -1,0 +1,153 @@
+[
+  {
+    "test_id": "DV-TC-210",
+    "name": "Turbine burst/overspeed containment test",
+    "standard": "SAE J1826-mod",
+    "lab": "Horizon Powertrain Test Labs",
+    "procedure": "Spin turbine wheel to 120% of max design speed in a calibrated burst-containment rig; inspect housing for rupture or fragment penetration.",
+    "req_ids": [
+      "REC-20001"
+    ]
+  },
+  {
+    "test_id": "DV-TC-211",
+    "name": "Actuator response time bench test",
+    "standard": "ES-CIV-0150 Annex B",
+    "lab": "Horizon Powertrain Test Labs",
+    "procedure": "Command full-stroke actuation across the -30C to 150C range on a thermal bench rig; measure stroke time with a linear position sensor.",
+    "req_ids": [
+      "REC-20002",
+      "REC-20012"
+    ]
+  },
+  {
+    "test_id": "DV-TC-212",
+    "name": "CHRA thermal cycling durability test",
+    "standard": "SOR-CIV-15 Annex D",
+    "lab": "Horizon Powertrain Test Labs",
+    "procedure": "Cycle center housing between -30C and 250C for 50,000 cycles; measure bearing clearance growth via CMM before/after.",
+    "req_ids": [
+      "REC-20003"
+    ]
+  },
+  {
+    "test_id": "DV-TC-213",
+    "name": "Compressor map / surge margin dyno test",
+    "standard": "ES-CIV-0150 Annex C",
+    "lab": "Datum Powertrain Dyno Cell 2",
+    "procedure": "Sweep compressor operating points across the full engine map on an engine dynamometer; record surge margin at each rated-boost point.",
+    "req_ids": [
+      "REC-20004"
+    ]
+  },
+  {
+    "test_id": "DV-TC-214",
+    "name": "Boost sensor accuracy calibration test",
+    "standard": "ES-CIV-0150 Annex A",
+    "lab": "Datum Sensor Cal Lab",
+    "procedure": "Compare sensor output to a calibrated reference pressure source across 0-2.5 bar(a) at 5 setpoints, 3 temperature conditions.",
+    "req_ids": [
+      "REC-20005"
+    ]
+  },
+  {
+    "test_id": "DV-TC-215",
+    "name": "Charge air cooling effectiveness dyno test",
+    "standard": "SOR-CIV-15 Annex E",
+    "lab": "Datum Powertrain Dyno Cell 1",
+    "procedure": "Run sustained high-load dyno cycle; measure compressor-outlet and intake-manifold temperatures continuously, compute delta-T above ambient.",
+    "req_ids": [
+      "REC-20006"
+    ]
+  },
+  {
+    "test_id": "DV-TC-216",
+    "name": "Charge pipe burst pressure test",
+    "standard": "ES-CIV-0150 Annex F",
+    "lab": "Horizon Powertrain Test Labs",
+    "procedure": "Pressurize charge piping assembly to 4.5 bar(g) and beyond in a hydrostatic rig; monitor for rupture or joint separation.",
+    "req_ids": [
+      "REC-20007"
+    ]
+  },
+  {
+    "test_id": "DV-TC-217",
+    "name": "Exhaust manifold thermal fatigue cycling test",
+    "standard": "SOR-CIV-15 Annex G",
+    "lab": "Horizon Powertrain Test Labs",
+    "procedure": "Cycle manifold/downpipe assembly to 950C peak gas temperature for 1,500 cycles; inspect for crack propagation via dye penetrant.",
+    "req_ids": [
+      "REC-20008"
+    ]
+  },
+  {
+    "test_id": "DV-TC-218",
+    "name": "Fuel injector flow bench test",
+    "standard": "ES-CIV-0150 Annex H",
+    "lab": "Datum Fuel Systems Lab",
+    "procedure": "Measure injected fuel mass across the 0.3-3.0 ms pulse-width range at 350 bar rail pressure on a calibrated flow bench.",
+    "req_ids": [
+      "REC-20009"
+    ]
+  },
+  {
+    "test_id": "DV-TC-219",
+    "name": "Piston thermal/mechanical durability engine test",
+    "standard": "SOR-CIV-15 Annex B",
+    "lab": "Datum Powertrain Dyno Cell 1",
+    "procedure": "Run full validation duty cycle at 130 bar peak cylinder pressure; inspect piston crowns and ring lands via borescope and teardown.",
+    "req_ids": [
+      "REC-20010"
+    ]
+  },
+  {
+    "test_id": "DV-TC-220",
+    "name": "Wastegate valve seat leakage test",
+    "standard": "ES-CIV-0150 Annex I",
+    "lab": "Horizon Powertrain Test Labs",
+    "procedure": "Actuate valve 500 cycles, then measure closed-position leakage as a percentage of rated exhaust mass flow.",
+    "req_ids": [
+      "REC-20011"
+    ]
+  },
+  {
+    "test_id": "DV-TC-222",
+    "name": "EGT sensor accuracy & survivability test",
+    "standard": "SOR-CIV-15 Annex J (new)",
+    "lab": "Datum Sensor Cal Lab",
+    "procedure": "Calibrate sensor reading against reference thermocouple across 400-980C, then hold at continuous 1000C exposure for accelerated service-life equivalence.",
+    "req_ids": [
+      "REC-20013"
+    ]
+  },
+  {
+    "test_id": "DV-TC-223",
+    "name": "Oil feed line pressure/flow test",
+    "standard": "ES-CIV-0150 Annex K",
+    "lab": "Horizon Powertrain Test Labs",
+    "procedure": "Pressurize feed line to 6 bar and measure delivered flow rate to a simulated center-housing fixture at idle oil temperature.",
+    "req_ids": [
+      "REC-20014"
+    ]
+  },
+  {
+    "test_id": "DV-TC-224",
+    "name": "Crankshaft torsional vibration fatigue test",
+    "standard": "SOR-CIV-15 Annex A",
+    "lab": "Datum Powertrain Dyno Cell 2",
+    "procedure": "Apply the full torsional vibration spectrum at rated power on an instrumented dynamometer; monitor for crack initiation via strain gauge and periodic NDT.",
+    "req_ids": [
+      "REC-20015"
+    ]
+  },
+  {
+    "test_id": "DV-TC-225",
+    "name": "Ignition coil dwell/energy validation",
+    "standard": "ES-CIV-0150 Annex L",
+    "lab": "Datum Powertrain Dyno Cell 1",
+    "procedure": "Run coil at commanded dwell/energy settings under in-cylinder pressures equivalent to 2.5 bar(a) boost; monitor for misfire via in-cylinder pressure trace.",
+    "req_ids": [
+      "REC-20016"
+    ]
+  }
+]

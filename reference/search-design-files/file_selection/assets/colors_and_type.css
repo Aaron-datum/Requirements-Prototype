@@ -1,0 +1,184 @@
+/* =========================================================
+   Datum UI V1 — Design Tokens
+   Three modes: White (default) · Tan · Dark
+   Primary accent: Datum Dark Blue #1A3A5C
+   Radius: 5px · Type max: 16px · Weight max: 500
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ---------- Brand palette ---------- */
+  --charcoal:   #211F1F;
+  --storm:      #4A4E57;
+  --coast:      #70869E;
+  --ice-melt:   #C0DDF0;
+  --oatmilk:    #E0D6D1;
+  --vanilla:    #FAF5F3;
+  --datum-blue:       #1A3A5C;   /* primary accent — cleared AAA on Vanilla/White */
+  --datum-blue-hover: #264C72;
+  --datum-blue-tint:  #E3EEF8;
+
+  /* ---------- Status (semantic) ---------- */
+  --status-pass-fg: #1A6B3A; --status-pass-bg: #E6F4EC;
+  --status-warn-fg: #7A4F00; --status-warn-bg: #FFF3CD;
+  --status-fail-fg: #A8200D; --status-fail-bg: #FAE5E3;
+  --status-info-fg: var(--datum-blue); --status-info-bg: var(--datum-blue-tint);
+  --danger:      #C0392B;
+  --danger-dark: #E55C5C;
+
+  /* ---------- Type ---------- */
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'DM Mono', 'Fira Code', ui-monospace, monospace;
+  /* UI body scale — capped at 16px (page) */
+  --text-page: 16px;    --lh-page: 24px;
+  --text-section: 13px; --lh-section: 20px;
+  --text-body: 12px;    --lh-body: 16px;
+  --text-small: 11px;   --lh-small: 14px;
+  --text-button: 13px;  --lh-button: 16px;
+  --text-badge: 11px;   --lh-badge: 14px;
+  --text-mono: 11px;    --lh-mono: 16px;
+  /* Display scale — use on low-density / hero surfaces (home, auth, onboarding, modal headers, empty states). */
+  --text-display-lg: 32px; --lh-display-lg: 40px;
+  --text-display-md: 22px; --lh-display-md: 28px;
+  --text-display-sm: 18px; --lh-display-sm: 24px;
+  --fw-regular: 400;
+  --fw-medium:  500;
+
+  /* ---------- Spacing ---------- */
+  /* Component scale — padding, gap, internal rhythm */
+  --gap-1: 4px; --gap-2: 8px; --gap-3: 12px; --gap-4: 16px;
+  --p-2: 8px;   --p-3: 12px;   --p-4: 16px;
+  /* Layout scale — canvas rhythm, hero margins, section padding */
+  --layout-1: 24px; --layout-2: 32px; --layout-3: 40px; --layout-4: 56px; --layout-5: 80px;
+
+  /* ---------- Sizing ---------- */
+  --sidebar-width: 320px;            /* default expanded width — user-resizable */
+  --sidebar-width-collapsed: 56px;   /* collapsed (icons only) */
+  --topbar-height: 48px;
+  --btn-height: 32px;
+  --input-height: 28px;
+  --icon-btn: 24px;
+  --icon-md: 14px;
+  --icon-sm: 12px;
+
+  /* ---------- Shape + motion ---------- */
+  --radius: 5px;
+  --dur-fast: 150ms;
+  --dur-med:  200ms;
+  --easing:   ease;
+
+  /* ---------- Focus ---------- */
+  --focus-ring: 1.5px solid var(--datum-blue);
+  --focus-offset: 1px;
+}
+
+/* =========================================================
+   WHITE MODE (default) — white canvas, Datum blue accents
+   ========================================================= */
+:root, [data-theme="white"] {
+  --bg-page:         #FAFBFC;
+  --bg-sidebar:      #FFFFFF;
+  --bg-card:         #FFFFFF;
+  --bg-subtle:       #F4F6F9;
+  --fg-primary:      var(--charcoal);
+  --fg-secondary:    var(--storm);
+  --fg-muted:        var(--coast);
+  --border-default:  #E6EAF0;
+  --border-strong:   #D6DCE3;
+  --border-focus:    var(--datum-blue);
+  --fill-hover:      #F4F6F9;
+  --fill-selected:   var(--datum-blue-tint);
+  --border-selected: var(--datum-blue);
+  --accent:          var(--datum-blue);
+  --accent-hover:    var(--datum-blue-hover);
+  --accent-tint:     var(--datum-blue-tint);
+  --btn-primary-bg:  var(--datum-blue);
+  --btn-primary-fg:  #FFFFFF;
+}
+
+/* =========================================================
+   TAN MODE — warm paper, Charcoal primary (original system)
+   ========================================================= */
+[data-theme="tan"] {
+  --bg-page:         var(--vanilla);
+  --bg-sidebar:      var(--oatmilk);
+  --bg-card:         var(--vanilla);
+  --bg-subtle:       #EFE9E5;
+  --fg-primary:      var(--charcoal);
+  --fg-secondary:    var(--storm);
+  --fg-muted:        var(--coast);
+  --border-default:  var(--oatmilk);
+  --border-strong:   #C0B5B0;
+  --border-focus:    var(--charcoal);
+  --fill-hover:      var(--ice-melt);
+  --fill-selected:   var(--ice-melt);
+  --border-selected: var(--charcoal);
+  --accent:          var(--charcoal);
+  --accent-hover:    var(--storm);
+  --accent-tint:     var(--ice-melt);
+  --btn-primary-bg:  var(--charcoal);
+  --btn-primary-fg:  var(--vanilla);
+}
+
+/* =========================================================
+   DARK MODE — charcoal canvas, Vanilla glyphs
+   ========================================================= */
+[data-theme="dark"] {
+  --bg-page:         #2A2828;     /* lifted from #1B1A1A — less harsh */
+  --bg-sidebar:      #343232;     /* lifted from #252323 */
+  --bg-card:         #3D3B3B;     /* lifted from #2E2C2C */
+  --bg-subtle:       #484646;
+  --fg-primary:      var(--vanilla);
+  --fg-secondary:    #D9E5EF;     /* brighter than Ice Melt for body text */
+  --fg-muted:        #9AB0C4;     /* lifted Coast — AA on new bg */
+  --border-default:  #555252;     /* lifted for visibility */
+  --border-strong:   #6E6A6A;
+  --border-focus:    var(--ice-melt);
+  --fill-hover:      #484646;
+  --fill-selected:   #2B4864;     /* lifted blue-tint */
+  --border-selected: var(--ice-melt);
+  --accent:          var(--ice-melt);        /* AAA on all lifted surfaces */
+  --accent-hover:    #D6E8F5;
+  --accent-tint:     #2B4864;
+  --btn-primary-bg:  var(--ice-melt);
+  --btn-primary-fg:  var(--charcoal);
+  --danger:          var(--danger-dark);
+}
+
+/* =========================================================
+   Element base
+   ========================================================= */
+body, input, button, select, textarea {
+  font-family: var(--font-sans);
+  color: var(--fg-primary);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body { background: var(--bg-page); }
+
+.text-display-lg { font: var(--fw-medium) var(--text-display-lg)/var(--lh-display-lg) var(--font-sans); letter-spacing: -0.4px; }
+.text-display-md { font: var(--fw-medium) var(--text-display-md)/var(--lh-display-md) var(--font-sans); letter-spacing: -0.2px; }
+.text-display-sm { font: var(--fw-medium) var(--text-display-sm)/var(--lh-display-sm) var(--font-sans); }
+
+.text-page     { font: var(--fw-medium)  var(--text-page)/var(--lh-page) var(--font-sans); }
+.text-section  { font: var(--fw-medium)  var(--text-section)/var(--lh-section) var(--font-sans); }
+.text-body     { font: var(--fw-regular) var(--text-body)/var(--lh-body) var(--font-sans); }
+.text-small    { font: var(--fw-regular) var(--text-small)/var(--lh-small) var(--font-sans); }
+.text-button   { font: var(--fw-medium)  var(--text-button)/var(--lh-button) var(--font-sans); }
+.text-badge    { font: var(--fw-medium)  var(--text-badge)/var(--lh-badge) var(--font-sans); }
+.text-mono     { font: var(--fw-regular) var(--text-mono)/var(--lh-mono) var(--font-mono); }
+
+.text-muted    { color: var(--fg-muted); }
+.text-secondary{ color: var(--fg-secondary); }
+
+.text-label-caps {
+  font: var(--fw-medium) var(--text-badge)/var(--lh-badge) var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--fg-muted);
+}
+
+:focus-visible { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+
+button, input, select, textarea { border-radius: var(--radius); }

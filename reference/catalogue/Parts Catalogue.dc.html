@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/colors_and_type.css">
+<script src="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/_ds_bundle.js"></script>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#EDEEF0;font-family:'DM Sans',system-ui,sans-serif}
+a{color:#1A3A5C}a:hover{color:#264C72}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08)}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 8px}
+.dv-tid{font:500 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#211F1F;color:#fff;border-radius:5px;text-decoration:none}
+.dv-tname{font:500 13px/1.2 'DM Sans',sans-serif;color:#211F1F}
+.dv-intro{max-width:820px;margin:0 0 24px;font:400 12px/18px 'DM Sans',sans-serif;color:#4A4E57}
+.dv-opts{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:500 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#211F1F;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.4 'DM Sans',sans-serif;color:rgba(0,0,0,.55);max-width:900px}
+.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.14);border-radius:5px;overflow:hidden}
+.dv-opt:target .dv-oid{background:#1A3A5C;color:#fff}
+.dv-note{font:400 11px/16px 'DM Sans',sans-serif;color:#4A4E57;max-width:560px}
+.dv-next{margin:24px 0 0;font:400 12px/1.6 'DM Sans',sans-serif;color:rgba(0,0,0,.5)}
+</style>
+</helmet>
+
+<section class="dv-turn" id="t3">
+<div class="dv-thd"><a class="dv-tid" href="#t3">3</a><span class="dv-tname">Filter-sidebar versions of <a class="dv-oid" href="#1b">1b</a> and <a class="dv-oid" href="#1f">1f</a></span></div>
+<p class="dv-intro">The tree is gone from both screens — left is the Filter Sidebar throughout, matching <a class="dv-oid" href="#2a">2a</a>, and the crumb strip carries the hierarchy. The quick-select selectors from <a class="dv-oid" href="#1c">1c</a> and <a class="dv-oid" href="#1d">1d</a> now live as filter sections: Thread Size sits at the top of the sidebar as a chip grid, with Length and Grade beneath it as ordinary filter rows. Picking M16 in the sidebar is what transitions the center stage from tiles to table.</p>
+<div class="dv-opts">
+
+<!-- 3a -->
+<div class="dv-opt" id="3a">
+<div class="dv-olabel"><a class="dv-oid" href="#3a">3a</a><span><strong style="font-weight:500;color:#211F1F">Step 2 · Bolts, filter sidebar left.</strong> Thread Size chips are the first filter section — no selection yet, so the center still shows bolt-type tiles. Crumb: <code style="font:400 11px var(--font-mono)">Search › Catalogue › Fasteners › Bolts</code>.</span></div>
+<div class="dv-card" style="width:1320px">
+<div data-screen-label="02b Bolts filter sidebar" style="height:780px;display:flex;flex-direction:column;background:var(--bg-page);color:var(--fg-primary);font-family:var(--font-sans);overflow:hidden">
+  <header style="height:48px;flex:0 0 48px;background:var(--bg-card);border-bottom:1px solid var(--border-default);display:flex;align-items:center;padding:0 16px;gap:24px">
+    <div style="display:flex;align-items:center;gap:8px"><img src="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/assets/datum-icon-transparent.png" alt="" style="height:22px;width:auto"><span style="font:500 15px/20px var(--font-sans)">Datum</span></div>
+    <span style="display:inline-flex;align-items:center;height:28px;padding:0 8px;border-left:1px solid var(--border-default);color:var(--fg-secondary);font:500 13px/16px var(--font-sans)">Adient</span>
+    <nav style="display:flex;align-items:center;gap:2px;height:48px;margin-left:8px">
+      <button style="display:inline-flex;align-items:center;gap:6px;padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid var(--accent);color:var(--accent);font:500 13px/16px var(--font-sans);cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>Search</button>
+      <button style="padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--fg-secondary);font:400 13px/16px var(--font-sans);cursor:pointer">Create</button>
+      <button style="padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--fg-secondary);font:400 13px/16px var(--font-sans);cursor:pointer">My Projects</button>
+    </nav>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      <button style="display:inline-flex;align-items:center;gap:8px;padding:0 8px 0 4px;height:28px;border-radius:var(--radius);background:transparent;border:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer"><span style="width:22px;height:22px;border-radius:var(--radius);background:var(--accent-tint);color:var(--accent);font:500 11px/22px var(--font-sans);text-align:center">MA</span><span>m.alvarez@adient.com</span></button>
+    </div>
+  </header>
+  <div style="height:36px;flex:0 0 36px;background:var(--bg-card);border-bottom:1px solid var(--border-default);display:flex;align-items:center;gap:10px;padding:0 16px">
+    <button aria-label="Back" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;padding:0;background:transparent;border:0;color:var(--fg-secondary);cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div style="display:flex;align-items:center;gap:6px">
+      <button style="background:transparent;border:0;padding:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer" style-hover="color:var(--accent)">Search</button><span style="color:var(--fg-muted);font:400 13px/16px var(--font-sans)">›</span>
+      <button style="background:transparent;border:0;padding:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer" style-hover="color:var(--accent)">Catalogue</button><span style="color:var(--fg-muted);font:400 13px/16px var(--font-sans)">›</span>
+      <button style="background:transparent;border:0;padding:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer" style-hover="color:var(--accent)">Fasteners</button><span style="color:var(--fg-muted);font:400 13px/16px var(--font-sans)">›</span>
+      <span style="font:500 13px/16px var(--font-sans);color:var(--fg-primary)">Bolts</span>
+    </div>
+  </div>
+  <div style="flex:1;min-height:0;display:flex">
+    <aside style="width:320px;flex:0 0 320px;background:var(--bg-sidebar);border-right:1px solid var(--border-default);display:flex;flex-direction:column;overflow:hidden">
+      <div style="padding:12px 16px 10px;border-bottom:1px solid var(--border-default);display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <div><div style="font:500 13px/16px var(--font-sans)">Filters</div><div style="font:400 11px/14px var(--font-mono);color:var(--fg-muted);margin-top:2px">0 active · 1,436 bolts</div></div>
+        <button style="background:transparent;border:0;padding:3px 6px;font:500 11px/14px var(--font-sans);color:var(--accent);cursor:pointer;opacity:.38">Clear all</button>
+      </div>
+      <div style="display:flex;padding:0 12px;border-bottom:1px solid var(--border-default)">
+        <button style="padding:10px 12px;border:0;background:transparent;border-bottom:2px solid var(--accent);margin-bottom:-1px;font:500 13px/16px var(--font-sans);color:var(--accent);cursor:pointer">Filters</button>
+        <button style="padding:10px 12px;border:0;background:transparent;border-bottom:2px solid transparent;margin-bottom:-1px;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer">Columns</button>
+        <button style="padding:10px 12px;border:0;background:transparent;border-bottom:2px solid transparent;margin-bottom:-1px;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer">Manage</button>
+      </div>
+      <div style="flex:1;overflow-y:auto">
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Thread Size<span style="margin-left:auto;font:400 10px/14px var(--font-mono);color:var(--fg-muted)">common</span></div>
+          <div style="padding:0 14px 14px 32px;display:flex;gap:6px;flex-wrap:wrap">
+            <sc-for list="{{ threadsAll }}" as="t" hint-placeholder-count="8"><button style="height:26px;padding:0 11px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-primary);font:400 11px/16px var(--font-mono);cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)">{{ t }}</button></sc-for>
+            <button style="height:26px;padding:0 10px;border:0;background:transparent;color:var(--accent);font:500 11px/16px var(--font-sans);cursor:pointer">All sizes</button>
+          </div>
+        </div>
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Length</div>
+          <div style="padding:0 14px 14px 32px;display:flex;gap:6px;flex-wrap:wrap">
+            <sc-for list="{{ lengthChips }}" as="t" hint-placeholder-count="5"><button style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-primary);font:400 11px/16px var(--font-mono);cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)">{{ t }}</button></sc-for>
+          </div>
+        </div>
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Grade</div>
+          <div style="padding:0 14px 14px 32px;display:flex;gap:6px;flex-wrap:wrap">
+            <sc-for list="{{ gradeChips }}" as="t" hint-placeholder-count="5"><button style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-primary);font:400 11px/16px var(--font-mono);cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)">{{ t }}</button></sc-for>
+          </div>
+        </div>
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Head Type</div>
+          <div style="padding:0 14px 14px 32px;display:flex;gap:6px;flex-wrap:wrap">
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-sans)">Hex</span>
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-sans)">Socket head</span>
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-sans)">Flange</span>
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-sans)">Countersunk</span>
+          </div>
+        </div>
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Material</div>
+          <div style="padding:0 14px 14px 32px">
+            <div style="display:flex;align-items:center;gap:6px;height:28px;padding:0 8px;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);margin-bottom:8px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted)"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span style="font:400 11px/16px var(--font-sans);color:var(--fg-muted)">Search 24 materials</span></div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <label style="display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-sans);cursor:pointer"><span style="width:14px;height:14px;border-radius:3px;border:1.5px solid var(--border-strong);background:var(--bg-card)"></span>A2-70 Stainless<span style="margin-left:auto;font:400 11px/14px var(--font-mono);color:var(--fg-muted)">402</span></label>
+              <label style="display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-sans);cursor:pointer"><span style="width:14px;height:14px;border-radius:3px;border:1.5px solid var(--border-strong);background:var(--bg-card)"></span>Steel 8.8<span style="margin-left:auto;font:400 11px/14px var(--font-mono);color:var(--fg-muted)">516</span></label>
+            </div>
+          </div>
+        </div>
+        <div style="border-bottom:1px solid var(--border-default);display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted);transform:rotate(-90deg)"><path d="M6 9l6 6 6-6"/></svg>Standard Compliance</div>
+        <div style="border-bottom:1px solid var(--border-default);display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted);transform:rotate(-90deg)"><path d="M6 9l6 6 6-6"/></svg>Source</div>
+      </div>
+      <div style="flex:0 0 auto;border-top:1px solid var(--border-default);padding:8px">
+        <button style="width:100%;height:28px;border:0;background:transparent;border-radius:var(--radius);color:var(--fg-secondary);display:inline-flex;align-items:center;justify-content:center;gap:6px;font:500 11px/14px var(--font-sans);cursor:pointer" style-hover="background:var(--fill-hover);color:var(--accent)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="m15 6-6 6 6 6"/></svg>Collapse</button>
+      </div>
+    </aside>
+    <main style="flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden">
+      <div style="padding:24px 32px 12px;display:flex;align-items:baseline;gap:12px">
+        <div class="text-display-sm">Bolts</div><span style="font:400 11px/16px var(--font-mono);color:var(--fg-muted)">1,436 parts · 6 types</span>
+      </div>
+      <div style="padding:0 32px 16px">
+        <label for="cat-search-3a" style="display:block;font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin-bottom:8px">Search Bolts</label>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="flex:1;display:flex;align-items:center;gap:8px;height:32px;padding:0 12px;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted);flex:0 0 14px"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input id="cat-search-3a" type="text" placeholder="Part number, description, or spec — e.g. M16 hex ISO 4014" style="flex:1;height:30px;border:0;background:transparent;padding:0;font:400 12px/16px var(--font-sans);color:var(--fg-primary);outline:none">
+            <span style="font:400 10px/14px var(--font-mono);color:var(--fg-muted);border:1px solid var(--border-default);border-radius:var(--radius);padding:1px 5px">⌘K</span>
+          </div>
+          <button style="height:32px;padding:0 14px;border:1px solid var(--accent);background:var(--accent);color:var(--btn-primary-fg);border-radius:var(--radius);font:500 12px/16px var(--font-sans);cursor:pointer" style-hover="opacity:.88">Search</button>
+        </div>
+      </div>
+      <div style="flex:1;overflow-y:auto;padding:0 32px 32px">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+          <sc-for list="{{ boltTiles }}" as="tile" hint-placeholder-count="6">
+            <div style="border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);padding:16px;display:flex;flex-direction:column;gap:8px;min-height:120px;cursor:pointer" style-hover="border-color:var(--accent)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="font:500 13px/20px var(--font-sans)">{{ tile.name }}</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M9 18l6-6-6-6"/></svg></div>
+              <div style="font:400 12px/16px var(--font-sans);color:var(--fg-secondary);flex:1">{{ tile.desc }}</div>
+              <div style="font:400 11px/16px var(--font-mono);color:var(--fg-muted);border-top:1px solid var(--border-default);padding-top:8px">{{ tile.meta }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- 3b -->
+<div class="dv-opt" id="3b">
+<div class="dv-olabel"><a class="dv-oid" href="#3b">3b</a><span><strong style="font-weight:500;color:#211F1F">Step 4 · Table, filter sidebar left, no tree.</strong> Thread Size chip section with M16 selected sits above Length (10–14 cm), Head Type and Material. Center is the heavyweight table with pills and the armed Compare action; right is full part detail.</span></div>
+<div class="dv-card" style="width:1440px">
+<div data-screen-label="04b Table filter sidebar" style="height:820px;display:flex;flex-direction:column;background:var(--bg-page);color:var(--fg-primary);font-family:var(--font-sans);overflow:hidden">
+  <header style="height:48px;flex:0 0 48px;background:var(--bg-card);border-bottom:1px solid var(--border-default);display:flex;align-items:center;padding:0 16px;gap:24px">
+    <div style="display:flex;align-items:center;gap:8px"><img src="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/assets/datum-icon-transparent.png" alt="" style="height:22px;width:auto"><span style="font:500 15px/20px var(--font-sans)">Datum</span></div>
+    <span style="display:inline-flex;align-items:center;height:28px;padding:0 8px;border-left:1px solid var(--border-default);color:var(--fg-secondary);font:500 13px/16px var(--font-sans)">Adient</span>
+    <nav style="display:flex;align-items:center;gap:2px;height:48px;margin-left:8px">
+      <button style="display:inline-flex;align-items:center;gap:6px;padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid var(--accent);color:var(--accent);font:500 13px/16px var(--font-sans);cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>Search</button>
+      <button style="padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--fg-secondary);font:400 13px/16px var(--font-sans);cursor:pointer">Create</button>
+      <button style="padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--fg-secondary);font:400 13px/16px var(--font-sans);cursor:pointer">My Projects</button>
+    </nav>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      <button style="display:inline-flex;align-items:center;gap:8px;padding:0 8px 0 4px;height:28px;border-radius:var(--radius);background:transparent;border:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer"><span style="width:22px;height:22px;border-radius:var(--radius);background:var(--accent-tint);color:var(--accent);font:500 11px/22px var(--font-sans);text-align:center">MA</span><span>m.alvarez@adient.com</span></button>
+    </div>
+  </header>
+  <div style="height:36px;flex:0 0 36px;background:var(--bg-card);border-bottom:1px solid var(--border-default);display:flex;align-items:center;gap:10px;padding:0 16px">
+    <button aria-label="Back" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;padding:0;background:transparent;border:0;color:var(--fg-secondary);cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div style="display:flex;align-items:center;gap:6px">
+      <button style="background:transparent;border:0;padding:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer">Search</button><span style="color:var(--fg-muted);font:400 13px/16px var(--font-sans)">›</span>
+      <button style="background:transparent;border:0;padding:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer">Catalogue</button><span style="color:var(--fg-muted);font:400 13px/16px var(--font-sans)">›</span>
+      <button style="background:transparent;border:0;padding:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer">Fasteners</button><span style="color:var(--fg-muted);font:400 13px/16px var(--font-sans)">›</span>
+      <button style="background:transparent;border:0;padding:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer">Bolts</button><span style="color:var(--fg-muted);font:400 13px/16px var(--font-sans)">›</span>
+      <span style="font:500 13px/16px var(--font-mono);color:var(--fg-primary)">M16</span>
+    </div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      <button style="height:28px;padding:0 10px;border:1px solid var(--border-default);background:transparent;border-radius:var(--radius);cursor:pointer;color:var(--fg-secondary);font:500 12px/16px var(--font-sans);display:inline-flex;align-items:center;gap:6px" style-hover="background:var(--fill-hover);color:var(--fg-primary)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>Save View</button>
+    </div>
+  </div>
+  <div style="flex:1;min-height:0;display:flex">
+    <aside style="width:320px;flex:0 0 320px;background:var(--bg-sidebar);border-right:1px solid var(--border-default);display:flex;flex-direction:column;overflow:hidden">
+      <div style="padding:12px 16px 10px;border-bottom:1px solid var(--border-default);display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <div><div style="font:500 13px/16px var(--font-sans)">Filters</div><div style="font:400 11px/14px var(--font-mono);color:var(--fg-muted);margin-top:2px">3 active · 14 of 118</div></div>
+        <button style="background:transparent;border:0;padding:3px 6px;font:500 11px/14px var(--font-sans);color:var(--accent);cursor:pointer">Clear all</button>
+      </div>
+      <div style="display:flex;padding:0 12px;border-bottom:1px solid var(--border-default)">
+        <button style="padding:10px 12px;border:0;background:transparent;border-bottom:2px solid var(--accent);margin-bottom:-1px;font:500 13px/16px var(--font-sans);color:var(--accent);cursor:pointer">Filters</button>
+        <button style="padding:10px 12px;border:0;background:transparent;border-bottom:2px solid transparent;margin-bottom:-1px;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer">Columns</button>
+        <button style="padding:10px 12px;border:0;background:transparent;border-bottom:2px solid transparent;margin-bottom:-1px;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer">Manage</button>
+      </div>
+      <div style="flex:1;overflow-y:auto">
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Thread Size<span style="margin-left:auto;font:500 10px/14px var(--font-mono);padding:1px 5px;border-radius:99px;background:var(--accent);color:var(--btn-primary-fg)">1</span></div>
+          <div style="padding:0 14px 14px 32px;display:flex;gap:6px;flex-wrap:wrap">
+            <sc-for list="{{ threadsA }}" as="t" hint-placeholder-count="4"><button style="height:26px;padding:0 11px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-primary);font:400 11px/16px var(--font-mono);cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)">{{ t }}</button></sc-for>
+            <button style="height:26px;padding:0 11px;border:1px solid var(--accent);border-radius:99px;background:var(--accent);color:var(--btn-primary-fg);font:500 11px/16px var(--font-mono);cursor:pointer">M16</button>
+            <button style="height:26px;padding:0 11px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-primary);font:400 11px/16px var(--font-mono);cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)">M20</button>
+            <button style="height:26px;padding:0 11px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-primary);font:400 11px/16px var(--font-mono);cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)">M24</button>
+          </div>
+        </div>
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Length<span style="margin-left:auto;font:500 10px/14px var(--font-mono);padding:1px 5px;border-radius:99px;background:var(--accent);color:var(--btn-primary-fg)">1</span></div>
+          <div style="padding:0 14px 14px 32px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+              <div style="display:flex;border:1px solid var(--border-default);border-radius:var(--radius);overflow:hidden;flex:1">
+                <button style="flex:1;height:24px;border:0;border-right:1px solid var(--border-default);background:var(--accent);color:var(--btn-primary-fg);font:500 11px/16px var(--font-sans);cursor:pointer">Value</button>
+                <button style="flex:1;height:24px;border:0;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/16px var(--font-sans);cursor:pointer">Error %</button>
+              </div>
+              <span style="font:400 11px/16px var(--font-mono);color:var(--fg-muted)">cm</span>
+            </div>
+            <div style="position:relative;height:20px;margin-bottom:8px">
+              <div style="position:absolute;left:0;right:0;top:8px;height:3px;border-radius:99px;background:var(--bg-subtle)"></div>
+              <div style="position:absolute;left:28%;right:22%;top:8px;height:3px;border-radius:99px;background:var(--accent)"></div>
+              <div style="position:absolute;left:calc(28% - 5px);top:3px;width:11px;height:13px;border-radius:3px;background:var(--bg-card);border:1.5px solid var(--accent)"></div>
+              <div style="position:absolute;left:calc(78% - 5px);top:3px;width:11px;height:13px;border-radius:3px;background:var(--bg-card);border:1.5px solid var(--accent)"></div>
+              <div style="position:absolute;left:52%;top:0;width:1px;height:20px;background:var(--status-pass-fg)"></div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <div style="flex:1;display:flex;align-items:center;gap:6px;height:28px;padding:0 8px;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card)"><span style="font:400 10px/14px var(--font-sans);color:var(--fg-muted)">min</span><span style="font:500 11px/16px var(--font-mono)">10.0</span></div>
+              <div style="flex:1;display:flex;align-items:center;gap:6px;height:28px;padding:0 8px;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card)"><span style="font:400 10px/14px var(--font-sans);color:var(--fg-muted)">max</span><span style="font:500 11px/16px var(--font-mono)">14.0</span></div>
+            </div>
+            <div style="font:400 10px/14px var(--font-mono);color:var(--fg-muted);margin-top:6px">requirement target 12.0 cm</div>
+          </div>
+        </div>
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Head Type<span style="margin-left:auto;font:500 10px/14px var(--font-mono);padding:1px 5px;border-radius:99px;background:var(--accent);color:var(--btn-primary-fg)">2</span></div>
+          <div style="padding:0 14px 14px 32px;display:flex;gap:6px;flex-wrap:wrap">
+            <span style="height:24px;padding:0 10px;border:1px solid var(--accent);border-radius:99px;background:var(--accent);color:var(--btn-primary-fg);font:500 11px/24px var(--font-sans)">Hex</span>
+            <span style="height:24px;padding:0 10px;border:1px solid var(--accent);border-radius:99px;background:var(--accent);color:var(--btn-primary-fg);font:500 11px/24px var(--font-sans)">Socket head</span>
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-sans)">Flange</span>
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-sans)">Countersunk</span>
+          </div>
+        </div>
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Material</div>
+          <div style="padding:0 14px 14px 32px">
+            <div style="display:flex;align-items:center;gap:6px;height:28px;padding:0 8px;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);margin-bottom:8px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted)"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span style="font:400 11px/16px var(--font-sans);color:var(--fg-muted)">Search 24 materials</span></div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <label style="display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-sans);cursor:pointer"><span style="width:14px;height:14px;border-radius:3px;border:1.5px solid var(--border-strong);background:var(--bg-card)"></span>A2-70 Stainless<span style="margin-left:auto;font:400 11px/14px var(--font-mono);color:var(--fg-muted)">42</span></label>
+              <label style="display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-sans);cursor:pointer"><span style="width:14px;height:14px;border-radius:3px;border:1.5px solid var(--border-strong);background:var(--bg-card)"></span>Steel 8.8<span style="margin-left:auto;font:400 11px/14px var(--font-mono);color:var(--fg-muted)">38</span></label>
+              <label style="display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-sans);cursor:pointer"><span style="width:14px;height:14px;border-radius:3px;border:1.5px solid var(--border-strong);background:var(--bg-card)"></span>Steel 10.9<span style="margin-left:auto;font:400 11px/14px var(--font-mono);color:var(--fg-muted)">21</span></label>
+            </div>
+          </div>
+        </div>
+        <div style="border-bottom:1px solid var(--border-default);display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted);transform:rotate(-90deg)"><path d="M6 9l6 6 6-6"/></svg>Standard Compliance</div>
+        <div style="border-bottom:1px solid var(--border-default);display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted);transform:rotate(-90deg)"><path d="M6 9l6 6 6-6"/></svg>Source<span style="margin-left:auto;font:500 10px/14px var(--font-mono);padding:1px 5px;border-radius:99px;background:var(--accent);color:var(--btn-primary-fg)">1</span></div>
+      </div>
+      <div style="flex:0 0 auto;border-top:1px solid var(--border-default);padding:8px">
+        <button style="width:100%;height:28px;border:0;background:transparent;border-radius:var(--radius);color:var(--fg-secondary);display:inline-flex;align-items:center;justify-content:center;gap:6px;font:500 11px/14px var(--font-sans);cursor:pointer" style-hover="background:var(--fill-hover);color:var(--accent)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="m15 6-6 6 6 6"/></svg>Collapse</button>
+      </div>
+    </aside>
+    <main style="flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden">
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--bg-sidebar);border-bottom:1px solid var(--border-default)">
+        <span style="font:500 13px/18px var(--font-sans)">M16 Bolts</span>
+        <span style="margin-left:auto;font:400 11px/16px var(--font-mono);color:var(--fg-muted)">14 results · sorted by length</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--border-default);flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;flex:1">
+          <span style="display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 6px 0 9px;border-radius:99px;background:var(--accent-tint);color:var(--accent);font:500 11px/14px var(--font-sans)">Thread: M16<button aria-label="Remove" style="width:15px;height:15px;border:0;background:transparent;color:currentColor;border-radius:99px;display:grid;place-items:center;cursor:pointer"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></span>
+          <span style="display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 6px 0 9px;border-radius:99px;background:var(--accent-tint);color:var(--accent);font:500 11px/14px var(--font-sans)">Length: 10–14 cm<button aria-label="Remove" style="width:15px;height:15px;border:0;background:transparent;color:currentColor;border-radius:99px;display:grid;place-items:center;cursor:pointer"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></span>
+          <span style="display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 6px 0 9px;border-radius:99px;background:var(--accent-tint);color:var(--accent);font:500 11px/14px var(--font-sans)">Head: Hex, Socket head<button aria-label="Remove" style="width:15px;height:15px;border:0;background:transparent;color:currentColor;border-radius:99px;display:grid;place-items:center;cursor:pointer"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></span>
+        </div>
+        <button style="height:28px;padding:0 10px;border:1px solid var(--accent);background:var(--accent);color:var(--btn-primary-fg);font:500 12px/16px var(--font-sans);border-radius:var(--radius);cursor:pointer;display:inline-flex;align-items:center;gap:6px" style-hover="opacity:.88"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="3" y="4" width="7" height="16" rx="1"/><rect x="14" y="4" width="7" height="16" rx="1"/></svg>Compare 2 Selected</button>
+        <button style="height:28px;padding:0 10px;border:1px solid var(--border-default);background:transparent;color:var(--fg-secondary);font:500 12px/16px var(--font-sans);border-radius:var(--radius);cursor:pointer;display:inline-flex;align-items:center;gap:6px" style-hover="background:var(--fill-hover);color:var(--fg-primary)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>Export CSV</button>
+      </div>
+      <div style="flex:1;overflow:auto">
+        <table style="width:100%;border-collapse:collapse">
+          <thead>
+            <tr>
+              <th style="position:sticky;top:0;background:var(--bg-subtle);width:32px;padding:8px 0 8px 12px;border-bottom:1px solid var(--border-default)"><span style="display:block;width:14px;height:14px;border-radius:3px;border:1.5px solid var(--border-strong);background:var(--bg-card)"></span></th>
+              <th style="position:sticky;top:0;background:var(--bg-subtle);color:var(--fg-secondary);text-align:left;padding:8px 12px;font:500 11px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid var(--border-default);min-width:170px">Part Number</th>
+              <th style="position:sticky;top:0;background:var(--accent-tint);color:var(--accent);text-align:right;padding:8px 12px;font:500 11px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid var(--border-default)">Length ↑</th>
+              <th style="position:sticky;top:0;background:var(--bg-subtle);color:var(--fg-secondary);text-align:left;padding:8px 12px;font:500 11px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid var(--border-default)">Head Type</th>
+              <th style="position:sticky;top:0;background:var(--bg-subtle);color:var(--fg-secondary);text-align:left;padding:8px 12px;font:500 11px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid var(--border-default)">Material</th>
+              <th style="position:sticky;top:0;background:var(--bg-subtle);color:var(--fg-secondary);text-align:left;padding:8px 12px;font:500 11px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid var(--border-default)">Standard</th>
+              <th style="position:sticky;top:0;background:var(--bg-subtle);color:var(--fg-secondary);text-align:left;padding:8px 12px;font:500 11px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid var(--border-default)">Source</th>
+              <th style="position:sticky;top:0;background:var(--bg-subtle);text-align:right;padding:8px 12px;font:500 11px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-secondary);border-bottom:1px solid var(--border-default)">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{ rows }}" as="row" hint-placeholder-count="9">
+              <tr style="border-bottom:1px solid var(--border-default);background:{{ row.bg }}" style-hover="background:var(--fill-hover)">
+                <td style="padding:8px 0 8px 12px"><span style="display:block;width:14px;height:14px;border-radius:3px;border:1.5px solid {{ row.boxBorder }};background:{{ row.boxBg }};display:grid;place-items:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="{{ row.checkColor }}" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></span></td>
+                <td style="padding:8px 12px;font:500 12px/16px var(--font-mono)">{{ row.part }}</td>
+                <td style="padding:8px 12px;text-align:right;font:500 12px/16px var(--font-mono);background:color-mix(in srgb, var(--accent-tint) 45%, transparent)">{{ row.length }}</td>
+                <td style="padding:8px 12px;font:400 12px/16px var(--font-sans)">{{ row.head }}</td>
+                <td style="padding:8px 12px;font:400 12px/16px var(--font-sans)">{{ row.material }}</td>
+                <td style="padding:8px 12px;font:400 12px/16px var(--font-mono);color:var(--fg-secondary)">{{ row.standard }}</td>
+                <td style="padding:8px 12px"><span style="font:400 11px/14px var(--font-sans);padding:1px 7px;border-radius:99px;background:var(--bg-subtle);color:var(--fg-secondary)">{{ row.source }}</span></td>
+                <td style="padding:8px 12px;text-align:right;white-space:nowrap">
+                  <button title="Open in PLM" style="width:26px;height:26px;border:1px solid var(--border-default);background:var(--bg-card);border-radius:var(--radius);color:var(--fg-secondary);display:inline-grid;place-items:center;cursor:pointer;vertical-align:middle" style-hover="color:var(--accent);border-color:var(--accent)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></button>
+                  <button title="Compare" style="width:26px;height:26px;border:1px solid var(--border-default);background:var(--bg-card);border-radius:var(--radius);color:var(--fg-secondary);display:inline-grid;place-items:center;cursor:pointer;vertical-align:middle;margin-left:4px" style-hover="color:var(--accent);border-color:var(--accent)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="3" y="4" width="7" height="16" rx="1"/><rect x="14" y="4" width="7" height="16" rx="1"/></svg></button>
+                  <button title="Use This Part" style="width:26px;height:26px;border:1px solid var(--border-default);background:var(--bg-card);border-radius:var(--radius);color:var(--fg-secondary);display:inline-grid;place-items:center;cursor:pointer;vertical-align:middle;margin-left:4px" style-hover="color:var(--accent);border-color:var(--accent)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></button>
+                </td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-top:1px solid var(--border-default);background:var(--bg-sidebar)">
+        <span style="font:400 11px/16px var(--font-mono);color:var(--fg-muted)">Showing 1–9 of 14 · 10 per page</span>
+        <div style="display:flex;gap:4px">
+          <button style="min-width:26px;height:26px;padding:0 6px;border:1px solid var(--border-default);background:var(--bg-card);border-radius:var(--radius);font:400 11px/16px var(--font-mono);color:var(--fg-secondary);cursor:pointer">‹</button>
+          <button style="min-width:26px;height:26px;padding:0 6px;border:1px solid var(--accent);background:var(--accent);border-radius:var(--radius);font:400 11px/16px var(--font-mono);color:var(--btn-primary-fg);cursor:pointer">1</button>
+          <button style="min-width:26px;height:26px;padding:0 6px;border:1px solid var(--border-default);background:var(--bg-card);border-radius:var(--radius);font:400 11px/16px var(--font-mono);color:var(--fg-secondary);cursor:pointer">2</button>
+          <button style="min-width:26px;height:26px;padding:0 6px;border:1px solid var(--border-default);background:var(--bg-card);border-radius:var(--radius);font:400 11px/16px var(--font-mono);color:var(--fg-secondary);cursor:pointer">›</button>
+        </div>
+      </div>
+    </main>
+    <aside style="width:320px;flex:0 0 320px;background:var(--bg-sidebar);border-left:1px solid var(--border-default);display:flex;flex-direction:column;overflow:hidden">
+      <div style="padding:12px 16px;border-bottom:1px solid var(--border-default);display:flex;align-items:flex-start;gap:8px">
+        <div style="min-width:0"><div style="font:500 13px/18px var(--font-mono)">HX-M16-120-A2</div><div style="font:400 11px/14px var(--font-sans);color:var(--fg-muted);margin-top:2px">Hex bolt · M16 × 120 mm</div></div>
+        <button aria-label="Close" style="margin-left:auto;width:20px;height:20px;border:0;background:transparent;color:var(--fg-muted);display:grid;place-items:center;cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <div style="flex:1;overflow-y:auto">
+        <div style="padding:12px 16px;border-bottom:1px solid var(--border-default)">
+          <div style="border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);height:150px;overflow:hidden"><img src="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/assets/cad-preview-2.png" alt="" style="width:100%;height:150px;object-fit:contain;display:block"></div>
+          <div style="display:flex;gap:6px;margin-top:8px">
+            <button style="flex:1;height:28px;border:1px solid var(--border-default);background:transparent;border-radius:var(--radius);font:500 11px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer" style-hover="background:var(--fill-hover);color:var(--fg-primary)">Open in Viewer</button>
+            <button style="flex:1;height:28px;border:1px solid var(--border-default);background:transparent;border-radius:var(--radius);font:500 11px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer" style-hover="background:var(--fill-hover);color:var(--fg-primary)">Open in PLM</button>
+          </div>
+        </div>
+        <div style="padding:12px 16px;border-bottom:1px solid var(--border-default)">
+          <div style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin-bottom:8px">Specification</div>
+          <sc-for list="{{ detailSpecs }}" as="f" hint-placeholder-count="8">
+            <div style="display:flex;align-items:baseline;gap:12px;padding:4px 0;border-bottom:1px solid var(--border-default)"><span style="font:400 11px/16px var(--font-sans);color:var(--fg-secondary);width:104px;flex:0 0 104px">{{ f.k }}</span><span style="font:400 11px/16px var(--font-mono);color:var(--fg-primary)">{{ f.v }}</span></div>
+          </sc-for>
+        </div>
+        <div style="padding:12px 16px">
+          <div style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin-bottom:8px">PLM Data</div>
+          <sc-for list="{{ detailPlm }}" as="f" hint-placeholder-count="4">
+            <div style="display:flex;align-items:baseline;gap:12px;padding:4px 0;border-bottom:1px solid var(--border-default)"><span style="font:400 11px/16px var(--font-sans);color:var(--fg-secondary);width:104px;flex:0 0 104px">{{ f.k }}</span><span style="font:400 11px/16px var(--font-mono);color:var(--fg-primary)">{{ f.v }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="flex:0 0 auto;border-top:1px solid var(--border-default);padding:10px 16px">
+        <button style="width:100%;height:32px;border:1px solid var(--accent);background:var(--accent);color:var(--btn-primary-fg);border-radius:var(--radius);font:500 12px/16px var(--font-sans);cursor:pointer" style-hover="opacity:.88">Use This Part</button>
+      </div>
+    </aside>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: “in <a class="dv-oid" href="#3a">3a</a>, show the moment M16 is clicked — tiles collapsing into the table” · “add a Categories filter section to <a class="dv-oid" href="#3b">3b</a> so you can jump sideways to Screws” · “try <a class="dv-oid" href="#3b">3b</a> in compact density”</p>
+</section>
+
+<section class="dv-turn" id="t2">
+<div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Landing with the filter sidebar on the left</span></div>
+<p class="dv-intro">Same landing as <a class="dv-oid" href="#1a">1a</a>, but the left panel is the Filter Sidebar from the start — catalogue-wide attribute filters instead of the category tree — and the crumb trail reads <code style="font:400 11px var(--font-mono)">Search › Catalogue</code>. Category navigation now lives only in the center tiles; filtering a spec before picking a category is the alternate entry path (filter first, browse second).</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="2a">
+<div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a><span><strong style="font-weight:500;color:#211F1F">Catalogue landing · filter-first.</strong> Left: Filters / Columns / Manage with catalogue-scope filters (Category multi-search, Material, Source, Standard, Availability) — no tree. Center: category tiles, count footers respond to active filters. Right: empty until selection.</span></div>
+<div class="dv-card" style="width:1320px">
+<div data-screen-label="01b Catalogue landing filter-first" style="height:780px;display:flex;flex-direction:column;background:var(--bg-page);color:var(--fg-primary);font-family:var(--font-sans);overflow:hidden">
+
+  <header style="height:48px;flex:0 0 48px;background:var(--bg-card);border-bottom:1px solid var(--border-default);display:flex;align-items:center;padding:0 16px;gap:24px">
+    <div style="display:flex;align-items:center;gap:8px"><img src="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/assets/datum-icon-transparent.png" alt="" style="height:22px;width:auto"><span style="font:500 15px/20px var(--font-sans)">Datum</span></div>
+    <span style="display:inline-flex;align-items:center;height:28px;padding:0 8px;border-left:1px solid var(--border-default);color:var(--fg-secondary);font:500 13px/16px var(--font-sans)">Adient</span>
+    <nav style="display:flex;align-items:center;gap:2px;height:48px;margin-left:8px">
+      <button style="display:inline-flex;align-items:center;gap:6px;padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid var(--accent);color:var(--accent);font:500 13px/16px var(--font-sans);cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>Search</button>
+      <button style="padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--fg-secondary);font:400 13px/16px var(--font-sans);cursor:pointer">Create</button>
+      <button style="padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--fg-secondary);font:400 13px/16px var(--font-sans);cursor:pointer">My Projects</button>
+    </nav>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      <button style="height:28px;padding:0 10px;border:1px solid var(--border-default);background:transparent;border-radius:var(--radius);cursor:pointer;color:var(--fg-secondary);font:500 12px/16px var(--font-sans);display:inline-flex;align-items:center;gap:6px" style-hover="background:var(--fill-hover);color:var(--fg-primary)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg>Feedback</button>
+      <button style="display:inline-flex;align-items:center;gap:8px;padding:0 8px 0 4px;height:28px;border-radius:var(--radius);background:transparent;border:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer"><span style="width:22px;height:22px;border-radius:var(--radius);background:var(--accent-tint);color:var(--accent);font:500 11px/22px var(--font-sans);text-align:center">MA</span><span>m.alvarez@adient.com</span></button>
+    </div>
+  </header>
+
+  <div style="height:36px;flex:0 0 36px;background:var(--bg-card);border-bottom:1px solid var(--border-default);display:flex;align-items:center;gap:10px;padding:0 16px">
+    <button aria-label="Back" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;padding:0;background:transparent;border:0;color:var(--fg-secondary);cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div style="display:flex;align-items:center;gap:6px">
+      <button style="background:transparent;border:0;padding:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer" style-hover="color:var(--accent)">Search</button>
+      <span style="color:var(--fg-muted);font:400 13px/16px var(--font-sans)">›</span>
+      <span style="font:500 13px/16px var(--font-sans);color:var(--fg-primary)">Catalogue</span>
+    </div>
+  </div>
+
+  <div style="flex:1;min-height:0;display:flex">
+    <!-- LEFT: filter sidebar -->
+    <aside style="width:320px;flex:0 0 320px;background:var(--bg-sidebar);border-right:1px solid var(--border-default);display:flex;flex-direction:column;overflow:hidden">
+      <div style="padding:12px 16px 10px;border-bottom:1px solid var(--border-default);display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <div><div style="font:500 13px/16px var(--font-sans)">Filters</div><div style="font:400 11px/14px var(--font-mono);color:var(--fg-muted);margin-top:2px">0 active · 15,339 parts</div></div>
+        <button style="background:transparent;border:0;padding:3px 6px;font:500 11px/14px var(--font-sans);color:var(--accent);cursor:pointer;opacity:.38">Clear all</button>
+      </div>
+      <div style="display:flex;padding:0 12px;border-bottom:1px solid var(--border-default)">
+        <button style="padding:10px 12px;border:0;background:transparent;border-bottom:2px solid var(--accent);margin-bottom:-1px;font:500 13px/16px var(--font-sans);color:var(--accent);cursor:pointer">Filters</button>
+        <button style="padding:10px 12px;border:0;background:transparent;border-bottom:2px solid transparent;margin-bottom:-1px;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer">Columns</button>
+        <button style="padding:10px 12px;border:0;background:transparent;border-bottom:2px solid transparent;margin-bottom:-1px;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer">Manage</button>
+      </div>
+      <div style="flex:1;overflow-y:auto">
+        <!-- Category multi-search -->
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Category</div>
+          <div style="padding:0 14px 14px 32px">
+            <div style="display:flex;align-items:center;gap:6px;height:28px;padding:0 8px;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);margin-bottom:8px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted)"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span style="font:400 11px/16px var(--font-sans);color:var(--fg-muted)">Search 8 categories</span></div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <sc-for list="{{ catFilterRows }}" as="c" hint-placeholder-count="5">
+                <label style="display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-sans);cursor:pointer"><span style="width:14px;height:14px;border-radius:3px;border:1.5px solid var(--border-strong);background:var(--bg-card)"></span>{{ c.name }}<span style="margin-left:auto;font:400 11px/14px var(--font-mono);color:var(--fg-muted)">{{ c.count }}</span></label>
+              </sc-for>
+              <button style="background:transparent;border:0;padding:2px 0;font:500 11px/14px var(--font-sans);color:var(--accent);cursor:pointer;text-align:left">Show 3 more</button>
+            </div>
+          </div>
+        </div>
+        <!-- Material multi-search -->
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Material</div>
+          <div style="padding:0 14px 14px 32px">
+            <div style="display:flex;align-items:center;gap:6px;height:28px;padding:0 8px;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);margin-bottom:8px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted)"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span style="font:400 11px/16px var(--font-sans);color:var(--fg-muted)">Search 24 materials</span></div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <label style="display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-sans);cursor:pointer"><span style="width:14px;height:14px;border-radius:3px;border:1.5px solid var(--border-strong);background:var(--bg-card)"></span>A2-70 Stainless<span style="margin-left:auto;font:400 11px/14px var(--font-mono);color:var(--fg-muted)">1,204</span></label>
+              <label style="display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-sans);cursor:pointer"><span style="width:14px;height:14px;border-radius:3px;border:1.5px solid var(--border-strong);background:var(--bg-card)"></span>Steel 8.8<span style="margin-left:auto;font:400 11px/14px var(--font-mono);color:var(--fg-muted)">2,088</span></label>
+              <label style="display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-sans);cursor:pointer"><span style="width:14px;height:14px;border-radius:3px;border:1.5px solid var(--border-strong);background:var(--bg-card)"></span>Al 6061-T6<span style="margin-left:auto;font:400 11px/14px var(--font-mono);color:var(--fg-muted)">946</span></label>
+            </div>
+          </div>
+        </div>
+        <!-- Source multi-tag -->
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Source</div>
+          <div style="padding:0 14px 14px 32px;display:flex;gap:6px;flex-wrap:wrap">
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-sans)">CAD Library</span>
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-sans)">Teamcenter</span>
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-sans)">SharePoint</span>
+          </div>
+        </div>
+        <!-- Standard multi-tag -->
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Standard Compliance</div>
+          <div style="padding:0 14px 14px 32px;display:flex;gap:6px;flex-wrap:wrap">
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-mono)">ISO</span>
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-mono)">DIN</span>
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-mono)">SAE</span>
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-mono)">ANSI</span>
+          </div>
+        </div>
+        <!-- Availability level-seg -->
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Reuse Status</div>
+          <div style="padding:0 14px 14px 32px">
+            <div style="display:flex;border:1px solid var(--border-default);border-radius:var(--radius);overflow:hidden">
+              <button style="flex:1;padding:5px 4px;border:0;border-right:1px solid var(--border-default);background:var(--bg-card);color:var(--fg-secondary);font:400 11px/14px var(--font-sans);cursor:pointer">Approved</button>
+              <button style="flex:1;padding:5px 4px;border:0;border-right:1px solid var(--border-default);background:var(--bg-card);color:var(--fg-secondary);font:400 11px/14px var(--font-sans);cursor:pointer">Review</button>
+              <button style="flex:1;padding:5px 4px;border:0;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/14px var(--font-sans);cursor:pointer">Obsolete</button>
+            </div>
+          </div>
+        </div>
+        <div style="border-bottom:1px solid var(--border-default);display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted);transform:rotate(-90deg)"><path d="M6 9l6 6 6-6"/></svg>Program Usage</div>
+      </div>
+      <div style="flex:0 0 auto;border-top:1px solid var(--border-default);padding:8px">
+        <button style="width:100%;height:28px;border:0;background:transparent;border-radius:var(--radius);color:var(--fg-secondary);display:inline-flex;align-items:center;justify-content:center;gap:6px;font:500 11px/14px var(--font-sans);cursor:pointer" style-hover="background:var(--fill-hover);color:var(--accent)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="m15 6-6 6 6 6"/></svg>Collapse</button>
+      </div>
+    </aside>
+
+    <!-- CENTER -->
+    <main style="flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden">
+      <div style="padding:24px 32px 16px">
+        <div class="text-display-sm" style="margin-bottom:4px">Parts Catalogue</div>
+        <div style="font:400 12px/16px var(--font-sans);color:var(--fg-secondary)">Pick a category, or narrow by spec first and the counts follow.</div>
+      </div>
+      <div style="padding:0 32px 16px">
+        <label for="cat-search-2a" style="display:block;font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin-bottom:8px">Search Catalogue</label>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="flex:1;display:flex;align-items:center;gap:8px;height:32px;padding:0 12px;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted);flex:0 0 14px"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input id="cat-search-2a" type="text" placeholder="Part number, description, or spec — e.g. M16 hex ISO 4014" style="flex:1;height:30px;border:0;background:transparent;padding:0;font:400 12px/16px var(--font-sans);color:var(--fg-primary);outline:none">
+            <span style="font:400 10px/14px var(--font-mono);color:var(--fg-muted);border:1px solid var(--border-default);border-radius:var(--radius);padding:1px 5px">⌘K</span>
+          </div>
+          <button style="height:32px;padding:0 14px;border:1px solid var(--accent);background:var(--accent);color:var(--btn-primary-fg);border-radius:var(--radius);font:500 12px/16px var(--font-sans);cursor:pointer" style-hover="opacity:.88">Search</button>
+        </div>
+      </div>
+      <div style="flex:1;overflow-y:auto;padding:0 32px 32px">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+          <sc-for list="{{ tiles }}" as="tile" hint-placeholder-count="8">
+            <div style="border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);padding:16px;display:flex;flex-direction:column;gap:8px;min-height:124px;cursor:pointer" style-hover="border-color:var(--accent)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="font:500 13px/20px var(--font-sans)">{{ tile.name }}</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M9 18l6-6-6-6"/></svg></div>
+              <div style="font:400 12px/16px var(--font-sans);color:var(--fg-secondary);flex:1">{{ tile.desc }}</div>
+              <div style="font:400 11px/16px var(--font-mono);color:var(--fg-muted);border-top:1px solid var(--border-default);padding-top:8px">{{ tile.meta }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </main>
+
+  </div>
+</div>
+</div>
+<div class="dv-note">Trade-off: filter-first means no persistent tree, so the crumb strip is the only way back up the hierarchy — worth pairing with the tree returning once you're inside a category (as in <a class="dv-oid" href="#1f">1f</a>, which pins a small tree above the tabs).</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: “make <a class="dv-oid" href="#2a">2a</a> the default and drop the tree everywhere” · “show <a class="dv-oid" href="#2a">2a</a> with two filters active and the tiles re-counted” · “put the tree and filters in the same sidebar as stacked sections”</p>
+</section>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Parts Catalogue — step walkthrough</span></div>
+<p class="dv-intro">Every screen is Left / Center / Right with the panels always present. Catalogue sits as a fourth mode under Search (your pick) — the left sidebar pins the mode list, then the category tree above the Filters / Columns / Manage tabs. Steps 1–4 are full fidelity; step 5 is shown in the two compare treatments you asked for, with step 6's <em>Use This Part</em> action in place. Quick-select chips appear in three treatments (<a class="dv-oid" href="#1c">1c</a>, <a class="dv-oid" href="#1d">1d</a>, <a class="dv-oid" href="#1e">1e</a>) — the only genuinely new pattern here.</p>
+<div class="dv-opts">
+
+<!-- ============ 1a — Step 1 landing ============ -->
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a><span><strong style="font-weight:500;color:#211F1F">Step 1 · Catalogue landing.</strong> Center: top-level category tiles on the Launchpad card pattern — primary tile accent-filled, rest bordered, mono meta footer. Left: same categories as a tree, in sync. Right: empty, never gone.</span></div>
+<div class="dv-card" style="width:1320px">
+<div data-screen-label="01 Catalogue landing" style="height:780px;display:flex;flex-direction:column;background:var(--bg-page);color:var(--fg-primary);font-family:var(--font-sans);overflow:hidden">
+
+  <header style="height:48px;flex:0 0 48px;background:var(--bg-card);border-bottom:1px solid var(--border-default);display:flex;align-items:center;padding:0 16px;gap:24px">
+    <div style="display:flex;align-items:center;gap:8px"><img src="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/assets/datum-icon-transparent.png" alt="" style="height:22px;width:auto"><span style="font:500 15px/20px var(--font-sans)">Datum</span></div>
+    <span style="display:inline-flex;align-items:center;height:28px;padding:0 8px;border-left:1px solid var(--border-default);color:var(--fg-secondary);font:500 13px/16px var(--font-sans)">Adient</span>
+    <nav style="display:flex;align-items:center;gap:2px;height:48px;margin-left:8px">
+      <button style="display:inline-flex;align-items:center;gap:6px;padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid var(--accent);color:var(--accent);font:500 13px/16px var(--font-sans);cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>Search</button>
+      <button style="display:inline-flex;align-items:center;gap:6px;padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--fg-secondary);font:400 13px/16px var(--font-sans);cursor:pointer" style-hover="color:var(--fg-primary)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Create</button>
+      <button style="display:inline-flex;align-items:center;gap:6px;padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--fg-secondary);font:400 13px/16px var(--font-sans);cursor:pointer" style-hover="color:var(--fg-primary)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>My Projects</button>
+    </nav>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      <button style="height:28px;padding:0 10px;border:1px solid var(--border-default);background:transparent;border-radius:var(--radius);cursor:pointer;color:var(--fg-secondary);font:500 12px/16px var(--font-sans);display:inline-flex;align-items:center;gap:6px" style-hover="background:var(--fill-hover);color:var(--fg-primary)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg>Feedback</button>
+      <button style="display:inline-flex;align-items:center;gap:8px;padding:0 8px 0 4px;height:28px;border-radius:var(--radius);background:transparent;border:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer" style-hover="background:var(--fill-hover)"><span style="width:22px;height:22px;border-radius:var(--radius);background:var(--accent-tint);color:var(--accent);font:500 11px/22px var(--font-sans);text-align:center">MA</span><span>m.alvarez@adient.com</span></button>
+    </div>
+  </header>
+
+  <div style="height:36px;flex:0 0 36px;background:var(--bg-card);border-bottom:1px solid var(--border-default);display:flex;align-items:center;gap:10px;padding:0 16px">
+    <button aria-label="Back" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;padding:0;background:transparent;border:0;color:var(--fg-secondary);cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div style="display:flex;align-items:center;gap:6px"><span style="font:500 13px/16px var(--font-sans)">Catalogue</span></div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      <button style="height:28px;padding:0 10px;border:1px solid var(--border-default);background:transparent;border-radius:var(--radius);cursor:pointer;color:var(--fg-secondary);font:500 12px/16px var(--font-sans);display:inline-flex;align-items:center;gap:6px" style-hover="background:var(--fill-hover);color:var(--fg-primary)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>Search Catalogue</button>
+    </div>
+  </div>
+
+  <div style="flex:1;min-height:0;display:flex">
+    <!-- LEFT -->
+    <aside style="width:288px;flex:0 0 288px;background:var(--bg-sidebar);border-right:1px solid var(--border-default);display:flex;flex-direction:column;overflow:hidden">
+      <div style="padding:12px 14px 8px;border-bottom:1px solid var(--border-default)">
+        <div style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin-bottom:8px">Search Modes</div>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <button style="display:flex;align-items:center;gap:8px;height:28px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-secondary);font:400 12px/16px var(--font-sans);cursor:pointer;text-align:left" style-hover="background:var(--fill-hover);color:var(--fg-primary)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 2 2 7l10 5 10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>Assembly Search</button>
+          <button style="display:flex;align-items:center;gap:8px;height:28px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-secondary);font:400 12px/16px var(--font-sans);cursor:pointer;text-align:left" style-hover="background:var(--fill-hover);color:var(--fg-primary)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg>Part Search</button>
+          <button style="display:flex;align-items:center;gap:8px;height:28px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-secondary);font:400 12px/16px var(--font-sans);cursor:pointer;text-align:left" style-hover="background:var(--fill-hover);color:var(--fg-primary)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="3" y="3" width="13" height="13" rx="2"/><path d="M8 21h11a2 2 0 0 0 2-2V8"/></svg>Find Duplicates</button>
+          <button style="display:flex;align-items:center;gap:8px;height:28px;padding:0 8px;border:0;border-radius:var(--radius);background:var(--fill-selected);color:var(--accent);font:500 12px/16px var(--font-sans);cursor:pointer;text-align:left"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Parts Catalogue</button>
+        </div>
+      </div>
+      <div style="padding:12px 14px 8px;display:flex;align-items:center;justify-content:space-between">
+        <div style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted)">Categories</div>
+        <span style="font:400 10px/14px var(--font-mono);color:var(--fg-muted)">8 groups</span>
+      </div>
+      <div style="flex:1;overflow-y:auto;padding:0 8px 8px">
+        <sc-for list="{{ tree }}" as="node" hint-placeholder-count="8">
+          <button style="display:flex;align-items:center;gap:8px;width:100%;height:28px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-primary);font:400 12px/16px var(--font-sans);cursor:pointer;text-align:left" style-hover="background:var(--fill-hover)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted);transform:rotate(-90deg)"><path d="M6 9l6 6 6-6"/></svg>
+            {{ node.name }}<span style="margin-left:auto;font:400 10px/14px var(--font-mono);color:var(--fg-muted)">{{ node.count }}</span>
+          </button>
+        </sc-for>
+      </div>
+      <div style="flex:0 0 auto;border-top:1px solid var(--border-default);padding:8px">
+        <button style="width:100%;height:28px;border:0;background:transparent;border-radius:var(--radius);color:var(--fg-secondary);display:inline-flex;align-items:center;justify-content:center;gap:6px;font:500 11px/14px var(--font-sans);cursor:pointer" style-hover="background:var(--fill-hover);color:var(--accent)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="m15 6-6 6 6 6"/></svg>Collapse</button>
+      </div>
+    </aside>
+
+    <!-- CENTER -->
+    <main style="flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden">
+      <div style="padding:24px 32px 16px">
+        <div class="text-display-sm" style="margin-bottom:4px">Parts Catalogue</div>
+        <div style="font:400 12px/16px var(--font-sans);color:var(--fg-secondary)">Browse what the company already has by category and spec. No CAD upload needed.</div>
+      </div>
+      <div style="flex:1;overflow-y:auto;padding:0 32px 32px">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+          <sc-for list="{{ tiles }}" as="tile" hint-placeholder-count="8">
+            <div style="border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);padding:16px;display:flex;flex-direction:column;gap:8px;min-height:124px;cursor:pointer" style-hover="border-color:var(--accent)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+                <span style="font:500 13px/20px var(--font-sans)">{{ tile.name }}</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M9 18l6-6-6-6"/></svg>
+              </div>
+              <div style="font:400 12px/16px var(--font-sans);color:var(--fg-secondary);flex:1">{{ tile.desc }}</div>
+              <div style="font:400 11px/16px var(--font-mono);color:var(--fg-muted);border-top:1px solid var(--border-default);padding-top:8px">{{ tile.meta }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </main>
+
+    <!-- RIGHT -->
+    <aside style="width:300px;flex:0 0 300px;background:var(--bg-sidebar);border-left:1px solid var(--border-default);display:flex;flex-direction:column">
+      <div style="padding:14px 16px;border-bottom:1px solid var(--border-default);font:500 13px/16px var(--font-sans)">Detail</div>
+      <div style="flex:1;display:grid;place-items:center;padding:32px 24px;text-align:center">
+        <div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="color:var(--fg-muted)"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+          <div style="font:400 12px/16px var(--font-sans);color:var(--fg-muted);margin-top:8px">Select a category or part to see its detail here.</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ============ 1b — Step 2 drill ============ -->
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a><span><strong style="font-weight:500;color:#211F1F">Step 2 · Fasteners › Bolts.</strong> Tiles narrow to the next level, crumb strip reads <code style="font:400 11px var(--font-mono)">Catalogue › Fasteners › Bolts</code>, and the left tree is expanded to the same position — bidirectional sync, same principle as the CAD tree ↔ canvas link.</span></div>
+<div class="dv-card" style="width:1320px">
+<div data-screen-label="02 Drill to Bolts" style="height:780px;display:flex;flex-direction:column;background:var(--bg-page);color:var(--fg-primary);font-family:var(--font-sans);overflow:hidden">
+
+  <header style="height:48px;flex:0 0 48px;background:var(--bg-card);border-bottom:1px solid var(--border-default);display:flex;align-items:center;padding:0 16px;gap:24px">
+    <div style="display:flex;align-items:center;gap:8px"><img src="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/assets/datum-icon-transparent.png" alt="" style="height:22px;width:auto"><span style="font:500 15px/20px var(--font-sans)">Datum</span></div>
+    <span style="display:inline-flex;align-items:center;height:28px;padding:0 8px;border-left:1px solid var(--border-default);color:var(--fg-secondary);font:500 13px/16px var(--font-sans)">Adient</span>
+    <nav style="display:flex;align-items:center;gap:2px;height:48px;margin-left:8px">
+      <button style="display:inline-flex;align-items:center;gap:6px;padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid var(--accent);color:var(--accent);font:500 13px/16px var(--font-sans);cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>Search</button>
+      <button style="display:inline-flex;align-items:center;gap:6px;padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--fg-secondary);font:400 13px/16px var(--font-sans);cursor:pointer">Create</button>
+      <button style="display:inline-flex;align-items:center;gap:6px;padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--fg-secondary);font:400 13px/16px var(--font-sans);cursor:pointer">My Projects</button>
+    </nav>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      <button style="display:inline-flex;align-items:center;gap:8px;padding:0 8px 0 4px;height:28px;border-radius:var(--radius);background:transparent;border:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer"><span style="width:22px;height:22px;border-radius:var(--radius);background:var(--accent-tint);color:var(--accent);font:500 11px/22px var(--font-sans);text-align:center">MA</span><span>m.alvarez@adient.com</span></button>
+    </div>
+  </header>
+
+  <div style="height:36px;flex:0 0 36px;background:var(--bg-card);border-bottom:1px solid var(--border-default);display:flex;align-items:center;gap:10px;padding:0 16px">
+    <button aria-label="Back" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;padding:0;background:transparent;border:0;color:var(--fg-secondary);cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div style="display:flex;align-items:center;gap:6px">
+      <button style="background:transparent;border:0;padding:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer" style-hover="color:var(--accent)">Catalogue</button>
+      <span style="color:var(--fg-muted);font:400 13px/16px var(--font-sans)">›</span>
+      <button style="background:transparent;border:0;padding:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer" style-hover="color:var(--accent)">Fasteners</button>
+      <span style="color:var(--fg-muted);font:400 13px/16px var(--font-sans)">›</span>
+      <span style="font:500 13px/16px var(--font-sans);color:var(--fg-primary)">Bolts</span>
+    </div>
+  </div>
+
+  <div style="flex:1;min-height:0;display:flex">
+    <aside style="width:288px;flex:0 0 288px;background:var(--bg-sidebar);border-right:1px solid var(--border-default);display:flex;flex-direction:column;overflow:hidden">
+      <div style="padding:12px 14px 8px;border-bottom:1px solid var(--border-default)">
+        <div style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin-bottom:8px">Search Modes</div>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <button style="display:flex;align-items:center;gap:8px;height:28px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-secondary);font:400 12px/16px var(--font-sans);cursor:pointer;text-align:left">Assembly Search</button>
+          <button style="display:flex;align-items:center;gap:8px;height:28px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-secondary);font:400 12px/16px var(--font-sans);cursor:pointer;text-align:left">Part Search</button>
+          <button style="display:flex;align-items:center;gap:8px;height:28px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-secondary);font:400 12px/16px var(--font-sans);cursor:pointer;text-align:left">Find Duplicates</button>
+          <button style="display:flex;align-items:center;gap:8px;height:28px;padding:0 8px;border:0;border-radius:var(--radius);background:var(--fill-selected);color:var(--accent);font:500 12px/16px var(--font-sans);cursor:pointer;text-align:left">Parts Catalogue</button>
+        </div>
+      </div>
+      <div style="padding:12px 14px 8px;font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted)">Categories</div>
+      <div style="flex:1;overflow-y:auto;padding:0 8px 8px">
+        <button style="display:flex;align-items:center;gap:8px;width:100%;height:28px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-primary);font:500 12px/16px var(--font-sans);cursor:pointer;text-align:left">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Fasteners<span style="margin-left:auto;font:400 10px/14px var(--font-mono);color:var(--fg-muted)">4,182</span>
+        </button>
+        <div style="padding-left:12px;border-left:1px solid var(--border-default);margin:2px 0 2px 14px;display:flex;flex-direction:column;gap:2px">
+          <button style="display:flex;align-items:center;gap:8px;width:100%;height:26px;padding:0 8px;border:0;border-radius:var(--radius);background:var(--fill-selected);color:var(--accent);font:500 12px/16px var(--font-sans);cursor:pointer;text-align:left">Bolts<span style="margin-left:auto;font:400 10px/14px var(--font-mono)">1,436</span></button>
+          <button style="display:flex;align-items:center;gap:8px;width:100%;height:26px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-primary);font:400 12px/16px var(--font-sans);cursor:pointer;text-align:left" style-hover="background:var(--fill-hover)">Nuts<span style="margin-left:auto;font:400 10px/14px var(--font-mono);color:var(--fg-muted)">804</span></button>
+          <button style="display:flex;align-items:center;gap:8px;width:100%;height:26px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-primary);font:400 12px/16px var(--font-sans);cursor:pointer;text-align:left" style-hover="background:var(--fill-hover)">Washers<span style="margin-left:auto;font:400 10px/14px var(--font-mono);color:var(--fg-muted)">612</span></button>
+          <button style="display:flex;align-items:center;gap:8px;width:100%;height:26px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-primary);font:400 12px/16px var(--font-sans);cursor:pointer;text-align:left" style-hover="background:var(--fill-hover)">Screws<span style="margin-left:auto;font:400 10px/14px var(--font-mono);color:var(--fg-muted)">958</span></button>
+          <button style="display:flex;align-items:center;gap:8px;width:100%;height:26px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-primary);font:400 12px/16px var(--font-sans);cursor:pointer;text-align:left" style-hover="background:var(--fill-hover)">Rivets<span style="margin-left:auto;font:400 10px/14px var(--font-mono);color:var(--fg-muted)">231</span></button>
+          <button style="display:flex;align-items:center;gap:8px;width:100%;height:26px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-primary);font:400 12px/16px var(--font-sans);cursor:pointer;text-align:left" style-hover="background:var(--fill-hover)">Pins<span style="margin-left:auto;font:400 10px/14px var(--font-mono);color:var(--fg-muted)">141</span></button>
+        </div>
+        <sc-for list="{{ treeRest }}" as="node" hint-placeholder-count="7">
+          <button style="display:flex;align-items:center;gap:8px;width:100%;height:28px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-primary);font:400 12px/16px var(--font-sans);cursor:pointer;text-align:left" style-hover="background:var(--fill-hover)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted);transform:rotate(-90deg)"><path d="M6 9l6 6 6-6"/></svg>{{ node.name }}<span style="margin-left:auto;font:400 10px/14px var(--font-mono);color:var(--fg-muted)">{{ node.count }}</span>
+          </button>
+        </sc-for>
+      </div>
+    </aside>
+
+    <main style="flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden">
+      <div style="padding:20px 32px 12px;display:flex;align-items:baseline;gap:12px">
+        <div class="text-display-sm">Bolts</div>
+        <span style="font:400 11px/16px var(--font-mono);color:var(--fg-muted)">1,436 parts · 6 types</span>
+      </div>
+      <div style="flex:1;overflow-y:auto;padding:0 32px 32px">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+          <sc-for list="{{ boltTiles }}" as="tile" hint-placeholder-count="6">
+            <div style="border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);padding:16px;display:flex;flex-direction:column;gap:8px;min-height:120px;cursor:pointer" style-hover="border-color:var(--accent)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="font:500 13px/20px var(--font-sans)">{{ tile.name }}</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M9 18l6-6-6-6"/></svg></div>
+              <div style="font:400 12px/16px var(--font-sans);color:var(--fg-secondary);flex:1">{{ tile.desc }}</div>
+              <div style="font:400 11px/16px var(--font-mono);color:var(--fg-muted);border-top:1px solid var(--border-default);padding-top:8px">{{ tile.meta }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </main>
+
+    <aside style="width:300px;flex:0 0 300px;background:var(--bg-sidebar);border-left:1px solid var(--border-default);display:flex;flex-direction:column">
+      <div style="padding:14px 16px;border-bottom:1px solid var(--border-default);font:500 13px/16px var(--font-sans)">Detail</div>
+      <div style="flex:1;display:grid;place-items:center;padding:32px 24px;text-align:center"><div style="font:400 12px/16px var(--font-sans);color:var(--fg-muted)">No part selected.</div></div>
+    </aside>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ============ 1c — chips variant A ============ -->
+<div class="dv-opt" id="1c">
+<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a><span><strong style="font-weight:500;color:#211F1F">Step 3 · Quick-select, treatment A — pill row.</strong> Common thread sizes as a labelled pill row above the tile grid. Cheapest to build, reads as chrome not filter, one line of height. Clicking M16 collapses the grid into the table.</span></div>
+<div class="dv-card" style="width:640px">
+<div style="background:var(--bg-page);color:var(--fg-primary);font-family:var(--font-sans);padding:20px 24px 24px">
+  <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:16px"><div class="text-display-sm">Bolts</div><span style="font:400 11px/16px var(--font-mono);color:var(--fg-muted)">1,436 parts</span></div>
+  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:12px;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card)">
+    <span style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin-right:4px">Thread size</span>
+    <sc-for list="{{ threadsA }}" as="t" hint-placeholder-count="7">
+      <button style="height:26px;padding:0 12px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-primary);font:400 12px/16px var(--font-mono);cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)">{{ t }}</button>
+    </sc-for>
+    <button style="height:26px;padding:0 12px;border:1px solid var(--accent);border-radius:99px;background:var(--accent);color:var(--btn-primary-fg);font:500 12px/16px var(--font-mono);cursor:pointer">M16</button>
+    <button style="height:26px;padding:0 10px;border:0;background:transparent;color:var(--fg-secondary);font:400 11px/16px var(--font-sans);cursor:pointer" style-hover="color:var(--accent)">All sizes ›</button>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px">
+    <div style="border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);padding:12px;min-height:74px"><div style="font:500 13px/20px var(--font-sans)">Hex Bolts</div><div style="font:400 11px/16px var(--font-mono);color:var(--fg-muted);margin-top:16px">612 parts</div></div>
+    <div style="border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);padding:12px;min-height:74px"><div style="font:500 13px/20px var(--font-sans)">Socket Head</div><div style="font:400 11px/16px var(--font-mono);color:var(--fg-muted);margin-top:16px">341 parts</div></div>
+  </div>
+</div>
+</div>
+<div class="dv-note">Fits any category — chips just render from whichever attribute is flagged “common values” for that node.</div>
+</div>
+
+<!-- ============ 1d — chips variant B ============ -->
+<div class="dv-opt" id="1d">
+<div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a><span><strong style="font-weight:500;color:#211F1F">Treatment B — labelled spec strip.</strong> Two or three spec axes stacked, each its own row of chips (thread size, length class, grade). Scales past one attribute and previews the filter model; taller and closer to the Filters tab it's meant to shortcut.</span></div>
+<div class="dv-card" style="width:640px">
+<div style="background:var(--bg-page);color:var(--fg-primary);font-family:var(--font-sans);padding:20px 24px 24px">
+  <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:16px"><div class="text-display-sm">Bolts</div><span style="font:400 11px/16px var(--font-mono);color:var(--fg-muted)">1,436 parts</span></div>
+  <div style="border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);overflow:hidden">
+    <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid var(--border-default);background:var(--bg-subtle)">
+      <span style="font:500 11px/14px var(--font-sans)">Quick select</span>
+      <span style="font:400 10px/14px var(--font-mono);color:var(--fg-muted)">common values · full filters in sidebar</span>
+      <button style="margin-left:auto;background:transparent;border:0;font:500 11px/14px var(--font-sans);color:var(--accent);cursor:pointer">Clear</button>
+    </div>
+    <div style="display:grid;grid-template-columns:88px 1fr;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid var(--border-default)">
+      <span style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted)">Thread</span>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <sc-for list="{{ threadsA }}" as="t" hint-placeholder-count="7"><button style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-primary);font:400 11px/16px var(--font-mono);cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)">{{ t }}</button></sc-for>
+        <button style="height:24px;padding:0 10px;border:1px solid var(--accent);border-radius:99px;background:var(--accent);color:var(--btn-primary-fg);font:500 11px/16px var(--font-mono);cursor:pointer">M16</button>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:88px 1fr;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid var(--border-default)">
+      <span style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted)">Length</span>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <sc-for list="{{ lengthChips }}" as="t" hint-placeholder-count="5"><button style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-primary);font:400 11px/16px var(--font-mono);cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)">{{ t }}</button></sc-for>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:88px 1fr;align-items:center;gap:8px;padding:10px 12px">
+      <span style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted)">Grade</span>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <sc-for list="{{ gradeChips }}" as="t" hint-placeholder-count="4"><button style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-primary);font:400 11px/16px var(--font-mono);cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)">{{ t }}</button></sc-for>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="dv-note">Per-category config: each node declares 0–3 quick-select axes. Categories with none simply render no strip.</div>
+</div>
+
+<!-- ============ 1e — chips variant C ============ -->
+<div class="dv-opt" id="1e">
+<div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a><span><strong style="font-weight:500;color:#211F1F">Treatment C — chips inside the tree.</strong> Sizes live as leaf chips under the Bolts node, so narrowing happens where hierarchy already lives and the crumb becomes <code style="font:400 11px var(--font-mono)">… › Bolts › M16</code> naturally. Costs sidebar height and hides the chips when the tree is collapsed.</span></div>
+<div class="dv-card" style="width:320px">
+<div style="background:var(--bg-sidebar);color:var(--fg-primary);font-family:var(--font-sans);padding:12px 8px 16px;min-height:340px">
+  <div style="padding:0 6px 8px;font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted)">Categories</div>
+  <button style="display:flex;align-items:center;gap:8px;width:100%;height:28px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-primary);font:500 12px/16px var(--font-sans);cursor:pointer;text-align:left"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Fasteners<span style="margin-left:auto;font:400 10px/14px var(--font-mono);color:var(--fg-muted)">4,182</span></button>
+  <div style="padding-left:12px;border-left:1px solid var(--border-default);margin:2px 0 2px 14px">
+    <button style="display:flex;align-items:center;gap:8px;width:100%;height:26px;padding:0 8px;border:0;border-radius:var(--radius);background:var(--fill-selected);color:var(--accent);font:500 12px/16px var(--font-sans);cursor:pointer;text-align:left"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>Bolts<span style="margin-left:auto;font:400 10px/14px var(--font-mono)">1,436</span></button>
+    <div style="padding:8px 8px 10px 20px">
+      <div style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin-bottom:6px">Thread size</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <sc-for list="{{ threadsA }}" as="t" hint-placeholder-count="7"><button style="height:24px;padding:0 9px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-primary);font:400 11px/16px var(--font-mono);cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)">{{ t }}</button></sc-for>
+        <button style="height:24px;padding:0 9px;border:1px solid var(--accent);border-radius:99px;background:var(--accent);color:var(--btn-primary-fg);font:500 11px/16px var(--font-mono);cursor:pointer">M16</button>
+      </div>
+    </div>
+    <button style="display:flex;align-items:center;gap:8px;width:100%;height:26px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-primary);font:400 12px/16px var(--font-sans);cursor:pointer;text-align:left" style-hover="background:var(--fill-hover)">Nuts<span style="margin-left:auto;font:400 10px/14px var(--font-mono);color:var(--fg-muted)">804</span></button>
+    <button style="display:flex;align-items:center;gap:8px;width:100%;height:26px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-primary);font:400 12px/16px var(--font-sans);cursor:pointer;text-align:left" style-hover="background:var(--fill-hover)">Washers<span style="margin-left:auto;font:400 10px/14px var(--font-mono);color:var(--fg-muted)">612</span></button>
+  </div>
+  <button style="display:flex;align-items:center;gap:8px;width:100%;height:28px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-primary);font:400 12px/16px var(--font-sans);cursor:pointer;text-align:left" style-hover="background:var(--fill-hover)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted);transform:rotate(-90deg)"><path d="M6 9l6 6 6-6"/></svg>Bearings<span style="margin-left:auto;font:400 10px/14px var(--font-mono);color:var(--fg-muted)">2,310</span></button>
+</div>
+</div>
+<div class="dv-note">My recommendation: <a class="dv-oid" href="#1c">1c</a> for launch, with <a class="dv-oid" href="#1d">1d</a>'s config model behind it so a category can declare more than one axis later.</div>
+</div>
+
+<!-- ============ 1f — Step 4 table ============ -->
+<div class="dv-opt" id="1f">
+<div class="dv-olabel"><a class="dv-oid" href="#1f">1f</a><span><strong style="font-weight:500;color:#211F1F">Step 4 · Table + attribute filters.</strong> Heavyweight table of M16 bolts; Filters tab active with Length set to 10–14 cm (range-units), Head type multi-tag, Material multi-search, Standard multi-tag. Active filters raise pills above the table. Right panel shows full part detail for the highlighted row; two rows checked, so the Compare action is armed.</span></div>
+<div class="dv-card" style="width:1440px">
+<div data-screen-label="04 Table and filters" style="height:820px;display:flex;flex-direction:column;background:var(--bg-page);color:var(--fg-primary);font-family:var(--font-sans);overflow:hidden">
+
+  <header style="height:48px;flex:0 0 48px;background:var(--bg-card);border-bottom:1px solid var(--border-default);display:flex;align-items:center;padding:0 16px;gap:24px">
+    <div style="display:flex;align-items:center;gap:8px"><img src="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/assets/datum-icon-transparent.png" alt="" style="height:22px;width:auto"><span style="font:500 15px/20px var(--font-sans)">Datum</span></div>
+    <span style="display:inline-flex;align-items:center;height:28px;padding:0 8px;border-left:1px solid var(--border-default);color:var(--fg-secondary);font:500 13px/16px var(--font-sans)">Adient</span>
+    <nav style="display:flex;align-items:center;gap:2px;height:48px;margin-left:8px">
+      <button style="display:inline-flex;align-items:center;gap:6px;padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid var(--accent);color:var(--accent);font:500 13px/16px var(--font-sans);cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>Search</button>
+      <button style="padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--fg-secondary);font:400 13px/16px var(--font-sans);cursor:pointer">Create</button>
+      <button style="padding:0 12px;height:48px;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--fg-secondary);font:400 13px/16px var(--font-sans);cursor:pointer">My Projects</button>
+    </nav>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      <button style="display:inline-flex;align-items:center;gap:8px;padding:0 8px 0 4px;height:28px;border-radius:var(--radius);background:transparent;border:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer"><span style="width:22px;height:22px;border-radius:var(--radius);background:var(--accent-tint);color:var(--accent);font:500 11px/22px var(--font-sans);text-align:center">MA</span><span>m.alvarez@adient.com</span></button>
+    </div>
+  </header>
+
+  <div style="height:36px;flex:0 0 36px;background:var(--bg-card);border-bottom:1px solid var(--border-default);display:flex;align-items:center;gap:10px;padding:0 16px">
+    <button aria-label="Back" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;padding:0;background:transparent;border:0;color:var(--fg-secondary);cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div style="display:flex;align-items:center;gap:6px">
+      <button style="background:transparent;border:0;padding:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer">Catalogue</button><span style="color:var(--fg-muted);font:400 13px/16px var(--font-sans)">›</span>
+      <button style="background:transparent;border:0;padding:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer">Fasteners</button><span style="color:var(--fg-muted);font:400 13px/16px var(--font-sans)">›</span>
+      <button style="background:transparent;border:0;padding:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer">Bolts</button><span style="color:var(--fg-muted);font:400 13px/16px var(--font-sans)">›</span>
+      <span style="font:500 13px/16px var(--font-mono);color:var(--fg-primary)">M16</span>
+    </div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      <button style="height:28px;padding:0 10px;border:1px solid var(--border-default);background:transparent;border-radius:var(--radius);cursor:pointer;color:var(--fg-secondary);font:500 12px/16px var(--font-sans);display:inline-flex;align-items:center;gap:6px" style-hover="background:var(--fill-hover);color:var(--fg-primary)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>Save View</button>
+    </div>
+  </div>
+
+  <div style="flex:1;min-height:0;display:flex">
+    <!-- LEFT: pinned tree above tabs -->
+    <aside style="width:300px;flex:0 0 300px;background:var(--bg-sidebar);border-right:1px solid var(--border-default);display:flex;flex-direction:column;overflow:hidden">
+      <div style="padding:10px 8px;border-bottom:1px solid var(--border-default)">
+        <div style="padding:0 6px 6px;font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted)">Catalogue</div>
+        <button style="display:flex;align-items:center;gap:8px;width:100%;height:26px;padding:0 8px;border:0;border-radius:var(--radius);background:transparent;color:var(--fg-primary);font:400 12px/16px var(--font-sans);cursor:pointer;text-align:left"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Fasteners</button>
+        <div style="padding-left:12px;border-left:1px solid var(--border-default);margin:2px 0 0 14px">
+          <button style="display:flex;align-items:center;gap:8px;width:100%;height:26px;padding:0 8px;border:0;border-radius:var(--radius);background:var(--fill-selected);color:var(--accent);font:500 12px/16px var(--font-sans);cursor:pointer;text-align:left">Bolts <span style="font:500 11px/16px var(--font-mono)">· M16</span><span style="margin-left:auto;font:400 10px/14px var(--font-mono)">118</span></button>
+        </div>
+      </div>
+      <div style="padding:12px 16px 10px;border-bottom:1px solid var(--border-default);display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <div><div style="font:500 13px/16px var(--font-sans)">Filters</div><div style="font:400 11px/14px var(--font-mono);color:var(--fg-muted);margin-top:2px">3 active · 14 of 118</div></div>
+        <button style="background:transparent;border:0;padding:3px 6px;font:500 11px/14px var(--font-sans);color:var(--accent);cursor:pointer">Clear all</button>
+      </div>
+      <div style="display:flex;padding:0 12px;border-bottom:1px solid var(--border-default)">
+        <button style="padding:10px 12px;border:0;background:transparent;border-bottom:2px solid var(--accent);margin-bottom:-1px;font:500 13px/16px var(--font-sans);color:var(--accent);cursor:pointer">Filters</button>
+        <button style="padding:10px 12px;border:0;background:transparent;border-bottom:2px solid transparent;margin-bottom:-1px;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer">Columns</button>
+        <button style="padding:10px 12px;border:0;background:transparent;border-bottom:2px solid transparent;margin-bottom:-1px;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer">Manage</button>
+      </div>
+      <div style="flex:1;overflow-y:auto">
+        <!-- Length range-units -->
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Length<span style="margin-left:auto;font:500 10px/14px var(--font-mono);padding:1px 5px;border-radius:99px;background:var(--accent);color:var(--btn-primary-fg)">1</span></div>
+          <div style="padding:0 14px 14px 32px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+              <div style="display:flex;border:1px solid var(--border-default);border-radius:var(--radius);overflow:hidden;flex:1">
+                <button style="flex:1;height:24px;border:0;border-right:1px solid var(--border-default);background:var(--accent);color:var(--btn-primary-fg);font:500 11px/16px var(--font-sans);cursor:pointer">Value</button>
+                <button style="flex:1;height:24px;border:0;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/16px var(--font-sans);cursor:pointer">Error %</button>
+              </div>
+              <span style="font:400 11px/16px var(--font-mono);color:var(--fg-muted)">cm</span>
+            </div>
+            <div style="position:relative;height:20px;margin-bottom:8px">
+              <div style="position:absolute;left:0;right:0;top:8px;height:3px;border-radius:99px;background:var(--bg-subtle)"></div>
+              <div style="position:absolute;left:28%;right:22%;top:8px;height:3px;border-radius:99px;background:var(--accent)"></div>
+              <div style="position:absolute;left:calc(28% - 5px);top:3px;width:11px;height:13px;border-radius:3px;background:var(--bg-card);border:1.5px solid var(--accent)"></div>
+              <div style="position:absolute;left:calc(78% - 5px);top:3px;width:11px;height:13px;border-radius:3px;background:var(--bg-card);border:1.5px solid var(--accent)"></div>
+              <div style="position:absolute;left:52%;top:0;width:1px;height:20px;background:var(--status-pass-fg)"></div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <div style="flex:1;display:flex;align-items:center;gap:6px;height:28px;padding:0 8px;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card)"><span style="font:400 10px/14px var(--font-sans);color:var(--fg-muted)">min</span><span style="font:500 11px/16px var(--font-mono)">10.0</span></div>
+              <div style="flex:1;display:flex;align-items:center;gap:6px;height:28px;padding:0 8px;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card)"><span style="font:400 10px/14px var(--font-sans);color:var(--fg-muted)">max</span><span style="font:500 11px/16px var(--font-mono)">14.0</span></div>
+            </div>
+            <div style="font:400 10px/14px var(--font-mono);color:var(--fg-muted);margin-top:6px">requirement target 12.0 cm</div>
+          </div>
+        </div>
+        <!-- Head type multi-tag -->
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Head Type<span style="margin-left:auto;font:500 10px/14px var(--font-mono);padding:1px 5px;border-radius:99px;background:var(--accent);color:var(--btn-primary-fg)">2</span></div>
+          <div style="padding:0 14px 14px 32px;display:flex;gap:6px;flex-wrap:wrap">
+            <span style="height:24px;padding:0 10px;border:1px solid var(--accent);border-radius:99px;background:var(--accent);color:var(--btn-primary-fg);font:500 11px/24px var(--font-sans)">Hex</span>
+            <span style="height:24px;padding:0 10px;border:1px solid var(--accent);border-radius:99px;background:var(--accent);color:var(--btn-primary-fg);font:500 11px/24px var(--font-sans)">Socket head</span>
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-sans)">Flange</span>
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-sans)">Countersunk</span>
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-sans)">Carriage</span>
+          </div>
+        </div>
+        <!-- Material multi-search -->
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Material</div>
+          <div style="padding:0 14px 14px 32px">
+            <div style="display:flex;align-items:center;gap:6px;height:28px;padding:0 8px;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);margin-bottom:8px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted)"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span style="font:400 11px/16px var(--font-sans);color:var(--fg-muted)">Search 24 materials</span></div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <label style="display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-sans);cursor:pointer"><span style="width:14px;height:14px;border-radius:3px;border:1.5px solid var(--border-strong);background:var(--bg-card)"></span>A2-70 Stainless<span style="margin-left:auto;font:400 11px/14px var(--font-mono);color:var(--fg-muted)">42</span></label>
+              <label style="display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-sans);cursor:pointer"><span style="width:14px;height:14px;border-radius:3px;border:1.5px solid var(--border-strong);background:var(--bg-card)"></span>Steel 8.8<span style="margin-left:auto;font:400 11px/14px var(--font-mono);color:var(--fg-muted)">38</span></label>
+              <label style="display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-sans);cursor:pointer"><span style="width:14px;height:14px;border-radius:3px;border:1.5px solid var(--border-strong);background:var(--bg-card)"></span>Steel 10.9<span style="margin-left:auto;font:400 11px/14px var(--font-mono);color:var(--fg-muted)">21</span></label>
+            </div>
+          </div>
+        </div>
+        <!-- Standard multi-tag -->
+        <div style="border-bottom:1px solid var(--border-default)">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M6 9l6 6 6-6"/></svg>Standard Compliance</div>
+          <div style="padding:0 14px 14px 32px;display:flex;gap:6px;flex-wrap:wrap">
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-mono)">ISO 4014</span>
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-mono)">ISO 4762</span>
+            <span style="height:24px;padding:0 10px;border:1px solid var(--border-default);border-radius:99px;background:var(--bg-card);color:var(--fg-secondary);font:400 11px/24px var(--font-mono)">DIN 6921</span>
+          </div>
+        </div>
+        <div style="border-bottom:1px solid var(--border-default);display:flex;align-items:center;gap:8px;padding:10px 14px;font:500 13px/16px var(--font-sans)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--fg-muted);transform:rotate(-90deg)"><path d="M6 9l6 6 6-6"/></svg>Source<span style="margin-left:auto;font:500 10px/14px var(--font-mono);padding:1px 5px;border-radius:99px;background:var(--accent);color:var(--btn-primary-fg)">1</span></div>
+      </div>
+      <div style="flex:0 0 auto;border-top:1px solid var(--border-default);padding:8px">
+        <button style="width:100%;height:28px;border:0;background:transparent;border-radius:var(--radius);color:var(--fg-secondary);display:inline-flex;align-items:center;justify-content:center;gap:6px;font:500 11px/14px var(--font-sans);cursor:pointer" style-hover="background:var(--fill-hover);color:var(--accent)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="m15 6-6 6 6 6"/></svg>Collapse</button>
+      </div>
+    </aside>
+
+    <!-- CENTER -->
+    <main style="flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden">
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--bg-sidebar);border-bottom:1px solid var(--border-default)">
+        <span style="font:500 13px/18px var(--font-sans)">M16 Bolts</span>
+        <span style="width:1px;height:14px;background:var(--border-strong)"></span>
+        <span style="font:500 11px/14px var(--font-sans);padding:2px 8px;border-radius:99px;background:var(--status-info-bg);color:var(--status-info-fg)">Spec browse · no CAD upload</span>
+        <span style="margin-left:auto;font:400 11px/16px var(--font-mono);color:var(--fg-muted)">14 results · sorted by length</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--border-default);flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;flex:1">
+          <span style="display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 6px 0 9px;border-radius:99px;background:var(--accent-tint);color:var(--accent);font:500 11px/14px var(--font-sans)">Thread: M16<button aria-label="Remove" style="width:15px;height:15px;border:0;background:transparent;color:currentColor;border-radius:99px;display:grid;place-items:center;cursor:pointer"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></span>
+          <span style="display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 6px 0 9px;border-radius:99px;background:var(--accent-tint);color:var(--accent);font:500 11px/14px var(--font-sans)">Length: 10–14 cm<button aria-label="Remove" style="width:15px;height:15px;border:0;background:transparent;color:currentColor;border-radius:99px;display:grid;place-items:center;cursor:pointer"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></span>
+          <span style="display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 6px 0 9px;border-radius:99px;background:var(--accent-tint);color:var(--accent);font:500 11px/14px var(--font-sans)">Head: Hex, Socket head<button aria-label="Remove" style="width:15px;height:15px;border:0;background:transparent;color:currentColor;border-radius:99px;display:grid;place-items:center;cursor:pointer"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></span>
+        </div>
+        <button style="height:28px;padding:0 10px;border:1px solid var(--accent);background:var(--accent);color:var(--btn-primary-fg);font:500 12px/16px var(--font-sans);border-radius:var(--radius);cursor:pointer;display:inline-flex;align-items:center;gap:6px" style-hover="opacity:.88"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="3" y="4" width="7" height="16" rx="1"/><rect x="14" y="4" width="7" height="16" rx="1"/></svg>Compare 2 Selected</button>
+        <button style="height:28px;padding:0 10px;border:1px solid var(--border-default);background:transparent;color:var(--fg-secondary);font:500 12px/16px var(--font-sans);border-radius:var(--radius);cursor:pointer;display:inline-flex;align-items:center;gap:6px" style-hover="background:var(--fill-hover);color:var(--fg-primary)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>Export CSV</button>
+      </div>
+      <div style="flex:1;overflow:auto">
+        <table style="width:100%;border-collapse:collapse">
+          <thead>
+            <tr>
+              <th style="position:sticky;top:0;background:var(--bg-subtle);width:32px;padding:8px 0 8px 12px;border-bottom:1px solid var(--border-default)"><span style="display:block;width:14px;height:14px;border-radius:3px;border:1.5px solid var(--border-strong);background:var(--bg-card)"></span></th>
+              <th style="position:sticky;top:0;background:var(--bg-subtle);color:var(--fg-secondary);text-align:left;padding:8px 12px;font:500 11px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid var(--border-default);min-width:170px">Part Number</th>
+              <th style="position:sticky;top:0;background:var(--accent-tint);color:var(--accent);text-align:right;padding:8px 12px;font:500 11px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid var(--border-default)">Length ↑</th>
+              <th style="position:sticky;top:0;background:var(--bg-subtle);color:var(--fg-secondary);text-align:left;padding:8px 12px;font:500 11px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid var(--border-default)">Head Type</th>
+              <th style="position:sticky;top:0;background:var(--bg-subtle);color:var(--fg-secondary);text-align:left;padding:8px 12px;font:500 11px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid var(--border-default)">Material</th>
+              <th style="position:sticky;top:0;background:var(--bg-subtle);color:var(--fg-secondary);text-align:left;padding:8px 12px;font:500 11px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid var(--border-default)">Standard</th>
+              <th style="position:sticky;top:0;background:var(--bg-subtle);color:var(--fg-secondary);text-align:left;padding:8px 12px;font:500 11px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid var(--border-default)">Source</th>
+              <th style="position:sticky;top:0;background:var(--bg-subtle);text-align:right;padding:8px 12px;font:500 11px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-secondary);border-bottom:1px solid var(--border-default)">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{ rows }}" as="row" hint-placeholder-count="9">
+              <tr style="border-bottom:1px solid var(--border-default);background:{{ row.bg }}" style-hover="background:var(--fill-hover)">
+                <td style="padding:8px 0 8px 12px"><span style="display:block;width:14px;height:14px;border-radius:3px;border:1.5px solid {{ row.boxBorder }};background:{{ row.boxBg }};display:grid;place-items:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="{{ row.checkColor }}" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></span></td>
+                <td style="padding:8px 12px;font:500 12px/16px var(--font-mono)">{{ row.part }}</td>
+                <td style="padding:8px 12px;text-align:right;font:500 12px/16px var(--font-mono);background:color-mix(in srgb, var(--accent-tint) 45%, transparent)">{{ row.length }}</td>
+                <td style="padding:8px 12px;font:400 12px/16px var(--font-sans)">{{ row.head }}</td>
+                <td style="padding:8px 12px;font:400 12px/16px var(--font-sans)">{{ row.material }}</td>
+                <td style="padding:8px 12px;font:400 12px/16px var(--font-mono);color:var(--fg-secondary)">{{ row.standard }}</td>
+                <td style="padding:8px 12px"><span style="font:400 11px/14px var(--font-sans);padding:1px 7px;border-radius:99px;background:var(--bg-subtle);color:var(--fg-secondary)">{{ row.source }}</span></td>
+                <td style="padding:8px 12px;text-align:right;white-space:nowrap">
+                  <button title="Open in PLM" style="width:26px;height:26px;border:1px solid var(--border-default);background:var(--bg-card);border-radius:var(--radius);color:var(--fg-secondary);display:inline-grid;place-items:center;cursor:pointer;vertical-align:middle" style-hover="color:var(--accent);border-color:var(--accent)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></button>
+                  <button title="Compare" style="width:26px;height:26px;border:1px solid var(--border-default);background:var(--bg-card);border-radius:var(--radius);color:var(--fg-secondary);display:inline-grid;place-items:center;cursor:pointer;vertical-align:middle;margin-left:4px" style-hover="color:var(--accent);border-color:var(--accent)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="3" y="4" width="7" height="16" rx="1"/><rect x="14" y="4" width="7" height="16" rx="1"/></svg></button>
+                  <button title="Use This Part" style="width:26px;height:26px;border:1px solid var(--border-default);background:var(--bg-card);border-radius:var(--radius);color:var(--fg-secondary);display:inline-grid;place-items:center;cursor:pointer;vertical-align:middle;margin-left:4px" style-hover="color:var(--accent);border-color:var(--accent)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></button>
+                </td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-top:1px solid var(--border-default);background:var(--bg-sidebar)">
+        <span style="font:400 11px/16px var(--font-mono);color:var(--fg-muted)">Showing 1–9 of 14 · 10 per page</span>
+        <div style="display:flex;gap:4px">
+          <button style="min-width:26px;height:26px;padding:0 6px;border:1px solid var(--border-default);background:var(--bg-card);border-radius:var(--radius);font:400 11px/16px var(--font-mono);color:var(--fg-secondary);cursor:pointer">‹</button>
+          <button style="min-width:26px;height:26px;padding:0 6px;border:1px solid var(--accent);background:var(--accent);border-radius:var(--radius);font:400 11px/16px var(--font-mono);color:var(--btn-primary-fg);cursor:pointer">1</button>
+          <button style="min-width:26px;height:26px;padding:0 6px;border:1px solid var(--border-default);background:var(--bg-card);border-radius:var(--radius);font:400 11px/16px var(--font-mono);color:var(--fg-secondary);cursor:pointer">2</button>
+          <button style="min-width:26px;height:26px;padding:0 6px;border:1px solid var(--border-default);background:var(--bg-card);border-radius:var(--radius);font:400 11px/16px var(--font-mono);color:var(--fg-secondary);cursor:pointer">›</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- RIGHT: part detail -->
+    <aside style="width:320px;flex:0 0 320px;background:var(--bg-sidebar);border-left:1px solid var(--border-default);display:flex;flex-direction:column;overflow:hidden">
+      <div style="padding:12px 16px;border-bottom:1px solid var(--border-default);display:flex;align-items:flex-start;gap:8px">
+        <div style="min-width:0"><div style="font:500 13px/18px var(--font-mono)">HX-M16-120-A2</div><div style="font:400 11px/14px var(--font-sans);color:var(--fg-muted);margin-top:2px">Hex bolt · M16 × 120 mm</div></div>
+        <button aria-label="Close" style="margin-left:auto;width:20px;height:20px;border:0;background:transparent;color:var(--fg-muted);display:grid;place-items:center;cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <div style="flex:1;overflow-y:auto">
+        <div style="padding:12px 16px;border-bottom:1px solid var(--border-default)">
+          <div style="border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);height:150px;overflow:hidden"><img src="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/assets/cad-preview-2.png" alt="" style="width:100%;height:150px;object-fit:contain;display:block"></div>
+          <div style="display:flex;gap:6px;margin-top:8px">
+            <button style="flex:1;height:28px;border:1px solid var(--border-default);background:transparent;border-radius:var(--radius);font:500 11px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer" style-hover="background:var(--fill-hover);color:var(--fg-primary)">Open in Viewer</button>
+            <button style="flex:1;height:28px;border:1px solid var(--border-default);background:transparent;border-radius:var(--radius);font:500 11px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer" style-hover="background:var(--fill-hover);color:var(--fg-primary)">Open in PLM</button>
+          </div>
+        </div>
+        <div style="padding:12px 16px;border-bottom:1px solid var(--border-default)">
+          <div style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin-bottom:8px">Specification</div>
+          <sc-for list="{{ detailSpecs }}" as="f" hint-placeholder-count="8">
+            <div style="display:flex;align-items:baseline;gap:12px;padding:4px 0;border-bottom:1px solid var(--border-default)"><span style="font:400 11px/16px var(--font-sans);color:var(--fg-secondary);width:104px;flex:0 0 104px">{{ f.k }}</span><span style="font:400 11px/16px var(--font-mono);color:var(--fg-primary)">{{ f.v }}</span></div>
+          </sc-for>
+        </div>
+        <div style="padding:12px 16px;border-bottom:1px solid var(--border-default)">
+          <div style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin-bottom:8px">PLM Data</div>
+          <sc-for list="{{ detailPlm }}" as="f" hint-placeholder-count="4">
+            <div style="display:flex;align-items:baseline;gap:12px;padding:4px 0;border-bottom:1px solid var(--border-default)"><span style="font:400 11px/16px var(--font-sans);color:var(--fg-secondary);width:104px;flex:0 0 104px">{{ f.k }}</span><span style="font:400 11px/16px var(--font-mono);color:var(--fg-primary)">{{ f.v }}</span></div>
+          </sc-for>
+        </div>
+        <div style="padding:12px 16px">
+          <div style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin-bottom:8px">Used On</div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-sans)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M12 2 2 7l10 5 10-5z"/></svg>T3 Heat Exchanger<span style="margin-left:auto;font:400 10px/14px var(--font-mono);color:var(--fg-muted)">14 uses</span></div>
+            <div style="display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-sans)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" style="color:var(--fg-muted)"><path d="M12 2 2 7l10 5 10-5z"/></svg>MY24 Powertrain<span style="margin-left:auto;font:400 10px/14px var(--font-mono);color:var(--fg-muted)">6 uses</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="flex:0 0 auto;border-top:1px solid var(--border-default);padding:10px 16px">
+        <button style="width:100%;height:32px;border:1px solid var(--accent);background:var(--accent);color:var(--btn-primary-fg);border-radius:var(--radius);font:500 12px/16px var(--font-sans);cursor:pointer" style-hover="opacity:.88">Use This Part</button>
+      </div>
+    </aside>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ============ 1g — compare dual pane ============ -->
+<div class="dv-opt" id="1g">
+<div class="dv-olabel"><a class="dv-oid" href="#1g">1g</a><span><strong style="font-weight:500;color:#211F1F">Step 5 · Compare, treatment A — dual pane.</strong> CAD Compare mechanics on spec data: two mirrored panes, matching fields tinted pass-green, differing fields left plain with a Δ marker. Step 6's decision lands in each pane's footer — <em>Use This Part</em>, no system opinion on head type.</span></div>
+<div class="dv-card" style="width:1180px">
+<div data-screen-label="05 Compare dual pane" style="height:700px;display:flex;flex-direction:column;background:var(--bg-page);color:var(--fg-primary);font-family:var(--font-sans);overflow:hidden">
+  <div style="height:36px;flex:0 0 36px;background:var(--bg-card);border-bottom:1px solid var(--border-default);display:flex;align-items:center;gap:10px;padding:0 16px">
+    <button aria-label="Back" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;padding:0;background:transparent;border:0;color:var(--fg-secondary);cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div style="display:flex;align-items:center;gap:6px">
+      <button style="background:transparent;border:0;padding:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer">Catalogue</button><span style="color:var(--fg-muted)">›</span>
+      <button style="background:transparent;border:0;padding:0;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer">Bolts</button><span style="color:var(--fg-muted)">›</span>
+      <button style="background:transparent;border:0;padding:0;font:400 13px/16px var(--font-mono);color:var(--fg-secondary);cursor:pointer">M16</button><span style="color:var(--fg-muted)">›</span>
+      <span style="font:500 13px/16px var(--font-sans)">Compare</span>
+    </div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      <span style="font:500 11px/14px var(--font-sans);padding:2px 8px;border-radius:99px;background:var(--status-pass-bg);color:var(--status-pass-fg)">9 of 13 fields match</span>
+      <button style="height:28px;padding:0 10px;border:1px solid var(--border-default);background:transparent;border-radius:var(--radius);cursor:pointer;color:var(--fg-secondary);font:500 12px/16px var(--font-sans)" style-hover="background:var(--fill-hover);color:var(--fg-primary)">Differences Only</button>
+    </div>
+  </div>
+  <div style="flex:1;min-height:0;display:flex">
+    <div style="flex:1;min-width:0;display:flex;flex-direction:column;border-right:1px solid var(--border-strong)">
+      <div style="padding:12px 16px;border-bottom:1px solid var(--border-default);background:var(--bg-sidebar);display:flex;align-items:center;gap:8px">
+        <span style="width:18px;height:18px;border-radius:var(--radius);background:var(--accent-tint);color:var(--accent);font:500 10px/18px var(--font-mono);text-align:center">A</span>
+        <span style="font:500 13px/18px var(--font-mono)">HX-M16-120-A2</span>
+        <span style="margin-left:auto;font:400 11px/16px var(--font-sans);color:var(--fg-muted)">CAD Library</span>
+      </div>
+      <div style="padding:12px 16px;border-bottom:1px solid var(--border-default)"><div style="border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);height:170px;overflow:hidden"><img src="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/assets/cad-preview-2.png" alt="" style="width:100%;height:170px;object-fit:contain;display:block"></div></div>
+      <div style="flex:1;overflow-y:auto;padding:8px 16px 16px">
+        <sc-for list="{{ cmpA }}" as="f" hint-placeholder-count="13">
+          <div style="display:flex;align-items:baseline;gap:12px;padding:6px 8px;border-radius:var(--radius);background:{{ f.bg }};margin-bottom:2px">
+            <span style="font:400 11px/16px var(--font-sans);color:var(--fg-secondary);width:104px;flex:0 0 104px">{{ f.k }}</span>
+            <span style="font:500 12px/16px var(--font-mono);color:{{ f.fg }};white-space:nowrap">{{ f.v }}</span>
+            <span style="margin-left:auto;font:400 10px/16px var(--font-mono);color:var(--fg-muted)">{{ f.mark }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="flex:0 0 auto;border-top:1px solid var(--border-default);padding:10px 16px;display:flex;gap:8px">
+        <button style="flex:1;height:32px;border:1px solid var(--accent);background:var(--accent);color:var(--btn-primary-fg);border-radius:var(--radius);font:500 12px/16px var(--font-sans);cursor:pointer" style-hover="opacity:.88">Use This Part</button>
+        <button style="height:32px;padding:0 12px;border:1px solid var(--border-default);background:transparent;color:var(--fg-secondary);border-radius:var(--radius);font:500 12px/16px var(--font-sans);cursor:pointer" style-hover="background:var(--fill-hover);color:var(--fg-primary)">Search On</button>
+      </div>
+    </div>
+    <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+      <div style="padding:12px 16px;border-bottom:1px solid var(--border-default);background:var(--bg-sidebar);display:flex;align-items:center;gap:8px">
+        <span style="width:18px;height:18px;border-radius:var(--radius);background:var(--bg-subtle);color:var(--fg-secondary);font:500 10px/18px var(--font-mono);text-align:center">B</span>
+        <span style="font:500 13px/18px var(--font-mono)">SH-M16-110-88</span>
+        <span style="margin-left:auto;font:400 11px/16px var(--font-sans);color:var(--fg-muted)">Teamcenter</span>
+      </div>
+      <div style="padding:12px 16px;border-bottom:1px solid var(--border-default)"><div style="border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);height:170px;overflow:hidden"><img src="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/assets/cad-preview-3.png" alt="" style="width:100%;height:170px;object-fit:contain;display:block"></div></div>
+      <div style="flex:1;overflow-y:auto;padding:8px 16px 16px">
+        <sc-for list="{{ cmpB }}" as="f" hint-placeholder-count="13">
+          <div style="display:flex;align-items:baseline;gap:12px;padding:6px 8px;border-radius:var(--radius);background:{{ f.bg }};margin-bottom:2px">
+            <span style="font:400 11px/16px var(--font-sans);color:var(--fg-secondary);width:104px;flex:0 0 104px">{{ f.k }}</span>
+            <span style="font:500 12px/16px var(--font-mono);color:{{ f.fg }};white-space:nowrap">{{ f.v }}</span>
+            <span style="margin-left:auto;font:400 10px/16px var(--font-mono);color:var(--fg-muted)">{{ f.mark }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="flex:0 0 auto;border-top:1px solid var(--border-default);padding:10px 16px;display:flex;gap:8px">
+        <button style="flex:1;height:32px;border:1px solid var(--border-default);background:transparent;color:var(--fg-primary);border-radius:var(--radius);font:500 12px/16px var(--font-sans);cursor:pointer" style-hover="background:var(--fill-hover)">Use This Part</button>
+        <button style="height:32px;padding:0 12px;border:1px solid var(--border-default);background:transparent;color:var(--fg-secondary);border-radius:var(--radius);font:500 12px/16px var(--font-sans);cursor:pointer" style-hover="background:var(--fill-hover);color:var(--fg-primary)">Search On</button>
+      </div>
+    </div>
+  </div>
+  <div style="flex:0 0 auto;display:flex;align-items:center;gap:16px;padding:8px 16px;border-top:1px solid var(--border-default);background:var(--bg-sidebar)">
+    <span style="display:inline-flex;align-items:center;gap:6px;font:400 11px/16px var(--font-sans);color:var(--fg-secondary)"><span style="width:10px;height:10px;border-radius:3px;background:var(--status-pass-bg);border:1px solid var(--status-pass-fg)"></span>Matching value</span>
+    <span style="display:inline-flex;align-items:center;gap:6px;font:400 11px/16px var(--font-sans);color:var(--fg-secondary)"><span style="width:10px;height:10px;border-radius:3px;background:var(--bg-card);border:1px solid var(--border-strong)"></span>Differs (Δ)</span>
+    <span style="margin-left:auto;font:400 11px/16px var(--font-mono);color:var(--fg-muted)">Head type is a preference call — not flagged</span>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ============ 1h — compare aligned table ============ -->
+<div class="dv-opt" id="1h">
+<div class="dv-olabel"><a class="dv-oid" href="#1h">1h</a><span><strong style="font-weight:500;color:#211F1F">Compare, treatment B — aligned attribute table.</strong> One field per row, one column per part, so the eye scans across instead of between panes. Denser and scales to 3–4 parts; loses the mirrored CAD-Compare feel. Extendable with an “Add part” column.</span></div>
+<div class="dv-card" style="width:820px">
+<div data-screen-label="05b Compare aligned table" style="background:var(--bg-page);color:var(--fg-primary);font-family:var(--font-sans);padding:16px">
+  <table style="width:100%;border-collapse:collapse;background:var(--bg-card);border:1px solid var(--border-default);border-radius:var(--radius)">
+    <thead>
+      <tr>
+        <th style="text-align:left;padding:10px 12px;font:500 11px/16px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);border-bottom:1px solid var(--border-default);width:150px">Field</th>
+        <th style="text-align:left;padding:10px 12px;border-bottom:1px solid var(--border-default);border-left:1px solid var(--border-default);background:var(--accent-tint)">
+          <div style="font:500 12px/16px var(--font-mono);color:var(--accent)">HX-M16-120-A2</div><div style="font:400 10px/14px var(--font-sans);color:var(--fg-secondary)">CAD Library</div>
+        </th>
+        <th style="text-align:left;padding:10px 12px;border-bottom:1px solid var(--border-default);border-left:1px solid var(--border-default)">
+          <div style="font:500 12px/16px var(--font-mono)">SH-M16-110-88</div><div style="font:400 10px/14px var(--font-sans);color:var(--fg-secondary)">Teamcenter</div>
+        </th>
+        <th style="text-align:left;padding:10px 12px;border-bottom:1px solid var(--border-default);border-left:1px dashed var(--border-strong);width:120px">
+          <button style="height:26px;padding:0 10px;border:1px dashed var(--border-strong);background:transparent;border-radius:var(--radius);font:500 11px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)">+ Add part</button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <sc-for list="{{ cmpRows }}" as="r" hint-placeholder-count="13">
+        <tr style="border-bottom:1px solid var(--border-default);background:{{ r.bg }}">
+          <td style="padding:7px 12px;font:400 11px/16px var(--font-sans);color:var(--fg-secondary)">{{ r.k }}</td>
+          <td style="padding:7px 12px;font:500 12px/16px var(--font-mono);border-left:1px solid var(--border-default)">{{ r.a }}</td>
+          <td style="padding:7px 12px;font:500 12px/16px var(--font-mono);border-left:1px solid var(--border-default)">{{ r.b }}</td>
+          <td style="padding:7px 12px;font:400 11px/16px var(--font-mono);color:var(--fg-muted);border-left:1px dashed var(--border-strong)">{{ r.mark }}</td>
+        </tr>
+      </sc-for>
+    </tbody>
+  </table>
+  <div style="display:flex;align-items:center;gap:8px;margin-top:12px">
+    <button style="height:32px;padding:0 14px;border:1px solid var(--accent);background:var(--accent);color:var(--btn-primary-fg);border-radius:var(--radius);font:500 12px/16px var(--font-sans);cursor:pointer" style-hover="opacity:.88">Use HX-M16-120-A2</button>
+    <button style="height:32px;padding:0 14px;border:1px solid var(--border-default);background:transparent;color:var(--fg-primary);border-radius:var(--radius);font:500 12px/16px var(--font-sans);cursor:pointer" style-hover="background:var(--fill-hover)">Use SH-M16-110-88</button>
+    <span style="margin-left:auto;font:400 11px/16px var(--font-sans);color:var(--fg-secondary);display:inline-flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:3px;background:var(--status-pass-bg);border:1px solid var(--status-pass-fg)"></span>Matching value</span>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: “make the chip row in <a class="dv-oid" href="#1c">1c</a> the one, and show <a class="dv-oid" href="#1f">1f</a> with it collapsed in the header” · “add the top-level nav variant of <a class="dv-oid" href="#1a">1a</a> so I can compare placements” · “show <a class="dv-oid" href="#1f">1f</a> in thumbnail density”</p>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  renderVals() {
+    const tiles = [
+      { name: 'Fasteners', desc: 'Bolts, nuts, washers, screws, rivets, pins.', meta: '4,182 parts · 6 types' },
+      { name: 'Bearings', desc: 'Ball, roller, thrust, bushings.', meta: '2,310 parts · 4 types' },
+      { name: 'Seals & Gaskets', desc: 'O-rings, lip seals, flat gaskets.', meta: '1,864 parts · 5 types' },
+      { name: 'Housings', desc: 'Cast and machined enclosures, covers.', meta: '976 parts · 3 types' },
+      { name: 'Electrical', desc: 'Connectors, terminals, harness clips.', meta: '3,405 parts · 7 types' },
+      { name: 'Fittings & Connectors', desc: 'Hydraulic, pneumatic, quick-connect.', meta: '1,502 parts · 5 types' },
+      { name: 'Springs', desc: 'Compression, extension, torsion, wave.', meta: '712 parts · 4 types' },
+      { name: 'Tooling & Fixtures', desc: 'Jigs, clamps, locating pins.', meta: '388 parts · 3 types' },
+    ];
+    const tree = tiles.map(t => ({ name: t.name, count: t.meta.split(' ')[0] }));
+    const pass = 'var(--status-pass-bg)';
+    const cmp = [
+      { k: 'Thread', a: 'M16 × 2.0', b: 'M16 × 2.0', same: true },
+      { k: 'Length', a: '120 mm', b: '110 mm', same: false },
+      { k: 'Head type', a: 'Hex', b: 'Socket head', same: false },
+      { k: 'Drive', a: 'Wrench 24 mm', b: 'Hex key 14 mm', same: false },
+      { k: 'Material', a: 'A2-70 Stainless', b: 'Steel 8.8', same: false },
+      { k: 'Tensile class', a: '700 MPa', b: '800 MPa', same: false },
+      { k: 'Standard', a: 'ISO 4014', b: 'ISO 4762', same: false },
+      { k: 'Coating', a: 'Passivated', b: 'Zinc-nickel', same: false },
+      { k: 'Thread pitch', a: 'Coarse', b: 'Coarse', same: true },
+      { k: 'Shank', a: 'Partial', b: 'Partial', same: true },
+      { k: 'Corrosion class', a: 'C4', b: 'C4', same: true },
+      { k: 'Reuse status', a: 'Approved', b: 'Approved', same: true },
+      { k: 'Lead time', a: '4 wk', b: '4 wk', same: true },
+    ];
+    const side = (key) => cmp.map(f => ({
+      k: f.k, v: f[key], mark: f.same ? '=' : 'Δ',
+      bg: f.same ? pass : 'transparent',
+      fg: f.same ? 'var(--status-pass-fg)' : 'var(--fg-primary)',
+    }));
+    const sel = 'var(--fill-selected)';
+    const rowData = [
+      ['HX-M16-100-A2', '100 mm', 'Hex', 'A2-70 Stainless', 'ISO 4014', 'CAD Library', false],
+      ['SH-M16-110-88', '110 mm', 'Socket head', 'Steel 8.8', 'ISO 4762', 'Teamcenter', true],
+      ['HX-M16-120-A2', '120 mm', 'Hex', 'A2-70 Stainless', 'ISO 4014', 'CAD Library', true],
+      ['SH-M16-120-109', '120 mm', 'Socket head', 'Steel 10.9', 'ISO 4762', 'Teamcenter', false],
+      ['HX-M16-125-A2', '125 mm', 'Hex', 'A2-70 Stainless', 'ISO 4017', 'CAD Library', false],
+      ['SH-M16-130-88', '130 mm', 'Socket head', 'Steel 8.8', 'ISO 4762', 'SharePoint', false],
+      ['HX-M16-130-A4', '130 mm', 'Hex', 'A4-80 Stainless', 'ISO 4014', 'CAD Library', false],
+      ['HX-M16-135-88', '135 mm', 'Hex', 'Steel 8.8', 'ISO 4014', 'Teamcenter', false],
+      ['HX-M16-140-A2', '140 mm', 'Hex', 'A2-70 Stainless', 'ISO 4014', 'CAD Library', false],
+    ];
+    return {
+      tiles, tree,
+      catFilterRows: tree.slice(0, 5),
+      treeRest: tree.slice(1),
+      boltTiles: [
+        { name: 'Hex Bolts', desc: 'Externally driven hex head, ISO 4014 / 4017.', meta: '612 parts' },
+        { name: 'Socket Head', desc: 'Internal hex drive, ISO 4762.', meta: '341 parts' },
+        { name: 'Flange Bolts', desc: 'Integrated washer face, DIN 6921.', meta: '188 parts' },
+        { name: 'Carriage Bolts', desc: 'Dome head, square neck.', meta: '124 parts' },
+        { name: 'Countersunk', desc: 'Flush-fit conical head, ISO 10642.', meta: '96 parts' },
+        { name: 'Shoulder Bolts', desc: 'Precision shoulder for pivots.', meta: '75 parts' },
+      ],
+      threadsA: ['M6', 'M8', 'M10', 'M12'],
+      threadsAll: ['M6', 'M8', 'M10', 'M12', 'M16', 'M20', 'M24', 'M30'],
+      lengthChips: ['≤ 40 mm', '40–80 mm', '80–120 mm', '120–180 mm', '> 180 mm'],
+      gradeChips: ['8.8', '10.9', '12.9', 'A2-70', 'A4-80'],
+      rows: rowData.map(r => ({
+        part: r[0], length: r[1], head: r[2], material: r[3], standard: r[4], source: r[5],
+        bg: r[6] ? sel : 'transparent',
+        boxBorder: r[6] ? 'var(--accent)' : 'var(--border-strong)',
+        boxBg: r[6] ? 'var(--accent)' : 'var(--bg-card)',
+        checkColor: r[6] ? '#fff' : 'transparent',
+      })),
+      detailSpecs: [
+        { k: 'Thread', v: 'M16 × 2.0' }, { k: 'Length', v: '120 mm' },
+        { k: 'Head type', v: 'Hex' }, { k: 'Drive', v: 'Wrench 24 mm' },
+        { k: 'Material', v: 'A2-70 Stainless' }, { k: 'Tensile class', v: '700 MPa' },
+        { k: 'Standard', v: 'ISO 4014' }, { k: 'Coating', v: 'Passivated' },
+      ],
+      detailPlm: [
+        { k: 'PLM ID', v: 'TC-0094-118' }, { k: 'Revision', v: 'C' },
+        { k: 'Status', v: 'Released' }, { k: 'Owner', v: 'R. Nakamura' },
+      ],
+      cmpA: side('a'),
+      cmpB: side('b'),
+      cmpRows: cmp.map(f => ({ k: f.k, a: f.a, b: f.b, mark: f.same ? '=' : 'Δ', bg: f.same ? pass : 'transparent' })),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Datum — Search Modality & Result Views</title>
+<link rel="stylesheet" href="datum-tokens.css">
+<style>
+  html, body { height: 100%; margin: 0; background: var(--bg-page); font-family: var(--font-sans); color: var(--fg-primary); }
+  body { padding: 0; }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 99px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  button { font-family: var(--font-sans); }
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="data.jsx"></script>
+<script type="text/babel" src="ui.jsx"></script>
+<script type="text/babel" src="table.jsx"></script>
+<script type="text/babel" src="screens.jsx"></script>
+
+<script type="text/babel">
+const { DesignCanvas, DCSection, DCArtboard } = window;
+const { useState } = React;
+
+// Wrapper for an artboard: provides a fixed-size container so the
+// inner Results/Homepage can use 100% height.
+function Frame({ children, width = 1480, height = 920 }) {
+  return (
+    <div style={{
+      width, height, overflow:"hidden",
+      background:"var(--bg-page)",
+      borderRadius: 5,
+      fontFamily:"var(--font-sans)",
+    }}>{children}</div>
+  );
+}
+
+// Small interactive homepage → results bridge for the first artboard.
+function HomepageDemo() {
+  const [mod, setMod] = useState(null);
+  if (mod) {
+    return <window.ResultsScreen modality={window.MODALITIES[mod]} openSidebar={false} openRowIds={[]}/>;
+  }
+  return <window.Homepage onPick={(id) => setMod(id)}/>;
+}
+
+function App() {
+  return (
+    <DesignCanvas>
+      {/* ── ENTRY POINT ── */}
+      <DCSection id="entry"
+        title="1 · Targeted search workflow"
+        subtitle="Homepage modality picker — pick the search shape before uploading. The chosen modality auto-applies the matching result view, but every toggle remains editable later in the Manage tab.">
+        <DCArtboard id="home" label="Homepage · modality picker" width={1480} height={920}>
+          <Frame width={1480} height={920}><HomepageDemo/></Frame>
+        </DCArtboard>
+      </DCSection>
+
+      {/* ── MODALITY-A: PARTS ONLY ── */}
+      <DCSection id="mode-a"
+        title="2a · Parts only"
+        subtitle="Search part → return parts. Standalone CAD parts only; no assemblies in results. Row shows part category + mass as secondary context.">
+        <DCArtboard id="results-a" label="Results · Parts only" width={1480} height={920}>
+          <Frame><window.ResultsScreen modality={window.MODALITIES.a}/></Frame>
+        </DCArtboard>
+      </DCSection>
+
+      {/* ── ROW DENSITY / VIEW MODES (part → part) ── */}
+      <DCSection id="density-views"
+        title="2a-density · Row density & views (Part → Part)"
+        subtitle="New Row-density control in the Columns tab: Compact · Default · Comfy · Thumbnail. Default is the current view. Comfy enlarges previews and spacing. Thumbnail switches to a Finder-style gallery; clicking a card opens a right detail panel carrying the exact same tabs (PLM Data · File Info · Search Requirements · Related Revisions) as the list view's expanded row.">
+        <DCArtboard id="dens-compact" label="Compact · tight rows, more on screen" width={1480} height={760}>
+          <Frame width={1480} height={760}>
+            <window.ResultsScreen modality={window.MODALITIES.a} densityOverride="compact"/>
+          </Frame>
+        </DCArtboard>
+        <DCArtboard id="dens-comfy" label="Comfy · larger previews + spacing" width={1480} height={1320}>
+          <Frame width={1480} height={1320}>
+            <window.ResultsScreen modality={window.MODALITIES.a} densityOverride="comfy"/>
+          </Frame>
+        </DCArtboard>
+        <DCArtboard id="dens-thumb" label="Thumbnail · gallery + detail panel (PLM Data)" width={1480} height={980}>
+          <Frame width={1480} height={980}>
+            <window.ResultsScreen
+              modality={window.MODALITIES.a}
+              densityOverride="thumbnail"
+              openRowIds={["part-1"]}
+            />
+          </Frame>
+        </DCArtboard>
+        <DCArtboard id="dens-thumb-revs" label="Thumbnail · detail panel switched to Related Revisions" width={1480} height={980}>
+          <Frame width={1480} height={980}>
+            <window.ResultsScreen
+              modality={window.MODALITIES.a}
+              densityOverride="thumbnail"
+              openRowIds={["part-1"]}
+              expandedTabHint={{ "part-1": "revs" }}
+            />
+          </Frame>
+        </DCArtboard>
+      </DCSection>
+
+      {/* ── MODALITY-B: PART → ASSEMBLY ("Find assemblies containing this or a similar part") ── */}
+      <DCSection id="mode-b"
+        title="2b · Part → Assembly"
+        subtitle="Search part → find assemblies containing parts like yours. The result list pivots to matching parts, not assemblies — each matching geometry exposes its assembly usage. Collapse duplicates flips between one row per (part × assembly) and one row per unique geometry.">
+        <DCArtboard id="results-b-exploded" label="Default · one row per part × assembly" width={1480} height={1080}>
+          <Frame width={1480} height={1080}>
+            <window.ResultsScreen modality={window.MODALITIES.b}/>
+          </Frame>
+        </DCArtboard>
+        <DCArtboard id="results-b-exploded-open" label="Exploded row open · In Assembly tab" width={1480} height={1180}>
+          <Frame width={1480} height={1180}>
+            <window.ResultsScreen
+              modality={window.MODALITIES.b}
+              openRowIds={["geom-1__asm-1"]}
+              expandedTabHint={{"geom-1__asm-1": "asminstance"}}
+            />
+          </Frame>
+        </DCArtboard>
+        <DCArtboard id="results-b-collapsed" label="Collapse duplicates ON · one row per geometry" width={1480} height={920}>
+          <Frame>
+            <window.ResultsScreen
+              modality={window.MODALITIES.b}
+              openSidebar={true}
+              defaultTab="columns"
+              flagsOverride={{collapseDuplicates: true, latestOnly: false}}
+            />
+          </Frame>
+        </DCArtboard>
+        <DCArtboard id="results-b-asmtab" label="Collapsed · row open · Assemblies tab" width={1480} height={1180}>
+          <Frame width={1480} height={1180}>
+            <window.ResultsScreen
+              modality={window.MODALITIES.b}
+              flagsOverride={{collapseDuplicates: true, latestOnly: false}}
+              openRowIds={["geom-1"]}
+              expandedTabHint={{"geom-1": "asmused"}}
+            />
+          </Frame>
+        </DCArtboard>
+      </DCSection>
+
+      {/* ── MODALITY-C: ASSEMBLY ONLY ── */}
+      <DCSection id="mode-c"
+        title="2c · Assembly → Assembly"
+        subtitle="Search assembly → find similar assemblies. Sorted by Overall Geometric Match (100% = exact). Each row shows how many contained parts matched out of total. Expand a row to see the part-by-part breakdown and the related-revisions table (preceding revisions + branch lineage).">
+        <DCArtboard id="results-c" label="Results · Assembly → Assembly (top row collapsed)" width={1480} height={920}>
+          <Frame><window.ResultsScreen modality={window.MODALITIES.c}/></Frame>
+        </DCArtboard>
+        <DCArtboard id="results-c-parts" label="Row open · Contained Parts (geometric % per part)" width={1480} height={1320}>
+          <Frame width={1480} height={1320}>
+            <window.ResultsScreen
+              modality={window.MODALITIES.c}
+              openRowIds={["asm-1"]}
+              expandedTabHint={{ "asm-1": "parts" }}
+            />
+          </Frame>
+        </DCArtboard>
+        <DCArtboard id="results-c-revs" label="Row open · Related Revisions table" width={1480} height={1320}>
+          <Frame width={1480} height={1320}>
+            <window.ResultsScreen
+              modality={window.MODALITIES.c}
+              openRowIds={["asm-6"]}
+              expandedTabHint={{ "asm-6": "revs" }}
+            />
+          </Frame>
+        </DCArtboard>
+      </DCSection>
+
+      {/* ── MODALITY-D: ASSEMBLY → PART ── */}
+      <DCSection id="mode-d"
+        title="2d · Assembly → Part"
+        subtitle="Search part-in-assembly → extract just the matching parts. Each row is a part, tagged with its parent assembly so engineers can trace where it came from.">
+        <DCArtboard id="results-d" label="Results · Assembly → Part" width={1480} height={920}>
+          <Frame><window.ResultsScreen modality={window.MODALITIES.d}/></Frame>
+        </DCArtboard>
+      </DCSection>
+
+      {/* ── TOGGLE: COLUMNS TAB ── */}
+      <DCSection id="toggle-views"
+        title="3 · Columns tab — view-mode toggles"
+        subtitle="Toggles moved to the Columns tab (variant E shape). Result scope is single-select (Parts / Assemblies / Both); view modes are independent checkboxes (Collapse duplicates + Latest revision only) — engineers can run any combination.">
+        <DCArtboard id="results-dup" label="Columns · Collapse duplicates" width={1480} height={920}>
+          <Frame>
+            <window.ResultsScreen
+              modality={window.MODALITIES.a}
+              openSidebar={true}
+              defaultTab="columns"
+              flagsOverride={{ collapseDuplicates: true, latestOnly: false }}
+              openRowIds={["part-4"]}
+            />
+          </Frame>
+        </DCArtboard>
+        <DCArtboard id="results-latest" label="Columns · Latest revision only" width={1480} height={920}>
+          <Frame>
+            <window.ResultsScreen
+              modality={window.MODALITIES.a}
+              openSidebar={true}
+              defaultTab="columns"
+              flagsOverride={{ collapseDuplicates: false, latestOnly: true }}
+              openRowIds={["part-1"]}
+            />
+          </Frame>
+        </DCArtboard>
+        <DCArtboard id="results-combo" label="Columns · Both toggles on (parts)" width={1480} height={920}>
+          <Frame>
+            <window.ResultsScreen
+              modality={window.MODALITIES.a}
+              openSidebar={true}
+              defaultTab="columns"
+              flagsOverride={{ collapseDuplicates: true, latestOnly: true }}
+            />
+          </Frame>
+        </DCArtboard>
+        <DCArtboard id="results-asm-combo" label="Columns · Assemblies + both toggles" width={1480} height={920}>
+          <Frame>
+            <window.ResultsScreen
+              modality={window.MODALITIES.c}
+              openSidebar={true}
+              defaultTab="columns"
+              scopeOverride="assemblies"
+              flagsOverride={{ collapseDuplicates: true, latestOnly: true }}
+            />
+          </Frame>
+        </DCArtboard>
+      </DCSection>
+    </DesignCanvas>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

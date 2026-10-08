@@ -1,0 +1,86 @@
+[
+  {
+    "supplier_id": "SUP-001",
+    "name": "BorgWarner Turbo Systems",
+    "region": "US-IN",
+    "category": "Turbocharger"
+  },
+  {
+    "supplier_id": "SUP-002",
+    "name": "Garrett Motion",
+    "region": "FR-Rouen",
+    "category": "Turbocharger"
+  },
+  {
+    "supplier_id": "SUP-003",
+    "name": "IHI Turbo America",
+    "region": "US-NC",
+    "category": "Turbocharger"
+  },
+  {
+    "supplier_id": "SUP-004",
+    "name": "Mahle Powertrain",
+    "region": "DE-Stuttgart",
+    "category": "Castings/Pistons"
+  },
+  {
+    "supplier_id": "SUP-005",
+    "name": "Nemak",
+    "region": "MX-Monterrey",
+    "category": "Aluminum Castings"
+  },
+  {
+    "supplier_id": "SUP-006",
+    "name": "Linamar Corporation",
+    "region": "CA-Guelph",
+    "category": "Machined Components"
+  },
+  {
+    "supplier_id": "SUP-007",
+    "name": "Denso",
+    "region": "JP-Aichi",
+    "category": "Fuel/Sensors"
+  },
+  {
+    "supplier_id": "SUP-008",
+    "name": "Bosch Powertrain",
+    "region": "DE-Stuttgart",
+    "category": "Fuel/Sensors/ECU"
+  },
+  {
+    "supplier_id": "SUP-009",
+    "name": "NSK Bearings",
+    "region": "JP-Fukushima",
+    "category": "Bearings"
+  },
+  {
+    "supplier_id": "SUP-010",
+    "name": "ContiTech",
+    "region": "DE-Hannover",
+    "category": "Hoses/Belts"
+  },
+  {
+    "supplier_id": "SUP-011",
+    "name": "Dana Incorporated",
+    "region": "US-OH",
+    "category": "Gaskets/Sealing"
+  },
+  {
+    "supplier_id": "SUP-012",
+    "name": "Valeo Powertrain",
+    "region": "FR-Paris",
+    "category": "Thermal/Cooling"
+  },
+  {
+    "supplier_id": "SUP-013",
+    "name": "Martinrea International",
+    "region": "CA-Vaughan",
+    "category": "Castings"
+  },
+  {
+    "supplier_id": "SUP-014",
+    "name": "Aisin",
+    "region": "JP-Kariya",
+    "category": "Drivetrain/Accessory"
+  }
+]

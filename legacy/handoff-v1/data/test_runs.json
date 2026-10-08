@@ -1,0 +1,227 @@
+[
+  {
+    "run_id": "TR-24-0031",
+    "test_id": "DV-TC-210",
+    "program_id": "PGM-CIV-LX",
+    "date": "2024-02-14",
+    "result": "Pass",
+    "samples": 6,
+    "notes": "Baseline single-scroll turbine, established containment margin at 2.3x design energy."
+  },
+  {
+    "run_id": "TR-26-0118",
+    "test_id": "DV-TC-210",
+    "program_id": "PGM-CIV-SI",
+    "date": null,
+    "result": "Scheduled",
+    "samples": null,
+    "notes": "Twin-scroll turbine/housing burst test \u2014 booked at Horizon Test Labs, awaiting rig availability."
+  },
+  {
+    "run_id": "TR-24-0045",
+    "test_id": "DV-TC-211",
+    "program_id": "PGM-CIV-LX",
+    "date": "2024-03-02",
+    "result": "Pass",
+    "samples": 8,
+    "notes": "Pneumatic actuator baseline."
+  },
+  {
+    "run_id": "TR-25-0019",
+    "test_id": "DV-TC-211",
+    "program_id": "PGM-CIV-SPT",
+    "date": "2025-01-20",
+    "result": "Pass",
+    "samples": 8,
+    "notes": "Electronic actuator, carried design \u2014 re-run for the new actuator type, full pass."
+  },
+  {
+    "run_id": "TR-26-0071",
+    "test_id": "DV-TC-211",
+    "program_id": "PGM-CIV-SI",
+    "date": "2025-01-20",
+    "result": "Carried",
+    "samples": null,
+    "notes": "Carried from Sport's TR-25-0019 \u2014 same actuator family, no hardware change."
+  },
+  {
+    "run_id": "TR-24-0052",
+    "test_id": "DV-TC-212",
+    "program_id": "PGM-CIV-LX",
+    "date": "2024-03-18",
+    "result": "Pass",
+    "samples": 4,
+    "notes": "Journal-bearing CHRA baseline."
+  },
+  {
+    "run_id": "TR-25-0024",
+    "test_id": "DV-TC-212",
+    "program_id": "PGM-CIV-SPT",
+    "date": "2025-02-05",
+    "result": "Pass",
+    "samples": 4,
+    "notes": "Ball-bearing CHRA, full 50,000-cycle run completed."
+  },
+  {
+    "run_id": "TR-26-0072",
+    "test_id": "DV-TC-212",
+    "program_id": "PGM-CIV-SI",
+    "date": "2025-02-05",
+    "result": "Carried",
+    "samples": null,
+    "notes": "Carried from Sport's TR-25-0024 \u2014 same bearing architecture."
+  },
+  {
+    "run_id": "TR-26-0119",
+    "test_id": "DV-TC-213",
+    "program_id": "PGM-CIV-SI",
+    "date": "2026-03-11",
+    "result": "Pass",
+    "samples": 3,
+    "notes": "Dyno sweep at rated boost confirmed 16.2% surge margin, above the 15% requirement."
+  },
+  {
+    "run_id": "TR-24-0061",
+    "test_id": "DV-TC-214",
+    "program_id": "PGM-CIV-LX",
+    "date": "2024-04-02",
+    "result": "Pass",
+    "samples": 10,
+    "notes": "2.0 bar range sensor, calibration confirmed within spec."
+  },
+  {
+    "run_id": "TR-26-0073",
+    "test_id": "DV-TC-214",
+    "program_id": "PGM-CIV-SI",
+    "date": "2024-04-02",
+    "result": "Carried",
+    "samples": null,
+    "notes": "Carried from LX's TR-24-0061 \u2014 same supplier family, Si's wider range covered by the sensor's own datasheet tolerance."
+  },
+  {
+    "run_id": "TR-26-0120",
+    "test_id": "DV-TC-215",
+    "program_id": "PGM-CIV-SI",
+    "date": null,
+    "result": "In progress",
+    "samples": null,
+    "notes": "Dyno cell instrumented for the air-to-water loop; sustained high-load run underway."
+  },
+  {
+    "run_id": "TR-26-0121",
+    "test_id": "DV-TC-216",
+    "program_id": "PGM-CIV-SI",
+    "date": null,
+    "result": "Scheduled",
+    "samples": null,
+    "notes": "Hydrostatic rig booked for the new water-cooled charge pipe routing."
+  },
+  {
+    "run_id": "TR-26-0122",
+    "test_id": "DV-TC-217",
+    "program_id": "PGM-CIV-SI",
+    "date": null,
+    "result": "Scheduled",
+    "samples": null,
+    "notes": "Highest-priority open item \u2014 Critical severity, lowest surrogate confidence (58%) of the turbo-adjacent set."
+  },
+  {
+    "run_id": "TR-24-0077",
+    "test_id": "DV-TC-218",
+    "program_id": "PGM-CIV-LX",
+    "date": "2024-05-09",
+    "result": "Pass",
+    "samples": 12,
+    "notes": "350cc injector baseline."
+  },
+  {
+    "run_id": "TR-26-0074",
+    "test_id": "DV-TC-218",
+    "program_id": "PGM-CIV-SI",
+    "date": "2024-05-09",
+    "result": "Carried",
+    "samples": null,
+    "notes": "Carried from LX's TR-24-0077 \u2014 same injector platform, larger flow rating within the supplier's validated family."
+  },
+  {
+    "run_id": "TR-26-0123",
+    "test_id": "DV-TC-219",
+    "program_id": "PGM-CIV-SI",
+    "date": "2026-02-20",
+    "result": "Pass",
+    "samples": 4,
+    "notes": "Forged piston teardown after full duty cycle \u2014 no crown cracking, ring lands within spec."
+  },
+  {
+    "run_id": "TR-24-0083",
+    "test_id": "DV-TC-220",
+    "program_id": "PGM-CIV-LX",
+    "date": "2024-05-22",
+    "result": "Pass",
+    "samples": 6,
+    "notes": "Valve seat baseline."
+  },
+  {
+    "run_id": "TR-26-0075",
+    "test_id": "DV-TC-220",
+    "program_id": "PGM-CIV-SI",
+    "date": "2024-05-22",
+    "result": "Carried",
+    "samples": null,
+    "notes": "Carried from LX's TR-24-0083 \u2014 identical part, no re-test required."
+  },
+  {
+    "run_id": "TR-26-0124",
+    "test_id": "DV-TC-222",
+    "program_id": "PGM-CIV-SI",
+    "date": null,
+    "result": "In progress",
+    "samples": null,
+    "notes": "First EGT sensor validation on this engine family \u2014 calibration phase underway, 1000C soak scheduled next."
+  },
+  {
+    "run_id": "TR-24-0088",
+    "test_id": "DV-TC-223",
+    "program_id": "PGM-CIV-LX",
+    "date": "2024-06-02",
+    "result": "Pass",
+    "samples": 4,
+    "notes": "Oil feed line baseline."
+  },
+  {
+    "run_id": "TR-26-0076",
+    "test_id": "DV-TC-223",
+    "program_id": "PGM-CIV-SI",
+    "date": "2024-06-02",
+    "result": "Carried",
+    "samples": null,
+    "notes": "Carried from LX's TR-24-0088 \u2014 identical part across all three trims."
+  },
+  {
+    "run_id": "TR-24-0091",
+    "test_id": "DV-TC-224",
+    "program_id": "PGM-CIV-LX",
+    "date": "2024-06-14",
+    "result": "Pass",
+    "samples": 2,
+    "notes": "Crankshaft baseline \u2014 no crack initiation after 1e8 cycles."
+  },
+  {
+    "run_id": "TR-26-0077",
+    "test_id": "DV-TC-224",
+    "program_id": "PGM-CIV-SI",
+    "date": "2024-06-14",
+    "result": "Carried",
+    "samples": null,
+    "notes": "Carried from LX's TR-24-0091 \u2014 unaffected by the turbo change."
+  },
+  {
+    "run_id": "TR-26-0125",
+    "test_id": "DV-TC-225",
+    "program_id": "PGM-CIV-SI",
+    "date": null,
+    "result": "Scheduled",
+    "samples": null,
+    "notes": "Recalibration validation at Si's higher boost target \u2014 not yet run; same coil hardware as LX/Sport."
+  }
+]

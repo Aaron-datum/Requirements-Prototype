@@ -1,6 +1,12 @@
 import type { DocExtraction } from '../../domain/types'
-// OWNER: Phase 5 (BOM). StubId: doc-extraction. Static package list.
+import { INTAKE, intakePackage, requirementScope } from '../../fixtures/derive-bom'
+import { delay } from '../latency'
+
+/** StubId: doc-extraction. OWNER: Phase 5 (BOM). Static package list with detected types, counts and routes (fixtures/extras/bom/intake.json). */
 export const docsStub: DocExtraction = {
-  listPackage: async () => [],
-  countRequirements: async () => ({ extracted: 0, implicated: 0 }),
+  listPackage: async (rfqId) => delay(rfqId === INTAKE.rfqId ? intakePackage() : []),
+  countRequirements: async (rfqId) => {
+    const s = requirementScope()
+    return delay(rfqId === INTAKE.rfqId ? { extracted: s.extracted, implicated: s.inScope } : { extracted: 0, implicated: 0 })
+  },
 }

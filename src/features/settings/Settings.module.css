@@ -1,0 +1,9 @@
+.page { flex: 1; overflow-y: auto; }
+.wrap { max-width: 860px; padding: var(--layout-2) var(--layout-3) var(--layout-4); display: flex; flex-direction: column; gap: var(--layout-1); }
+.card { border: 1px solid var(--border-default); border-radius: var(--radius); background: var(--bg-card); padding: var(--gap-4); display: flex; flex-direction: column; gap: var(--gap-3); align-items: flex-start; }
+.grid { align-self: stretch; border: 1px solid var(--border-default); border-radius: var(--radius); overflow: hidden; }
+.cadRow { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; align-items: center; gap: var(--gap-3); padding: var(--gap-2) var(--gap-3); border-bottom: 1px solid var(--border-default); font-size: var(--text-small); }
+.cadRow:last-child { border-bottom: 0; }
+.cadHead { background: var(--bg-subtle); font: var(--fw-medium) var(--text-badge)/var(--lh-badge) var(--font-ui); text-transform: uppercase; letter-spacing: .4px; color: var(--fg-muted); }
+.sel { height: var(--input-height); border: 1px solid var(--border-strong); border-radius: var(--radius); background: var(--bg-card); color: var(--fg-primary); padding: 0 var(--gap-2); font: inherit; width: 100%; }
+.conflict { align-self: stretch; padding: var(--gap-2) var(--gap-3); border: 1px solid var(--status-fail-border); border-left: 3px solid var(--status-fail-fg); border-radius: var(--radius); background: var(--status-fail-bg); color: var(--status-fail-fg); font-size: var(--text-small); }

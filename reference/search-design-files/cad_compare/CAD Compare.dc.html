@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/colors_and_type.css">
+<style>
+  html,body{margin:0;height:100%;background:var(--bg-page);}
+  *,*::before,*::after{box-sizing:border-box;}
+  ::-webkit-scrollbar{width:9px;height:9px;}
+  ::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:99px;}
+  ::-webkit-scrollbar-track{background:transparent;}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{color:var(--accent-hover);text-decoration:underline;}
+  input[type=range]{-webkit-appearance:none;appearance:none;height:3px;border-radius:99px;background:var(--border-strong);outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:99px;background:var(--accent);cursor:pointer;border:2px solid var(--bg-card);}
+</style>
+</helmet>
+
+<div data-screen-label="CAD Compare" data-theme="{{ theme }}" style="height:100vh;display:flex;flex-direction:column;font-family:var(--font-sans);color:var(--fg-primary);background:var(--bg-page);overflow:hidden;">
+
+  <!-- ─── Row 1 · Global nav (48px) ─── -->
+  <header style="flex:0 0 48px;display:flex;align-items:center;gap:28px;padding:0 20px;background:var(--bg-sidebar);border-bottom:1px solid var(--border-default);">
+    <img src="assets/datum-logo-full.png" alt="Datum" style="height:22px;width:auto;display:block;flex-shrink:0;">
+    <nav style="display:flex;align-items:center;gap:22px;flex-shrink:0;white-space:nowrap;">
+      <span style="display:inline-flex;align-items:center;gap:6px;font:500 13px/16px var(--font-sans);color:var(--accent);cursor:pointer;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>Files
+      </span>
+      <span style="display:inline-flex;align-items:center;gap:6px;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M7 8l5-5 5 5"/><path d="M4 21h16"/></svg>Upload
+      </span>
+      <span style="display:inline-flex;align-items:center;gap:6px;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg>Saved Searches
+      </span>
+    </nav>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:22px;white-space:nowrap;">
+      <span style="display:inline-flex;align-items:center;gap:6px;font:400 13px/16px var(--font-sans);color:var(--fg-secondary);cursor:pointer;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Feedback
+      </span>
+      <span style="display:inline-flex;align-items:center;gap:8px;font:400 13px/16px var(--font-mono);color:var(--fg-secondary);">
+        <span style="width:24px;height:24px;border-radius:99px;background:var(--accent-tint);color:var(--accent);display:grid;place-items:center;font:500 11px/1 var(--font-sans);">DV</span>dev@datum.co
+      </span>
+    </div>
+  </header>
+
+  <!-- ─── Row 2 · Breadcrumb strip (36px) ─── -->
+  <div style="flex:0 0 36px;display:flex;align-items:center;padding:0 20px;background:var(--bg-page);border-bottom:1px solid var(--border-default);">
+    <button aria-label="Back" style="width:24px;height:24px;border:0;background:transparent;border-radius:var(--radius);color:var(--fg-secondary);display:grid;place-items:center;cursor:pointer;margin-left:-4px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <nav style="display:flex;align-items:center;gap:8px;font:400 13px/16px var(--font-sans);margin-left:2px;white-space:nowrap;flex-shrink:0;">
+      <a href="#">Files</a><span style="color:var(--fg-muted);">/</span>
+      <a href="#">Define Requirements</a><span style="color:var(--fg-muted);">/</span>
+      <a href="#">Search Results</a><span style="color:var(--fg-muted);">/</span>
+      <span style="font-weight:500;color:var(--fg-primary);">Model Comparison</span>
+    </nav>
+    <button style="margin-left:auto;height:28px;display:inline-flex;align-items:center;gap:6px;padding:0 12px;border:1px solid var(--border-strong);border-radius:var(--radius);background:var(--bg-card);color:var(--fg-primary);font:500 12px/16px var(--font-sans);cursor:pointer;white-space:nowrap;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>Save Search
+    </button>
+  </div>
+
+  <!-- ═══════════════ WORKBENCH: left sidebar · center stage · right sidebar ═══════════════ -->
+  <div style="flex:1;min-height:0;display:flex;">
+
+    <!-- ─────────── LEFT · CAD viewer sidebar ─────────── -->
+    <aside style="flex:0 0 320px;width:320px;background:var(--bg-sidebar);border-right:1px solid var(--border-default);display:flex;flex-direction:column;overflow:hidden;">
+      <div style="flex:0 0 auto;padding:10px 14px;border-bottom:1px solid var(--border-default);">
+        <div style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.5px;color:var(--fg-muted);">Part name · search ↔ result</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px;">
+          <div style="border:1px solid var(--border-default);border-radius:var(--radius);padding:6px 8px;background:var(--bg-card);">
+            <div style="font:500 9px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.5px;color:var(--fg-muted);">Query</div>
+            <div style="font:500 11px/15px var(--font-mono);color:var(--accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">4405397_AE</div>
+          </div>
+          <div style="border:1px solid var(--border-default);border-radius:var(--radius);padding:6px 8px;background:var(--bg-card);">
+            <div style="font:500 9px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.5px;color:var(--fg-muted);">Result</div>
+            <div style="font:500 11px/15px var(--font-mono);color:var(--fg-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">4405397_AC</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- sidebar tabs -->
+      <div style="display:flex;flex:0 0 auto;background:var(--bg-sidebar);border-bottom:1px solid var(--border-default);padding:0 6px;">
+        <sc-for list="{{ leftTabs }}" as="lt" hint-placeholder-count="3">
+          <button onClick="{{ lt.on }}" style="flex:1;height:38px;border:0;background:transparent;border-bottom:2px solid {{ lt.border }};margin-bottom:-1px;font:500 12px/16px var(--font-sans);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;color: {{ lt.color }};">{{ lt.label }}<span style="font:500 10px/14px var(--font-mono);color:var(--fg-muted);">{{ lt.count }}</span></button>
+        </sc-for>
+      </div>
+
+      <div style="flex:1;min-height:0;overflow-y:auto;">
+        <!-- Assembly (stacked trees) -->
+        <sc-if value="{{ showAssembly }}" hint-placeholder-val="{{ true }}">
+        <div style="padding:8px 12px 12px;">
+          <div style="position:relative;margin-bottom:8px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--fg-muted)" stroke-width="2" stroke-linecap="round" style="position:absolute;left:8px;top:8px;"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input placeholder="Search parts…" style="width:100%;height:28px;padding:0 10px 0 28px;font:400 12px/16px var(--font-sans);border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);color:var(--fg-primary);outline:none;">
+          </div>
+          <div style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.5px;color:var(--fg-muted);margin:2px 0 4px;display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:2px;background:var(--accent);"></span>Query part</div>
+          <div style="display:flex;align-items:center;gap:6px;padding:4px 6px;border-radius:var(--radius);font:400 12px/16px var(--font-sans);color:var(--fg-primary);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--fg-muted)" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--fg-muted)" stroke-width="1.75"><path d="M12 2 3 7v10l9 5 9-5V7z"/></svg><span style="flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Bolt-Spacer Assembly</span></div>
+          <div style="display:flex;align-items:center;gap:6px;padding:4px 6px;padding-left:20px;border-radius:var(--radius);font:500 12px/16px var(--font-sans);background:var(--fill-selected);color:var(--accent);"><span style="width:14px;"></span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span style="flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Bolt Body</span></div>
+          <div style="display:flex;align-items:center;gap:6px;padding:4px 6px;padding-left:20px;border-radius:var(--radius);font:400 12px/16px var(--font-sans);color:var(--fg-primary);"><span style="width:14px;"></span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--fg-muted)" stroke-width="1.75"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span style="flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Spacer Collar</span></div>
+          <div style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.5px;color:var(--fg-muted);margin:12px 0 4px;display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:2px;background:var(--fg-muted);"></span>Result part</div>
+          <div style="display:flex;align-items:center;gap:6px;padding:4px 6px;border-radius:var(--radius);font:400 12px/16px var(--font-sans);color:var(--fg-primary);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--fg-muted)" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--fg-muted)" stroke-width="1.75"><path d="M12 2 3 7v10l9 5 9-5V7z"/></svg><span style="flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Bolt-Spacer + Washer</span></div>
+          <div style="display:flex;align-items:center;gap:6px;padding:4px 6px;padding-left:20px;border-radius:var(--radius);font:500 12px/16px var(--font-sans);background:var(--fill-selected);color:var(--accent);"><span style="width:14px;"></span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span style="flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Bolt Body</span></div>
+          <div style="display:flex;align-items:center;gap:6px;padding:4px 6px;padding-left:20px;border-radius:var(--radius);font:400 12px/16px var(--font-sans);color:var(--fg-primary);"><span style="width:14px;"></span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--fg-muted)" stroke-width="1.75"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span style="flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Retaining Washer</span></div>
+        </div>
+        </sc-if>
+
+        <!-- PLM (side-by-side) -->
+        <sc-if value="{{ showPlm }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:12px;">
+          <div style="display:grid;grid-template-columns:88px 1fr 1fr;gap:5px 8px;align-items:center;">
+            <span style="font:500 9px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);"></span>
+            <span style="font:500 9px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);">Query</span>
+            <span style="font:500 9px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);">Result</span>
+            <span style="font:400 11px/16px var(--font-sans);color:var(--fg-muted);">Material</span><span style="font:400 11px/16px var(--font-mono);padding:2px 5px;border-radius:3px;background:var(--status-pass-bg);color:var(--status-pass-fg);">Steel A2-70</span><span style="font:400 11px/16px var(--font-mono);padding:2px 5px;border-radius:3px;background:var(--status-pass-bg);color:var(--status-pass-fg);">Steel A2-70</span>
+            <span style="font:400 11px/16px var(--font-sans);color:var(--fg-muted);">Part no.</span><span style="font:400 11px/16px var(--font-mono);padding:2px 5px;color:var(--fg-primary);">4405397_AE</span><span style="font:400 11px/16px var(--font-mono);padding:2px 5px;color:var(--fg-primary);">4405397_AC</span>
+            <span style="font:400 11px/16px var(--font-sans);color:var(--fg-muted);">Revision</span><span style="font:400 11px/16px var(--font-mono);padding:2px 5px;color:var(--fg-primary);">R2</span><span style="font:400 11px/16px var(--font-mono);padding:2px 5px;color:var(--fg-primary);">R4</span>
+            <span style="font:400 11px/16px var(--font-sans);color:var(--fg-muted);">Lifecycle</span><span style="font:400 11px/16px var(--font-mono);padding:2px 5px;border-radius:3px;background:var(--status-pass-bg);color:var(--status-pass-fg);">Released</span><span style="font:400 11px/16px var(--font-mono);padding:2px 5px;border-radius:3px;background:var(--status-pass-bg);color:var(--status-pass-fg);">Released</span>
+          </div>
+          <div style="font:400 10px/14px var(--font-sans);color:var(--fg-muted);margin-top:8px;font-style:italic;">Matching fields highlighted with the positive-confirmation color. File-scoped records.</div>
+        </div>
+        </sc-if>
+
+        <!-- Measurements (dual boxes) -->
+        <sc-if value="{{ showMeas }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:10px 12px;">
+          <div style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin:0 2px 6px;">View mode</div>
+          <div style="display:flex;margin-bottom:12px;border:1px solid var(--border-default);border-radius:var(--radius);overflow:hidden;">
+            <button onClick="{{ goCompare }}" style="flex:1;height:30px;border:0;border-right:1px solid var(--border-default);font:500 12px/16px var(--font-sans);cursor:pointer;background: {{ compBg }};color: {{ compFg }};">Comparison</button>
+            <button onClick="{{ goAlign }}" style="flex:1;height:30px;border:0;font:500 12px/16px var(--font-sans);cursor:pointer;background: {{ alignBg }};color: {{ alignFg }};">Alignment</button>
+          </div>
+          <div style="border:1px solid var(--border-default);border-radius:var(--radius);padding:8px 10px;margin-bottom:8px;background:var(--bg-card);">
+            <div style="font:500 12px/16px var(--font-sans);color:var(--fg-primary);">Shank Diameter</div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px 6px;margin-top:5px;"><span style="font:400 10px/14px var(--font-sans);padding:1px 6px;border-radius:99px;background:var(--accent-tint);color:var(--accent);">Diameter</span><span style="font:400 10px/14px var(--font-sans);padding:1px 6px;border-radius:99px;background:var(--bg-subtle);color:var(--fg-secondary);">Bolt Body</span></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">
+              <div style="border:1px solid var(--border-default);border-radius:var(--radius);padding:6px 8px;"><div style="font:500 9px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.5px;color:var(--fg-muted);">Query</div><div style="font:500 11px/15px var(--font-mono);color:var(--fg-primary);">Ø 12.00 mm</div></div>
+              <div style="border:1px solid var(--border-default);border-radius:var(--radius);padding:6px 8px;"><div style="font:500 9px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.5px;color:var(--fg-muted);">Result</div><div style="font:500 11px/15px var(--font-mono);color:var(--fg-primary);">Ø 12.00 mm</div></div>
+            </div>
+          </div>
+          <div style="border:1px solid var(--border-default);border-radius:var(--radius);padding:8px 10px;margin-bottom:8px;background:var(--bg-card);">
+            <div style="font:500 12px/16px var(--font-sans);color:var(--fg-primary);">Overall Length</div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px 6px;margin-top:5px;"><span style="font:400 10px/14px var(--font-sans);padding:1px 6px;border-radius:99px;background:var(--accent-tint);color:var(--accent);">Distance</span><span style="font:400 10px/14px var(--font-sans);padding:1px 6px;border-radius:99px;background:var(--bg-subtle);color:var(--fg-secondary);">Head → tip</span></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">
+              <div style="border:1px solid var(--border-default);border-radius:var(--radius);padding:6px 8px;"><div style="font:500 9px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.5px;color:var(--fg-muted);">Query</div><div style="font:500 11px/15px var(--font-mono);color:var(--fg-primary);">48.20 mm</div></div>
+              <div style="border:1px solid var(--border-default);border-radius:var(--radius);padding:6px 8px;"><div style="font:500 9px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.5px;color:var(--fg-muted);">Result</div><div style="font:500 11px/15px var(--font-mono);color:var(--fg-primary);">49.40 mm</div></div>
+            </div>
+          </div>
+          <p style="margin:4px;font:400 11px/16px var(--font-sans);color:var(--fg-muted);">Measurements created in either view are saved here and cross-link to the body, tree row, and 3D geometry.</p>
+        </div>
+        </sc-if>
+      </div>
+    </aside>
+
+    <!-- ─────────── CENTER · stage ─────────── -->
+    <div style="flex:1;min-width:0;display:flex;flex-direction:column;background:var(--bg-page);overflow:hidden;">
+
+      <!-- Overlay legend bar (post-compute only) -->
+      <sc-if value="{{ isOverlay }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:0 0 auto;display:flex;align-items:center;gap:18px;padding:10px 16px;background:var(--bg-page);border-bottom:1px solid var(--border-default);">
+        <span style="display:inline-flex;align-items:center;gap:7px;font:400 12px/16px var(--font-sans);color:var(--fg-primary);"><span style="width:11px;height:11px;border-radius:3px;background:#A8200D;"></span>Query only</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;font:400 12px/16px var(--font-sans);color:var(--fg-primary);"><span style="width:11px;height:11px;border-radius:3px;background:#1F5FA8;"></span>Overlap</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;font:400 12px/16px var(--font-sans);color:var(--fg-primary);"><span style="width:11px;height:11px;border-radius:3px;background:#1A6B3A;"></span>Result only</span>
+        <span style="margin-left:auto;font:400 11px/16px var(--font-mono);color:var(--fg-muted);">Aligned · best fit from 3 constraints</span>
+      </div>
+      </sc-if>
+
+      <!-- shared toolbar -->
+      <div style="flex:0 0 auto;padding:6px 16px;border-bottom:1px solid var(--border-default);background:var(--bg-card);display:flex;flex-direction:column;gap:6px;">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <span style="font:500 9px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.5px;color:var(--fg-muted);width:52px;flex-shrink:0;">Viewer</span>
+          <div style="display:inline-flex;border:1px solid var(--border-default);border-radius:var(--radius);overflow:hidden;">
+            <sc-for list="{{ viewModes }}" as="vm" hint-placeholder-count="3">
+              <button onClick="{{ vm.on }}" style="padding:4px 11px;border:0;border-right:1px solid var(--border-default);font:500 11px/16px var(--font-sans);cursor:pointer;white-space:nowrap;background: {{ vm.bg }};color: {{ vm.fg }};">{{ vm.label }}</button>
+            </sc-for>
+          </div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--fg-muted)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l6 9a6 6 0 1 1-12 0z"/></svg>
+          <input type="range" min="10" max="100" value="100" style="width:78px;">
+          <span style="font:400 11px/16px var(--font-mono);color:var(--fg-muted);">100%</span>
+          <div style="display:flex;align-items:center;gap:2px;margin-left:auto;">
+            <button aria-label="Fit" style="width:26px;height:26px;border:0;background:transparent;border-radius:var(--radius);color:var(--fg-secondary);display:grid;place-items:center;cursor:pointer;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8V3h5M21 8V3h-5M3 16v5h5M21 16v5h-5"/></svg></button>
+            <button aria-label="Home view" style="width:26px;height:26px;border:0;background:transparent;border-radius:var(--radius);color:var(--fg-secondary);display:grid;place-items:center;cursor:pointer;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></button>
+            <button aria-label="Frame selection" style="width:26px;height:26px;border:0;background:transparent;border-radius:var(--radius);color:var(--fg-secondary);display:grid;place-items:center;cursor:pointer;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="1"/><circle cx="12" cy="12" r="3"/></svg></button>
+            <button aria-label="Settings" style="width:26px;height:26px;border:0;background:transparent;border-radius:var(--radius);color:var(--fg-secondary);display:grid;place-items:center;cursor:pointer;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-2.9 1.09V22a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 8 20.4l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15H4a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 6 8l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 12 4.6V4a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 2.83 1.09l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 22 12h-.6"/></svg></button>
+            <button aria-label="Snapshot" style="width:26px;height:26px;border:0;background:transparent;border-radius:var(--radius);color:var(--fg-secondary);display:grid;place-items:center;cursor:pointer;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></button>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <span style="font:500 9px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.5px;color:var(--fg-muted);width:52px;flex-shrink:0;">Measure</span>
+          <button style="height:26px;padding:0 10px;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);color:var(--fg-secondary);font:500 11px/16px var(--font-sans);cursor:pointer;display:inline-flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l7 17 2-7 7-2z"/></svg>Selection<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+          <button style="height:26px;padding:0 10px;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);color:var(--fg-secondary);font:500 11px/16px var(--font-sans);cursor:pointer;display:inline-flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V4h4M20 8V4h-4M4 16v4h4M20 16v4h-4"/></svg>Bounding Box</button>
+          <button style="height:26px;padding:0 10px;border:0;background:transparent;color:var(--fg-secondary);font:500 11px/16px var(--font-sans);cursor:pointer;">Clear</button>
+        </div>
+      </div>
+
+      <!-- Comparison / Alignment: two linked viewports -->
+      <sc-if value="{{ showSideBySide }}" hint-placeholder-val="{{ true }}">
+      <div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px;">
+        <div style="position:relative;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);display:grid;place-items:center;overflow:hidden;">
+          <span style="position:absolute;left:12px;top:12px;font:500 10px/14px var(--font-sans);padding:2px 8px;border-radius:var(--radius);background:var(--accent-tint);color:var(--accent);">Query · 4405397_AE_Bolt-Spacer.CATPart</span>
+          {{ cadPlaceholder }}
+          <span style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);font:400 10px/14px var(--font-mono);color:var(--fg-muted);background:var(--bg-card);border:1px solid var(--border-default);padding:2px 8px;border-radius:var(--radius);display:inline-flex;gap:5px;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 17H7A5 5 0 0 1 7 7h2M15 7h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg>Linked view</span>
+          <div style="position:absolute;right:14px;top:14px;">{{ viewCube }}</div>
+          <div style="position:absolute;left:14px;bottom:14px;">{{ gizmo }}</div>
+        </div>
+        <div style="position:relative;border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-card);display:grid;place-items:center;overflow:hidden;">
+          <span style="position:absolute;left:12px;top:12px;font:500 10px/14px var(--font-sans);padding:2px 8px;border-radius:var(--radius);background:var(--bg-subtle);color:var(--fg-secondary);border:1px solid var(--border-default);">Result · 4405397_AC_Bolt-Spacer.CATPart</span>
+          {{ cadPlaceholder }}
+          <span style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);font:400 10px/14px var(--font-mono);color:var(--fg-muted);background:var(--bg-card);border:1px solid var(--border-default);padding:2px 8px;border-radius:var(--radius);display:inline-flex;gap:5px;align-items:center;">rotate one → mirrors the other</span>
+          <div style="position:absolute;right:14px;top:14px;">{{ viewCube }}</div>
+          <div style="position:absolute;left:14px;bottom:14px;">{{ gizmo }}</div>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- Overlay: single aligned viewport -->
+      <sc-if value="{{ isOverlay }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:1;min-height:0;position:relative;background:var(--bg-card);display:grid;place-items:center;overflow:hidden;margin:12px;border:1px solid var(--border-default);border-radius:var(--radius);">
+        {{ cadPlaceholder }}
+        <span style="position:absolute;left:14px;top:14px;font:500 10px/14px var(--font-sans);padding:2px 8px;border-radius:var(--radius);background:var(--charcoal);color:#fff;">Aligned overlay · best fit</span>
+        <div style="position:absolute;right:16px;top:16px;">{{ viewCube }}</div>
+        <div style="position:absolute;left:16px;bottom:16px;">{{ gizmo }}</div>
+      </div>
+      </sc-if>
+    </div>
+
+    <!-- ─────────── RIGHT · analysis sidebar ─────────── -->
+    <sc-if value="{{ showRightPanel }}" hint-placeholder-val="{{ false }}">
+    <aside style="flex:0 0 300px;width:300px;background:var(--bg-sidebar);border-left:1px solid var(--border-default);display:flex;flex-direction:column;overflow:hidden;">
+      <div style="flex:0 0 auto;padding:12px 16px;border-bottom:1px solid var(--border-default);">
+        <h2 style="margin:0;font:500 16px/24px var(--font-sans);color:var(--fg-primary);">Alignment &amp; Overlay</h2>
+        <p style="margin:2px 0 0;font:400 11px/16px var(--font-sans);color:var(--fg-muted);">{{ panelSub }}</p>
+      </div>
+
+      <!-- ALIGNMENT: constraint builder -->
+      <sc-if value="{{ isAlignment }}" hint-placeholder-val="{{ true }}">
+      <div style="flex:1;min-height:0;display:flex;flex-direction:column;">
+        <div style="flex:0 0 auto;padding:12px 16px;border-bottom:1px solid var(--border-default);">
+          <div style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin-bottom:8px;">Add correspondence</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="font:400 11px/16px var(--font-sans);color:var(--fg-secondary);width:64px;flex-shrink:0;">Query face</span>
+              <button onClick="{{ pickQuery }}" style="flex:1;height:30px;padding:0 10px;border:1px dashed var(--border-strong);border-radius:var(--radius);font:500 11px/16px var(--font-mono);cursor:pointer;text-align:left;background: {{ qFaceBg }};color: {{ qFaceFg }};">{{ queryFaceLabel }}</button>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="font:400 11px/16px var(--font-sans);color:var(--fg-secondary);width:64px;flex-shrink:0;">Result face</span>
+              <button onClick="{{ pickResult }}" style="flex:1;height:30px;padding:0 10px;border:1px dashed var(--border-strong);border-radius:var(--radius);font:500 11px/16px var(--font-mono);cursor:pointer;text-align:left;background: {{ rFaceBg }};color: {{ rFaceFg }};">{{ resultFaceLabel }}</button>
+            </div>
+            <button onClick="{{ addConstraint }}" style="height:32px;border:1px solid var(--border-strong);border-radius:var(--radius);background:var(--bg-card);color:var(--fg-primary);font:500 12px/16px var(--font-sans);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;opacity: {{ addOpacity }};"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>Add constraint</button>
+          </div>
+        </div>
+
+        <div style="flex:1;min-height:0;overflow-y:auto;padding:10px 12px;">
+          <div style="font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);margin:2px 4px 8px;">Constraints</div>
+          <sc-for list="{{ constraints }}" as="c" hint-placeholder-count="2">
+            <div style="display:flex;align-items:flex-start;gap:10px;padding:10px;border:1px solid var(--border-default);border-radius:var(--radius);margin-bottom:8px;background:var(--bg-card);">
+              <span style="width:10px;height:10px;border-radius:99px;margin-top:4px;flex-shrink:0;background: {{ c.statusColor }};"></span>
+              <div style="flex:1;min-width:0;">
+                <div style="font:500 13px/18px var(--font-sans);color:var(--fg-primary);">{{ c.type }}</div>
+                <div style="font:400 11px/16px var(--font-mono);color:var(--fg-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ c.a }} ↔ {{ c.b }}</div>
+              </div>
+              <button onClick="{{ c.del }}" aria-label="Delete constraint" style="width:22px;height:22px;border:0;background:transparent;border-radius:3px;color:var(--fg-muted);display:grid;place-items:center;cursor:pointer;flex-shrink:0;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg></button>
+            </div>
+          </sc-for>
+          <sc-if value="{{ noConstraints }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:12px 4px;font:400 12px/18px var(--font-sans);color:var(--fg-muted);">No constraints yet. Pick a query face and a result face, then Add constraint.</p>
+          </sc-if>
+        </div>
+
+        <div style="flex:0 0 auto;padding:12px 16px;border-top:1px solid var(--border-default);">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+            <span style="width:8px;height:8px;border-radius:99px;flex-shrink:0;background: {{ dofColor }};"></span>
+            <span style="font:500 12px/16px var(--font-sans);color:var(--fg-secondary);">{{ remLabel }}</span>
+          </div>
+          <button onClick="{{ runCompare }}" style="width:100%;height:36px;border:0;border-radius:var(--radius);background:var(--btn-primary-bg);color:var(--btn-primary-fg);font:500 13px/16px var(--font-sans);cursor:pointer;opacity: {{ runOpacity }};">Align and compute overlap</button>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- OVERLAY: difference stats -->
+      <sc-if value="{{ isOverlay }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:1;min-height:0;overflow-y:auto;">
+        <div style="padding:12px 16px;border-bottom:1px solid var(--border-default);">
+          <h3 style="margin:0 0 8px;font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);">Volume</h3>
+          <div style="display:flex;align-items:center;gap:8px;padding:6px 0;"><span style="width:12px;height:12px;border-radius:3px;flex-shrink:0;background:#1F5FA8;"></span><span style="flex:1;font:400 12px/15px var(--font-sans);color:var(--fg-primary);">Overlap volume</span><span style="font:500 12px/16px var(--font-mono);color:var(--fg-primary);">4,182<span style="font-size:10px;color:var(--fg-muted);"> mm³</span></span></div>
+          <div style="display:flex;align-items:center;gap:8px;padding:6px 0;"><span style="width:12px;height:12px;border-radius:3px;flex-shrink:0;background:#A8200D;"></span><span style="flex:1;font:400 12px/15px var(--font-sans);color:var(--fg-primary);">Query part only</span><span style="font:500 12px/16px var(--font-mono);color:var(--fg-primary);">318<span style="font-size:10px;color:var(--fg-muted);"> mm³</span></span></div>
+          <div style="display:flex;align-items:center;gap:8px;padding:6px 0;"><span style="width:12px;height:12px;border-radius:3px;flex-shrink:0;background:#1A6B3A;"></span><span style="flex:1;font:400 12px/15px var(--font-sans);color:var(--fg-primary);">Result part only</span><span style="font:500 12px/16px var(--font-mono);color:var(--fg-primary);">506<span style="font-size:10px;color:var(--fg-muted);"> mm³</span></span></div>
+        </div>
+        <div style="padding:12px 16px;border-bottom:1px solid var(--border-default);">
+          <h3 style="margin:0 0 8px;font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);">Δ Bounding box</h3>
+          <div style="display:grid;grid-template-columns:20px 1fr auto;row-gap:8px;column-gap:8px;align-items:center;">
+            <span style="font:500 11px/16px var(--font-mono);color:var(--fg-muted);">X</span><span style="height:6px;border-radius:99px;background:var(--bg-subtle);position:relative;overflow:hidden;"><i style="position:absolute;top:0;bottom:0;left:50%;width:6%;background:var(--accent);border-radius:99px;"></i></span><span style="font:500 11px/16px var(--font-mono);text-align:right;color:var(--status-warn-fg);">+0.3 mm</span>
+            <span style="font:500 11px/16px var(--font-mono);color:var(--fg-muted);">Y</span><span style="height:6px;border-radius:99px;background:var(--bg-subtle);position:relative;overflow:hidden;"><i style="position:absolute;top:0;bottom:0;left:50%;width:3%;background:var(--accent);border-radius:99px;"></i></span><span style="font:500 11px/16px var(--font-mono);text-align:right;color:var(--status-warn-fg);">+0.1 mm</span>
+            <span style="font:500 11px/16px var(--font-mono);color:var(--fg-muted);">Z</span><span style="height:6px;border-radius:99px;background:var(--bg-subtle);position:relative;overflow:hidden;"><i style="position:absolute;top:0;bottom:0;left:34%;width:16%;background:var(--accent);border-radius:99px;"></i></span><span style="font:500 11px/16px var(--font-mono);text-align:right;color:var(--status-info-fg);">−1.2 mm</span>
+          </div>
+        </div>
+        <div style="padding:12px 16px;border-bottom:1px solid var(--border-default);">
+          <h3 style="margin:0 0 8px;font:500 10px/14px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--fg-muted);">Summary</h3>
+          <div style="display:flex;align-items:center;gap:8px;padding:5px 0;"><span style="flex:1;font:400 12px/15px var(--font-sans);color:var(--fg-primary);">Volume match</span><span style="font:500 12px/16px var(--font-mono);color:var(--fg-primary);">83.6<span style="font-size:10px;color:var(--fg-muted);"> %</span></span></div>
+          <div style="display:flex;align-items:center;gap:8px;padding:5px 0;"><span style="flex:1;font:400 12px/15px var(--font-sans);color:var(--fg-primary);">Max deviation</span><span style="font:500 12px/16px var(--font-mono);color:var(--fg-primary);">1.2<span style="font-size:10px;color:var(--fg-muted);"> mm</span></span></div>
+          <div style="display:flex;align-items:center;gap:8px;padding:5px 0;"><span style="flex:1;font:400 12px/15px var(--font-sans);color:var(--fg-primary);">Aligned by</span><span style="font:500 12px/16px var(--font-mono);color:var(--fg-primary);">3 constraints</span></div>
+        </div>
+        <p style="padding:10px 16px;margin:0;font:400 11px/16px var(--font-sans);color:var(--fg-muted);">Color-coded regions in the viewport are always paired with this labeled numeric readout — never a color-only indicator.</p>
+        <div style="padding:0 16px 16px;">
+          <button onClick="{{ goAlign }}" style="width:100%;height:32px;border:1px solid var(--border-strong);border-radius:var(--radius);background:var(--bg-card);color:var(--fg-primary);font:500 12px/16px var(--font-sans);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>Adjust alignment</button>
+        </div>
+      </div>
+      </sc-if>
+    </aside>
+    </sc-if>
+
+  </div>
+
+  <!-- footer -->
+  <div style="flex:0 0 auto;padding:5px 20px;text-align:right;font:400 10px/14px var(--font-sans);color:var(--fg-muted);border-top:1px solid var(--border-default);background:var(--bg-sidebar);">© 2026 Datum Systems Inc.</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:810},&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;white&quot;,&quot;options&quot;:[&quot;white&quot;,&quot;tan&quot;,&quot;dark&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Appearance&quot;}}">
+class Component extends DCLogic {
+  state = {
+    tab: 'comparison',
+    leftTab: 'assembly',
+    viewMode: 'Shaded',
+    queryFace: null,
+    resultFace: null,
+    qIdx: 0,
+    rIdx: 0,
+    constraints: [
+      { type: 'Coplanar', a: 'Plane face #22', b: 'Plane face #14', status: 'ok' },
+      { type: 'Coaxial', a: 'Cylinder face #18', b: 'Cylinder face #23', status: 'warn' },
+    ],
+  };
+
+  weights = { 'Coplanar': 3, 'Coaxial': 2, 'Concentric': 2, 'Parallel planes': 1 };
+
+  remaining(cons) {
+    let s = 0;
+    cons.forEach(c => { s += this.weights[c.type] || 0; });
+    return Math.max(0, 6 - s);
+  }
+
+  inferType(q, r) {
+    if (!q || !r) return null;
+    const k = f => f.split(' ')[0];
+    const kq = k(q), kr = k(r);
+    if (kq === 'Plane' && kr === 'Plane') return 'Coplanar';
+    if (kq === 'Cylinder' && kr === 'Cylinder') return 'Coaxial';
+    if (kq === 'Conical' || kr === 'Conical') return 'Concentric';
+    return 'Parallel planes';
+  }
+
+  filterFor(mode) {
+    if (mode === 'Wireframe') return 'grayscale(1) contrast(1.5) brightness(1.08)';
+    if (mode === 'X-Ray') return 'opacity(0.5) saturate(0.6)';
+    return 'none';
+  }
+
+  renderVals() {
+    const s = this.state;
+    const isAlign = s.tab === 'alignment';
+    const isComp = s.tab === 'comparison';
+    const isOverlay = s.tab === 'overlay';
+    const rem = this.remaining(s.constraints);
+    const qPool = ['Plane face #27', 'Cylinder face #31', 'Conical face #12', 'Plane face #08', 'Cylinder face #40'];
+    const rPool = ['Plane face #19', 'Cylinder face #33', 'Conical face #21', 'Plane face #05', 'Cylinder face #44'];
+    const canAdd = !!(s.queryFace && s.resultFace);
+    const canRun = rem === 0 && s.constraints.length > 0;
+    const accent = 'var(--accent)';
+    const detected = this.inferType(s.queryFace, s.resultFace);
+
+    const viewCube = React.createElement('svg', { width: 46, height: 46, viewBox: '0 0 64 64' },
+      React.createElement('polygon', { points: '32,6 56,18 32,30 8,18', fill: '#EEF1F5', stroke: '#B9C2CC', strokeWidth: 1 }),
+      React.createElement('polygon', { points: '8,18 32,30 32,56 8,44', fill: '#D2D9E1', stroke: '#B9C2CC', strokeWidth: 1 }),
+      React.createElement('polygon', { points: '56,18 32,30 32,56 56,44', fill: '#C2CAD3', stroke: '#B9C2CC', strokeWidth: 1 }),
+      React.createElement('text', { x: 20, y: 46, fill: '#5A6472', fontSize: 8, fontFamily: 'DM Sans, sans-serif', textAnchor: 'middle' }, 'BACK'),
+      React.createElement('text', { x: 44, y: 46, fill: '#5A6472', fontSize: 8, fontFamily: 'DM Sans, sans-serif', textAnchor: 'middle' }, 'LEFT'),
+    );
+    const gizmo = React.createElement('svg', { width: 44, height: 44, viewBox: '0 0 64 64', fill: 'none' },
+      React.createElement('circle', { cx: 20, cy: 44, r: 2.5, fill: '#4A4E57' }),
+      React.createElement('line', { x1: 20, y1: 44, x2: 52, y2: 52, stroke: '#C0392B', strokeWidth: 2.5, strokeLinecap: 'round' }),
+      React.createElement('text', { x: 55, y: 56, fill: '#C0392B', fontSize: 9, fontFamily: 'DM Mono, monospace' }, 'x'),
+      React.createElement('line', { x1: 20, y1: 44, x2: 6, y2: 56, stroke: '#1A6B3A', strokeWidth: 2.5, strokeLinecap: 'round' }),
+      React.createElement('text', { x: 2, y: 62, fill: '#1A6B3A', fontSize: 9, fontFamily: 'DM Mono, monospace' }, 'y'),
+      React.createElement('line', { x1: 20, y1: 44, x2: 20, y2: 12, stroke: '#1A3A5C', strokeWidth: 2.5, strokeLinecap: 'round' }),
+      React.createElement('text', { x: 24, y: 12, fill: '#1A3A5C', fontSize: 9, fontFamily: 'DM Mono, monospace' }, 'z'),
+    );
+
+    const mkLeftTab = (id, label, count) => ({
+      label, count,
+      color: s.leftTab === id ? 'var(--accent)' : 'var(--fg-secondary)',
+      border: s.leftTab === id ? 'var(--accent)' : 'transparent',
+      on: () => this.setState({ leftTab: id }),
+    });
+
+    const cadPlaceholder = React.createElement('div', {
+      style: { display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', color: 'var(--fg-muted)' },
+    },
+      React.createElement('svg', { width: 88, height: 88, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1, strokeLinecap: 'round', strokeLinejoin: 'round' },
+        React.createElement('path', { d: 'M14 3v5h5' }),
+        React.createElement('path', { d: 'M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z' }),
+        React.createElement('path', { d: 'M12 10l3.2 1.85v3.7L12 17.4l-3.2-1.85v-3.7z' }),
+        React.createElement('path', { d: 'M12 10v3.7M12 13.7l3.2-1.85M12 13.7l-3.2-1.85' }),
+      ),
+      React.createElement('div', { style: { font: '500 12px/16px var(--font-sans)', color: 'var(--fg-secondary)' } }, 'CAD part not rendered'),
+      React.createElement('div', { style: { font: '400 11px/16px var(--font-mono)', color: 'var(--fg-muted)' } }, '.CATPart · load to view geometry'),
+    );
+
+    return {
+      theme: this.props.theme ?? 'white',
+      cadPlaceholder,
+      isAlignment: isAlign,
+      isComparison: isComp,
+      isOverlay: isOverlay,
+      showSideBySide: isComp || isAlign,
+      showRightPanel: isAlign || isOverlay,
+      compBg: isComp ? accent : 'transparent',
+      compFg: isComp ? '#fff' : 'var(--fg-secondary)',
+      alignBg: (isAlign || isOverlay) ? accent : 'transparent',
+      alignFg: (isAlign || isOverlay) ? '#fff' : 'var(--fg-secondary)',
+      goCompare: () => this.setState({ tab: 'comparison' }),
+      goAlign: () => this.setState({ tab: 'alignment' }),
+      panelSub: isAlign ? 'Define face correspondences, then align.' : 'Overlap difference from the aligned parts.',
+
+      leftTabs: [mkLeftTab('assembly', 'Assembly', '4'), mkLeftTab('plm', 'PLM', ''), mkLeftTab('meas', 'Measurements', '2')],
+      showAssembly: s.leftTab === 'assembly',
+      showPlm: s.leftTab === 'plm',
+      showMeas: s.leftTab === 'meas',
+
+      queryFaceLabel: s.queryFace || 'Click a face in the viewer',
+      resultFaceLabel: s.resultFace || 'Click a face in the viewer',
+      qFaceBg: s.queryFace ? 'var(--accent-tint)' : 'var(--bg-card)',
+      qFaceFg: s.queryFace ? 'var(--accent)' : 'var(--fg-muted)',
+      rFaceBg: s.resultFace ? 'var(--accent-tint)' : 'var(--bg-card)',
+      rFaceFg: s.resultFace ? 'var(--accent)' : 'var(--fg-muted)',
+      pickQuery: () => this.setState({ queryFace: qPool[s.qIdx % qPool.length], qIdx: s.qIdx + 1 }),
+      pickResult: () => this.setState({ resultFace: rPool[s.rIdx % rPool.length], rIdx: s.rIdx + 1 }),
+
+      detectedType: detected || 'select two faces',
+      addOpacity: canAdd ? 1 : 0.38,
+      addConstraint: () => {
+        if (!s.queryFace || !s.resultFace) return;
+        const type = this.inferType(s.queryFace, s.resultFace);
+        const projected = this.remaining([...s.constraints, { type }]);
+        const status = projected === 0 ? 'ok' : 'warn';
+        this.setState({
+          constraints: [...s.constraints, { type, a: s.queryFace, b: s.resultFace, status }],
+          queryFace: null, resultFace: null,
+        });
+      },
+
+      constraints: s.constraints.map((c, i) => ({
+        type: c.type, a: c.a, b: c.b,
+        statusColor: c.status === 'ok' ? 'var(--status-pass-fg)' : '#C9820A',
+        del: () => this.setState(st => ({ constraints: st.constraints.filter((_, j) => j !== i) })),
+      })),
+      noConstraints: s.constraints.length === 0,
+
+      remLabel: rem + ' degree' + (rem === 1 ? '' : 's') + ' of freedom remaining',
+      dofColor: rem === 0 ? 'var(--status-pass-fg)' : '#C9820A',
+      runOpacity: 1,
+      runCompare: () => this.setState({ tab: 'overlay' }),
+
+      viewModes: ['Shaded', 'X-Ray', 'Wireframe'].map(m => ({
+        label: m,
+        bg: s.viewMode === m ? accent : 'var(--bg-card)',
+        fg: s.viewMode === m ? '#fff' : 'var(--fg-secondary)',
+        on: () => this.setState({ viewMode: m }),
+      })),
+      viewFilter: this.filterFor(s.viewMode),
+      overlayFilter: s.viewMode === 'X-Ray' ? 'opacity(0.6)' : 'none',
+
+      viewCube,
+      gizmo,
+    };
+  }
+}
+</script>
+</body>
+</html>

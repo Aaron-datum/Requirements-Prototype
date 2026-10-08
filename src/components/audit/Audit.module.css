@@ -1,0 +1,5 @@
+.list { display: flex; flex-direction: column; }
+.entry { display: flex; align-items: baseline; gap: var(--gap-3); padding: 6px 0; border-top: 1px solid var(--border-default); font-size: var(--text-small); line-height: var(--lh-small); }
+.entry:first-child { border-top: 0; }
+.by { font-weight: 500; white-space: nowrap; }
+.approval { display: inline-flex; align-items: center; gap: var(--gap-2); }

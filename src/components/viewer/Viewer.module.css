@@ -1,0 +1,13 @@
+.viewer { margin: 0; display: flex; flex-direction: column; border: 1px solid var(--border-default); border-radius: var(--radius); background: var(--bg-card); overflow: hidden; min-width: 0; }
+.toolbar { display: flex; align-items: center; gap: var(--gap-2); padding: var(--gap-2) var(--gap-3); border-bottom: 1px solid var(--border-default); flex-wrap: wrap; }
+.stage { position: relative; flex: 1; min-height: 0; background: var(--bg-subtle); display: grid; place-items: center; }
+.model { max-width: 70%; max-height: 80%; object-fit: contain; border-radius: var(--radius); }
+.wire { opacity: .5; filter: grayscale(1) contrast(1.6); }
+.xray { opacity: .6; }
+.chip { position: absolute; top: var(--gap-2); left: var(--gap-2); padding: 2px var(--gap-2); border-radius: var(--radius); background: var(--bg-card); border: 1px solid var(--border-default); font: var(--fw-regular) var(--text-data-sm)/var(--lh-data-sm) var(--font-data); max-width: 80%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cube { position: absolute; top: var(--gap-2); right: var(--gap-2); color: var(--fg-muted); }
+.axis { position: absolute; bottom: var(--gap-2); left: var(--gap-2); color: var(--fg-muted); font: var(--fw-regular) var(--text-badge)/1 var(--font-data); }
+.legend { display: flex; align-items: center; gap: var(--gap-4); flex-wrap: wrap; padding: var(--gap-2) var(--gap-3); border-top: 1px solid var(--border-default); font-size: var(--text-small); }
+.lg { display: inline-flex; align-items: center; gap: var(--gap-2); }
+.lg i { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+.query { background: var(--overlay-a); } .overlap { background: var(--overlay-b); } .result { background: var(--overlay-shared); }

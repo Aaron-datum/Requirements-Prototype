@@ -1,0 +1,17 @@
+.root { display: inline-flex; flex-direction: column; gap: var(--gap-1); min-width: 0; }
+.chips { display: flex; align-items: center; gap: var(--gap-1); flex-wrap: wrap; }
+.sim { display: flex; align-items: center; gap: var(--gap-2); }
+.bar { width: 72px; height: 10px; border: 1px solid var(--border-default); border-radius: 2px; background: var(--bg-subtle); overflow: hidden; flex: none; }
+.full .bar { width: 160px; }
+.bar i { display: block; height: 100%; }
+.pass { background: var(--status-pass-fg); } .info { background: var(--accent); } .warn { background: var(--status-warn-fg); } .fail { background: var(--status-fail-fg); } .neutral { background: var(--fg-muted); }
+.pct { font-size: var(--text-data-sm); min-width: 40px; text-align: right; }
+.band { font-size: var(--text-small); color: var(--fg-secondary); }
+.k { color: var(--fg-muted); margin-right: 2px; }
+.none { color: var(--fg-muted); }
+.whyWrap { position: relative; display: inline-flex; }
+.whyBtn { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; padding: 0; background: transparent; border: 0; color: var(--fg-muted); border-radius: var(--radius); }
+.whyBtn:hover { color: var(--accent); background: var(--fill-hover); }
+.popover { position: absolute; top: 26px; left: 0; z-index: 20; width: 280px; padding: var(--gap-3); background: var(--bg-card); border: 1px solid var(--border-default); border-radius: var(--radius); display: flex; flex-direction: column; gap: var(--gap-2); font-size: var(--text-small); font-weight: 400; white-space: normal; }
+.popover ul { margin: 0; padding-left: var(--gap-4); }
+.tags { display: flex; gap: var(--gap-1); flex-wrap: wrap; }

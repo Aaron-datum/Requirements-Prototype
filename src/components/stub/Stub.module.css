@@ -1,0 +1,4 @@
+.contents { display: contents; }
+.outlined { display: block; position: relative; outline: 1px dashed var(--accent); outline-offset: 2px; border-radius: var(--radius); }
+.outlinedInline { display: inline-block; position: relative; outline: 1px dashed var(--accent); outline-offset: 2px; border-radius: var(--radius); }
+.tag { position: absolute; top: -9px; right: 4px; z-index: 5; padding: 0 var(--gap-1); border-radius: var(--radius); background: var(--accent); color: var(--btn-primary-fg); font: var(--fw-medium) var(--text-badge)/var(--lh-badge) var(--font-data); }

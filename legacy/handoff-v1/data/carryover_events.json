@@ -1,0 +1,268 @@
+[
+  {
+    "req_id": "REC-20001",
+    "events": [
+      {
+        "date": "2024-01-10",
+        "event": "Raised",
+        "program_id": "PGM-CIV-LX",
+        "note": "Burst-containment clause established for LX program."
+      },
+      {
+        "date": "2024-02-14",
+        "event": "Test run",
+        "program_id": "PGM-CIV-LX",
+        "note": "TR-24-0031 \u2014 Pass, single-scroll turbine."
+      },
+      {
+        "date": "2025-11-02",
+        "event": "Interface changed",
+        "program_id": "PGM-CIV-SI",
+        "note": "Twin-scroll turbine/housing introduced \u2014 prior burst-containment evidence no longer applies directly."
+      },
+      {
+        "date": "2026-01-15",
+        "event": "Flagged for review",
+        "program_id": "PGM-CIV-SI",
+        "note": "Owner (M. Okafor) flagged for fresh burst test; no confidence score available."
+      }
+    ]
+  },
+  {
+    "req_id": "REC-20002",
+    "events": [
+      {
+        "date": "2024-01-10",
+        "event": "Raised",
+        "program_id": "PGM-CIV-LX",
+        "note": "Response-time clause established for LX program."
+      },
+      {
+        "date": "2024-03-02",
+        "event": "Test run",
+        "program_id": "PGM-CIV-LX",
+        "note": "TR-24-0045 \u2014 Pass, pneumatic actuator."
+      },
+      {
+        "date": "2024-11-20",
+        "event": "Interface changed",
+        "program_id": "PGM-CIV-SPT",
+        "note": "Switched to electronic wastegate actuator for Sport."
+      },
+      {
+        "date": "2025-01-20",
+        "event": "Test run",
+        "program_id": "PGM-CIV-SPT",
+        "note": "TR-25-0019 \u2014 Pass, electronic actuator."
+      },
+      {
+        "date": "2025-11-02",
+        "event": "Carried",
+        "program_id": "PGM-CIV-SI",
+        "note": "Carried from Sport at 95% confidence \u2014 same actuator family."
+      }
+    ]
+  },
+  {
+    "req_id": "REC-20007",
+    "events": [
+      {
+        "date": "2024-01-12",
+        "event": "Raised",
+        "program_id": "PGM-CIV-LX",
+        "note": "Burst-pressure clause established for LX program."
+      },
+      {
+        "date": "2024-04-20",
+        "event": "Test run",
+        "program_id": "PGM-CIV-LX",
+        "note": "Charge pipe burst test \u2014 Pass."
+      },
+      {
+        "date": "2025-11-10",
+        "event": "Interface changed",
+        "program_id": "PGM-CIV-SI",
+        "note": "Larger-bore, water-cooled charge pipe routing introduced for Si."
+      },
+      {
+        "date": "2026-01-15",
+        "event": "Flagged for review",
+        "program_id": "PGM-CIV-SI",
+        "note": "82% surrogate confidence \u2014 below the duplicate threshold; re-test booked."
+      }
+    ]
+  },
+  {
+    "req_id": "REC-20008",
+    "events": [
+      {
+        "date": "2024-01-12",
+        "event": "Raised",
+        "program_id": "PGM-CIV-LX",
+        "note": "Thermal fatigue clause established for LX program, single-scroll flange."
+      },
+      {
+        "date": "2024-05-30",
+        "event": "Test run",
+        "program_id": "PGM-CIV-LX",
+        "note": "Exhaust manifold thermal fatigue test \u2014 Pass, 1,000-cycle target."
+      },
+      {
+        "date": "2025-10-28",
+        "event": "Interface changed",
+        "program_id": "PGM-CIV-SI",
+        "note": "Twin-scroll flange introduced; OEM also raised the cycle-count requirement to 1,500."
+      },
+      {
+        "date": "2026-01-15",
+        "event": "Flagged for review",
+        "program_id": "PGM-CIV-SI",
+        "note": "Critical severity + 58% confidence \u2014 highest-priority open item in this cycle."
+      }
+    ]
+  },
+  {
+    "req_id": "REC-20011",
+    "events": [
+      {
+        "date": "2024-01-14",
+        "event": "Raised",
+        "program_id": "PGM-CIV-LX",
+        "note": "Leakage-rate clause established for LX program."
+      },
+      {
+        "date": "2024-05-22",
+        "event": "Test run",
+        "program_id": "PGM-CIV-LX",
+        "note": "TR-24-0083 \u2014 Pass."
+      },
+      {
+        "date": "2024-11-20",
+        "event": "Carried",
+        "program_id": "PGM-CIV-SPT",
+        "note": "Same part reused on Sport, no re-test."
+      },
+      {
+        "date": "2025-11-02",
+        "event": "Carried",
+        "program_id": "PGM-CIV-SI",
+        "note": "Same part reused on Si (TC-407-A) \u2014 geometric duplicate, no re-test."
+      }
+    ]
+  },
+  {
+    "req_id": "REC-20013",
+    "events": [
+      {
+        "date": "2025-10-15",
+        "event": "Raised",
+        "program_id": "PGM-CIV-SI",
+        "note": "New clause added for the twin-scroll turbine's thermal-protection strategy \u2014 no prior equivalent."
+      },
+      {
+        "date": "2026-02-01",
+        "event": "Test in progress",
+        "program_id": "PGM-CIV-SI",
+        "note": "TR-26-0124 \u2014 calibration phase underway."
+      }
+    ]
+  },
+  {
+    "req_id": "REC-20016",
+    "events": [
+      {
+        "date": "2024-01-18",
+        "event": "Raised",
+        "program_id": "PGM-CIV-LX",
+        "note": "Spark-energy clause established for LX program."
+      },
+      {
+        "date": "2024-06-28",
+        "event": "Test run",
+        "program_id": "PGM-CIV-LX",
+        "note": "Ignition coil validated at LX's boost target \u2014 Pass."
+      },
+      {
+        "date": "2024-11-20",
+        "event": "Carried",
+        "program_id": "PGM-CIV-SPT",
+        "note": "Same coil, same boost target \u2014 carried without re-test."
+      },
+      {
+        "date": "2025-11-05",
+        "event": "Interface changed",
+        "program_id": "PGM-CIV-SI",
+        "note": "Boost target raised to 2.5 bar(a) for Si \u2014 duty cycle on the coil shifted, even though the coil part itself did not change."
+      },
+      {
+        "date": "2026-01-15",
+        "event": "Flagged for review",
+        "program_id": "PGM-CIV-SI",
+        "note": "Owner (D. Patel) flagged \u2014 hardware unchanged but operating context changed; re-validation booked, not yet run."
+      }
+    ]
+  },
+  {
+    "req_id": "REC-20004",
+    "events": [
+      {
+        "date": "2024-01-20",
+        "event": "Raised",
+        "program_id": "PGM-CIV-LX",
+        "note": "Surge-margin clause established at 12% minimum."
+      },
+      {
+        "date": "2025-12-01",
+        "event": "Requirement changed",
+        "program_id": "PGM-CIV-SI",
+        "note": "OEM tightened the minimum surge margin to 15% for the Si program."
+      },
+      {
+        "date": "2026-03-11",
+        "event": "Test run",
+        "program_id": "PGM-CIV-SI",
+        "note": "TR-26-0119 \u2014 Pass, 16.2% measured margin."
+      }
+    ]
+  },
+  {
+    "req_id": "REC-20010",
+    "events": [
+      {
+        "date": "2024-01-22",
+        "event": "Raised",
+        "program_id": "PGM-CIV-LX",
+        "note": "Piston durability clause established, 115 bar peak cylinder pressure."
+      },
+      {
+        "date": "2025-12-01",
+        "event": "Requirement changed",
+        "program_id": "PGM-CIV-SI",
+        "note": "Peak cylinder pressure limit raised to 130 bar for the forged-piston Si build."
+      },
+      {
+        "date": "2026-02-20",
+        "event": "Test run",
+        "program_id": "PGM-CIV-SI",
+        "note": "TR-26-0123 \u2014 Pass, no crown cracking or ring-land failure."
+      }
+    ]
+  },
+  {
+    "req_id": "REC-20006",
+    "events": [
+      {
+        "date": "2025-10-20",
+        "event": "Raised",
+        "program_id": "PGM-CIV-SI",
+        "note": "New clause written for the air-to-water intercooler architecture."
+      },
+      {
+        "date": "2026-02-10",
+        "event": "Test in progress",
+        "program_id": "PGM-CIV-SI",
+        "note": "TR-26-0120 \u2014 sustained high-load dyno run underway."
+      }
+    ]
+  }
+]

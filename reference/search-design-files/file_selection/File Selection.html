@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Datum — File Selection</title>
+  <link rel="stylesheet" href="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/colors_and_type.css">
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; font-family: 'DM Sans', system-ui, sans-serif; }
+    *, *::before, *::after { box-sizing: border-box; }
+    #root { height: 100vh; }
+    ::-webkit-scrollbar { width: 9px; height: 9px; }
+    ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 99px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    input::placeholder { color: var(--fg-muted); }
+    /* the app frames sit inside artboards; give them a crisp white surface */
+    .fs-frame { height: 100%; width: 100%; background: var(--bg-page); overflow: hidden; }
+  </style>
+</head>
+<body data-theme="white">
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="_ds/ui-design-current-f2d33032-2526-4d9b-9a3c-5f6c38e4af29/_ds_bundle.js"></script>
+
+  <script type="text/babel" src="design-canvas.jsx"></script>
+  <script type="text/babel" src="fs-data.jsx"></script>
+  <script type="text/babel" src="fs-primitives.jsx"></script>
+  <script type="text/babel" src="fs-filtersidebar.jsx"></script>
+  <script type="text/babel" src="fs-table.jsx"></script>
+  <script type="text/babel" src="fs-gallery.jsx"></script>
+  <script type="text/babel" src="fs-detailspanel.jsx"></script>
+  <script type="text/babel" src="fs-app.jsx"></script>
+
+  <script type="text/babel">
+    const PREAPPLIED = {
+      program:       { values: ['Atlas EV'] },
+      modelYear:     { values: ['MY24'] },
+      releaseStatus: { values: ['Released'] },
+    };
+
+    function Root() {
+      // Keep Lucide glyphs fresh across both independent app instances.
+      React.useEffect(() => {
+        const tick = () => { if (window.lucide) lucide.createIcons(); };
+        tick();
+        const id = setInterval(tick, 350);
+        return () => clearInterval(id);
+      }, []);
+
+      return (
+        <DesignCanvas>
+          <DCSection id="file-selection" title="File Selection" subtitle="Pick a reference file to start a requirement search · list density vs. thumbnail gallery">
+            <DCArtboard id="comfortable" label="A · Comfortable" width={1440} height={900}>
+              <div className="fs-frame">
+                <FileSelectionApp density="comfortable" initialFilters={PREAPPLIED} />
+              </div>
+            </DCArtboard>
+            <DCArtboard id="compact" label="B · Compact" width={1440} height={900}>
+              <div className="fs-frame">
+                <FileSelectionApp density="compact" initialFilters={PREAPPLIED} />
+              </div>
+            </DCArtboard>
+            <DCArtboard id="gallery" label="C · Gallery (thumbnail view)" width={1440} height={900}>
+              <div className="fs-frame">
+                <FileSelectionApp density="comfortable" defaultView="gallery" initialFilters={PREAPPLIED} />
+              </div>
+            </DCArtboard>
+          </DCSection>
+        </DesignCanvas>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<Root />);
+  </script>
+</body>
+</html>

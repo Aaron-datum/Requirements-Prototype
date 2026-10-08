@@ -1,0 +1,29 @@
+[
+  {
+    "program_id": "PGM-CIV-LX",
+    "name": "Civic LX 1.5T",
+    "model_year": 2025,
+    "status": "in_production",
+    "rfq_id": null,
+    "description": "Base trim, single-scroll turbo, 2.0 bar boost target. In production \u2014 fully resolved BOM, used as the primary surrogate source for Sport and Si.",
+    "owner": "R. Castillo (Program Mgr)"
+  },
+  {
+    "program_id": "PGM-CIV-SPT",
+    "name": "Civic Sport 1.5T",
+    "model_year": 2025,
+    "status": "in_production",
+    "rfq_id": null,
+    "description": "Mid trim, larger single-scroll turbo + electronic wastegate, 2.0 bar boost target with a flatter torque curve. In production \u2014 fully resolved BOM.",
+    "owner": "R. Castillo (Program Mgr)"
+  },
+  {
+    "program_id": "PGM-CIV-SI",
+    "name": "Civic Si 1.5T",
+    "model_year": 2026,
+    "status": "quoting",
+    "rfq_id": "RFQ-26-0512",
+    "description": "Performance trim, NEW RFQ in progress. Twin-scroll turbo, forged internals, larger injectors, air-to-water intercooler. Being quoted now \u2014 this is the BOM running surrogate search against LX and Sport.",
+    "owner": "A. Novak (Sourcing Engineer)"
+  }
+]

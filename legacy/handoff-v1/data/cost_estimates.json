@@ -1,0 +1,210 @@
+[
+  {
+    "part_id": "TC-404-C",
+    "program_id": "PGM-CIV-SI",
+    "routing_score": 68,
+    "routing_status": "Suggested - not yet confirmed",
+    "suggested_model": "Should-cost: sand casting, Ni-resist iron, twin-scroll",
+    "next_best_alternative": "Supplier-quoted analog (TC-404-B, Sport) scaled by casting volume",
+    "why_this_model": [
+      {
+        "tag": "PLM",
+        "note": "Casting process and material match TC-404-B exactly."
+      },
+      {
+        "tag": "CAD features",
+        "note": "Twin-scroll volute adds ~18% casting volume and two additional core pulls vs. single-scroll."
+      },
+      {
+        "tag": "Surrogate",
+        "note": "TC-404-B's supplier-quoted price is the primary anchor, scaled for the added complexity."
+      }
+    ],
+    "input_maturity": {
+      "3d_cad": "Have",
+      "2d_drawing": "Have",
+      "material_spec": "Have"
+    },
+    "cost_breakdown": [
+      {
+        "line": "Material",
+        "amount_usd": 42.1,
+        "confidence": "Medium"
+      },
+      {
+        "line": "Casting & machining",
+        "amount_usd": 98.4,
+        "confidence": "Medium"
+      },
+      {
+        "line": "Tooling amortization",
+        "amount_usd": 27.5,
+        "confidence": "Low"
+      }
+    ]
+  },
+  {
+    "part_id": "INT-510-C",
+    "program_id": "PGM-CIV-SI",
+    "routing_score": 41,
+    "routing_status": "Suggested - not yet confirmed",
+    "suggested_model": "Should-cost: brazed aluminum core + cast end tanks, air-to-water",
+    "next_best_alternative": "Parametric estimate scaled from INT-510-B (air-to-air) by surface area and dedicated coolant-loop content",
+    "why_this_model": [
+      {
+        "tag": "RFQ",
+        "note": "Architecture is new to this program; no direct supplier quote on file yet."
+      },
+      {
+        "tag": "CAD features",
+        "note": "Cast end tanks and dedicated coolant loop are new content not present on any air-to-air variant."
+      },
+      {
+        "tag": "Surrogate",
+        "note": "Core-brazing cost anchored to INT-510-B; end-tank and coolant-loop content estimated separately, lower confidence."
+      }
+    ],
+    "input_maturity": {
+      "3d_cad": "Have",
+      "2d_drawing": "Via surrogate",
+      "material_spec": "Have"
+    },
+    "cost_breakdown": [
+      {
+        "line": "Core (brazed aluminum)",
+        "amount_usd": 88.0,
+        "confidence": "Medium"
+      },
+      {
+        "line": "Cast end tanks",
+        "amount_usd": 71.0,
+        "confidence": "Low"
+      },
+      {
+        "line": "Coolant loop integration",
+        "amount_usd": 56.0,
+        "confidence": "Low"
+      }
+    ]
+  },
+  {
+    "part_id": "TC-401-C",
+    "program_id": "PGM-CIV-SI",
+    "routing_score": 90,
+    "routing_status": "Suggested - not yet confirmed",
+    "suggested_model": "Supplier-quoted analog: BorgWarner twin-scroll family, scaled",
+    "next_best_alternative": "Should-cost: investment casting, Inconel 713C",
+    "why_this_model": [
+      {
+        "tag": "Supplier",
+        "note": "Same supplier (BorgWarner) and casting process as TC-401-B."
+      },
+      {
+        "tag": "PLM",
+        "note": "Material identical to TC-401-A/B."
+      },
+      {
+        "tag": "Surrogate",
+        "note": "90% geometric/manufacture similarity to TC-401-B supports a direct scaled quote."
+      }
+    ],
+    "input_maturity": {
+      "3d_cad": "Have",
+      "2d_drawing": "Have",
+      "material_spec": "Have"
+    },
+    "cost_breakdown": [
+      {
+        "line": "Material",
+        "amount_usd": 61.0,
+        "confidence": "High"
+      },
+      {
+        "line": "Investment casting",
+        "amount_usd": 158.0,
+        "confidence": "High"
+      },
+      {
+        "line": "Finish machining",
+        "amount_usd": 66.0,
+        "confidence": "Medium"
+      }
+    ]
+  },
+  {
+    "part_id": "EXH-710-C",
+    "program_id": "PGM-CIV-SI",
+    "routing_score": 52,
+    "routing_status": "Suggested - not yet confirmed",
+    "suggested_model": "Should-cost: investment casting, stainless steel, twin-scroll flange",
+    "next_best_alternative": "Supplier-quoted analog (EXH-710-A) scaled by flange and runner geometry",
+    "why_this_model": [
+      {
+        "tag": "CAD features",
+        "note": "Twin-scroll flange requires a materially different runner layout than EXH-710-A's single-scroll flange."
+      },
+      {
+        "tag": "RFQ",
+        "note": "No supplier quote yet for the twin-scroll casting; should-cost used as the primary model pending quote."
+      }
+    ],
+    "input_maturity": {
+      "3d_cad": "Have",
+      "2d_drawing": "Have",
+      "material_spec": "Have"
+    },
+    "cost_breakdown": [
+      {
+        "line": "Material",
+        "amount_usd": 38.0,
+        "confidence": "Medium"
+      },
+      {
+        "line": "Investment casting",
+        "amount_usd": 71.0,
+        "confidence": "Medium"
+      },
+      {
+        "line": "Tooling amortization",
+        "amount_usd": 19.0,
+        "confidence": "Low"
+      }
+    ]
+  },
+  {
+    "part_id": "ELEC-925-C",
+    "program_id": "PGM-CIV-SI",
+    "routing_score": 30,
+    "routing_status": "Suggested - not yet confirmed",
+    "suggested_model": "Should-cost: thermocouple sensor assembly, new part",
+    "next_best_alternative": "None \u2014 no surrogate or supplier quote exists for an EGT sensor on this program",
+    "why_this_model": [
+      {
+        "tag": "RFQ",
+        "note": "Brand-new part; cost model built from component-level should-cost rather than any surrogate."
+      }
+    ],
+    "input_maturity": {
+      "3d_cad": "Have",
+      "2d_drawing": "Have",
+      "material_spec": "Via surrogate"
+    },
+    "cost_breakdown": [
+      {
+        "line": "Thermocouple element",
+        "amount_usd": 18.0,
+        "confidence": "Low"
+      },
+      {
+        "line": "Inconel sheath & housing",
+        "amount_usd": 14.0,
+        "confidence": "Low"
+      },
+      {
+        "line": "Assembly & calibration",
+        "amount_usd": 9.0,
+        "confidence": "Low"
+      }
+    ]
+  }
+]

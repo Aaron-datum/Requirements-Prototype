@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview --port 4173 --strictPort",
+    "preview": "vite preview --port 4173",
     "typecheck": "tsc --noEmit",
     "lint": "oxlint -c design-system/_adherence.oxlintrc.json src && node scripts/check-tokens.mjs",
     "test": "vitest run",

@@ -1,0 +1,8 @@
+[
+  { "key": "area", "label": "Area", "unit": "mm²", "applicableTo": ["face", "body"], "tolerancePct": 5, "range": [1200, 64000] },
+  { "key": "perimeter", "label": "Perimeter", "unit": "mm", "applicableTo": ["face", "edge"], "tolerancePct": 5, "range": [80, 1400] },
+  { "key": "height", "label": "Height", "unit": "mm", "applicableTo": ["body", "edge"], "tolerancePct": 3, "range": [12, 420] },
+  { "key": "diameter", "label": "Diameter", "unit": "mm", "applicableTo": ["face", "edge"], "tolerancePct": 2, "range": [4, 96] },
+  { "key": "length", "label": "Length", "unit": "mm", "applicableTo": ["edge", "body"], "tolerancePct": 4, "range": [20, 780] },
+  { "key": "volume", "label": "Volume", "unit": "mm³", "applicableTo": ["body"], "tolerancePct": 6, "range": [8000, 920000] }
+]

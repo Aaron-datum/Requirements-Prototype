@@ -1,0 +1,8 @@
+[
+  { "id": "seed-1", "fileName": "FrameBack_Outer_v8.CATPart", "modality": "part-to-part", "results": 11, "ago": "2h ago" },
+  { "id": "seed-2", "fileName": "6644321_AA_COMPLETE_SEAT.CATProduct", "modality": "assembly-to-assembly", "results": 11, "ago": "yesterday" },
+  { "id": "seed-3", "fileName": "Recliner_Mech_LH_r4.CATPart", "modality": "part-in-assembly-to-part", "results": 9, "ago": "3 days ago" },
+  { "id": "seed-4", "fileName": "K04-117-RS_BRKT_MOUNT.SLDPRT", "modality": "part-to-part", "results": 12, "ago": "4 days ago" },
+  { "id": "seed-5", "fileName": "TrackRail_Upper_24a.CATPart", "modality": "part-to-assembly", "results": 10, "ago": "last week" },
+  { "id": "seed-6", "fileName": "7100490_0000_AB_ASM_RSB40_DEF.CATPart", "modality": "part-to-part", "results": 13, "ago": "last week" }
+]

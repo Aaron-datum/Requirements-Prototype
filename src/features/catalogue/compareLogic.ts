@@ -4,9 +4,9 @@ import type { CatalogueRowX } from '../../domain/catalogue'
 export type Cell = string | number | null
 
 /** Raw value of a compare field for a part. null when the part has no value (rendered as a dash, counted as different from a value). */
-export function fieldValue(part: CatalogueRowX, def: Pick<CatalogueFieldDef, 'key' | 'source'>): Cell {
+export function fieldValue(part: CatalogueRowX, def: Pick<CatalogueFieldDef, 'key' | 'source' | 'field'>): Cell {
   const rec = (def.source === 'row' ? part : def.source === 'plm' ? part.plm : part.fields) as unknown as Record<string, Cell | undefined>
-  const v = rec[def.key]
+  const v = rec[def.field ?? def.key]
   return v === undefined || v === '' ? null : v
 }
 

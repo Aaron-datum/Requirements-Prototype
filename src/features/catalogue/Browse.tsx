@@ -128,7 +128,6 @@ export function CatalogueNodePage() {
   const svc = useCatalogue()
   const [params] = useSearchParams()
   const node = svc.node(nodeId)
-  useCatalogueCrumbs(node ? null : null)
   if (!node) return <CatalogueFrame selectedId={null}><EmptyState title="That category does not exist" action={<Button onClick={() => undefined}>Back to the catalogue</Button>}>Choose a category from the tree.</EmptyState></CatalogueFrame>
   if (node.scope) {
     const cur = readTable(params)

@@ -17,7 +17,7 @@ export function useCatalogueColumns(): Array<ColumnDef<CatalogueRowX>> {
       get: (r) => facetValue(r, d) as Raw,
       label_of: d.vocabularyId ? (raw) => vocab.resolve(d.vocabularyId!, raw).label : undefined,
     }
-    if (d.key === 'pn') col.render = (r) => <span className="data" style={{ fontWeight: 500 }}>{r.partNumber}</span>
+    if (d.key === 'pn') col.render = (r) => <span className="data" style={{ fontWeight: 500, whiteSpace: 'nowrap' }}>{r.partNumber}</span>
     else if (d.key === 'thread') col.render = (r) => <span className="data">{String(r.fields.threadSpec ?? r.fields.thread)}</span>
     else if (d.key === 'length') col.render = (r) => <span className="data">{r.fields.length} mm</span>
     else if (d.vocabularyId) col.render = (r) => { const v = vocab.resolve(d.vocabularyId!, facetValue(r, d)); return <Badge tone={v.tone}>{v.label}</Badge> }

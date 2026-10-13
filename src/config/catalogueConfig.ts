@@ -36,7 +36,7 @@ export interface CatalogueFacetDef {
 
 export const CATALOGUE_FACETS: CatalogueFacetDef[] = [
   { key: 'pn', label: 'Part Number', group: 'Part', control: 'text-search', kind: 'text', source: 'row', field: 'partNumber', mono: true, pinned: true },
-  { key: 'thread', label: 'Thread Size', group: 'Size', control: 'level-seg', kind: 'enum', source: 'fields', field: 'thread', mono: true, order: ['M6', 'M8', 'M10', 'M12', 'M16', 'M20', 'M24'] },
+  { key: 'thread', label: 'Thread Size', group: 'Size', control: 'level-seg', kind: 'enum', source: 'fields', field: 'thread', mono: true, defaultVisible: false, order: ['M6', 'M8', 'M10', 'M12', 'M16', 'M20', 'M24'] },
   { key: 'length', label: 'Length', group: 'Size', control: 'range-units', kind: 'range', source: 'fields', field: 'length', unit: 'mm', mono: true, align: 'right' },
   { key: 'head', label: 'Head Type', group: 'Head', control: 'multi-tag', kind: 'enum', source: 'fields', field: 'head' },
   { key: 'grade', label: 'Grade', group: 'Material', control: 'multi-tag', kind: 'enum', source: 'fields', field: 'grade', mono: true, defaultVisible: false, order: ['8.8', '10.9', '12.9', 'A2-70', 'A4-80'] },
@@ -54,6 +54,8 @@ export const facetByKey = (key: string): CatalogueFacetDef | undefined => CATALO
 /** A field shown in the drawer (Specification) and compared in both Compare forms. */
 export interface CatalogueFieldDef {
   key: string
+  /** Key inside the source record when it differs from `key`. */
+  field?: string
   label: string
   source: ValueSource
   unit?: string
@@ -82,7 +84,7 @@ export const CATALOGUE_COMPARE_FIELDS: CatalogueFieldDef[] = [
   { key: 'source', label: 'Source', source: 'fields' },
   { key: 'plmId', label: 'PLM ID', source: 'fields', mono: true },
   { key: 'revision', label: 'Revision', source: 'fields', mono: true },
-  { key: 'status', label: 'Status', source: 'plm', vocabularyId: 'releaseStatus' },
+  { key: 'status', field: 'releaseStatus', label: 'Status', source: 'plm', vocabularyId: 'releaseStatus' },
 ]
 
 /**

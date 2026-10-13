@@ -1,5 +1,5 @@
 /* Sidebar */
-.top { flex: none; max-height: 38%; overflow-y: auto; border-bottom: 1px solid var(--border-default); }
+.top { flex: none; max-height: 30%; overflow-y: auto; border-bottom: 1px solid var(--border-default); }
 .side { position: relative; flex: 0 0 320px; display: flex; flex-direction: column; min-height: 0; background: var(--bg-sidebar); border-right: 1px solid var(--border-default); }
 .collapsed { flex-basis: var(--sidebar-width-collapsed); width: var(--sidebar-width-collapsed); align-items: center; padding-top: var(--gap-3); gap: var(--gap-2); }
 .head { display: flex; align-items: center; justify-content: space-between; gap: var(--gap-3); padding: 14px var(--gap-4) var(--gap-3); border-bottom: 1px solid var(--border-default); flex: none; }

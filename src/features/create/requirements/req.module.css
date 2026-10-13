@@ -61,3 +61,4 @@
 .tiles3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-2); }
 .tiles3 .tile { padding: var(--gap-2) var(--gap-3); }
 .select { height: var(--input-height); border: 1px solid var(--border-strong); border-radius: var(--radius); background: var(--bg-card); color: var(--fg-primary); font: var(--fw-regular) var(--text-small)/var(--lh-small) var(--font-ui); padding: 0 var(--gap-2); max-width: 280px; }
+.clamp { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }

@@ -17,7 +17,7 @@ import { RecordedNote, useReqActions } from '../actions'
 import {
   AssociatedTest, ClauseSection, ConfidencePair, ConformancePill, DrivenByCell, ReqTitle, ScreenHeader, Section, SeverityBadge, SourceCell, Stepper, TextBadge, VocabBadge,
 } from '../components/shared'
-import { stepHref, useParam, useReqModel } from '../model'
+import { startCollapsed, stepHref, useParam, useReqModel } from '../model'
 import { useReqVocab } from '../vocab'
 import s from '../req.module.css'
 
@@ -75,7 +75,7 @@ export function TraceScreen() {
           <Stub id="doc-extraction" note="Counts from the intake package"><span className="muted"> · scoped to the parts in this BOM{extracted > 0 ? `, out of ${extracted} requirements extracted from the RFQ package` : ''}</span></Stub></>}
         actions={<><Link to={stepHref('06-carryover')}><Button>Carryover Review · {m.stats.needDecision} open</Button></Link></>} />
       <div className={s.workspace}>
-        <TableShell id="trace" noun="requirements" columns={columns} rows={m.rows} rowId={(r) => r.req_id} selectedId={selected?.req_id} onSelect={setSel} urlSync onModel={onModel}
+        <TableShell sidebarCollapsed={startCollapsed()} id="trace" noun="requirements" columns={columns} rows={m.rows} rowId={(r) => r.req_id} selectedId={selected?.req_id} onSelect={setSel} urlSync onModel={onModel}
           rowTone={(r) => (r.rowDanger ? 'danger' : undefined)}
           toolbar={<span className="row" role="group" aria-label="Saved views">{SAVED_VIEWS.map((v) => <LinkButton key={v.name} onClick={() => modelRef.current?.setFilters(v.filters)}>{v.name}</LinkButton>)}</span>} />
         <SidePanel defaultWidth={380} title={selected ? selected.req_id : 'Requirement'} subtitle={selected?.title} badge={selected ? <ConformancePill raw={selected.conformance} /> : undefined}
@@ -139,7 +139,7 @@ function ChainDrawer({ r, open, onToggle }: { r: ReqView | null; open: boolean; 
   const box = useRef<HTMLDivElement>(null)
   const scrub = (dx: number) => box.current?.scrollBy({ left: dx, behavior: 'smooth' })
   return (
-    <BottomDrawer title="Full carryover chain" meta={r ? `${r.req_id} · ${r.hops} hops · ${hops.length} events` : 'no requirement selected'} open={open} onToggle={onToggle} height={196}>
+    <BottomDrawer title="Full carryover chain" meta={r ? `${r.req_id} · ${r.hops} hops · ${hops.length} events` : 'no requirement selected'} open={open} onToggle={onToggle} height={160}>
       {!r ? <div className="muted" style={{ padding: 'var(--gap-3) var(--gap-4)' }}>Select a requirement to see its carryover chain.</div>
         : hops.length === 0 ? <div className="muted" style={{ padding: 'var(--gap-3) var(--gap-4)' }}>No chain: this requirement is new to the program.</div>
         : (
@@ -150,7 +150,7 @@ function ChainDrawer({ r, open, onToggle }: { r: ReqView | null; open: boolean; 
                 <div key={i} className={`${s.hop} ${h.warn ? s.hopWarn : ''}`} data-warn={h.warn ?? undefined}>
                   <span className="data muted">{h.date} · {h.program}</span>
                   <span className={s.strong}>{h.event}{h.warn && <> <Badge tone="warn">{h.warn}</Badge></>}</span>
-                  <span className="secondary">{h.note}</span>
+                  <span className={`secondary ${s.clamp}`} title={h.note}>{h.note}</span>
                 </div>
               ))}
             </div>

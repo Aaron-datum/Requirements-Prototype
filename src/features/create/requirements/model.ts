@@ -24,5 +24,14 @@ export function useParam(name: string): [string | null, (v: string | null) => vo
   return [value, set]
 }
 
+/** Change several query parameters in one navigation (two separate setters in one tick would overwrite each other). */
+export function useQueryPatch(): (patch: Record<string, string | null>) => void {
+  const [, setParams] = useSearchParams()
+  return (patch) => setParams((p) => { const n = new URLSearchParams(p); Object.entries(patch).forEach(([k, v]) => (v == null ? n.delete(k) : n.set(k, v))); return n }, { replace: true })
+}
+
 export const BASE = '/create/requirements'
 export const stepHref = (step: string, query = ''): string => `${BASE}/${step}${query ? `?${query}` : ''}`
+
+/** Narrow viewports start with the table sidebar collapsed so the table keeps room beside the panel. */
+export const startCollapsed = (): boolean => typeof window !== 'undefined' && window.innerWidth < 1500

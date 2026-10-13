@@ -44,6 +44,8 @@ export interface TableShellProps<R> {
   onRetry?: () => void
   empty?: { title: string; body?: ReactNode }
   sidebar?: boolean
+  /** Start with the sidebar collapsed (narrow viewports); the user can expand it. */
+  sidebarCollapsed?: boolean
   /** Receives the model so the screen can read filtered rows or drive filters (catalogue tree narrowing). */
   onModel?: (m: TableModel<R>) => void
   initialFilters?: Record<string, import('./types').FilterValue>
@@ -163,7 +165,7 @@ export function TableShell<R>(p: TableShellProps<R>) {
 
   return (
     <>
-      {p.sidebar !== false && <FilterSidebar model={model} noun={p.noun} groupOptions={p.groupOptions} shownCount={sorted.length} canGallery={!!p.renderCard} />}
+      {p.sidebar !== false && <FilterSidebar model={model} noun={p.noun} groupOptions={p.groupOptions} shownCount={sorted.length} canGallery={!!p.renderCard} defaultCollapsed={p.sidebarCollapsed} />}
       <div className={s.center} data-density={density}>
         {p.header}
         <div className={s.pills} role="toolbar" aria-label="Applied filters">

@@ -9,7 +9,7 @@ import { laneEdges, laneEventsFor, type LaneEvent } from '../../../../fixtures/d
 import { LANES } from '../../../../fixtures/extras/requirements/rules'
 import { ConformancePill, ScreenHeader, Section, SourceTag, Stepper, VocabBadge } from '../components/shared'
 import { useWidth } from '../components/useWidth'
-import { stepHref, useParam, useReqModel } from '../model'
+import { stepHref, useParam, useQueryPatch, useReqModel } from '../model'
 import s from '../req.module.css'
 
 const LANE_NAME = { DOC: 'Source', PRT: 'Part', TST: 'Test' } as const
@@ -18,10 +18,11 @@ const NW = 172, NH = 72, LABEL_W = 84, LANE_H = 108, TOP = 34, STEP = 118
 /** 03c Event lanes: DOC, PRT and TST lanes from the earliest program to this RFQ, driven by carryover_events.json through the derive layer. */
 export function LanesScreen() {
   const m = useReqModel()
-  const [reqParam, setReq] = useParam('req')
-  const [show, setShow] = useParam('show')
+  const [reqParam] = useParam('req')
+  const [show] = useParam('show')
   const [evParam, setEv] = useParam('event')
   const [ret] = useParam('ret')
+  const patch = useQueryPatch()
   const { ref, width } = useWidth()
   const r = m.byId.get(reqParam ?? '') ?? m.byId.get('REC-20001') ?? m.rows[0]!
   const changesOnly = show === 'changes'
@@ -58,11 +59,11 @@ export function LanesScreen() {
       <ScreenHeader title="Traceability" sub={<span className="data">{r.req_id} · {all.length} events · {programs} programs</span>}
         actions={<>
           <label className="secondary" htmlFor="lane-req">Requirement</label>
-          <select id="lane-req" className={s.select} value={r.req_id} onChange={(e) => { setReq(e.target.value); setEv(null) }}>
+          <select id="lane-req" className={s.select} value={r.req_id} onChange={(e) => patch({ req: e.target.value, event: null })}>
             {ordered.map((x) => <option key={x.req_id} value={x.req_id}>{x.req_id} · {x.title}{x.chain.length ? '' : ' (no history)'}</option>)}
           </select>
           <span className="secondary">Show</span>
-          <Seg value={changesOnly ? 'changes' : 'all'} onChange={(v) => { setShow(v === 'all' ? null : v); setEv(null) }} label="Show" options={[['all', 'All events'], ['changes', 'Changes only']]} />
+          <Seg value={changesOnly ? 'changes' : 'all'} onChange={(v) => patch({ show: v === 'all' ? null : v, event: null })} label="Show" options={[['all', 'All events'], ['changes', 'Changes only']]} />
           <IconButton label="Previous event" disabled={idx <= 0} onClick={() => step(-1)}><ChevronLeft size={14} /></IconButton>
           <IconButton label="Next event" disabled={idx < 0 || idx >= events.length - 1} onClick={() => step(1)}><ChevronRight size={14} /></IconButton>
         </>} />
@@ -111,12 +112,6 @@ export function LanesScreen() {
           </>}>
           <span>{r.requirement_text}</span>
           <div className="row wrap"><SourceTag r={r} /><span className="data muted">{r.citation}</span></div>
-          <div className={s.tiles3} style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
-            <div className={s.tile}><span className="text-label-caps">Status</span><span><ConformancePill raw={r.conformance} /></span></div>
-            <div className={s.tile}><span className="text-label-caps">Events</span><span className={s.stat} data-testid="stat-events">{all.length}</span></div>
-            <div className={s.tile}><span className="text-label-caps">Programs</span><span className={s.stat} data-testid="stat-programs">{programs}</span></div>
-            <div className={s.tile}><span className="text-label-caps">Changes</span><span className={s.stat} data-testid="stat-changes">{all.filter((e) => e.warn).length}</span></div>
-          </div>
           <Section title="Selected event">
             {sel ? (
               <div className={s.card} data-testid="selected-event">
@@ -127,6 +122,12 @@ export function LanesScreen() {
               </div>
             ) : <span className="muted">No event selected.</span>}
           </Section>
+          <div className={s.tiles3} style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+            <div className={s.tile}><span className="text-label-caps">Status</span><span><ConformancePill raw={r.conformance} /></span></div>
+            <div className={s.tile}><span className="text-label-caps">Events</span><span className={s.stat} data-testid="stat-events">{all.length}</span></div>
+            <div className={s.tile}><span className="text-label-caps">Programs</span><span className={s.stat} data-testid="stat-programs">{programs}</span></div>
+            <div className={s.tile}><span className="text-label-caps">Changes</span><span className={s.stat} data-testid="stat-changes">{all.filter((e) => e.warn).length}</span></div>
+          </div>
           <Badge tone="outline">Driven by carryover_events.json through the derive layer</Badge>
         </SidePanel>
       </div>

@@ -11,7 +11,7 @@ import { useService } from '../../../../services/context'
 import { RecordedNote, useReqActions } from '../actions'
 import { ScreenHeader, Section, SeverityBadge, Stepper, VocabBadge } from '../components/shared'
 import { useWidth } from '../components/useWidth'
-import { stepHref, useParam, useReqModel } from '../model'
+import { stepHref, useParam, useQueryPatch, useReqModel } from '../model'
 import s from '../req.module.css'
 
 type Dir = 'both' | 'back' | 'forward'
@@ -25,7 +25,8 @@ export function ImpactScreen() {
   const m = useReqModel()
   const impact = useService('impact')
   const act = useReqActions()
-  const [reqParam, setReq] = useParam('req')
+  const [reqParam] = useParam('req')
+  const patch = useQueryPatch()
   const [hopsParam, setHops] = useParam('hops')
   const [dirParam, setDir] = useParam('dir')
   const [scParam, setScenario] = useParam('scenario')
@@ -162,7 +163,7 @@ export function ImpactScreen() {
           <Section title="Selected">
             <div className={s.card}>
               <span className={s.strong}>{sel.label}</span><span className="muted">{KIND[sel.type]} · {sel.sub}</span>
-              {sel.type === 'REQ' && sel.id !== anchor.req_id && <button type="button" className="link" onClick={() => { setReq(sel.id); setNode(null) }} style={{ background: 'none', border: 0, padding: 0, color: 'var(--accent)', textAlign: 'left' }}>Re-center on {sel.id}</button>}
+              {sel.type === 'REQ' && sel.id !== anchor.req_id && <button type="button" className="link" onClick={() => patch({ req: sel.id, node: null })} style={{ background: 'none', border: 0, padding: 0, color: 'var(--accent)', textAlign: 'left' }}>Re-center on {sel.id}</button>}
               {sel.type === 'TST' && sel.id.startsWith('TST:DV-') && <Link to={stepHref('test', `test=${sel.id.slice(4)}&from=${anchor.req_id}&back=06b-impact`)}>View Test</Link>}
             </div>
           </Section>

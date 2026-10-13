@@ -82,8 +82,8 @@ const clearOf = (def: { filter?: string }): FilterValue => (def.filter === 'rang
  * The shared filter sidebar (design system "Filter sidebar" card): header with active count and Clear all, Filters / Columns /
  * Manage tabs, collapsible groups of collapsible sections with a control chosen by data type, 4px resize edge, footer collapse.
  */
-export function FilterSidebar<R>({ model, noun = 'rows', groupOptions = [], shownCount, canGallery, onNewView }: {
-  model: TableModel<R>; noun?: string; groupOptions?: Array<GroupOption<R>>; shownCount: number; canGallery?: boolean; onNewView?: () => void
+export function FilterSidebar<R>({ model, noun = 'rows', groupOptions = [], shownCount, canGallery, onNewView, defaultCollapsed }: {
+  model: TableModel<R>; noun?: string; groupOptions?: Array<GroupOption<R>>; shownCount: number; canGallery?: boolean; onNewView?: () => void; defaultCollapsed?: boolean
 }) {
   const config = useConfig()
   const persistence = useService('persistence')
@@ -95,7 +95,7 @@ export function FilterSidebar<R>({ model, noun = 'rows', groupOptions = [], show
   const [activeOnly, setActiveOnly] = useState(false)
   const [open, setOpen] = useState<Record<string, boolean>>({})
   const [exp, setExp] = useState<Record<string, boolean> | null>(null)
-  const [collapsed, setCollapsed] = useState(false)
+  const [collapsed, setCollapsed] = useState(!!defaultCollapsed)
   const [width, setWidth] = useState(320)
   const [picker, setPicker] = useState(false)
   const [draft, setDraft] = useState<string[]>([])

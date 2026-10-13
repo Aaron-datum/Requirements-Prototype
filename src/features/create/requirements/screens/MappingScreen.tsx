@@ -16,7 +16,7 @@ import { useService } from '../../../../services/context'
 import { RecordedNote, useReqActions } from '../actions'
 import { BomLineSection, DeltaLine } from '../components/panelParts'
 import { ClauseSection, DrivenByCell, ReqTitle, ScreenHeader, Section, SeverityBadge, SourceCell, Stepper, TextBadge, VocabBadge } from '../components/shared'
-import { stepHref, useParam, useReqModel } from '../model'
+import { startCollapsed, stepHref, useParam, useReqModel } from '../model'
 import { useReqVocab } from '../vocab'
 import { useConfig } from '../../../../config/useConfig'
 import s from '../req.module.css'
@@ -76,27 +76,24 @@ export function MappingScreen() {
       <Stepper current="05-mapping" counts={{ '05-mapping': review.length - decided.length, '06-carryover': m.stats.needDecision }} />
       <ScreenHeader title="Review requirement to test mapping"
         sub={<>New and changed requirements with no surrogate evidence · {m.rows.length} in scope · <span className="data" data-testid="reviewed-count">Reviewed {decided.length} of {review.length}</span></>}
-        actions={<>
-          <span className="row" title="Bulk accept never takes a Changed or New requirement, a dangerous case, or a row without a score">
-            <label className="secondary" htmlFor="bulk-floor">Accept all at or above</label>
-            <TextInput id="bulk-floor" type="number" min={0} max={100} value={floor} style={{ width: 72 }} onChange={(e) => setFloor(Math.max(0, Math.min(100, Number(e.target.value) || 0)))} />
-            <Button disabled={plan.eligible.length === 0} onClick={bulk} aria-label={`Accept all at or above ${floor} percent`}>Accept all ≥ {floor}%</Button>
-          </span>
-          <Link to={stepHref('06-carryover')}><Button primary>Continue to Carryover Review</Button></Link>
-        </>} />
+        actions={<Link to={stepHref('06-carryover')}><Button primary>Continue to Carryover Review</Button></Link>} />
       <div className={s.head} style={{ paddingTop: 'var(--gap-2)', paddingBottom: 'var(--gap-2)', alignItems: 'center' }}>
         <Tabs<Tab> value={tab} onChange={setTab} label="Mapping filter" tabs={[{ key: 'all', label: 'All', count: review.length }, { key: 'review', label: 'Needs review', count: review.length - decided.length }, { key: 'decided', label: 'Decided', count: decided.length }]} />
-        <span className="secondary">Text · New {textCount('New')} · Changed {textCount('Changed')} · Unchanged {textCount('Unchanged')}</span>
-        <span className="secondary" data-testid="auto-accepted">{auto.length} mapped at ≥ {config.thresholds.autoAcceptAt}% and accepted automatically. <Link to={stepHref('06c-trace')}>See them in the trace</Link></span>
+        <span className="secondary">Text · New {textCount('New')} · Changed {textCount('Changed')}</span>
+        <span className="right row" title="Bulk accept never takes a Changed or New requirement, a dangerous case, or a row without a score">
+          <label className="secondary" htmlFor="bulk-floor">Accept all at or above</label>
+          <TextInput id="bulk-floor" type="number" min={0} max={100} value={floor} style={{ width: 72 }} onChange={(e) => setFloor(Math.max(0, Math.min(100, Number(e.target.value) || 0)))} />
+          <Button disabled={plan.eligible.length === 0} onClick={bulk} aria-label={`Accept all at or above ${floor} percent`}>Accept all ≥ {floor}%</Button>
+        </span>
       </div>
-      <div className={s.banner} style={{ margin: 'var(--gap-2) var(--gap-4) 0' }} role="status" data-testid="bulk-preview">
-        <span>At {floor}% or above, {plan.eligible.length} can be accepted in bulk. {held} Changed or driver-changed and {plan.held.noScore.length} unscored rows need individual review.</span>
-        {bulkNote && <span className={s.strong}>{bulkNote}</span>}
+      <div className="row wrap secondary" style={{ padding: 'var(--gap-1) var(--gap-4)', gap: 'var(--gap-4)' }}>
+        <span data-testid="auto-accepted">{auto.length} mapped at ≥ {config.thresholds.autoAcceptAt}% and accepted automatically. <Link to={stepHref('06c-trace')}>See them in the trace</Link></span>
+        <span role="status" data-testid="bulk-preview">At {floor}% or above, {plan.eligible.length} can be accepted in bulk. {held} Changed or driver-changed and {plan.held.noScore.length} unscored rows need individual review.{bulkNote ? <b> {bulkNote}</b> : null}</span>
       </div>
       <div className={s.workspace}>
         {cands == null ? <div style={{ flex: 1 }}><SkeletonRows rows={8} label="Loading proposed tests" /></div> : (
           <Stub id="test-matcher" note="Static mappings from requirement_test_links.json, floor from config">
-            <TableShell id="map" noun="requirements" columns={columns} rows={rows} rowId={(r) => r.req_id} selectedId={selected?.req_id} onSelect={setSel}
+            <TableShell sidebarCollapsed={startCollapsed()} id="map" noun="requirements" columns={columns} rows={rows} rowId={(r) => r.req_id} selectedId={selected?.req_id} onSelect={setSel}
               rowTone={(r) => (r.rowDanger ? 'danger' : undefined)} empty={{ title: 'No requirements in this tab.' }} />
           </Stub>
         )}

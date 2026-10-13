@@ -12,7 +12,7 @@ import { ALTERNATES_BY_REQ, DEFAULT_OWNER, INTERFACE_BY_REQ, DELTA_BY_REQ, OWNER
 import { EVIDENCE_RECORDS, toCandidateRows } from './extras/requirements/evidence'
 import { PROCEDURES } from './extras/requirements/procedures'
 import { EVENT_LANE, INTERFACE_EVENT, LANES, REQUIREMENT_RULES, SCENARIOS, WARN_EVENTS, type Lane } from './extras/requirements/rules'
-import type { EvidenceRecord, ImpactFlag, ImpactRole, TestCandidateRow, TestProcedure } from './extras/requirements/types'
+import type { EvidenceCandidateRow, EvidenceRecord, ImpactFlag, ImpactRole, TestCandidateRow, TestProcedure } from './extras/requirements/types'
 import { REQ_STATE, RUN } from './semantics'
 
 /* ------------------------------ raw vocabulary values ------------------------------ */
@@ -105,9 +105,9 @@ export interface EvidenceCandidate { record: EvidenceRecord; score: number | nul
 export const allEvidenceRecords = (d: Decisions): EvidenceRecord[] => [...EVIDENCE_RECORDS, ...d.uploads].map((r) => (d.verified[r.id] ? { ...r, verifiedBy: d.verified[r.id]!.by, verifiedAt: d.verified[r.id]!.at } : r))
 
 /** Ranked evidence for one requirement: computed candidates by score, then records a person added (no score). */
-export function evidenceCandidates(reqId: string, d: Decisions): EvidenceCandidate[] {
+export function evidenceCandidates(reqId: string, d: Decisions, computedRows: EvidenceCandidateRow[] = toCandidateRows(reqId)): EvidenceCandidate[] {
   const records = Object.fromEntries(allEvidenceRecords(d).map((r) => [r.id, r]))
-  const computed = toCandidateRows(reqId).flatMap((c) => (records[c.recordId] ? [{ record: records[c.recordId]!, score: c.score, provenance: c.provenance } as EvidenceCandidate] : []))
+  const computed = computedRows.flatMap((c) => (records[c.recordId] ? [{ record: records[c.recordId]!, score: c.score, provenance: c.provenance } as EvidenceCandidate] : []))
   const added = (d.candidates[reqId] ?? []).filter((id) => !computed.some((c) => c.record.id === id)).flatMap((id) => (records[id] ? [{ record: records[id]!, score: null, provenance: records[id]!.origin === 'user-supplied' ? 'user-supplied' : 'manual' } as EvidenceCandidate] : []))
   return [...computed, ...added]
 }
@@ -386,6 +386,28 @@ export function neighborhood(g: Graph, start: string, hops: 1 | 2, direction: 'b
   const ids = Object.keys(hop)
   const edges = g.edges.filter((e) => ids.includes(e.from) && ids.includes(e.to) && (direction === 'both' ? true : used.has(e)))
   return { nodes: ids.map((id) => ({ id, type: typeOfNode(id) })), edges, hop, side }
+}
+
+/** Hop distance and side (back or forward of the anchor) for a set of nodes and edges returned by the impact-graph service. */
+export function annotate(start: string, edges: Array<{ from: string; to: string }>): Pick<Neighborhood, 'hop' | 'side'> {
+  const hop: Record<string, number> = { [start]: 0 }
+  const side: Neighborhood['side'] = { [start]: 'self' }
+  let frontier = [start]
+  for (let h = 1; frontier.length; h++) {
+    const next: string[] = []
+    for (const id of frontier) {
+      if (id !== start && TERMINAL.includes(typeOfNode(id))) continue
+      for (const e of edges) {
+        const fwd = e.from === id
+        const back = e.to === id
+        if (!fwd && !back) continue
+        const other = fwd ? e.to : e.from
+        if (hop[other] == null) { hop[other] = h; side[other] = id === start ? (fwd ? 'forward' : 'back') : side[id]!; next.push(other) }
+      }
+    }
+    frontier = next
+  }
+  return { hop, side }
 }
 
 export interface NodeInfo { id: string; type: GraphType; label: string; sub: string; programs: string[]; role?: ImpactRole }

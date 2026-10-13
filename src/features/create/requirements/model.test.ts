@@ -103,7 +103,7 @@ describe('bulk accept', () => {
     expect(plan.held.noScore.map((r) => r.req_id).sort()).toEqual(['REC-20001', 'REC-20006', 'REC-20013'])
   })
   it('accepts an Unchanged, non-dangerous row at or above the threshold', () => {
-    const rows = views().map((r) => (r.req_id === 'REC-20004' ? { ...r, text_status: 'Unchanged', dangerous: false } : r))
+    const rows = views().map((r) => (r.req_id === 'REC-20004' ? { ...r, text_status: 'Unchanged' as const, dangerous: false } : r))
     const plan = bulkAcceptPlan(rows, 85, buildAppConfig().matchRules.changedRaw)
     expect(plan.eligible.map((r) => r.req_id)).toEqual(['REC-20004'])
     expect(bulkAcceptPlan(rows, 90, buildAppConfig().matchRules.changedRaw).eligible).toEqual([])

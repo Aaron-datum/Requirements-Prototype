@@ -1,0 +1,1917 @@
+{
+  "f01": [
+    {
+      "ref": "f01-face-10",
+      "kind": "face",
+      "label": "Face 10 (Plane)"
+    },
+    {
+      "ref": "f01-face-14",
+      "kind": "face",
+      "label": "Face 14 (Cylinder)"
+    },
+    {
+      "ref": "f01-face-18",
+      "kind": "face",
+      "label": "Face 18 (Cone)"
+    },
+    {
+      "ref": "f01-face-22",
+      "kind": "face",
+      "label": "Face 22 (Nurbs)"
+    },
+    {
+      "ref": "f01-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Circle)"
+    },
+    {
+      "ref": "f01-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Line)"
+    },
+    {
+      "ref": "f01-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Arc)"
+    },
+    {
+      "ref": "f01-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f02": [
+    {
+      "ref": "f02-face-10",
+      "kind": "face",
+      "label": "Face 10 (Cylinder)"
+    },
+    {
+      "ref": "f02-face-14",
+      "kind": "face",
+      "label": "Face 14 (Cone)"
+    },
+    {
+      "ref": "f02-face-18",
+      "kind": "face",
+      "label": "Face 18 (Nurbs)"
+    },
+    {
+      "ref": "f02-face-22",
+      "kind": "face",
+      "label": "Face 22 (Plane)"
+    },
+    {
+      "ref": "f02-face-26",
+      "kind": "face",
+      "label": "Face 26 (Cylinder)"
+    },
+    {
+      "ref": "f02-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Line)"
+    },
+    {
+      "ref": "f02-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Arc)"
+    },
+    {
+      "ref": "f02-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Circle)"
+    },
+    {
+      "ref": "f02-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f03": [
+    {
+      "ref": "f03-face-10",
+      "kind": "face",
+      "label": "Face 10 (Cone)"
+    },
+    {
+      "ref": "f03-face-14",
+      "kind": "face",
+      "label": "Face 14 (Nurbs)"
+    },
+    {
+      "ref": "f03-face-18",
+      "kind": "face",
+      "label": "Face 18 (Plane)"
+    },
+    {
+      "ref": "f03-face-22",
+      "kind": "face",
+      "label": "Face 22 (Cylinder)"
+    },
+    {
+      "ref": "f03-face-26",
+      "kind": "face",
+      "label": "Face 26 (Plane)"
+    },
+    {
+      "ref": "f03-face-30",
+      "kind": "face",
+      "label": "Face 30 (Plane)"
+    },
+    {
+      "ref": "f03-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Arc)"
+    },
+    {
+      "ref": "f03-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Circle)"
+    },
+    {
+      "ref": "f03-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Line)"
+    },
+    {
+      "ref": "f03-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f04": [
+    {
+      "ref": "f04-face-10",
+      "kind": "face",
+      "label": "Face 10 (Nurbs)"
+    },
+    {
+      "ref": "f04-face-14",
+      "kind": "face",
+      "label": "Face 14 (Plane)"
+    },
+    {
+      "ref": "f04-face-18",
+      "kind": "face",
+      "label": "Face 18 (Cylinder)"
+    },
+    {
+      "ref": "f04-face-22",
+      "kind": "face",
+      "label": "Face 22 (Plane)"
+    },
+    {
+      "ref": "f04-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Circle)"
+    },
+    {
+      "ref": "f04-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Line)"
+    },
+    {
+      "ref": "f04-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Arc)"
+    },
+    {
+      "ref": "f04-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f05": [
+    {
+      "ref": "f05-face-10",
+      "kind": "face",
+      "label": "Face 10 (Plane)"
+    },
+    {
+      "ref": "f05-face-14",
+      "kind": "face",
+      "label": "Face 14 (Cylinder)"
+    },
+    {
+      "ref": "f05-face-18",
+      "kind": "face",
+      "label": "Face 18 (Plane)"
+    },
+    {
+      "ref": "f05-face-22",
+      "kind": "face",
+      "label": "Face 22 (Plane)"
+    },
+    {
+      "ref": "f05-face-26",
+      "kind": "face",
+      "label": "Face 26 (Cylinder)"
+    },
+    {
+      "ref": "f05-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Line)"
+    },
+    {
+      "ref": "f05-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Arc)"
+    },
+    {
+      "ref": "f05-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Circle)"
+    },
+    {
+      "ref": "f05-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f06": [
+    {
+      "ref": "f06-face-10",
+      "kind": "face",
+      "label": "Face 10 (Cylinder)"
+    },
+    {
+      "ref": "f06-face-14",
+      "kind": "face",
+      "label": "Face 14 (Plane)"
+    },
+    {
+      "ref": "f06-face-18",
+      "kind": "face",
+      "label": "Face 18 (Plane)"
+    },
+    {
+      "ref": "f06-face-22",
+      "kind": "face",
+      "label": "Face 22 (Cylinder)"
+    },
+    {
+      "ref": "f06-face-26",
+      "kind": "face",
+      "label": "Face 26 (Cone)"
+    },
+    {
+      "ref": "f06-face-30",
+      "kind": "face",
+      "label": "Face 30 (Nurbs)"
+    },
+    {
+      "ref": "f06-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Arc)"
+    },
+    {
+      "ref": "f06-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Circle)"
+    },
+    {
+      "ref": "f06-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Line)"
+    },
+    {
+      "ref": "f06-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f07": [
+    {
+      "ref": "f07-face-10",
+      "kind": "face",
+      "label": "Face 10 (Plane)"
+    },
+    {
+      "ref": "f07-face-14",
+      "kind": "face",
+      "label": "Face 14 (Plane)"
+    },
+    {
+      "ref": "f07-face-18",
+      "kind": "face",
+      "label": "Face 18 (Cylinder)"
+    },
+    {
+      "ref": "f07-face-22",
+      "kind": "face",
+      "label": "Face 22 (Cone)"
+    },
+    {
+      "ref": "f07-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Circle)"
+    },
+    {
+      "ref": "f07-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Line)"
+    },
+    {
+      "ref": "f07-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Arc)"
+    },
+    {
+      "ref": "f07-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f08": [
+    {
+      "ref": "f08-face-10",
+      "kind": "face",
+      "label": "Face 10 (Plane)"
+    },
+    {
+      "ref": "f08-face-14",
+      "kind": "face",
+      "label": "Face 14 (Cylinder)"
+    },
+    {
+      "ref": "f08-face-18",
+      "kind": "face",
+      "label": "Face 18 (Cone)"
+    },
+    {
+      "ref": "f08-face-22",
+      "kind": "face",
+      "label": "Face 22 (Nurbs)"
+    },
+    {
+      "ref": "f08-face-26",
+      "kind": "face",
+      "label": "Face 26 (Plane)"
+    },
+    {
+      "ref": "f08-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Line)"
+    },
+    {
+      "ref": "f08-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Arc)"
+    },
+    {
+      "ref": "f08-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Circle)"
+    },
+    {
+      "ref": "f08-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f09": [
+    {
+      "ref": "f09-face-10",
+      "kind": "face",
+      "label": "Face 10 (Cylinder)"
+    },
+    {
+      "ref": "f09-face-14",
+      "kind": "face",
+      "label": "Face 14 (Cone)"
+    },
+    {
+      "ref": "f09-face-18",
+      "kind": "face",
+      "label": "Face 18 (Nurbs)"
+    },
+    {
+      "ref": "f09-face-22",
+      "kind": "face",
+      "label": "Face 22 (Plane)"
+    },
+    {
+      "ref": "f09-face-26",
+      "kind": "face",
+      "label": "Face 26 (Cylinder)"
+    },
+    {
+      "ref": "f09-face-30",
+      "kind": "face",
+      "label": "Face 30 (Plane)"
+    },
+    {
+      "ref": "f09-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Arc)"
+    },
+    {
+      "ref": "f09-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Circle)"
+    },
+    {
+      "ref": "f09-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Line)"
+    },
+    {
+      "ref": "f09-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f10": [
+    {
+      "ref": "f10-face-10",
+      "kind": "face",
+      "label": "Face 10 (Cone)"
+    },
+    {
+      "ref": "f10-face-14",
+      "kind": "face",
+      "label": "Face 14 (Nurbs)"
+    },
+    {
+      "ref": "f10-face-18",
+      "kind": "face",
+      "label": "Face 18 (Plane)"
+    },
+    {
+      "ref": "f10-face-22",
+      "kind": "face",
+      "label": "Face 22 (Cylinder)"
+    },
+    {
+      "ref": "f10-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Circle)"
+    },
+    {
+      "ref": "f10-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Line)"
+    },
+    {
+      "ref": "f10-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Arc)"
+    },
+    {
+      "ref": "f10-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f11": [
+    {
+      "ref": "f11-face-10",
+      "kind": "face",
+      "label": "Face 10 (Nurbs)"
+    },
+    {
+      "ref": "f11-face-14",
+      "kind": "face",
+      "label": "Face 14 (Plane)"
+    },
+    {
+      "ref": "f11-face-18",
+      "kind": "face",
+      "label": "Face 18 (Cylinder)"
+    },
+    {
+      "ref": "f11-face-22",
+      "kind": "face",
+      "label": "Face 22 (Plane)"
+    },
+    {
+      "ref": "f11-face-26",
+      "kind": "face",
+      "label": "Face 26 (Plane)"
+    },
+    {
+      "ref": "f11-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Line)"
+    },
+    {
+      "ref": "f11-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Arc)"
+    },
+    {
+      "ref": "f11-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Circle)"
+    },
+    {
+      "ref": "f11-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f12": [
+    {
+      "ref": "f12-face-10",
+      "kind": "face",
+      "label": "Face 10 (Plane)"
+    },
+    {
+      "ref": "f12-face-14",
+      "kind": "face",
+      "label": "Face 14 (Cylinder)"
+    },
+    {
+      "ref": "f12-face-18",
+      "kind": "face",
+      "label": "Face 18 (Plane)"
+    },
+    {
+      "ref": "f12-face-22",
+      "kind": "face",
+      "label": "Face 22 (Plane)"
+    },
+    {
+      "ref": "f12-face-26",
+      "kind": "face",
+      "label": "Face 26 (Cylinder)"
+    },
+    {
+      "ref": "f12-face-30",
+      "kind": "face",
+      "label": "Face 30 (Cone)"
+    },
+    {
+      "ref": "f12-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Arc)"
+    },
+    {
+      "ref": "f12-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Circle)"
+    },
+    {
+      "ref": "f12-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Line)"
+    },
+    {
+      "ref": "f12-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f13": [
+    {
+      "ref": "f13-face-10",
+      "kind": "face",
+      "label": "Face 10 (Cylinder)"
+    },
+    {
+      "ref": "f13-face-14",
+      "kind": "face",
+      "label": "Face 14 (Plane)"
+    },
+    {
+      "ref": "f13-face-18",
+      "kind": "face",
+      "label": "Face 18 (Plane)"
+    },
+    {
+      "ref": "f13-face-22",
+      "kind": "face",
+      "label": "Face 22 (Cylinder)"
+    },
+    {
+      "ref": "f13-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Circle)"
+    },
+    {
+      "ref": "f13-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Line)"
+    },
+    {
+      "ref": "f13-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Arc)"
+    },
+    {
+      "ref": "f13-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f14": [
+    {
+      "ref": "f14-face-10",
+      "kind": "face",
+      "label": "Face 10 (Plane)"
+    },
+    {
+      "ref": "f14-face-14",
+      "kind": "face",
+      "label": "Face 14 (Plane)"
+    },
+    {
+      "ref": "f14-face-18",
+      "kind": "face",
+      "label": "Face 18 (Cylinder)"
+    },
+    {
+      "ref": "f14-face-22",
+      "kind": "face",
+      "label": "Face 22 (Cone)"
+    },
+    {
+      "ref": "f14-face-26",
+      "kind": "face",
+      "label": "Face 26 (Nurbs)"
+    },
+    {
+      "ref": "f14-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Line)"
+    },
+    {
+      "ref": "f14-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Arc)"
+    },
+    {
+      "ref": "f14-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Circle)"
+    },
+    {
+      "ref": "f14-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f15": [
+    {
+      "ref": "f15-face-10",
+      "kind": "face",
+      "label": "Face 10 (Plane)"
+    },
+    {
+      "ref": "f15-face-14",
+      "kind": "face",
+      "label": "Face 14 (Cylinder)"
+    },
+    {
+      "ref": "f15-face-18",
+      "kind": "face",
+      "label": "Face 18 (Cone)"
+    },
+    {
+      "ref": "f15-face-22",
+      "kind": "face",
+      "label": "Face 22 (Nurbs)"
+    },
+    {
+      "ref": "f15-face-26",
+      "kind": "face",
+      "label": "Face 26 (Plane)"
+    },
+    {
+      "ref": "f15-face-30",
+      "kind": "face",
+      "label": "Face 30 (Cylinder)"
+    },
+    {
+      "ref": "f15-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Arc)"
+    },
+    {
+      "ref": "f15-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Circle)"
+    },
+    {
+      "ref": "f15-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Line)"
+    },
+    {
+      "ref": "f15-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f16": [
+    {
+      "ref": "f16-face-10",
+      "kind": "face",
+      "label": "Face 10 (Cylinder)"
+    },
+    {
+      "ref": "f16-face-14",
+      "kind": "face",
+      "label": "Face 14 (Cone)"
+    },
+    {
+      "ref": "f16-face-18",
+      "kind": "face",
+      "label": "Face 18 (Nurbs)"
+    },
+    {
+      "ref": "f16-face-22",
+      "kind": "face",
+      "label": "Face 22 (Plane)"
+    },
+    {
+      "ref": "f16-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Circle)"
+    },
+    {
+      "ref": "f16-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Line)"
+    },
+    {
+      "ref": "f16-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Arc)"
+    },
+    {
+      "ref": "f16-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f17": [
+    {
+      "ref": "f17-face-10",
+      "kind": "face",
+      "label": "Face 10 (Cone)"
+    },
+    {
+      "ref": "f17-face-14",
+      "kind": "face",
+      "label": "Face 14 (Nurbs)"
+    },
+    {
+      "ref": "f17-face-18",
+      "kind": "face",
+      "label": "Face 18 (Plane)"
+    },
+    {
+      "ref": "f17-face-22",
+      "kind": "face",
+      "label": "Face 22 (Cylinder)"
+    },
+    {
+      "ref": "f17-face-26",
+      "kind": "face",
+      "label": "Face 26 (Plane)"
+    },
+    {
+      "ref": "f17-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Line)"
+    },
+    {
+      "ref": "f17-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Arc)"
+    },
+    {
+      "ref": "f17-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Circle)"
+    },
+    {
+      "ref": "f17-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f18": [
+    {
+      "ref": "f18-face-10",
+      "kind": "face",
+      "label": "Face 10 (Nurbs)"
+    },
+    {
+      "ref": "f18-face-14",
+      "kind": "face",
+      "label": "Face 14 (Plane)"
+    },
+    {
+      "ref": "f18-face-18",
+      "kind": "face",
+      "label": "Face 18 (Cylinder)"
+    },
+    {
+      "ref": "f18-face-22",
+      "kind": "face",
+      "label": "Face 22 (Plane)"
+    },
+    {
+      "ref": "f18-face-26",
+      "kind": "face",
+      "label": "Face 26 (Plane)"
+    },
+    {
+      "ref": "f18-face-30",
+      "kind": "face",
+      "label": "Face 30 (Cylinder)"
+    },
+    {
+      "ref": "f18-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Arc)"
+    },
+    {
+      "ref": "f18-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Circle)"
+    },
+    {
+      "ref": "f18-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Line)"
+    },
+    {
+      "ref": "f18-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f19": [
+    {
+      "ref": "f19-face-10",
+      "kind": "face",
+      "label": "Face 10 (Plane)"
+    },
+    {
+      "ref": "f19-face-14",
+      "kind": "face",
+      "label": "Face 14 (Cylinder)"
+    },
+    {
+      "ref": "f19-face-18",
+      "kind": "face",
+      "label": "Face 18 (Plane)"
+    },
+    {
+      "ref": "f19-face-22",
+      "kind": "face",
+      "label": "Face 22 (Plane)"
+    },
+    {
+      "ref": "f19-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Circle)"
+    },
+    {
+      "ref": "f19-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Line)"
+    },
+    {
+      "ref": "f19-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Arc)"
+    },
+    {
+      "ref": "f19-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f20": [
+    {
+      "ref": "f20-face-10",
+      "kind": "face",
+      "label": "Face 10 (Cylinder)"
+    },
+    {
+      "ref": "f20-face-14",
+      "kind": "face",
+      "label": "Face 14 (Plane)"
+    },
+    {
+      "ref": "f20-face-18",
+      "kind": "face",
+      "label": "Face 18 (Plane)"
+    },
+    {
+      "ref": "f20-face-22",
+      "kind": "face",
+      "label": "Face 22 (Cylinder)"
+    },
+    {
+      "ref": "f20-face-26",
+      "kind": "face",
+      "label": "Face 26 (Cone)"
+    },
+    {
+      "ref": "f20-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Line)"
+    },
+    {
+      "ref": "f20-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Arc)"
+    },
+    {
+      "ref": "f20-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Circle)"
+    },
+    {
+      "ref": "f20-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f21": [
+    {
+      "ref": "f21-face-10",
+      "kind": "face",
+      "label": "Face 10 (Plane)"
+    },
+    {
+      "ref": "f21-face-14",
+      "kind": "face",
+      "label": "Face 14 (Plane)"
+    },
+    {
+      "ref": "f21-face-18",
+      "kind": "face",
+      "label": "Face 18 (Cylinder)"
+    },
+    {
+      "ref": "f21-face-22",
+      "kind": "face",
+      "label": "Face 22 (Cone)"
+    },
+    {
+      "ref": "f21-face-26",
+      "kind": "face",
+      "label": "Face 26 (Nurbs)"
+    },
+    {
+      "ref": "f21-face-30",
+      "kind": "face",
+      "label": "Face 30 (Plane)"
+    },
+    {
+      "ref": "f21-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Arc)"
+    },
+    {
+      "ref": "f21-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Circle)"
+    },
+    {
+      "ref": "f21-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Line)"
+    },
+    {
+      "ref": "f21-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f22": [
+    {
+      "ref": "f22-face-10",
+      "kind": "face",
+      "label": "Face 10 (Plane)"
+    },
+    {
+      "ref": "f22-face-14",
+      "kind": "face",
+      "label": "Face 14 (Cylinder)"
+    },
+    {
+      "ref": "f22-face-18",
+      "kind": "face",
+      "label": "Face 18 (Cone)"
+    },
+    {
+      "ref": "f22-face-22",
+      "kind": "face",
+      "label": "Face 22 (Nurbs)"
+    },
+    {
+      "ref": "f22-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Circle)"
+    },
+    {
+      "ref": "f22-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Line)"
+    },
+    {
+      "ref": "f22-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Arc)"
+    },
+    {
+      "ref": "f22-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f23": [
+    {
+      "ref": "f23-face-10",
+      "kind": "face",
+      "label": "Face 10 (Cylinder)"
+    },
+    {
+      "ref": "f23-face-14",
+      "kind": "face",
+      "label": "Face 14 (Cone)"
+    },
+    {
+      "ref": "f23-face-18",
+      "kind": "face",
+      "label": "Face 18 (Nurbs)"
+    },
+    {
+      "ref": "f23-face-22",
+      "kind": "face",
+      "label": "Face 22 (Plane)"
+    },
+    {
+      "ref": "f23-face-26",
+      "kind": "face",
+      "label": "Face 26 (Cylinder)"
+    },
+    {
+      "ref": "f23-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Line)"
+    },
+    {
+      "ref": "f23-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Arc)"
+    },
+    {
+      "ref": "f23-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Circle)"
+    },
+    {
+      "ref": "f23-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f24": [
+    {
+      "ref": "f24-face-10",
+      "kind": "face",
+      "label": "Face 10 (Cone)"
+    },
+    {
+      "ref": "f24-face-14",
+      "kind": "face",
+      "label": "Face 14 (Nurbs)"
+    },
+    {
+      "ref": "f24-face-18",
+      "kind": "face",
+      "label": "Face 18 (Plane)"
+    },
+    {
+      "ref": "f24-face-22",
+      "kind": "face",
+      "label": "Face 22 (Cylinder)"
+    },
+    {
+      "ref": "f24-face-26",
+      "kind": "face",
+      "label": "Face 26 (Plane)"
+    },
+    {
+      "ref": "f24-face-30",
+      "kind": "face",
+      "label": "Face 30 (Plane)"
+    },
+    {
+      "ref": "f24-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Arc)"
+    },
+    {
+      "ref": "f24-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Circle)"
+    },
+    {
+      "ref": "f24-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Line)"
+    },
+    {
+      "ref": "f24-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f25": [
+    {
+      "ref": "f25-face-10",
+      "kind": "face",
+      "label": "Face 10 (Nurbs)"
+    },
+    {
+      "ref": "f25-face-14",
+      "kind": "face",
+      "label": "Face 14 (Plane)"
+    },
+    {
+      "ref": "f25-face-18",
+      "kind": "face",
+      "label": "Face 18 (Cylinder)"
+    },
+    {
+      "ref": "f25-face-22",
+      "kind": "face",
+      "label": "Face 22 (Plane)"
+    },
+    {
+      "ref": "f25-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Circle)"
+    },
+    {
+      "ref": "f25-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Line)"
+    },
+    {
+      "ref": "f25-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Arc)"
+    },
+    {
+      "ref": "f25-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f26": [
+    {
+      "ref": "f26-face-10",
+      "kind": "face",
+      "label": "Face 10 (Plane)"
+    },
+    {
+      "ref": "f26-face-14",
+      "kind": "face",
+      "label": "Face 14 (Cylinder)"
+    },
+    {
+      "ref": "f26-face-18",
+      "kind": "face",
+      "label": "Face 18 (Plane)"
+    },
+    {
+      "ref": "f26-face-22",
+      "kind": "face",
+      "label": "Face 22 (Plane)"
+    },
+    {
+      "ref": "f26-face-26",
+      "kind": "face",
+      "label": "Face 26 (Cylinder)"
+    },
+    {
+      "ref": "f26-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Line)"
+    },
+    {
+      "ref": "f26-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Arc)"
+    },
+    {
+      "ref": "f26-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Circle)"
+    },
+    {
+      "ref": "f26-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f27": [
+    {
+      "ref": "f27-face-10",
+      "kind": "face",
+      "label": "Face 10 (Cylinder)"
+    },
+    {
+      "ref": "f27-face-14",
+      "kind": "face",
+      "label": "Face 14 (Plane)"
+    },
+    {
+      "ref": "f27-face-18",
+      "kind": "face",
+      "label": "Face 18 (Plane)"
+    },
+    {
+      "ref": "f27-face-22",
+      "kind": "face",
+      "label": "Face 22 (Cylinder)"
+    },
+    {
+      "ref": "f27-face-26",
+      "kind": "face",
+      "label": "Face 26 (Cone)"
+    },
+    {
+      "ref": "f27-face-30",
+      "kind": "face",
+      "label": "Face 30 (Nurbs)"
+    },
+    {
+      "ref": "f27-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Arc)"
+    },
+    {
+      "ref": "f27-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Circle)"
+    },
+    {
+      "ref": "f27-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Line)"
+    },
+    {
+      "ref": "f27-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f28": [
+    {
+      "ref": "f28-face-10",
+      "kind": "face",
+      "label": "Face 10 (Plane)"
+    },
+    {
+      "ref": "f28-face-14",
+      "kind": "face",
+      "label": "Face 14 (Plane)"
+    },
+    {
+      "ref": "f28-face-18",
+      "kind": "face",
+      "label": "Face 18 (Cylinder)"
+    },
+    {
+      "ref": "f28-face-22",
+      "kind": "face",
+      "label": "Face 22 (Cone)"
+    },
+    {
+      "ref": "f28-edge-3",
+      "kind": "edge",
+      "label": "Edge 3 (Circle)"
+    },
+    {
+      "ref": "f28-edge-8",
+      "kind": "edge",
+      "label": "Edge 8 (Line)"
+    },
+    {
+      "ref": "f28-edge-13",
+      "kind": "edge",
+      "label": "Edge 13 (Arc)"
+    },
+    {
+      "ref": "f28-body-1",
+      "kind": "body",
+      "label": "Body 1"
+    }
+  ],
+  "f29": [
+    {
+      "ref": "f29-body-n10",
+      "kind": "body",
+      "label": "Sub-assembly: Seat_Back_Assy"
+    },
+    {
+      "ref": "f29-body-n1",
+      "kind": "body",
+      "label": "Body: FrameBack_Outer"
+    },
+    {
+      "ref": "f29-body-n2",
+      "kind": "body",
+      "label": "Body: FrameBack_Inner"
+    },
+    {
+      "ref": "f29-body-n5",
+      "kind": "body",
+      "label": "Sub-assembly: Headrest_Assy"
+    },
+    {
+      "ref": "f29-body-n3",
+      "kind": "body",
+      "label": "Body: Headrest_Core"
+    },
+    {
+      "ref": "f29-body-n9",
+      "kind": "body",
+      "label": "Sub-assembly: Recliner_Assy"
+    },
+    {
+      "ref": "f29-body-n6",
+      "kind": "body",
+      "label": "Body: Recliner_Mech_LH"
+    },
+    {
+      "ref": "f29-body-n7",
+      "kind": "body",
+      "label": "Body: Recliner_Mech_RH"
+    },
+    {
+      "ref": "f29-body-n15",
+      "kind": "body",
+      "label": "Sub-assembly: Seat_Cushion_Assy"
+    },
+    {
+      "ref": "f29-body-n11",
+      "kind": "body",
+      "label": "Body: Cushion_Foam_Lower"
+    },
+    {
+      "ref": "f29-body-all",
+      "kind": "body",
+      "label": "Body: whole assembly"
+    },
+    {
+      "ref": "f29-body-env",
+      "kind": "body",
+      "label": "Body: bounding envelope"
+    }
+  ],
+  "f30": [
+    {
+      "ref": "f30-body-n10",
+      "kind": "body",
+      "label": "Sub-assembly: Seat_Back_Assy"
+    },
+    {
+      "ref": "f30-body-n1",
+      "kind": "body",
+      "label": "Body: FrameBack_Outer"
+    },
+    {
+      "ref": "f30-body-n2",
+      "kind": "body",
+      "label": "Body: FrameBack_Inner"
+    },
+    {
+      "ref": "f30-body-n5",
+      "kind": "body",
+      "label": "Sub-assembly: Headrest_Assy"
+    },
+    {
+      "ref": "f30-body-n3",
+      "kind": "body",
+      "label": "Body: Headrest_Core"
+    },
+    {
+      "ref": "f30-body-n9",
+      "kind": "body",
+      "label": "Sub-assembly: Recliner_Assy"
+    },
+    {
+      "ref": "f30-body-n6",
+      "kind": "body",
+      "label": "Body: Recliner_Mech_LH"
+    },
+    {
+      "ref": "f30-body-n7",
+      "kind": "body",
+      "label": "Body: Recliner_Mech_RH"
+    },
+    {
+      "ref": "f30-body-n15",
+      "kind": "body",
+      "label": "Sub-assembly: Seat_Cushion_Assy"
+    },
+    {
+      "ref": "f30-body-n11",
+      "kind": "body",
+      "label": "Body: Cushion_Foam_Lower"
+    },
+    {
+      "ref": "f30-body-all",
+      "kind": "body",
+      "label": "Body: whole assembly"
+    },
+    {
+      "ref": "f30-body-env",
+      "kind": "body",
+      "label": "Body: bounding envelope"
+    }
+  ],
+  "f31": [
+    {
+      "ref": "f31-body-n6",
+      "kind": "body",
+      "label": "Sub-assembly: Seat_Back_Assy"
+    },
+    {
+      "ref": "f31-body-n1",
+      "kind": "body",
+      "label": "Body: FrameBack_Outer"
+    },
+    {
+      "ref": "f31-body-n2",
+      "kind": "body",
+      "label": "Body: FrameBack_Inner"
+    },
+    {
+      "ref": "f31-body-n5",
+      "kind": "body",
+      "label": "Sub-assembly: Recliner_Assy"
+    },
+    {
+      "ref": "f31-body-n3",
+      "kind": "body",
+      "label": "Body: Recliner_Mech_LH"
+    },
+    {
+      "ref": "f31-body-n4",
+      "kind": "body",
+      "label": "Body: Recliner_Mech_RH"
+    },
+    {
+      "ref": "f31-body-n9",
+      "kind": "body",
+      "label": "Sub-assembly: Seat_Cushion_Assy"
+    },
+    {
+      "ref": "f31-body-n7",
+      "kind": "body",
+      "label": "Body: Cushion_Foam_Lower"
+    },
+    {
+      "ref": "f31-body-n8",
+      "kind": "body",
+      "label": "Body: Cushion_Foam_Upper"
+    },
+    {
+      "ref": "f31-body-n13",
+      "kind": "body",
+      "label": "Sub-assembly: Track_Assy"
+    },
+    {
+      "ref": "f31-body-all",
+      "kind": "body",
+      "label": "Body: whole assembly"
+    },
+    {
+      "ref": "f31-body-env",
+      "kind": "body",
+      "label": "Body: bounding envelope"
+    }
+  ],
+  "f32": [
+    {
+      "ref": "f32-body-n4",
+      "kind": "body",
+      "label": "Sub-assembly: Bench_Back_Assy"
+    },
+    {
+      "ref": "f32-body-n1",
+      "kind": "body",
+      "label": "Body: FrameBack_Outer"
+    },
+    {
+      "ref": "f32-body-n2",
+      "kind": "body",
+      "label": "Body: FrameBack_Inner"
+    },
+    {
+      "ref": "f32-body-n3",
+      "kind": "body",
+      "label": "Body: Headrest_Core"
+    },
+    {
+      "ref": "f32-body-n9",
+      "kind": "body",
+      "label": "Sub-assembly: Bench_Track_Assy"
+    },
+    {
+      "ref": "f32-body-n5",
+      "kind": "body",
+      "label": "Body: TrackRail_Upper"
+    },
+    {
+      "ref": "f32-body-n6",
+      "kind": "body",
+      "label": "Body: TrackRail_Lower"
+    },
+    {
+      "ref": "f32-body-n7",
+      "kind": "body",
+      "label": "Body: Buckle_Anchor_Bracket"
+    },
+    {
+      "ref": "f32-body-n10",
+      "kind": "body",
+      "label": "Body: Trim_Cover_Lower"
+    },
+    {
+      "ref": "f32-body-all",
+      "kind": "body",
+      "label": "Body: whole assembly"
+    },
+    {
+      "ref": "f32-body-env",
+      "kind": "body",
+      "label": "Body: bounding envelope"
+    }
+  ],
+  "f33": [
+    {
+      "ref": "f33-body-n4",
+      "kind": "body",
+      "label": "Sub-assembly: Bench_Back_Assy"
+    },
+    {
+      "ref": "f33-body-n1",
+      "kind": "body",
+      "label": "Body: FrameBack_Outer"
+    },
+    {
+      "ref": "f33-body-n2",
+      "kind": "body",
+      "label": "Body: FrameBack_Inner"
+    },
+    {
+      "ref": "f33-body-n3",
+      "kind": "body",
+      "label": "Body: Headrest_Core"
+    },
+    {
+      "ref": "f33-body-n9",
+      "kind": "body",
+      "label": "Sub-assembly: Bench_Track_Assy"
+    },
+    {
+      "ref": "f33-body-n5",
+      "kind": "body",
+      "label": "Body: TrackRail_Upper"
+    },
+    {
+      "ref": "f33-body-n6",
+      "kind": "body",
+      "label": "Body: TrackRail_Lower"
+    },
+    {
+      "ref": "f33-body-n7",
+      "kind": "body",
+      "label": "Body: Buckle_Anchor_Bracket"
+    },
+    {
+      "ref": "f33-body-n10",
+      "kind": "body",
+      "label": "Body: Trim_Cover_Lower"
+    },
+    {
+      "ref": "f33-body-all",
+      "kind": "body",
+      "label": "Body: whole assembly"
+    },
+    {
+      "ref": "f33-body-env",
+      "kind": "body",
+      "label": "Body: bounding envelope"
+    }
+  ],
+  "f34": [
+    {
+      "ref": "f34-body-n5",
+      "kind": "body",
+      "label": "Sub-assembly: Back_Assy"
+    },
+    {
+      "ref": "f34-body-n1",
+      "kind": "body",
+      "label": "Body: FrameBack_Outer"
+    },
+    {
+      "ref": "f34-body-n2",
+      "kind": "body",
+      "label": "Body: FrameBack_Inner"
+    },
+    {
+      "ref": "f34-body-n3",
+      "kind": "body",
+      "label": "Body: Headrest_Core"
+    },
+    {
+      "ref": "f34-body-n8",
+      "kind": "body",
+      "label": "Sub-assembly: Cushion_Assy"
+    },
+    {
+      "ref": "f34-body-n6",
+      "kind": "body",
+      "label": "Body: Cushion_Foam_Lower"
+    },
+    {
+      "ref": "f34-body-n7",
+      "kind": "body",
+      "label": "Body: Seat_Heater_Pad"
+    },
+    {
+      "ref": "f34-body-all",
+      "kind": "body",
+      "label": "Body: whole assembly"
+    },
+    {
+      "ref": "f34-body-env",
+      "kind": "body",
+      "label": "Body: bounding envelope"
+    }
+  ],
+  "f35": [
+    {
+      "ref": "f35-body-n4",
+      "kind": "body",
+      "label": "Sub-assembly: Back_Assy"
+    },
+    {
+      "ref": "f35-body-n1",
+      "kind": "body",
+      "label": "Body: FrameBack_Outer"
+    },
+    {
+      "ref": "f35-body-n2",
+      "kind": "body",
+      "label": "Body: FrameBack_Inner"
+    },
+    {
+      "ref": "f35-body-n3",
+      "kind": "body",
+      "label": "Body: Headrest_Core"
+    },
+    {
+      "ref": "f35-body-n7",
+      "kind": "body",
+      "label": "Sub-assembly: Cushion_Assy"
+    },
+    {
+      "ref": "f35-body-n5",
+      "kind": "body",
+      "label": "Body: Cushion_Foam_Lower"
+    },
+    {
+      "ref": "f35-body-n6",
+      "kind": "body",
+      "label": "Body: Seat_Heater_Pad"
+    },
+    {
+      "ref": "f35-body-all",
+      "kind": "body",
+      "label": "Body: whole assembly"
+    },
+    {
+      "ref": "f35-body-env",
+      "kind": "body",
+      "label": "Body: bounding envelope"
+    }
+  ],
+  "f36": [
+    {
+      "ref": "f36-body-n3",
+      "kind": "body",
+      "label": "Sub-assembly: Bench_Back_Assy"
+    },
+    {
+      "ref": "f36-body-n1",
+      "kind": "body",
+      "label": "Body: FrameBack_Outer"
+    },
+    {
+      "ref": "f36-body-n2",
+      "kind": "body",
+      "label": "Body: FrameBack_Inner"
+    },
+    {
+      "ref": "f36-body-n7",
+      "kind": "body",
+      "label": "Sub-assembly: Bench_Track_Assy"
+    },
+    {
+      "ref": "f36-body-n4",
+      "kind": "body",
+      "label": "Body: TrackRail_Upper"
+    },
+    {
+      "ref": "f36-body-n5",
+      "kind": "body",
+      "label": "Body: Buckle_Anchor_Bracket"
+    },
+    {
+      "ref": "f36-body-n8",
+      "kind": "body",
+      "label": "Body: Trim_Cover_Lower"
+    },
+    {
+      "ref": "f36-body-all",
+      "kind": "body",
+      "label": "Body: whole assembly"
+    },
+    {
+      "ref": "f36-body-env",
+      "kind": "body",
+      "label": "Body: bounding envelope"
+    }
+  ],
+  "f37": [
+    {
+      "ref": "f37-body-n5",
+      "kind": "body",
+      "label": "Sub-assembly: Arm_Assy"
+    },
+    {
+      "ref": "f37-body-n1",
+      "kind": "body",
+      "label": "Body: RSB40_ARM_L"
+    },
+    {
+      "ref": "f37-body-n2",
+      "kind": "body",
+      "label": "Body: RSB40_ARM_R"
+    },
+    {
+      "ref": "f37-body-n3",
+      "kind": "body",
+      "label": "Body: RSB40_DEF"
+    },
+    {
+      "ref": "f37-body-n9",
+      "kind": "body",
+      "label": "Sub-assembly: Mount_Assy"
+    },
+    {
+      "ref": "f37-body-n6",
+      "kind": "body",
+      "label": "Body: ENG_MOUNT_FR"
+    },
+    {
+      "ref": "f37-body-n7",
+      "kind": "body",
+      "label": "Body: BRKT_MOUNT_RS"
+    },
+    {
+      "ref": "f37-body-n8",
+      "kind": "body",
+      "label": "Body: BRKT_MOUNT_LS"
+    },
+    {
+      "ref": "f37-body-all",
+      "kind": "body",
+      "label": "Body: whole assembly"
+    },
+    {
+      "ref": "f37-body-env",
+      "kind": "body",
+      "label": "Body: bounding envelope"
+    }
+  ],
+  "f38": [
+    {
+      "ref": "f38-body-n5",
+      "kind": "body",
+      "label": "Sub-assembly: Beam_Assy"
+    },
+    {
+      "ref": "f38-body-n1",
+      "kind": "body",
+      "label": "Body: BRKT_MOUNT_RS"
+    },
+    {
+      "ref": "f38-body-n2",
+      "kind": "body",
+      "label": "Body: BRKT_MOUNT_LS"
+    },
+    {
+      "ref": "f38-body-n3",
+      "kind": "body",
+      "label": "Body: BRKT_MOUNT_RS_B"
+    },
+    {
+      "ref": "f38-body-n6",
+      "kind": "body",
+      "label": "Body: AXLE_HSG"
+    },
+    {
+      "ref": "f38-body-all",
+      "kind": "body",
+      "label": "Body: whole assembly"
+    },
+    {
+      "ref": "f38-body-env",
+      "kind": "body",
+      "label": "Body: bounding envelope"
+    }
+  ],
+  "f39": [
+    {
+      "ref": "f39-body-n3",
+      "kind": "body",
+      "label": "Sub-assembly: Rail_Pair"
+    },
+    {
+      "ref": "f39-body-n1",
+      "kind": "body",
+      "label": "Body: TrackRail_Upper"
+    },
+    {
+      "ref": "f39-body-n2",
+      "kind": "body",
+      "label": "Body: TrackRail_Lower"
+    },
+    {
+      "ref": "f39-body-n4",
+      "kind": "body",
+      "label": "Body: BRKT_MOUNT_RS"
+    },
+    {
+      "ref": "f39-body-all",
+      "kind": "body",
+      "label": "Body: whole assembly"
+    },
+    {
+      "ref": "f39-body-env",
+      "kind": "body",
+      "label": "Body: bounding envelope"
+    }
+  ],
+  "f40": [
+    {
+      "ref": "f40-body-n4",
+      "kind": "body",
+      "label": "Sub-assembly: Cradle_Frame"
+    },
+    {
+      "ref": "f40-body-n1",
+      "kind": "body",
+      "label": "Body: AXLE_HSG"
+    },
+    {
+      "ref": "f40-body-n2",
+      "kind": "body",
+      "label": "Body: ENG_MOUNT_FR"
+    },
+    {
+      "ref": "f40-body-n3",
+      "kind": "body",
+      "label": "Body: RSB40_ARM_L"
+    },
+    {
+      "ref": "f40-body-n7",
+      "kind": "body",
+      "label": "Sub-assembly: Cradle_Hardware"
+    },
+    {
+      "ref": "f40-body-n5",
+      "kind": "body",
+      "label": "Body: BRKT_MOUNT_LS"
+    },
+    {
+      "ref": "f40-body-all",
+      "kind": "body",
+      "label": "Body: whole assembly"
+    },
+    {
+      "ref": "f40-body-env",
+      "kind": "body",
+      "label": "Body: bounding envelope"
+    }
+  ]
+}

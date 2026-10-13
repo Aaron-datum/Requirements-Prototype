@@ -36,7 +36,8 @@ export interface TableShellProps<R> {
   /** Gallery layout for Files. */
   renderCard?: (row: R) => ReactNode
   defaultLayout?: 'table' | 'gallery'
-  toolbar?: ReactNode
+  /** Right side of the pills row. A function receives the table model (sort, layout, filtered rows). */
+  toolbar?: ReactNode | ((m: TableModel<R>) => ReactNode)
   urlSync?: boolean
   paginate?: boolean
   loading?: boolean
@@ -49,7 +50,8 @@ export interface TableShellProps<R> {
   /** Receives the model so the screen can read filtered rows or drive filters (catalogue tree narrowing). */
   onModel?: (m: TableModel<R>) => void
   initialFilters?: Record<string, import('./types').FilterValue>
-  header?: ReactNode
+  /** Above the pills row. A function receives the table model (filtered count, filters). */
+  header?: ReactNode | ((m: TableModel<R>) => ReactNode)
   /** Rendered at the top of the filter sidebar, above the filter header (catalogue category tree). */
   sidebarTop?: ReactNode
   /** Filter section keys that start expanded (default: the first section and every active one). */
@@ -175,7 +177,7 @@ export function TableShell<R>(p: TableShellProps<R>) {
     <>
       {p.sidebar !== false && <FilterSidebar model={model} noun={p.noun} groupOptions={p.groupOptions} shownCount={sorted.length} canGallery={!!p.renderCard} top={p.sidebarTop} defaultOpen={p.sidebarOpen} initialWidth={p.sidebarWidth} />}
       <div className={s.center} data-density={density}>
-        {p.header}
+        {typeof p.header === 'function' ? p.header(model) : p.header}
         {p.idle && activeKeys.length === 0 ? p.idle : (<>
         <div className={s.pills} role="toolbar" aria-label="Applied filters">
           {p.title && <span className="text-section">{p.title}</span>}
@@ -184,7 +186,7 @@ export function TableShell<R>(p: TableShellProps<R>) {
             <span key={x.key} className={s.pill}>{x.label}<button type="button" aria-label={`Remove filter ${x.label}`} onClick={() => model.setFilter(x.c.key, undefined)}>×</button></span>
           ))}
           {pills.length > 0 && <button type="button" className={s.clear} onClick={model.clearAll}>Clear all</button>}
-          <span className="right row">{p.toolbar}</span>
+          <span className="right row">{typeof p.toolbar === 'function' ? p.toolbar(model) : p.toolbar}</span>
         </div>
         <div className={s.scroll}>{body}</div>
         {p.paginate && pages > 1 && (

@@ -1,0 +1,1997 @@
+[
+  {
+    "id": "f01",
+    "name": "7100490_0001_A_RSB40_ARM_L.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 11000000,
+    "source": "Teamcenter",
+    "createdBy": "m.osei",
+    "created": "2024-06-08T09:11:00.000Z",
+    "updated": "2026-02-04T14:11:00.000Z",
+    "lastSynced": "2026-10-02T01:11:00.000Z",
+    "thumbnail": "/cad-preview-2.png",
+    "partNumber": "7100490",
+    "revision": "A",
+    "lineageId": "RSB40-ARM-L",
+    "description": "RSB40 rear suspension arm, left",
+    "geometryHash": "g-f01",
+    "plm": {
+      "program": "Atlas EV",
+      "modelYear": "MY24",
+      "programType": "BEV",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Chassis",
+      "productLine": "Suspension",
+      "calcWeight": 3.6,
+      "releaseStatus": "Obsolete",
+      "lifecycleState": "Superseded",
+      "releasedDate": "2025-01-12",
+      "supplierLeadTime": 6
+    },
+    "supersededBy": "f02"
+  },
+  {
+    "id": "f02",
+    "name": "7100490_0001_B_RSB40_ARM_L.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 11120000,
+    "source": "Teamcenter",
+    "createdBy": "j.lindqvist",
+    "created": "2024-11-15T09:12:00.000Z",
+    "updated": "2026-03-07T14:12:00.000Z",
+    "lastSynced": "2026-10-03T02:12:00.000Z",
+    "thumbnail": "/cad-preview-3.png",
+    "partNumber": "7100490",
+    "revision": "B",
+    "lineageId": "RSB40-ARM-L",
+    "description": "RSB40 rear suspension arm, left",
+    "geometryHash": "g-rsb40-l-b",
+    "plm": {
+      "program": "Atlas EV",
+      "modelYear": "MY24",
+      "programType": "BEV",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Chassis",
+      "productLine": "Suspension",
+      "calcWeight": 3.65,
+      "releaseStatus": "Obsolete",
+      "lifecycleState": "Superseded",
+      "releasedDate": "2025-02-12",
+      "supplierLeadTime": 6
+    },
+    "supersededBy": "f03"
+  },
+  {
+    "id": "f03",
+    "name": "7100490_0001_C_RSB40_ARM_L.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 11240000,
+    "source": "Teamcenter",
+    "createdBy": "r.banerjee",
+    "created": "2024-04-22T09:13:00.000Z",
+    "updated": "2026-04-10T14:13:00.000Z",
+    "lastSynced": "2026-10-04T03:13:00.000Z",
+    "thumbnail": "/cad-preview-4.png",
+    "partNumber": "7100490",
+    "revision": "C",
+    "lineageId": "RSB40-ARM-L",
+    "description": "RSB40 rear suspension arm, left",
+    "geometryHash": "g-rsb40-l-b",
+    "plm": {
+      "program": "Atlas EV",
+      "modelYear": "MY24",
+      "programType": "BEV",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Chassis",
+      "productLine": "Suspension",
+      "calcWeight": 3.7,
+      "releaseStatus": "Obsolete",
+      "lifecycleState": "Superseded",
+      "releasedDate": "2025-03-12",
+      "supplierLeadTime": 6
+    },
+    "supersededBy": "f04"
+  },
+  {
+    "id": "f04",
+    "name": "7100490_0001_AA_RSB40_ARM_L.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 11360000,
+    "source": "Teamcenter",
+    "createdBy": "c.dubois",
+    "created": "2025-09-02T09:14:00.000Z",
+    "updated": "2026-05-13T14:14:00.000Z",
+    "lastSynced": "2026-10-05T04:14:00.000Z",
+    "thumbnail": "/cad-preview-5.png",
+    "partNumber": "7100490",
+    "revision": "AA",
+    "lineageId": "RSB40-ARM-L",
+    "description": "RSB40 rear suspension arm, left",
+    "geometryHash": "g-f04",
+    "plm": {
+      "program": "Atlas EV",
+      "modelYear": "MY24",
+      "programType": "BEV",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Chassis",
+      "productLine": "Suspension",
+      "calcWeight": 3.75,
+      "releaseStatus": "Obsolete",
+      "lifecycleState": "Superseded",
+      "releasedDate": "2025-04-12",
+      "supplierLeadTime": 6
+    },
+    "supersededBy": "f05"
+  },
+  {
+    "id": "f05",
+    "name": "7100490_0001_AB_RSB40_ARM_L.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 11480000,
+    "source": "Teamcenter",
+    "createdBy": "a.keller",
+    "created": "2025-02-09T09:15:00.000Z",
+    "updated": "2026-06-16T14:15:00.000Z",
+    "lastSynced": "2026-10-06T05:15:00.000Z",
+    "thumbnail": "/cad-preview-1.png",
+    "partNumber": "7100490",
+    "revision": "AB",
+    "lineageId": "RSB40-ARM-L",
+    "description": "RSB40 rear suspension arm, left",
+    "geometryHash": "g-f05",
+    "plm": {
+      "program": "Atlas EV",
+      "modelYear": "MY24",
+      "programType": "BEV",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Chassis",
+      "productLine": "Suspension",
+      "calcWeight": 3.8000000000000003,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2025-05-12",
+      "supplierLeadTime": 6
+    },
+    "supersededBy": "f06"
+  },
+  {
+    "id": "f06",
+    "name": "7100490_0001_AC_RSB40_ARM_L.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 11600000,
+    "source": "Teamcenter",
+    "createdBy": "m.osei",
+    "created": "2025-07-16T09:16:00.000Z",
+    "updated": "2026-07-19T14:16:00.000Z",
+    "lastSynced": "2026-10-07T06:16:00.000Z",
+    "thumbnail": "/cad-preview-2.png",
+    "partNumber": "7100490",
+    "revision": "AC",
+    "lineageId": "RSB40-ARM-L",
+    "description": "RSB40 rear suspension arm, left",
+    "geometryHash": "g-f06",
+    "plm": {
+      "program": "Atlas EV",
+      "modelYear": "MY24",
+      "programType": "BEV",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Chassis",
+      "productLine": "Suspension",
+      "calcWeight": 3.85,
+      "releaseStatus": "In Review",
+      "lifecycleState": "In Work",
+      "releasedDate": null,
+      "supplierLeadTime": 6
+    }
+  },
+  {
+    "id": "f07",
+    "name": "7100490_0000_AB_ASM_RSB40_DEF.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 16800000,
+    "source": "Teamcenter",
+    "createdBy": "j.lindqvist",
+    "created": "2025-12-23T09:17:00.000Z",
+    "updated": "2026-08-22T14:17:00.000Z",
+    "lastSynced": "2026-10-01T07:17:00.000Z",
+    "thumbnail": "/cad-preview-3.png",
+    "partNumber": "7100490",
+    "revision": "AB",
+    "lineageId": "RSB40-DEF",
+    "description": "RSB40 deflection link",
+    "geometryHash": "g-rsb40-def",
+    "plm": {
+      "program": "Atlas EV",
+      "modelYear": "MY24",
+      "programType": "BEV",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Chassis",
+      "productLine": "Suspension",
+      "calcWeight": 4.2,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2025-03-12",
+      "supplierLeadTime": 8
+    }
+  },
+  {
+    "id": "f08",
+    "name": "7100490_0000_AB_ASM_RSB40_DEF.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 16800000,
+    "source": "CAD Library",
+    "createdBy": "r.banerjee",
+    "created": "2025-05-03T09:18:00.000Z",
+    "updated": "2026-09-25T14:18:00.000Z",
+    "lastSynced": "2026-10-02T08:18:00.000Z",
+    "thumbnail": "/cad-preview-4.png",
+    "partNumber": "7100490",
+    "revision": "AB",
+    "lineageId": "RSB40-DEF",
+    "description": "RSB40 deflection link (vault copy)",
+    "geometryHash": "g-rsb40-def",
+    "plm": {}
+  },
+  {
+    "id": "f09",
+    "name": "7100490_0002_AC_RSB40_ARM_R.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 11400000,
+    "source": "Teamcenter",
+    "createdBy": "c.dubois",
+    "created": "2025-10-10T09:19:00.000Z",
+    "updated": "2026-01-01T14:19:00.000Z",
+    "lastSynced": "2026-10-03T00:19:00.000Z",
+    "thumbnail": "/cad-preview-5.png",
+    "partNumber": "7100490",
+    "revision": "AC",
+    "lineageId": "RSB40-ARM-R",
+    "description": "RSB40 rear suspension arm, right",
+    "geometryHash": "g-f09",
+    "plm": {
+      "program": "Atlas EV",
+      "modelYear": "MY25",
+      "programType": "BEV",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Chassis",
+      "productLine": "Suspension",
+      "calcWeight": 3.7,
+      "releaseStatus": "In Review",
+      "lifecycleState": "In Work",
+      "releasedDate": null,
+      "supplierLeadTime": 6
+    }
+  },
+  {
+    "id": "f10",
+    "name": "K04-117-RS_BRKT_MOUNT.SLDPRT",
+    "kind": "part",
+    "format": "SLDPRT",
+    "sizeBytes": 3400000,
+    "source": "CAD Library",
+    "createdBy": "a.keller",
+    "created": "2025-03-17T09:20:00.000Z",
+    "updated": "2026-02-04T14:20:00.000Z",
+    "lastSynced": "2026-10-04T01:20:00.000Z",
+    "thumbnail": "/cad-preview-1.png",
+    "partNumber": "K04-117",
+    "revision": "A",
+    "lineageId": "K04-117",
+    "description": "Bracket mount, right side",
+    "geometryHash": "g-k04-117",
+    "plm": {
+      "program": "Atlas EV",
+      "modelYear": "MY24",
+      "programType": "BEV",
+      "customerGroup": "OEM-B",
+      "region": "EU",
+      "productGroup": "Chassis",
+      "productLine": "Bracketry",
+      "calcWeight": 0.9,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2025-03-30",
+      "supplierLeadTime": 4
+    }
+  },
+  {
+    "id": "f11",
+    "name": "K04-118-LS_BRKT_MOUNT.SLDPRT",
+    "kind": "part",
+    "format": "SLDPRT",
+    "sizeBytes": 3300000,
+    "source": "CAD Library",
+    "createdBy": "m.osei",
+    "created": "2025-08-24T09:21:00.000Z",
+    "updated": "2026-03-07T14:21:00.000Z",
+    "lastSynced": "2026-10-05T02:21:00.000Z",
+    "thumbnail": "/cad-preview-2.png",
+    "partNumber": "K04-118",
+    "revision": "A",
+    "lineageId": "K04-118",
+    "description": "Bracket mount, left side",
+    "geometryHash": "g-f11",
+    "plm": {
+      "program": "Atlas EV",
+      "modelYear": "MY24",
+      "programType": "BEV",
+      "customerGroup": "OEM-B",
+      "region": "EU",
+      "productGroup": "Chassis",
+      "productLine": "Bracketry",
+      "calcWeight": 0.9,
+      "releaseStatus": "Released",
+      "lifecycleState": "Frozen",
+      "releasedDate": "2025-03-30",
+      "supplierLeadTime": 4
+    }
+  },
+  {
+    "id": "f12",
+    "name": "K04_117_RS_BRKT_MOUNT_B.SLDPRT",
+    "kind": "part",
+    "format": "SLDPRT",
+    "sizeBytes": 3390000,
+    "source": "Windchill",
+    "createdBy": "j.lindqvist",
+    "created": "2025-01-04T09:22:00.000Z",
+    "updated": "2026-04-10T14:22:00.000Z",
+    "lastSynced": "2026-10-06T03:22:00.000Z",
+    "thumbnail": "/cad-preview-3.png",
+    "partNumber": "K04-117",
+    "revision": "B",
+    "lineageId": "K04-117",
+    "description": "Bracket mount, right side (Windchill export)",
+    "geometryHash": "g-k04-117",
+    "plm": {
+      "program": "Atlas EV",
+      "modelYear": "MY24",
+      "programType": "BEV",
+      "customerGroup": "OEM-B",
+      "region": "EU",
+      "productGroup": "Chassis",
+      "productLine": "Bracketry",
+      "calcWeight": 0.9,
+      "releaseStatus": "Pending Sign-off",
+      "lifecycleState": "In Work",
+      "releasedDate": null,
+      "supplierLeadTime": 4
+    }
+  },
+  {
+    "id": "f13",
+    "name": "7100631_0000_AA_ENG_MOUNT_FR.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 8700000,
+    "source": "Teamcenter",
+    "createdBy": "r.banerjee",
+    "created": "2025-06-11T09:23:00.000Z",
+    "updated": "2026-05-13T14:23:00.000Z",
+    "lastSynced": "2026-10-07T04:23:00.000Z",
+    "thumbnail": "/cad-preview-4.png",
+    "partNumber": "7100631",
+    "revision": "AA",
+    "lineageId": "ENG-MOUNT-FR",
+    "description": "Front engine mount",
+    "geometryHash": "g-f13",
+    "plm": {
+      "program": "Atlas EV",
+      "modelYear": "MY24",
+      "programType": "BEV",
+      "customerGroup": "Internal",
+      "region": "NA",
+      "productGroup": "Powertrain",
+      "productLine": "Engine Mount",
+      "calcWeight": 2.1,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2025-04-05",
+      "supplierLeadTime": 10
+    }
+  },
+  {
+    "id": "f14",
+    "name": "7300042_0000_AB_ORION_AXLE_HSG.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 52700000,
+    "source": "Teamcenter",
+    "createdBy": "c.dubois",
+    "created": "2025-11-18T09:24:00.000Z",
+    "updated": "2026-06-16T14:24:00.000Z",
+    "lastSynced": "2026-10-01T05:24:00.000Z",
+    "thumbnail": "/cad-preview-5.png",
+    "partNumber": "7300042",
+    "revision": "AB",
+    "lineageId": "ORION-AXLE-HSG",
+    "description": "Axle housing",
+    "geometryHash": "g-f14",
+    "plm": {
+      "program": "Orion LCV",
+      "modelYear": "MY25",
+      "programType": "ICE",
+      "customerGroup": "OEM-B",
+      "region": "NA",
+      "productGroup": "Powertrain",
+      "productLine": "Axle",
+      "calcWeight": 17.6,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2026-04-22",
+      "supplierLeadTime": 16
+    }
+  },
+  {
+    "id": "f15",
+    "name": "FrameBack_Outer_v8.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 2460000,
+    "source": "Teamcenter",
+    "createdBy": "a.keller",
+    "created": "2025-04-25T09:25:00.000Z",
+    "updated": "2026-07-19T14:25:00.000Z",
+    "lastSynced": "2026-10-02T06:25:00.000Z",
+    "thumbnail": "/cad-preview-1.png",
+    "partNumber": "FBO-2241",
+    "revision": "AC",
+    "lineageId": "FBO-2241",
+    "description": "Seat back frame, outer shell",
+    "geometryHash": "g-fbo-8",
+    "plm": {
+      "program": "Tundra",
+      "modelYear": "MY22",
+      "programType": "ICE",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Seating",
+      "productLine": "Complete Seat",
+      "calcWeight": 2.84,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2026-05-04",
+      "supplierLeadTime": 12
+    }
+  },
+  {
+    "id": "f16",
+    "name": "FrameBack_Outer_v7.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 2550000,
+    "source": "Teamcenter",
+    "createdBy": "m.osei",
+    "created": "2025-09-05T09:26:00.000Z",
+    "updated": "2026-08-22T14:26:00.000Z",
+    "lastSynced": "2026-10-03T07:26:00.000Z",
+    "thumbnail": "/cad-preview-2.png",
+    "partNumber": "FBO-2241",
+    "revision": "AB",
+    "lineageId": "FBO-2241",
+    "description": "Seat back frame, outer shell (previous)",
+    "geometryHash": "g-f16",
+    "plm": {
+      "program": "Tundra",
+      "modelYear": "MY23",
+      "programType": "ICE",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Seating",
+      "productLine": "Complete Seat",
+      "calcWeight": 2.86,
+      "releaseStatus": "Obsolete",
+      "lifecycleState": "Superseded",
+      "releasedDate": "2026-04-15",
+      "supplierLeadTime": 12
+    },
+    "supersededBy": "f15"
+  },
+  {
+    "id": "f17",
+    "name": "FrameBack_Inner_v2.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 2640000,
+    "source": "Teamcenter",
+    "createdBy": "j.lindqvist",
+    "created": "2025-02-12T09:27:00.000Z",
+    "updated": "2026-09-25T14:27:00.000Z",
+    "lastSynced": "2026-10-04T08:27:00.000Z",
+    "thumbnail": "/cad-preview-3.png",
+    "partNumber": "FBI-2244",
+    "revision": "AB",
+    "lineageId": "FBI-2244",
+    "description": "Seat back frame, inner shell",
+    "geometryHash": "g-f17",
+    "plm": {
+      "program": "Tundra",
+      "modelYear": "MY22",
+      "programType": "ICE",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Seating",
+      "productLine": "Complete Seat",
+      "calcWeight": 2.1,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2026-02-28",
+      "supplierLeadTime": 12
+    }
+  },
+  {
+    "id": "f18",
+    "name": "Cushion_Foam_Lower.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 2730000,
+    "source": "Teamcenter",
+    "createdBy": "r.banerjee",
+    "created": "2025-07-19T09:28:00.000Z",
+    "updated": "2026-01-01T14:28:00.000Z",
+    "lastSynced": "2026-10-05T00:28:00.000Z",
+    "thumbnail": "/cad-preview-4.png",
+    "partNumber": "CFL-3310",
+    "revision": "A",
+    "lineageId": "CFL-3310",
+    "description": "Cushion foam, lower",
+    "geometryHash": "g-f18",
+    "plm": {
+      "program": "Tundra",
+      "modelYear": "MY22",
+      "programType": "ICE",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Seating",
+      "productLine": "Complete Seat",
+      "calcWeight": 0.9,
+      "releaseStatus": "Released",
+      "lifecycleState": "Frozen",
+      "releasedDate": "2026-01-19",
+      "supplierLeadTime": 5
+    }
+  },
+  {
+    "id": "f19",
+    "name": "Cushion_Foam_Upper.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 2820000,
+    "source": "Teamcenter",
+    "createdBy": "c.dubois",
+    "created": "2025-12-26T09:29:00.000Z",
+    "updated": "2026-02-04T14:29:00.000Z",
+    "lastSynced": "2026-10-06T01:29:00.000Z",
+    "thumbnail": "/cad-preview-5.png",
+    "partNumber": "CFU-3311",
+    "revision": "A",
+    "lineageId": "CFU-3311",
+    "description": "Cushion foam, upper",
+    "geometryHash": "g-f19",
+    "plm": {
+      "program": "Tundra",
+      "modelYear": "MY22",
+      "programType": "ICE",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Seating",
+      "productLine": "Complete Seat",
+      "calcWeight": 0.7,
+      "releaseStatus": "WIP",
+      "lifecycleState": "In Work",
+      "releasedDate": null,
+      "supplierLeadTime": 5
+    }
+  },
+  {
+    "id": "f20",
+    "name": "Headrest_Core_AC.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 2910000,
+    "source": "Teamcenter",
+    "createdBy": "a.keller",
+    "created": "2025-05-06T09:30:00.000Z",
+    "updated": "2026-03-07T14:30:00.000Z",
+    "lastSynced": "2026-10-07T02:30:00.000Z",
+    "thumbnail": "/cad-preview-1.png",
+    "partNumber": "HRC-2210",
+    "revision": "AC",
+    "lineageId": "HRC-2210",
+    "description": "Headrest foam core",
+    "geometryHash": "g-f20",
+    "plm": {
+      "program": "ID.Buzz",
+      "modelYear": "MY25",
+      "programType": "BEV",
+      "customerGroup": "OEM-C",
+      "region": "EU",
+      "productGroup": "Seating",
+      "productLine": "Front Seat",
+      "calcWeight": 0.31,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2026-04-04",
+      "supplierLeadTime": 5
+    }
+  },
+  {
+    "id": "f21",
+    "name": "Recliner_Mech_LH_r4.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 3000000,
+    "source": "Teamcenter",
+    "createdBy": "m.osei",
+    "created": "2025-10-13T09:31:00.000Z",
+    "updated": "2026-04-10T14:31:00.000Z",
+    "lastSynced": "2026-10-01T03:31:00.000Z",
+    "thumbnail": "/cad-preview-2.png",
+    "partNumber": "RML-0814",
+    "revision": "B",
+    "lineageId": "RML-0814",
+    "description": "Recliner mechanism, left",
+    "geometryHash": "g-f21",
+    "plm": {
+      "program": "Tundra",
+      "modelYear": "MY23",
+      "programType": "ICE",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Seating",
+      "productLine": "Complete Seat",
+      "calcWeight": 0.62,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2026-03-19",
+      "supplierLeadTime": 9
+    }
+  },
+  {
+    "id": "f22",
+    "name": "Recliner_Mech_RH_r4.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 3090000,
+    "source": "Teamcenter",
+    "createdBy": "j.lindqvist",
+    "created": "2025-03-20T09:32:00.000Z",
+    "updated": "2026-05-13T14:32:00.000Z",
+    "lastSynced": "2026-10-02T04:32:00.000Z",
+    "thumbnail": "/cad-preview-3.png",
+    "partNumber": "RMR-0815",
+    "revision": "B",
+    "lineageId": "RMR-0815",
+    "description": "Recliner mechanism, right",
+    "geometryHash": "g-f22",
+    "plm": {
+      "program": "Tundra",
+      "modelYear": "MY23",
+      "programType": "ICE",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Seating",
+      "productLine": "Complete Seat",
+      "calcWeight": 0.62,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2026-03-19",
+      "supplierLeadTime": 9
+    }
+  },
+  {
+    "id": "f23",
+    "name": "TrackRail_Upper_24a.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 3180000,
+    "source": "Teamcenter",
+    "createdBy": "r.banerjee",
+    "created": "2025-08-27T09:33:00.000Z",
+    "updated": "2026-06-16T14:33:00.000Z",
+    "lastSynced": "2026-10-03T05:33:00.000Z",
+    "thumbnail": "/cad-preview-4.png",
+    "partNumber": "TRU-0410",
+    "revision": "A",
+    "lineageId": "TRU-0410",
+    "description": "Track rail, upper",
+    "geometryHash": "g-tru",
+    "plm": {
+      "program": "Bronco",
+      "modelYear": "MY24",
+      "programType": "ICE",
+      "customerGroup": "OEM-B",
+      "region": "NA",
+      "productGroup": "Seating",
+      "productLine": "Rear Bench",
+      "calcWeight": 1.12,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2026-02-28",
+      "supplierLeadTime": 7
+    }
+  },
+  {
+    "id": "f24",
+    "name": "TrackRail_Lower_24a.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 3270000,
+    "source": "Teamcenter",
+    "createdBy": "c.dubois",
+    "created": "2025-01-07T09:34:00.000Z",
+    "updated": "2026-07-19T14:34:00.000Z",
+    "lastSynced": "2026-10-04T06:34:00.000Z",
+    "thumbnail": "/cad-preview-5.png",
+    "partNumber": "TRL-0411",
+    "revision": "A",
+    "lineageId": "TRL-0411",
+    "description": "Track rail, lower",
+    "geometryHash": "g-f24",
+    "plm": {
+      "program": "Bronco",
+      "modelYear": "MY24",
+      "programType": "ICE",
+      "customerGroup": "OEM-B",
+      "region": "NA",
+      "productGroup": "Seating",
+      "productLine": "Rear Bench",
+      "calcWeight": 1.4,
+      "releaseStatus": "In Review",
+      "lifecycleState": "In Work",
+      "releasedDate": null,
+      "supplierLeadTime": 7
+    }
+  },
+  {
+    "id": "f25",
+    "name": "Seat_Heater_Pad.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 3360000,
+    "source": "Teamcenter",
+    "createdBy": "a.keller",
+    "created": "2025-06-14T09:35:00.000Z",
+    "updated": "2026-08-22T14:35:00.000Z",
+    "lastSynced": "2026-10-05T07:35:00.000Z",
+    "thumbnail": "/cad-preview-1.png",
+    "partNumber": "SHP-5520",
+    "revision": "A",
+    "lineageId": "SHP-5520",
+    "description": "Seat heater pad",
+    "geometryHash": "g-f25",
+    "plm": {
+      "program": "ID.Buzz",
+      "modelYear": "MY25",
+      "programType": "BEV",
+      "customerGroup": "OEM-C",
+      "region": "EU",
+      "productGroup": "Seating",
+      "productLine": "Front Seat",
+      "calcWeight": 0.12,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2026-02-11",
+      "supplierLeadTime": 11
+    }
+  },
+  {
+    "id": "f26",
+    "name": "Buckle_Anchor_Bracket_r2.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 3450000,
+    "source": "Teamcenter",
+    "createdBy": "m.osei",
+    "created": "2025-11-21T09:36:00.000Z",
+    "updated": "2026-09-25T14:36:00.000Z",
+    "lastSynced": "2026-10-06T08:36:00.000Z",
+    "thumbnail": "/cad-preview-2.png",
+    "partNumber": "BAB-0917",
+    "revision": "B",
+    "lineageId": "BAB-0917",
+    "description": "Buckle anchor bracket",
+    "geometryHash": "g-f26",
+    "plm": {
+      "program": "Silverado",
+      "modelYear": "MY24",
+      "programType": "ICE",
+      "customerGroup": "OEM-B",
+      "region": "NA",
+      "productGroup": "Seating",
+      "productLine": "Rear Bench",
+      "calcWeight": 0.18,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2026-03-22",
+      "supplierLeadTime": 4
+    }
+  },
+  {
+    "id": "f27",
+    "name": "Trim_Cover_Lower_r1.CATPart",
+    "kind": "part",
+    "format": "CATPart",
+    "sizeBytes": 3540000,
+    "source": "Teamcenter",
+    "createdBy": "j.lindqvist",
+    "created": "2025-04-01T09:37:00.000Z",
+    "updated": "2026-01-01T14:37:00.000Z",
+    "lastSynced": "2026-10-07T00:37:00.000Z",
+    "thumbnail": "/cad-preview-3.png",
+    "partNumber": "TCL-1108",
+    "revision": "A",
+    "lineageId": "TCL-1108",
+    "description": "Trim cover, lower",
+    "geometryHash": "g-f27",
+    "plm": {
+      "program": "Silverado",
+      "modelYear": "MY24",
+      "programType": "ICE",
+      "customerGroup": "OEM-B",
+      "region": "NA",
+      "productGroup": "Seating",
+      "productLine": "Rear Bench",
+      "calcWeight": 0.42,
+      "releaseStatus": "WIP",
+      "lifecycleState": "In Work",
+      "releasedDate": null,
+      "supplierLeadTime": 6
+    }
+  },
+  {
+    "id": "f28",
+    "name": "TrackRail_Upper_OEM.STEP",
+    "kind": "part",
+    "format": "STEP",
+    "sizeBytes": 2100000,
+    "source": "Windchill",
+    "createdBy": "r.banerjee",
+    "created": "2025-09-08T09:38:00.000Z",
+    "updated": "2026-02-04T14:38:00.000Z",
+    "lastSynced": "2026-10-01T01:38:00.000Z",
+    "thumbnail": "/cad-preview-4.png",
+    "partNumber": "TRU-0410-OEM",
+    "revision": "A",
+    "lineageId": "TRU-0410-OEM",
+    "description": "Track rail, upper (OEM STEP export)",
+    "geometryHash": "g-tru",
+    "plm": {}
+  },
+  {
+    "id": "f29",
+    "name": "6644321_AA_COMPLETE_SEAT.CATProduct",
+    "kind": "assembly",
+    "format": "CATProduct",
+    "sizeBytes": 41300000,
+    "source": "Teamcenter",
+    "createdBy": "c.dubois",
+    "created": "2026-02-15T09:39:00.000Z",
+    "updated": "2026-03-07T14:39:00.000Z",
+    "lastSynced": "2026-10-02T02:39:00.000Z",
+    "thumbnail": "/cad-preview-5.png",
+    "partNumber": "6644321",
+    "revision": "AA",
+    "lineageId": "TUN-780B-CS-001",
+    "description": "Complete Seat, 1st and 2nd row",
+    "geometryHash": "g-f29",
+    "plm": {
+      "program": "Tundra",
+      "modelYear": "MY22",
+      "programType": "ICE",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Seating",
+      "productLine": "Complete Seat",
+      "calcWeight": 38.4,
+      "releaseStatus": "id1055",
+      "lifecycleState": "Released",
+      "releasedDate": "2026-05-08",
+      "supplierLeadTime": 14
+    },
+    "tree": [
+      {
+        "id": "n22",
+        "name": "Complete_Seat",
+        "children": [
+          {
+            "id": "n10",
+            "name": "Seat_Back_Assy",
+            "children": [
+              {
+                "id": "n1",
+                "name": "FrameBack_Outer",
+                "fileId": "f15"
+              },
+              {
+                "id": "n2",
+                "name": "FrameBack_Inner",
+                "fileId": "f17"
+              },
+              {
+                "id": "n5",
+                "name": "Headrest_Assy",
+                "children": [
+                  {
+                    "id": "n3",
+                    "name": "Headrest_Core",
+                    "fileId": "f20"
+                  },
+                  {
+                    "id": "n4",
+                    "name": "Headrest_Cover",
+                    "reference": true
+                  }
+                ]
+              },
+              {
+                "id": "n9",
+                "name": "Recliner_Assy",
+                "children": [
+                  {
+                    "id": "n6",
+                    "name": "Recliner_Mech_LH",
+                    "fileId": "f21"
+                  },
+                  {
+                    "id": "n7",
+                    "name": "Recliner_Mech_RH",
+                    "fileId": "f22"
+                  },
+                  {
+                    "id": "n8",
+                    "name": "Recliner_Bolt_M10",
+                    "reference": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "n15",
+            "name": "Seat_Cushion_Assy",
+            "children": [
+              {
+                "id": "n11",
+                "name": "Cushion_Foam_Lower",
+                "fileId": "f18"
+              },
+              {
+                "id": "n12",
+                "name": "Cushion_Foam_Upper",
+                "fileId": "f19"
+              },
+              {
+                "id": "n13",
+                "name": "Seat_Heater_Pad",
+                "fileId": "f25"
+              },
+              {
+                "id": "n14",
+                "name": "Trim_Cover_Lower",
+                "fileId": "f27"
+              }
+            ]
+          },
+          {
+            "id": "n21",
+            "name": "Track_Assy",
+            "children": [
+              {
+                "id": "n16",
+                "name": "TrackRail_Upper",
+                "fileId": "f23"
+              },
+              {
+                "id": "n17",
+                "name": "TrackRail_Lower",
+                "fileId": "f24"
+              },
+              {
+                "id": "n18",
+                "name": "Buckle_Anchor_Bracket",
+                "fileId": "f26"
+              },
+              {
+                "id": "n19",
+                "name": "Track_Fasteners",
+                "reference": true
+              },
+              {
+                "id": "n20",
+                "name": "Track_Cover_Reference",
+                "reference": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "f30",
+    "name": "6644336_AB_COMPLETE_SEAT.CATProduct",
+    "kind": "assembly",
+    "format": "CATProduct",
+    "sizeBytes": 44800000,
+    "source": "Teamcenter",
+    "createdBy": "a.keller",
+    "created": "2026-07-22T09:40:00.000Z",
+    "updated": "2026-04-10T14:40:00.000Z",
+    "lastSynced": "2026-10-03T03:40:00.000Z",
+    "thumbnail": "/cad-preview-1.png",
+    "partNumber": "6644336",
+    "revision": "AB",
+    "lineageId": "TUN-780B-CS-002",
+    "description": "Complete Seat, 1st and 2nd row, MY23",
+    "geometryHash": "g-f30",
+    "plm": {
+      "program": "Tundra",
+      "modelYear": "MY23",
+      "programType": "ICE",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Seating",
+      "productLine": "Complete Seat",
+      "calcWeight": 38.9,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2026-05-09",
+      "supplierLeadTime": 14
+    },
+    "tree": [
+      {
+        "id": "n21",
+        "name": "Complete_Seat",
+        "children": [
+          {
+            "id": "n10",
+            "name": "Seat_Back_Assy",
+            "children": [
+              {
+                "id": "n1",
+                "name": "FrameBack_Outer",
+                "fileId": "f15"
+              },
+              {
+                "id": "n2",
+                "name": "FrameBack_Inner",
+                "fileId": "f17"
+              },
+              {
+                "id": "n5",
+                "name": "Headrest_Assy",
+                "children": [
+                  {
+                    "id": "n3",
+                    "name": "Headrest_Core",
+                    "fileId": "f20"
+                  },
+                  {
+                    "id": "n4",
+                    "name": "Headrest_Cover",
+                    "reference": true
+                  }
+                ]
+              },
+              {
+                "id": "n9",
+                "name": "Recliner_Assy",
+                "children": [
+                  {
+                    "id": "n6",
+                    "name": "Recliner_Mech_LH",
+                    "fileId": "f21"
+                  },
+                  {
+                    "id": "n7",
+                    "name": "Recliner_Mech_RH",
+                    "fileId": "f22"
+                  },
+                  {
+                    "id": "n8",
+                    "name": "Recliner_Bolt_M10",
+                    "reference": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "n15",
+            "name": "Seat_Cushion_Assy",
+            "children": [
+              {
+                "id": "n11",
+                "name": "Cushion_Foam_Lower",
+                "fileId": "f18"
+              },
+              {
+                "id": "n12",
+                "name": "Cushion_Foam_Upper",
+                "fileId": "f19"
+              },
+              {
+                "id": "n13",
+                "name": "Seat_Heater_Pad",
+                "fileId": "f25"
+              },
+              {
+                "id": "n14",
+                "name": "Trim_Cover_Lower",
+                "fileId": "f27"
+              }
+            ]
+          },
+          {
+            "id": "n20",
+            "name": "Track_Assy",
+            "children": [
+              {
+                "id": "n16",
+                "name": "TrackRail_Upper",
+                "fileId": "f23"
+              },
+              {
+                "id": "n17",
+                "name": "TrackRail_Lower",
+                "fileId": "f24"
+              },
+              {
+                "id": "n18",
+                "name": "Buckle_Anchor_Bracket",
+                "fileId": "f26"
+              },
+              {
+                "id": "n19",
+                "name": "Track_Fasteners",
+                "reference": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "f31",
+    "name": "6644336_AA_COMPLETE_SEAT.CATProduct",
+    "kind": "assembly",
+    "format": "CATProduct",
+    "sizeBytes": 44100000,
+    "source": "Teamcenter",
+    "createdBy": "m.osei",
+    "created": "2026-12-02T09:41:00.000Z",
+    "updated": "2026-05-13T14:41:00.000Z",
+    "lastSynced": "2026-10-04T04:41:00.000Z",
+    "thumbnail": "/cad-preview-2.png",
+    "partNumber": "6644336",
+    "revision": "AA",
+    "lineageId": "TUN-780B-CS-002",
+    "description": "Complete Seat, 1st and 2nd row, MY23 (previous revision)",
+    "geometryHash": "g-f31",
+    "plm": {
+      "program": "Tundra",
+      "modelYear": "MY23",
+      "programType": "ICE",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Seating",
+      "productLine": "Complete Seat",
+      "calcWeight": 38.7,
+      "releaseStatus": "Obsolete",
+      "lifecycleState": "Superseded",
+      "releasedDate": "2026-03-14",
+      "supplierLeadTime": 14
+    },
+    "tree": [
+      {
+        "id": "n14",
+        "name": "Complete_Seat",
+        "children": [
+          {
+            "id": "n6",
+            "name": "Seat_Back_Assy",
+            "children": [
+              {
+                "id": "n1",
+                "name": "FrameBack_Outer",
+                "fileId": "f16"
+              },
+              {
+                "id": "n2",
+                "name": "FrameBack_Inner",
+                "fileId": "f17"
+              },
+              {
+                "id": "n5",
+                "name": "Recliner_Assy",
+                "children": [
+                  {
+                    "id": "n3",
+                    "name": "Recliner_Mech_LH",
+                    "fileId": "f21"
+                  },
+                  {
+                    "id": "n4",
+                    "name": "Recliner_Mech_RH",
+                    "fileId": "f22"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "n9",
+            "name": "Seat_Cushion_Assy",
+            "children": [
+              {
+                "id": "n7",
+                "name": "Cushion_Foam_Lower",
+                "fileId": "f18"
+              },
+              {
+                "id": "n8",
+                "name": "Cushion_Foam_Upper",
+                "fileId": "f19"
+              }
+            ]
+          },
+          {
+            "id": "n13",
+            "name": "Track_Assy",
+            "children": [
+              {
+                "id": "n10",
+                "name": "TrackRail_Upper",
+                "fileId": "f23"
+              },
+              {
+                "id": "n11",
+                "name": "TrackRail_Lower",
+                "fileId": "f24"
+              },
+              {
+                "id": "n12",
+                "name": "Track_Fasteners",
+                "reference": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "supersededBy": "f30"
+  },
+  {
+    "id": "f32",
+    "name": "6651104_BA_COMPLETE_SEAT.CATProduct",
+    "kind": "assembly",
+    "format": "CATProduct",
+    "sizeBytes": 38200000,
+    "source": "Teamcenter",
+    "createdBy": "j.lindqvist",
+    "created": "2026-05-09T09:42:00.000Z",
+    "updated": "2026-06-16T14:42:00.000Z",
+    "lastSynced": "2026-10-05T05:42:00.000Z",
+    "thumbnail": "/cad-preview-3.png",
+    "partNumber": "6651104",
+    "revision": "BA",
+    "lineageId": "FOR-P702-CS-001",
+    "description": "Complete Seat, 2nd row bench",
+    "geometryHash": "g-bronco-bench",
+    "plm": {
+      "program": "Bronco",
+      "modelYear": "MY24",
+      "programType": "ICE",
+      "customerGroup": "OEM-B",
+      "region": "NA",
+      "productGroup": "Seating",
+      "productLine": "Rear Bench",
+      "calcWeight": 31.2,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2026-04-22",
+      "supplierLeadTime": 12
+    },
+    "tree": [
+      {
+        "id": "n11",
+        "name": "Bench_Seat",
+        "children": [
+          {
+            "id": "n4",
+            "name": "Bench_Back_Assy",
+            "children": [
+              {
+                "id": "n1",
+                "name": "FrameBack_Outer",
+                "fileId": "f15"
+              },
+              {
+                "id": "n2",
+                "name": "FrameBack_Inner",
+                "fileId": "f17"
+              },
+              {
+                "id": "n3",
+                "name": "Headrest_Core",
+                "fileId": "f20"
+              }
+            ]
+          },
+          {
+            "id": "n9",
+            "name": "Bench_Track_Assy",
+            "children": [
+              {
+                "id": "n5",
+                "name": "TrackRail_Upper",
+                "fileId": "f23"
+              },
+              {
+                "id": "n6",
+                "name": "TrackRail_Lower",
+                "fileId": "f24"
+              },
+              {
+                "id": "n7",
+                "name": "Buckle_Anchor_Bracket",
+                "fileId": "f26"
+              },
+              {
+                "id": "n8",
+                "name": "Track_Fasteners",
+                "reference": true
+              }
+            ]
+          },
+          {
+            "id": "n10",
+            "name": "Trim_Cover_Lower",
+            "fileId": "f27"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "f33",
+    "name": "Bronco_2ndRowBench_FINAL.CATProduct",
+    "kind": "assembly",
+    "format": "CATProduct",
+    "sizeBytes": 38200000,
+    "source": "CAD Library",
+    "createdBy": "r.banerjee",
+    "created": "2026-10-16T09:43:00.000Z",
+    "updated": "2026-07-19T14:43:00.000Z",
+    "lastSynced": "2026-10-06T06:43:00.000Z",
+    "thumbnail": "/cad-preview-4.png",
+    "partNumber": "6651104-M",
+    "revision": "BA",
+    "lineageId": "FOR-P702-CS-MIR",
+    "description": "Bronco 2nd row bench (mirror copy)",
+    "geometryHash": "g-bronco-bench",
+    "plm": {},
+    "tree": [
+      {
+        "id": "n11",
+        "name": "Bench_Seat",
+        "children": [
+          {
+            "id": "n4",
+            "name": "Bench_Back_Assy",
+            "children": [
+              {
+                "id": "n1",
+                "name": "FrameBack_Outer",
+                "fileId": "f15"
+              },
+              {
+                "id": "n2",
+                "name": "FrameBack_Inner",
+                "fileId": "f17"
+              },
+              {
+                "id": "n3",
+                "name": "Headrest_Core",
+                "fileId": "f20"
+              }
+            ]
+          },
+          {
+            "id": "n9",
+            "name": "Bench_Track_Assy",
+            "children": [
+              {
+                "id": "n5",
+                "name": "TrackRail_Upper",
+                "fileId": "f23"
+              },
+              {
+                "id": "n6",
+                "name": "TrackRail_Lower",
+                "fileId": "f24"
+              },
+              {
+                "id": "n7",
+                "name": "Buckle_Anchor_Bracket",
+                "fileId": "f26"
+              },
+              {
+                "id": "n8",
+                "name": "Track_Fasteners",
+                "reference": true
+              }
+            ]
+          },
+          {
+            "id": "n10",
+            "name": "Trim_Cover_Lower",
+            "fileId": "f27"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "f34",
+    "name": "8810022_AC_FRONT_SEAT.CATProduct",
+    "kind": "assembly",
+    "format": "CATProduct",
+    "sizeBytes": 36000000,
+    "source": "Teamcenter",
+    "createdBy": "c.dubois",
+    "created": "2026-03-23T09:44:00.000Z",
+    "updated": "2026-08-22T14:44:00.000Z",
+    "lastSynced": "2026-10-07T07:44:00.000Z",
+    "thumbnail": "/cad-preview-5.png",
+    "partNumber": "8810022",
+    "revision": "AC",
+    "lineageId": "VW-MEB-FS-014",
+    "description": "Front seat, driver",
+    "geometryHash": "g-f34",
+    "plm": {
+      "program": "ID.Buzz",
+      "modelYear": "MY25",
+      "programType": "BEV",
+      "customerGroup": "OEM-C",
+      "region": "EU",
+      "productGroup": "Seating",
+      "productLine": "Front Seat",
+      "calcWeight": 24.8,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2026-02-11",
+      "supplierLeadTime": 13
+    },
+    "tree": [
+      {
+        "id": "n9",
+        "name": "Front_Seat",
+        "children": [
+          {
+            "id": "n5",
+            "name": "Back_Assy",
+            "children": [
+              {
+                "id": "n1",
+                "name": "FrameBack_Outer",
+                "fileId": "f15"
+              },
+              {
+                "id": "n2",
+                "name": "FrameBack_Inner",
+                "fileId": "f17"
+              },
+              {
+                "id": "n3",
+                "name": "Headrest_Core",
+                "fileId": "f20"
+              },
+              {
+                "id": "n4",
+                "name": "Back_Trim_Reference",
+                "reference": true
+              }
+            ]
+          },
+          {
+            "id": "n8",
+            "name": "Cushion_Assy",
+            "children": [
+              {
+                "id": "n6",
+                "name": "Cushion_Foam_Lower",
+                "fileId": "f18"
+              },
+              {
+                "id": "n7",
+                "name": "Seat_Heater_Pad",
+                "fileId": "f25"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "f35",
+    "name": "8810022_AB_FRONT_SEAT.CATProduct",
+    "kind": "assembly",
+    "format": "CATProduct",
+    "sizeBytes": 35400000,
+    "source": "Teamcenter",
+    "createdBy": "a.keller",
+    "created": "2026-08-03T09:45:00.000Z",
+    "updated": "2026-09-25T14:45:00.000Z",
+    "lastSynced": "2026-10-01T08:45:00.000Z",
+    "thumbnail": "/cad-preview-1.png",
+    "partNumber": "8810022",
+    "revision": "AB",
+    "lineageId": "VW-MEB-FS-014",
+    "description": "Front seat, driver (previous revision)",
+    "geometryHash": "g-f35",
+    "plm": {
+      "program": "ID.Buzz",
+      "modelYear": "MY25",
+      "programType": "BEV",
+      "customerGroup": "OEM-C",
+      "region": "EU",
+      "productGroup": "Seating",
+      "productLine": "Front Seat",
+      "calcWeight": 24.6,
+      "releaseStatus": "Obsolete",
+      "lifecycleState": "Superseded",
+      "releasedDate": "2026-01-22",
+      "supplierLeadTime": 13
+    },
+    "tree": [
+      {
+        "id": "n8",
+        "name": "Front_Seat",
+        "children": [
+          {
+            "id": "n4",
+            "name": "Back_Assy",
+            "children": [
+              {
+                "id": "n1",
+                "name": "FrameBack_Outer",
+                "fileId": "f16"
+              },
+              {
+                "id": "n2",
+                "name": "FrameBack_Inner",
+                "fileId": "f17"
+              },
+              {
+                "id": "n3",
+                "name": "Headrest_Core",
+                "fileId": "f20"
+              }
+            ]
+          },
+          {
+            "id": "n7",
+            "name": "Cushion_Assy",
+            "children": [
+              {
+                "id": "n5",
+                "name": "Cushion_Foam_Lower",
+                "fileId": "f18"
+              },
+              {
+                "id": "n6",
+                "name": "Seat_Heater_Pad",
+                "fileId": "f25"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "supersededBy": "f34"
+  },
+  {
+    "id": "f36",
+    "name": "GM_T1XX_CrewCab_RearBench.CATProduct",
+    "kind": "assembly",
+    "format": "CATProduct",
+    "sizeBytes": 33000000,
+    "source": "Windchill",
+    "createdBy": "m.osei",
+    "created": "2025-01-10T09:46:00.000Z",
+    "updated": "2026-01-01T14:46:00.000Z",
+    "lastSynced": "2026-10-02T00:46:00.000Z",
+    "thumbnail": "/cad-preview-2.png",
+    "partNumber": "GM-T1XX-RB",
+    "revision": "AA",
+    "lineageId": "GM-T1XX-RB-001",
+    "description": "Rear bench, crew cab",
+    "geometryHash": "g-f36",
+    "plm": {
+      "program": "Silverado",
+      "modelYear": "MY24",
+      "programType": "ICE",
+      "customerGroup": "OEM-B",
+      "region": "NA",
+      "productGroup": "Seating",
+      "productLine": "Rear Bench",
+      "calcWeight": 29.5,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2025-12-02",
+      "supplierLeadTime": 15
+    },
+    "tree": [
+      {
+        "id": "n9",
+        "name": "Rear_Bench",
+        "children": [
+          {
+            "id": "n3",
+            "name": "Bench_Back_Assy",
+            "children": [
+              {
+                "id": "n1",
+                "name": "FrameBack_Outer",
+                "fileId": "f16"
+              },
+              {
+                "id": "n2",
+                "name": "FrameBack_Inner",
+                "fileId": "f17"
+              }
+            ]
+          },
+          {
+            "id": "n7",
+            "name": "Bench_Track_Assy",
+            "children": [
+              {
+                "id": "n4",
+                "name": "TrackRail_Upper",
+                "fileId": "f23"
+              },
+              {
+                "id": "n5",
+                "name": "Buckle_Anchor_Bracket",
+                "fileId": "f26"
+              },
+              {
+                "id": "n6",
+                "name": "Track_Fasteners",
+                "reference": true
+              }
+            ]
+          },
+          {
+            "id": "n8",
+            "name": "Trim_Cover_Lower",
+            "fileId": "f27"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "f37",
+    "name": "7100512_0000_AB_ASM_SUBFRAME_S2.CATProduct",
+    "kind": "assembly",
+    "format": "CATProduct",
+    "sizeBytes": 41300000,
+    "source": "Teamcenter",
+    "createdBy": "j.lindqvist",
+    "created": "2025-06-17T09:47:00.000Z",
+    "updated": "2026-02-04T14:47:00.000Z",
+    "lastSynced": "2026-10-03T01:47:00.000Z",
+    "thumbnail": "/cad-preview-3.png",
+    "partNumber": "7100512",
+    "revision": "AB",
+    "lineageId": "SUBFRAME-S2",
+    "description": "Subframe S2 assembly",
+    "geometryHash": "g-f37",
+    "plm": {
+      "program": "Atlas EV",
+      "modelYear": "MY24",
+      "programType": "BEV",
+      "customerGroup": "OEM-A",
+      "region": "NA",
+      "productGroup": "Chassis",
+      "productLine": "Subframe",
+      "calcWeight": 12.8,
+      "releaseStatus": "Released",
+      "lifecycleState": "Frozen",
+      "releasedDate": "2025-02-28",
+      "supplierLeadTime": 18
+    },
+    "tree": [
+      {
+        "id": "n10",
+        "name": "Subframe_S2",
+        "children": [
+          {
+            "id": "n5",
+            "name": "Arm_Assy",
+            "children": [
+              {
+                "id": "n1",
+                "name": "RSB40_ARM_L",
+                "fileId": "f05"
+              },
+              {
+                "id": "n2",
+                "name": "RSB40_ARM_R",
+                "fileId": "f09"
+              },
+              {
+                "id": "n3",
+                "name": "RSB40_DEF",
+                "fileId": "f07"
+              },
+              {
+                "id": "n4",
+                "name": "Bushing_Set",
+                "reference": true
+              }
+            ]
+          },
+          {
+            "id": "n9",
+            "name": "Mount_Assy",
+            "children": [
+              {
+                "id": "n6",
+                "name": "ENG_MOUNT_FR",
+                "fileId": "f13"
+              },
+              {
+                "id": "n7",
+                "name": "BRKT_MOUNT_RS",
+                "fileId": "f10"
+              },
+              {
+                "id": "n8",
+                "name": "BRKT_MOUNT_LS",
+                "fileId": "f11"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "f38",
+    "name": "7200118_0000_AB_VEGA_CROSSMBR.CATProduct",
+    "kind": "assembly",
+    "format": "CATProduct",
+    "sizeBytes": 28100000,
+    "source": "Teamcenter",
+    "createdBy": "r.banerjee",
+    "created": "2025-11-24T09:48:00.000Z",
+    "updated": "2026-03-07T14:48:00.000Z",
+    "lastSynced": "2026-10-04T02:48:00.000Z",
+    "thumbnail": "/cad-preview-4.png",
+    "partNumber": "7200118",
+    "revision": "AB",
+    "lineageId": "VEGA-CROSSMBR",
+    "description": "Vega crossmember",
+    "geometryHash": "g-f38",
+    "plm": {
+      "program": "Vega PHEV",
+      "modelYear": "MY24",
+      "programType": "PHEV",
+      "customerGroup": "OEM-A",
+      "region": "EU",
+      "productGroup": "Body",
+      "productLine": "Crossmember",
+      "calcWeight": 9.4,
+      "releaseStatus": "Released",
+      "lifecycleState": "Released",
+      "releasedDate": "2025-01-18",
+      "supplierLeadTime": 14
+    },
+    "tree": [
+      {
+        "id": "n7",
+        "name": "Vega_Crossmember",
+        "children": [
+          {
+            "id": "n5",
+            "name": "Beam_Assy",
+            "children": [
+              {
+                "id": "n1",
+                "name": "BRKT_MOUNT_RS",
+                "fileId": "f10"
+              },
+              {
+                "id": "n2",
+                "name": "BRKT_MOUNT_LS",
+                "fileId": "f11"
+              },
+              {
+                "id": "n3",
+                "name": "BRKT_MOUNT_RS_B",
+                "fileId": "f12"
+              },
+              {
+                "id": "n4",
+                "name": "Weld_Nuts",
+                "reference": true
+              }
+            ]
+          },
+          {
+            "id": "n6",
+            "name": "AXLE_HSG",
+            "fileId": "f14"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "f39",
+    "name": "K04-200-RS_TRACK_ASSY.JT",
+    "kind": "assembly",
+    "format": "JT",
+    "sizeBytes": 19500000,
+    "source": "CAD Library",
+    "createdBy": "c.dubois",
+    "created": "2025-04-04T09:49:00.000Z",
+    "updated": "2026-04-10T14:49:00.000Z",
+    "lastSynced": "2026-10-05T03:49:00.000Z",
+    "thumbnail": "/cad-preview-5.png",
+    "partNumber": "K04-200",
+    "revision": "A",
+    "lineageId": "K04-200",
+    "description": "Seat track assembly (JT)",
+    "geometryHash": "g-f39",
+    "plm": {
+      "program": "Atlas EV",
+      "modelYear": "MY24",
+      "programType": "BEV",
+      "customerGroup": "OEM-B",
+      "region": "EU",
+      "productGroup": "Chassis",
+      "productLine": "Bracketry",
+      "calcWeight": 6.2,
+      "releaseStatus": "In Review",
+      "lifecycleState": "In Work",
+      "releasedDate": null,
+      "supplierLeadTime": 8
+    },
+    "tree": [
+      {
+        "id": "n6",
+        "name": "Track_Assy_JT",
+        "children": [
+          {
+            "id": "n3",
+            "name": "Rail_Pair",
+            "children": [
+              {
+                "id": "n1",
+                "name": "TrackRail_Upper",
+                "fileId": "f23"
+              },
+              {
+                "id": "n2",
+                "name": "TrackRail_Lower",
+                "fileId": "f24"
+              }
+            ]
+          },
+          {
+            "id": "n4",
+            "name": "BRKT_MOUNT_RS",
+            "fileId": "f10"
+          },
+          {
+            "id": "n5",
+            "name": "Fastener_Kit",
+            "reference": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "f40",
+    "name": "7500031_0000_AA_HELIX_CRADLE_ASM.PRT",
+    "kind": "assembly",
+    "format": "PRT",
+    "sizeBytes": 47600000,
+    "source": "Teamcenter",
+    "createdBy": "a.keller",
+    "created": "2025-09-11T09:50:00.000Z",
+    "updated": "2026-05-13T14:50:00.000Z",
+    "lastSynced": "2026-10-06T04:50:00.000Z",
+    "thumbnail": "/cad-preview-1.png",
+    "partNumber": "7500031",
+    "revision": "AA",
+    "lineageId": "HELIX-CRADLE",
+    "description": "Helix front cradle (NX)",
+    "geometryHash": "g-f40",
+    "plm": {
+      "program": "Helix SUV",
+      "modelYear": "MY26",
+      "programType": "BEV",
+      "customerGroup": "OEM-A",
+      "region": "EU",
+      "productGroup": "Chassis",
+      "productLine": "Cradle",
+      "calcWeight": 21.3,
+      "releaseStatus": "In Review",
+      "lifecycleState": "In Work",
+      "releasedDate": null,
+      "supplierLeadTime": 17
+    },
+    "tree": [
+      {
+        "id": "n8",
+        "name": "Helix_Cradle",
+        "children": [
+          {
+            "id": "n4",
+            "name": "Cradle_Frame",
+            "children": [
+              {
+                "id": "n1",
+                "name": "AXLE_HSG",
+                "fileId": "f14"
+              },
+              {
+                "id": "n2",
+                "name": "ENG_MOUNT_FR",
+                "fileId": "f13"
+              },
+              {
+                "id": "n3",
+                "name": "RSB40_ARM_L",
+                "fileId": "f06"
+              }
+            ]
+          },
+          {
+            "id": "n7",
+            "name": "Cradle_Hardware",
+            "children": [
+              {
+                "id": "n5",
+                "name": "BRKT_MOUNT_LS",
+                "fileId": "f11"
+              },
+              {
+                "id": "n6",
+                "name": "Cradle_Bolts",
+                "reference": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

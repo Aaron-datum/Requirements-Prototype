@@ -15,7 +15,7 @@ export interface OverlayLegendItem { label: string; tone: 'query' | 'overlap' | 
  *   Search compare: query only = red, overlap = blue, result only = green (labelled A red, B blue in catalogue compare).
  */
 export function ViewerPlaceholder({ chip, image = '/cad-preview-2.png', legend, linkedCameras, onLinkedChange, children, height = 320 }: {
-  chip: string; image?: string; legend?: OverlayLegendItem[]; linkedCameras?: boolean; onLinkedChange?: (v: boolean) => void; children?: ReactNode; height?: number
+  chip: string; image?: string; legend?: OverlayLegendItem[]; linkedCameras?: boolean; onLinkedChange?: (v: boolean) => void; children?: ReactNode; height?: number | string
 }) {
   const [mode, setMode] = useState<ViewerController['viewMode']>('shaded')
   return (

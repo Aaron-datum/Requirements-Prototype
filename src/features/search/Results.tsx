@@ -74,9 +74,9 @@ export function Results() {
           return <span className={s.nameCell}>{f && <FileThumb file={f} />}<span className="col" style={{ gap: 0 }}><span className={s.fname}>{r.name}</span>
             <span className={s.sub}>{r.isSourcePart && <Badge tone="info">Source Part</Badge>} {r.fileKind === 'assembly' ? `Assembly · ${f ? activeLeaves(f).length : 0} parts` : f ? `${f.partNumber} · Rev ${f.revision}` : ''}</span></span></span>
         } },
-      { key: 'source', label: 'Source', group: 'File Metadata', filter: 'multi-tag', get: (r) => r.source, render: (r) => <span className="nowrap">{r.source}</span> },
-      { key: 'created', label: 'Created', group: 'File Metadata', filter: 'date-preset', get: (r) => r.created, render: (r) => <span className="data nowrap">{fmtDate(r.created)}</span> },
-      { key: 'lastEdited', label: 'Last Edited', group: 'File Metadata', filter: 'date-preset', get: (r) => r.lastEdited, render: (r) => <span className="data nowrap">{fmtDate(r.lastEdited)}</span> },
+      { key: 'source', label: 'Source', group: 'File Metadata', filter: 'multi-tag', get: (r) => r.source, render: (r) => <span className={s.nowrap}>{r.source}</span> },
+      { key: 'created', label: 'Created', group: 'File Metadata', filter: 'date-preset', get: (r) => r.created, render: (r) => <span className={`data ${s.nowrap}`}>{fmtDate(r.created)}</span> },
+      { key: 'lastEdited', label: 'Last Edited', group: 'File Metadata', filter: 'date-preset', get: (r) => r.lastEdited, render: (r) => <span className={`data ${s.nowrap}`}>{fmtDate(r.lastEdited)}</span> },
     ]
     if (st.modality === 'part-in-assembly-to-part') cols.push({ key: 'parent', label: 'Parent assembly', group: 'File Metadata', filter: 'multi-search', get: (r) => (r.parentAssemblyId ? fileById[r.parentAssemblyId]?.name : undefined), render: (r) => <span className={s.fname}>{r.parentAssemblyId ? fileById[r.parentAssemblyId]?.name : '—'}</span> })
     cols.push(
@@ -112,7 +112,7 @@ export function Results() {
     <span className={s.actions}>
       {!r.isSourcePart && <Button size="sm" onClick={() => nav(returnTo(r))}><GitCompareArrows size={14} aria-hidden />Compare</Button>}
       <Stub id="plm-connectors" note="Never live in the prototype"><IconButton label="Open in PLM" disabled title={PLM_DISABLED_TIP}><ExternalLink size={14} /></IconButton></Stub>
-      <Link to={searchOnHref(r.fileId, ctx, st.modality)} target="_blank" rel="noreferrer" className="row" aria-label={`Search on ${r.name}`} title="Search on (opens a new tab)"><SearchIcon size={14} aria-hidden />Search on</Link>
+      <Link to={searchOnHref(r.fileId, ctx, st.modality)} target="_blank" rel="noreferrer" className={s.iconLink} aria-label={`Search on ${r.name}`} title="Search on (opens a new tab)"><SearchIcon size={14} aria-hidden /></Link>
       {ctx && !r.isSourcePart && ctx.def.actions.map((a) => (
         <Stub key={a.id} id="audit-trail" note="Decision is recorded in the ledger"><Button size="sm" primary onClick={() => {
           const to = applyDecisionAction(ctx, a, r.name, { audit, config })

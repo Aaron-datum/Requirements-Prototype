@@ -1,0 +1,14 @@
+{
+  "_note": "Selected-part pairs with intended matches and mismatches, so the compare highlighting shows every state. Keys are compare field keys (src/config/catalogueConfig.ts). Administrative fields are never counted.",
+  "pairs": [
+    { "id": "worked", "a": "HX-M16-120-A2", "b": "SH-M16-110-88",
+      "match": ["threadSpec", "pitchClass", "shank", "corrosion", "reuseStatus", "leadTime"],
+      "differ": ["length", "head", "drive", "grade", "material", "tensile", "standard", "finish", "supplier"],
+      "administrativeDiffer": ["source", "plmId", "revision", "status"] },
+    { "id": "near-match", "a": "HX-M16-100-A2", "b": "HX-M16-100-A4",
+      "match": ["threadSpec", "length", "head", "drive", "material", "standard", "finish", "pitchClass", "shank"],
+      "differ": ["grade", "tensile", "corrosion", "reuseStatus", "leadTime", "supplier"],
+      "administrativeDiffer": ["plmId", "revision"],
+      "missingOnB": ["leadTime"] }
+  ]
+}

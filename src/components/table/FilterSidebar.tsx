@@ -1,5 +1,5 @@
 import { ChevronDown, ChevronRight, ChevronsLeft, ChevronsRight, Trash2 } from 'lucide-react'
-import { useRef, useState } from 'react'
+import { useRef, useState, type ReactNode } from 'react'
 import { useConfig } from '../../config/useConfig'
 import { useService } from '../../services/context'
 import { useAppStore } from '../../stores/appStore'
@@ -82,8 +82,12 @@ const clearOf = (def: { filter?: string }): FilterValue => (def.filter === 'rang
  * The shared filter sidebar (design system "Filter sidebar" card): header with active count and Clear all, Filters / Columns /
  * Manage tabs, collapsible groups of collapsible sections with a control chosen by data type, 4px resize edge, footer collapse.
  */
-export function FilterSidebar<R>({ model, noun = 'rows', groupOptions = [], shownCount, canGallery, onNewView }: {
+export function FilterSidebar<R>({ model, noun = 'rows', groupOptions = [], shownCount, canGallery, onNewView, top, defaultOpen }: {
   model: TableModel<R>; noun?: string; groupOptions?: Array<GroupOption<R>>; shownCount: number; canGallery?: boolean; onNewView?: () => void
+  /** Slot above the filter header (catalogue category tree). */
+  top?: ReactNode
+  /** Section keys that start expanded. */
+  defaultOpen?: string[]
 }) {
   const config = useConfig()
   const persistence = useService('persistence')
@@ -105,7 +109,7 @@ export function FilterSidebar<R>({ model, noun = 'rows', groupOptions = [], show
   const { filterCols, activeKeys, filters, columns } = model
   const matches = (c: ColumnDef<R>) => (!activeOnly || activeKeys.includes(c.key)) && (!query || c.label.toLowerCase().includes(query.toLowerCase()))
   const groups = [...new Set(filterCols.map((c) => c.group ?? 'Other'))]
-  const isOpen = (k: string) => (exp ? !!exp[k] : k === filterCols[0]?.key || activeKeys.includes(k))
+  const isOpen = (k: string) => (exp ? !!exp[k] : defaultOpen ? defaultOpen.includes(k) || activeKeys.includes(k) : k === filterCols[0]?.key || activeKeys.includes(k))
   const savedViews = views.filter((v) => v.meta?.table === model.id)
 
   const startResize = (e: React.MouseEvent) => {
@@ -137,6 +141,7 @@ export function FilterSidebar<R>({ model, noun = 'rows', groupOptions = [], show
 
   return (
     <aside className={s.side} style={{ width, flexBasis: width }} aria-label="Table sidebar" data-testid="filter-sidebar">
+      {top && <div className={s.top}>{top}</div>}
       <div className={s.head}>
         <div className="col" style={{ gap: 2 }}>
           <span className="text-section">Filters</span>

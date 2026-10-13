@@ -48,6 +48,12 @@ export interface TableShellProps<R> {
   onModel?: (m: TableModel<R>) => void
   initialFilters?: Record<string, import('./types').FilterValue>
   header?: ReactNode
+  /** Rendered at the top of the filter sidebar, above the filter header (catalogue category tree). */
+  sidebarTop?: ReactNode
+  /** Filter section keys that start expanded (default: the first section and every active one). */
+  sidebarOpen?: string[]
+  /** Rendered in place of the pills, table and pager while no filter is active (catalogue tiles). Clearing all filters returns here. */
+  idle?: ReactNode
 }
 
 const ROWS_PER_PAGE = { compact: 15, default: 10, comfy: 8 } as const
@@ -69,8 +75,10 @@ export function TableShell<R>(p: TableShellProps<R>) {
 
   const groupOpt = p.groupOptions?.find((g) => g.key === model.group)
   const perPage = ROWS_PER_PAGE[density]
-  const paged = p.paginate ? sorted.slice(page * perPage, page * perPage + perPage) : sorted
   const pages = p.paginate ? Math.max(1, Math.ceil(sorted.length / perPage)) : 1
+  // Filtering can leave fewer pages than the current one: clamp so rows never vanish behind a stale page index.
+  const curPage = Math.min(page, pages - 1)
+  const paged = p.paginate ? sorted.slice(curPage * perPage, curPage * perPage + perPage) : sorted
   const folders = useMemo(() => {
     if (!groupOpt) return [{ name: null as string | null, rows: paged }]
     const m = new Map<string, R[]>()
@@ -163,9 +171,10 @@ export function TableShell<R>(p: TableShellProps<R>) {
 
   return (
     <>
-      {p.sidebar !== false && <FilterSidebar model={model} noun={p.noun} groupOptions={p.groupOptions} shownCount={sorted.length} canGallery={!!p.renderCard} />}
+      {p.sidebar !== false && <FilterSidebar model={model} noun={p.noun} groupOptions={p.groupOptions} shownCount={sorted.length} canGallery={!!p.renderCard} top={p.sidebarTop} defaultOpen={p.sidebarOpen} />}
       <div className={s.center} data-density={density}>
         {p.header}
+        {p.idle && activeKeys.length === 0 ? p.idle : (<>
         <div className={s.pills} role="toolbar" aria-label="Applied filters">
           {p.title && <span className="text-section">{p.title}</span>}
           <span className="data muted" data-testid="result-count">{sorted.length} of {p.rows.length} {p.noun ?? 'rows'}</span>
@@ -178,11 +187,12 @@ export function TableShell<R>(p: TableShellProps<R>) {
         <div className={s.scroll}>{body}</div>
         {p.paginate && pages > 1 && (
           <div className={s.pager}>
-            <Button size="sm" disabled={page === 0} onClick={() => setPage(page - 1)}>Previous</Button>
-            <span className="data muted">Page {page + 1} of {pages} · {perPage} per page</span>
-            <Button size="sm" disabled={page >= pages - 1} onClick={() => setPage(page + 1)}>Next</Button>
+            <Button size="sm" disabled={curPage === 0} onClick={() => setPage(curPage - 1)}>Previous</Button>
+            <span className="data muted">Page {curPage + 1} of {pages} · {perPage} per page</span>
+            <Button size="sm" disabled={curPage >= pages - 1} onClick={() => setPage(curPage + 1)}>Next</Button>
           </div>
         )}
+        </>)}
       </div>
     </>
   )

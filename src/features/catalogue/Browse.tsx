@@ -15,7 +15,7 @@ import { useCatalogue } from './useCatalogue'
 import s from './catalogue.module.css'
 
 const fmt = (n: number): string => n.toLocaleString('en-US')
-const NO_DATA_NOTE = 'Opens the same browse flow. Sample parts exist for Fasteners › Bolts only.'
+const NO_DATA_NOTE = 'Sample data: Fasteners › Bolts only.'
 
 /** Breadcrumbs mirror the tree path: Search > Catalogue > Fasteners > Bolts > M16. */
 export function useCatalogueCrumbs(nodeId: string | null, tail?: string): void {

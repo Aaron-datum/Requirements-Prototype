@@ -17,7 +17,7 @@ test.describe('Phase 4: Parts Catalogue', () => {
     await page.goto('/catalogue')
     await expect(page.getByRole('heading', { name: 'Parts Catalogue' })).toBeVisible()
     await expect(page.getByTestId('drawer-empty')).toBeVisible()
-    await expect(page.getByTestId('tile-bearings')).toContainText(/opens the same browse flow/i)
+    await expect(page.getByTestId('tile-bearings')).toContainText(/sample data: fasteners/i)
     await page.getByTestId('tile-fasteners').click()
     await expect(page.getByTestId('breadcrumbs')).toContainText('Fasteners')
     await page.getByTestId('tile-bolts').click()

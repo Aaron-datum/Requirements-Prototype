@@ -95,6 +95,7 @@ export function TableShell<R>(p: TableShellProps<R>) {
   const pills = model.columns.flatMap((c) => (activeKeys.includes(c.key) ? describeFilter(c, filters[c.key]!).map((label, i) => ({ key: `${c.key}-${i}`, label, c, i })) : []))
   const colCount = visCols.length + (p.renderExpanded ? 1 : 0) + (p.onCheckedChange ? 1 : 0) + (p.rowActions ? 1 : 0)
   const onKey = (e: React.KeyboardEvent<HTMLTableRowElement>, id: string) => {
+    if (e.target !== e.currentTarget) return // keys inside a cell control (checkbox, button, link) are theirs
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); p.onSelect?.(id) }
     if (e.key === 'ArrowDown') { e.preventDefault(); (e.currentTarget.nextElementSibling as HTMLElement | null)?.focus() }
     if (e.key === 'ArrowUp') { e.preventDefault(); (e.currentTarget.previousElementSibling as HTMLElement | null)?.focus() }

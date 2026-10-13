@@ -32,3 +32,4 @@
 .st .k { color: var(--fg-muted); font-size: var(--text-badge); line-height: var(--lh-badge); text-transform: uppercase; letter-spacing: .4px; }
 .st .v { font: var(--fw-medium) var(--text-data)/var(--lh-data) var(--font-data); }
 .when { color: var(--fg-muted); font-size: var(--text-small); }
+:global([data-theme="dark"]) .logo { filter: brightness(0) invert(1); }

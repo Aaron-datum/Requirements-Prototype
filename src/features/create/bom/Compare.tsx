@@ -1,5 +1,5 @@
 import { ArrowRight, Check } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { FieldRenderer } from '../../../components/fields/FieldRenderer'
 import { SidePanel } from '../../../components/panels/Panels'
@@ -14,6 +14,7 @@ import { PLM_DISABLED_TIP } from '../../../services/stubs/plm'
 import { BreakdownBars } from './BreakdownBars'
 import { REQ_LINKS } from './bomConfig'
 import { findSurrogateLink } from './searchLinks'
+import { useBomStore } from './bomStore'
 import { useBomRows, useLineMode, useSurrogateActions } from './useBomData'
 import s from './bom.module.css'
 
@@ -33,6 +34,8 @@ export function Compare() {
   const [linked, setLinked] = useState(true)
   const [reqSel, setReqSel] = useState<string | null>(null)
 
+  // A deep link to a compare implies the search has been run.
+  useEffect(() => { if (useBomStore.getState().search === 'idle') useBomStore.getState().finishSearch() }, [])
   const row = rows.find((r) => r.id === params.get('line')) ?? null
   if (!row) return <div className={s.page}><EmptyState title="No BOM line selected" action={<Link to="/create/bom/03-review"><Button primary>Back to BOM</Button></Link>}>Open a line in BOM review and choose Compare parts.</EmptyState></div>
   const candId = params.get('cand') ?? row.similarTo?.partId ?? row.candidates[0]?.partId ?? null

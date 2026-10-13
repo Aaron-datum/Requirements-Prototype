@@ -145,7 +145,7 @@ export function CostEstimate() {
             <span className="text-label-caps">Why this model</span>
             {routing.why.map((w, i) => <div key={i} className="row" style={{ alignItems: 'flex-start' }}><Check size={14} aria-hidden style={{ flex: 'none', marginTop: 3 }} /><span className="grow">{w.note}</span><Badge tone={bvocab.resolve('costTag', w.tag).tone}>{bvocab.resolve('costTag', w.tag).label}</Badge></div>)}
           </section>
-          <section className={s.card} aria-label="Input maturity" data-testid="maturity">
+          <section className={s.card} style={{ overflowX: 'auto' }} aria-label="Input maturity" data-testid="maturity">
             <span className="text-label-caps">Input maturity · pursuit</span>
             <table className={s.tbl}><thead><tr><th>Input</th>{routing.models.map((m) => <th key={m.name} title={m.name}>{modelFamily(m.name).label}</th>)}</tr></thead><tbody>
               {([['3D CAD', 'cad3d'], ['2D drawing', 'drawing2d'], ['Material spec', 'materialSpec']] as const).map(([label, k]) => (

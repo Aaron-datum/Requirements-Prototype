@@ -49,10 +49,10 @@ export interface ModelFamily {
   shape: [number, number, number, number, number, number]
 }
 export const MODEL_FAMILIES: ModelFamily[] = [
+  { key: 'quote', match: /quot|analog/i, label: 'Supplier-quoted analog', needs: { cad3d: false, drawing2d: false, materialSpec: false }, ceiling: 'Surrogate', shape: [1, 1, 1, 1, 1, 1] },
   { key: 'casting', match: /cast/i, label: 'Casting', needs: { cad3d: true, drawing2d: false, materialSpec: true }, ceiling: 'Surrogate', shape: [0.92, 0.45, 1.9, 1.4, 0.95, 0.98] },
   { key: 'billet', match: /billet|machin|mill/i, label: 'Machined billet', needs: { cad3d: true, drawing2d: true, materialSpec: true }, ceiling: 'Surrogate', shape: [1.15, 1.25, 0.55, 0.9, 1.02, 1.0] },
   { key: 'forging', match: /forg/i, label: 'Forging', needs: { cad3d: true, drawing2d: true, materialSpec: true }, ceiling: 'Estimated', shape: [1.05, 0.85, 1.6, 1.1, 1.0, 1.0] },
-  { key: 'quote', match: /quot|analog/i, label: 'Supplier-quoted analog', needs: { cad3d: false, drawing2d: false, materialSpec: false }, ceiling: 'Surrogate', shape: [1, 1, 1, 1, 1, 1] },
   { key: 'assembly', match: /assembl|braz|thermocouple|sensor|should/i, label: 'Should-cost build-up', needs: { cad3d: true, drawing2d: false, materialSpec: true }, ceiling: 'Surrogate', shape: [1, 1, 1, 1, 1, 1] },
   { key: 'parametric', match: /./, label: 'Parametric', needs: { cad3d: true, drawing2d: false, materialSpec: false }, ceiling: 'Estimated', shape: [1.04, 1.1, 1.0, 1.0, 1.0, 1.0] },
 ]

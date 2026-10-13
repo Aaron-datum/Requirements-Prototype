@@ -7,14 +7,14 @@
 
 /* Stepper */
 .stepper { flex: none; display: flex; align-items: stretch; gap: 0; border-bottom: 1px solid var(--border-default); background: var(--bg-card); overflow-x: auto; }
-.step { flex: 1 1 0; min-width: 130px; display: flex; align-items: center; gap: var(--gap-2); padding: var(--gap-2) var(--gap-3); color: var(--fg-secondary); border: 0; border-bottom: 2px solid transparent; background: transparent; text-align: left; font-size: var(--text-small); }
+.step { flex: 1 1 0; min-width: 0; overflow: hidden; display: flex; align-items: center; gap: var(--gap-2); padding: var(--gap-2) var(--gap-3); color: var(--fg-secondary); border: 0; border-bottom: 2px solid transparent; background: transparent; text-align: left; font-size: var(--text-small); }
 .step:hover { background: var(--fill-hover); text-decoration: none; color: var(--fg-primary); }
 .stepOn { color: var(--accent); border-bottom-color: var(--accent); background: var(--fill-selected); }
 .num { flex: none; width: 24px; height: 24px; border-radius: 99px; border: 1.5px solid var(--border-strong); display: grid; place-items: center; font: var(--fw-medium) var(--text-badge)/1 var(--font-data); }
 .stepOn .num { background: var(--accent); border-color: var(--accent); color: var(--btn-primary-fg); }
 .stepDone .num { border-color: var(--status-pass-fg); color: var(--status-pass-fg); }
-.stepText { display: flex; flex-direction: column; min-width: 0; }
-.stepLabel { font-weight: 500; white-space: nowrap; }
+.stepText { display: flex; flex-direction: column; min-width: 0; overflow: hidden; }
+.stepLabel { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .stepSub { font: var(--fw-regular) var(--text-badge)/var(--lh-badge) var(--font-data); color: var(--fg-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .subs { display: flex; gap: var(--gap-1); padding: 0 var(--gap-3); border-bottom: 1px solid var(--border-default); background: var(--bg-subtle); align-items: center; min-height: 32px; font-size: var(--text-small); }
 .subLink { padding: 2px var(--gap-2); border-radius: var(--radius); color: var(--fg-secondary); }
@@ -74,6 +74,7 @@
 .progress { height: 6px; background: var(--bg-card); border: 1px solid var(--border-default); border-radius: 99px; overflow: hidden; flex: 1; min-width: 120px; }
 .progress i { display: block; height: 100%; background: var(--accent); }
 .body { flex: 1; min-height: 0; display: flex; }
+.body table td { white-space: nowrap; }
 .partCell { display: flex; align-items: center; gap: var(--gap-2); min-width: 0; }
 .bars { display: flex; flex-direction: column; gap: var(--gap-2); }
 .barRow { display: grid; grid-template-columns: minmax(110px, 1.2fr) 2fr 36px; align-items: center; gap: var(--gap-2); font-size: var(--text-small); }

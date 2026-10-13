@@ -211,7 +211,7 @@ export function LinePanel({ row, tab, onTab, onClose, mode }: { row: BomViewRow;
 
   return (
     <SidePanel title={row.name} subtitle={`${row.partNumber} · ${row.subassembly}`} badge={<Stub id="matching-engine" note="Simulated match"><MatchQuality quality={quality} /></Stub>}
-      onClose={onClose} tabs={[...REVIEW_TABS]} tab={tab} onTab={onTab} defaultWidth={420}>
+      onClose={onClose} tabs={[...REVIEW_TABS]} tab={tab} onTab={onTab} defaultWidth={380}>
       <span hidden data-testid="line-panel" data-line={row.id} />
       {tab === 'summary' && summary}
       {tab === 'similarity' && <Stub id="matching-engine" note="Pre-baked scores and candidates"><div className="col" style={{ gap: 'var(--gap-4)' }}>{similar}</div></Stub>}

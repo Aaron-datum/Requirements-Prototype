@@ -13,7 +13,6 @@ import type { CatalogueNode, CatalogueRowX } from '../../domain/catalogue'
 import { useService } from '../../services/context'
 import { toastSuccess } from '../../stores/toastStore'
 import { useCatalogueCrumbs } from './Browse'
-import { CategoryTree } from './CategoryTree'
 import { useCatalogueColumns } from './columns'
 import { downloadText, toCsv } from './csv'
 import { PartDrawer } from './PartDrawer'
@@ -42,7 +41,6 @@ export function BoltsView() {
   const key = JSON.stringify({ facets, text })
   const active = anyActive(table.filters)
   const filtered = useMemo(() => applyFilters(rows, columns, table.filters), [rows, columns, table])
-  const live = useMemo(() => svc.liveTree(facets, text), [svc, key]) // eslint-disable-line react-hooks/exhaustive-deps
   const counts = useMemo(() => svc.query(root.id, facets, text).facetCounts, [svc, key, root.id]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const sel = readList(params, SEL_PARAM)
@@ -66,12 +64,6 @@ export function BoltsView() {
   useCatalogueCrumbs(effective.id)
 
   const setFilters = (f: FilterState) => modelRef.current?.setFilters(f)
-  const onTree = (n: CatalogueNode) => {
-    if (n.id !== root.id && !n.scope) { nav(`/catalogue/${n.id}${loc.search.includes('ctx=') ? `?${new URLSearchParams([...params].filter(([k]) => k === 'ctx' || k === 'ret')).toString()}` : ''}`); return }
-    const base = { ...table.filters }
-    delete base[n.scope ? Object.keys(n.scope)[0]! : axis]
-    setFilters(n.scope ? mergeFilters(base, filtersFromFacets(n.scope)) : base)
-  }
   const toggle = (k: string, v: string, on: boolean) => {
     const cur = facets[k] ?? []
     const next = on ? [...cur, v] : cur.filter((x) => x !== v)
@@ -130,7 +122,6 @@ export function BoltsView() {
           selectedId={partId} onSelect={(id) => patch({ [PART_PARAM]: id })} checkedIds={sel} onCheckedChange={setSel}
           onModel={(m) => { modelRef.current = m }} header={header} idle={idle}
           sidebarOpen={['thread', 'length', 'head', 'grade', 'material', 'standard']}
-          sidebarTop={<CategoryTree title="Catalogue" tree={live} selectedId={effective.id} filtersActive={active} onSelect={onTree} />}
           rowActions={(r) => <span className="row" style={{ justifyContent: 'center' }}><SearchOnLink partNumber={r.partNumber} iconOnly ghost /><DecisionButtons partNumber={r.partNumber} /></span>}
           empty={{ title: 'No bolts match these filters', body: 'Remove a filter or widen the length range to see more parts.' }}
           toolbar={(

@@ -90,3 +90,4 @@
 .card { text-align: left; display: flex; flex-direction: column; padding: 0; overflow: hidden; background: var(--bg-card); border: 1px solid var(--border-default); border-radius: var(--radius); font-weight: 400; color: var(--fg-primary); }
 .card:hover { border-color: var(--accent); }
 .cardPicked { border: 2px solid var(--border-selected); }
+.table td .data { white-space: nowrap; }

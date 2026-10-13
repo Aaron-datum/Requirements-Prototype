@@ -90,7 +90,8 @@ export function TopNav() {
 
 /** Left nav (decided, D-01): Search, Create, My Projects tree with counts and New project, Settings in the footer. */
 export function LeftNav() {
-  const [collapsed, setCollapsed] = useState(false)
+  // Narrow windows start with the rail so tables keep their width.
+  const [collapsed, setCollapsed] = useState(() => window.innerWidth < 1360)
   const projects = useProjectStore((p) => p.projects)
   const addProject = useProjectStore((p) => p.addProject)
   const [open, setOpen] = useState<Record<string, boolean>>({ 'p-civic-si': true })

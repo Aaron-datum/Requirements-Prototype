@@ -10,7 +10,8 @@
 .stepOn { color: var(--accent); font-weight: 500; border-bottom-color: var(--accent); }
 .stepNo { font-family: var(--font-data); color: var(--fg-muted); }
 .workspace { flex: 1; min-height: 0; display: flex; }
-.cell { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.cell { display: flex; flex-direction: column; gap: 2px; min-width: 0; max-width: 260px; }
+.cell > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .id { font-family: var(--font-data); font-size: var(--text-data-sm); color: var(--fg-muted); }
 .strong { font-weight: 500; }
 .sec { display: flex; flex-direction: column; gap: var(--gap-2); }

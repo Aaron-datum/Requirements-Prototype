@@ -67,7 +67,7 @@ export function VocabBadge({ vocab, raw, dashed }: { vocab: string; raw: string;
 export function ReqTitle({ r }: { r: ReqView }) {
   return (
     <div className={s.cell}>
-      <span>{r.title}</span>
+      <span title={r.title}>{r.title}</span>
       <span className={s.id}>{r.req_id} · {r.linked_part_id}</span>
       {r.dangerous && (r.rowDanger
         ? <span><Badge tone="fail" icon={<AlertTriangle size={12} aria-hidden />} title="Text is Unchanged but what it traces to has Changed">Driver changed</Badge></span>
@@ -77,7 +77,7 @@ export function ReqTitle({ r }: { r: ReqView }) {
 }
 
 export function SourceCell({ r }: { r: ReqView }) {
-  return <div className={s.cell}><span><SourceTag r={r} /></span><span className={s.id}>{r.citation}</span></div>
+  return <div className={s.cell}><span><SourceTag r={r} /></span><span className={s.id} title={r.citation}>{r.citation}</span></div>
 }
 
 /** Driven by: the interface, its state, and ALWAYS a score or an explicit n/a while computed; a check mark once confirmed. */

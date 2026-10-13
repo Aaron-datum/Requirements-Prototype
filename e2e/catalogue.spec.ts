@@ -68,15 +68,11 @@ test.describe('Phase 4: Parts Catalogue', () => {
     await expect(page.getByRole('status').getByText(/Use This Part: HX-M16-120-A2/)).toBeVisible()
   })
 
-  test('filters make the tree respond, Back restores state, hidden selection does not arm Compare', async ({ page }) => {
+  test('no tree in the sidebar, Back restores state, hidden selection does not arm Compare', async ({ page }) => {
     await page.goto('/catalogue/bolts-m16')
     const side = page.getByTestId('filter-sidebar')
-    await expect(page.getByTestId('tree-node-bolts-m16')).toHaveAttribute('data-count', '36')
-    await expect(page.getByTestId('tree-node-bolts-m6')).toHaveAttribute('data-count', '10')
+    await expect(page.getByTestId('tree-node-bolts-m16')).toHaveCount(0)
     await side.getByRole('checkbox', { name: /^Hex/ }).check({ force: true })
-    await expect(page.getByTestId('tree-node-bearings')).toHaveAttribute('data-dimmed', 'true')
-    await expect(page.getByTestId('tree-node-screws')).toHaveAttribute('data-dimmed', 'true')
-    await expect(page.getByTestId('tree-node-bolts-m16')).toHaveAttribute('data-count', '13')
     await tick(page, 'HX-M16-120-A2')
     await tick(page, 'HX-M16-130-A2')
     await expect(page.getByTestId('compare-btn')).toBeEnabled()

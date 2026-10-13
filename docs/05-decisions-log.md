@@ -39,6 +39,9 @@ Status key: **Open** (needs Aaron), **Assumed** (default chosen, safe to build),
 | D-24 | No login screen in the routes list. | No login. The user menu shows the fixture user (Aaron Keller) and a disabled Log out. | Assumed. |
 | D-25 | Info density only changed row heights. | Density is a global UI scale (Comfy 112%, Default 100%, Compact 88%, via CSS zoom on the app root) plus table row tokens. Every table obeys it; there is no per-table density. | Assumed (Aaron asked for whole-UI scaling). |
 | D-26 | Repo layout: the earlier JS prototype and handoff folder. | Moved to `legacy/` for reference. The new TypeScript app is at the repo root. | Assumed. |
+| D-27 | Left nav is decided (D-01), but the user wants to try a layout without it. | Settings > Navigation: Sidebar (default) or Top bar only, with Search, Create and Projects menus in the top bar. Persisted in prefs. | Assumed (experiment). |
+| D-28 | Helper text length. | Keep copy short and direct: no explanations of how the prototype works, one line where possible. | Product direction. |
+| D-29 | Alert tone after a decision. | Red row tone and banners show only while an item is an open action item; accepting or rejecting clears them. | Product direction. |
 
 ## Resolved (do not reopen)
 
@@ -50,6 +53,17 @@ Status key: **Open** (needs Aaron), **Assumed** (default chosen, safe to build),
 - PLM schema, Reuse Status, Conformance State and tones are configurable per company and data source.
 - Fake example data everywhere. Prototype state is in memory.
 - Locked or upsell workflows and "Found It" button removed.
+
+
+## Area assumptions
+
+Each build area logged its own assumptions without blocking. Full tables are in `docs/decisions/`; IDs are stable.
+
+- **Search (S-)**: 13 assumptions in [`docs/decisions/search.md`](decisions/search.md).
+- **Catalogue (C-)**: 15 assumptions in [`docs/decisions/catalogue.md`](decisions/catalogue.md).
+- **BOM creation (B-)**: 18 assumptions in [`docs/decisions/bom.md`](decisions/bom.md).
+- **Requirements and traceability (R-)**: 21 assumptions in [`docs/decisions/requirements.md`](decisions/requirements.md).
+- **Home and Projects (P-)**: 13 assumptions in [`docs/decisions/projects.md`](decisions/projects.md).
 
 ## How to add to this log
 

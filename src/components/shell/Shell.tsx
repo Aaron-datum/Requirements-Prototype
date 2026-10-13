@@ -41,9 +41,19 @@ export function FeedbackModal({ onClose }: { onClose: () => void }) {
   )
 }
 
+/** Active when the path matches and, if the link carries a query string, every one of its params matches too. */
+function isOn(to: string, loc: { pathname: string; search: string }): boolean {
+  const [path, q] = to.split('?')
+  if (loc.pathname !== path && !(loc.pathname.startsWith(`${path}/`) && !q)) return false
+  if (!q) return true
+  const have = new URLSearchParams(loc.search)
+  return [...new URLSearchParams(q)].every(([k, v]) => have.get(k) === v)
+}
+
 function Item({ to, icon, label, collapsed, kid, count, end }: { to: string; icon: ReactNode; label: string; collapsed?: boolean; kid?: boolean; count?: number; end?: boolean }) {
+  const loc = useLocation()
   return (
-    <NavLink to={to} end={end} title={collapsed ? label : undefined} className={({ isActive }) => `${s.item} ${isActive ? s.itemOn : ''} ${kid ? s.itemKid : ''}`}>
+    <NavLink to={to} end={end} title={collapsed ? label : undefined} className={() => `${s.item} ${isOn(to, loc) ? s.itemOn : ''} ${kid ? s.itemKid : ''}`}>
       {icon}<span className={`grow ${s.lbl}`}>{label}</span>{count != null && !collapsed && <span className={s.navCount}>{count}</span>}
     </NavLink>
   )

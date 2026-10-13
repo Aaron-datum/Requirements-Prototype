@@ -4,6 +4,7 @@ import { WORKFLOWS, type DecisionActionDef, type WorkflowDef } from '../config/w
 import type { AppConfigFull } from '../domain/extra'
 import type { AuditService } from '../domain/types'
 import { useLedger } from '../stores/ledgerStore'
+import { resolveSearchFile } from '../fixtures/derive-search'
 import { now } from './clock'
 
 /** A workflow context as carried in the URL: ?ctx=bom-review:BOML-0152&ret=/create/bom/review */
@@ -29,7 +30,11 @@ export const ctxQuery = (workflowId: string, subject: string, returnTo: string):
 /** Append the current workflow context (if any) to a URL so Define, Results and Compare keep it. */
 export const withCtx = (url: string, ctx: WorkflowCtx | null): string => (ctx ? `${url}${url.includes('?') ? '&' : '?'}${ctxQuery(ctx.workflowId, ctx.subject, ctx.returnTo)}` : url)
 /** "Search on" for a part or assembly: opens a new search with that part active. Callers open it with target="_blank". */
-export const searchOnHref = (fileId: string, ctx?: WorkflowCtx | null, modality = 'part-to-part'): string => withCtx(`/search/define?file=${encodeURIComponent(fileId)}&modality=${modality}`, ctx ?? null)
+export const searchOnHref = (fileId: string, ctx?: WorkflowCtx | null, modality = 'part-to-part'): string => {
+  // Part numbers from BOM review and the Catalogue resolve to a library file; `rep` says which part it stands in for.
+  const { file, represents } = resolveSearchFile(fileId)
+  return withCtx(`/search/define?file=${encodeURIComponent(file.id)}&modality=${modality}${represents ? `&rep=${encodeURIComponent(represents)}` : ''}`, ctx ?? null)
+}
 
 /** Ledger key for a decision recorded by a workflow action. e.g. decisionKey('select-surrogate', 'BOML-0152') */
 export const decisionKey = (effect: DecisionActionDef['effect'], subject: string): string => `${effect}:${subject}`

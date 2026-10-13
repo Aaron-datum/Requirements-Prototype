@@ -31,6 +31,18 @@ export function findFileByName(name: string): SearchFile | undefined {
     ?? searchFiles.find((f) => n.length >= 5 && normalizeName(f.name).startsWith(n))
 }
 
+/**
+ * Resolve whatever "Search on" was given to a library file. Other areas (BOM review, Catalogue) pass Civic part numbers or
+ * catalogue part numbers, which are not CAD files in the search library. Unknown ids resolve deterministically (by hash) to a
+ * library part file, and `represents` records the original so Define can say so. Prototype simplification (matching-engine / cad-parser).
+ */
+export function resolveSearchFile(idOrPartNumber: string): { file: SearchFile; represents?: string } {
+  const direct = fileById[idOrPartNumber] ?? findFileByName(idOrPartNumber)
+  if (direct) return { file: direct }
+  const parts = searchFiles.filter((f) => f.kind === 'part' && Object.keys(f.plm).length > 0)
+  return { file: parts[hashInt(`search-on|${idOrPartNumber}`, 0, parts.length - 1)]!, represents: idOrPartNumber }
+}
+
 /* ------------------------------- trees --------------------------------- */
 
 export interface FlatNode { node: TreeNode; depth: number; parentId?: string; path: string[] }

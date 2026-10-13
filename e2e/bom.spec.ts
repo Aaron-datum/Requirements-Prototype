@@ -135,19 +135,21 @@ test.describe('Phase 5: BOM creation and cost', () => {
     const link = page.getByTestId('search-on-BOML-0166')
     await expect(link).toHaveAttribute('target', '_blank')
     const href = (await link.getAttribute('href'))!
-    expect(href).toMatch(/^\/search\/define\?file=ELEC-925-C&modality=part-to-part&ctx=bom-review%3ABOML-0166&ret=/)
-    // The Search area is not merged: a test-only stand-in route applies the same applyDecisionAction in a second page.
+    expect(href).toMatch(/^\/search\/define\?file=[^&]+&modality=part-to-part&rep=ELEC-925-C&ctx=bom-review%3ABOML-0166&ret=/)
+    // Real round trip: the second tab runs the search and applies the decision through the shared ledger.
     const second = await context.newPage()
-    await second.goto(`/dev/bom-decision?${href.split('?')[1]!.split('&').slice(2).join('&')}`)
-    await second.getByRole('row', { name: /TC-404-B/ }).getByRole('button', { name: 'Select as surrogate' }).click()
-    await expect(second.getByTestId('audit-entry').first()).toContainText('Select as surrogate: TC-404-B')
+    await second.goto(href)
+    await expect(second.getByTestId('represents')).toContainText('ELEC-925-C')
+    await second.getByRole('button', { name: 'Run Search' }).click()
+    await second.getByRole('button', { name: 'Select as surrogate' }).first().click()
+    await expect(second).toHaveURL(/\/create\/bom/)
     await second.close()
     // The BOM review tab picks the decision up from the shared ledger.
     await expect(page.getByTestId('counter-confirmed')).toContainText('1 of 14', { timeout: 10_000 })
     const panel = page.getByTestId('side-panel')
     await panel.getByRole('tab', { name: 'Similarity' }).click()
     await expect(panel.getByText('Confirmed surrogate').first()).toBeVisible()
-    await expect(panel.getByTestId('similar-to')).toContainText('TC-404-B')
+    await expect(panel.getByTestId('similar-to')).toBeVisible()
     await expect(panel.getByTestId('audit-entry').first()).toContainText('Select as surrogate')
     await expect(page.getByTestId('counter-unresolved')).toContainText('2')
   })

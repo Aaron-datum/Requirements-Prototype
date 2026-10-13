@@ -86,6 +86,7 @@ export function Define() {
         <div className={s.leftHead}>
           <span className="text-label-caps muted">Active part</span>
           <span className="text-section trunc" data-testid="active-part">{node?.name ?? file.name}</span>
+          {params.get('rep') && <span className="muted" data-testid="represents">Representing {params.get('rep')} (simulated CAD match)</span>}
           <div className="row"><Badge tone="info">{mod.short}</Badge>{locked && <span className="muted">fixed by the card you chose</span>}</div>
         </div>
         <Tabs value={tab} onChange={setTab} label="Define tabs" tabs={[{ key: 'assembly', label: 'Assembly' }, { key: 'plm', label: 'PLM' }, { key: 'measurements', label: 'Measurements', count: st.measurements.length }]} />

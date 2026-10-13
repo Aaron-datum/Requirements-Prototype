@@ -13,7 +13,7 @@ import { stepHref, useParam, useReqModel } from '../model'
 import s from '../req.module.css'
 
 const LANE_NAME = { DOC: 'Source', PRT: 'Part', TST: 'Test' } as const
-const NW = 168, NH = 72, LABEL_W = 84, LANE_H = 112, TOP = 34
+const NW = 172, NH = 72, LABEL_W = 84, LANE_H = 108, TOP = 34, STEP = 118
 
 /** 03c Event lanes: DOC, PRT and TST lanes from the earliest program to this RFQ, driven by carryover_events.json through the derive layer. */
 export function LanesScreen() {
@@ -31,11 +31,21 @@ export function LanesScreen() {
   const idx = sel ? events.indexOf(sel) : -1
   useBreadcrumbs([{ label: 'Home', to: '/' }, { label: 'Create' }, { label: RFQ_ID }, { label: `Traceability · ${r.req_id}` }])
 
-  const colW = Math.max(NW + 12, (width - LABEL_W - 16) / Math.max(1, events.length))
-  const W = Math.max(width - 2, LABEL_W + 16 + colW * events.length)
-  const H = TOP + LANE_H * LANES.length + 8
+  // Place events left to right in time order: at least STEP apart, and never overlapping the previous event in the same lane.
   const pos: Record<string, { x: number; y: number }> = {}
-  events.forEach((e, i) => { pos[e.id] = { x: LABEL_W + 8 + colW * i + (colW - NW) / 2, y: TOP + LANE_H * LANES.indexOf(e.lane) + (LANE_H - NH) / 2 } })
+  const lastInLane: Record<string, number> = {}
+  let prevX = LABEL_W + 8 - STEP
+  events.forEach((e) => {
+    const x = Math.max(prevX + STEP, (lastInLane[e.lane] ?? -1e9) + NW + 10)
+    pos[e.id] = { x, y: TOP + LANE_H * LANES.indexOf(e.lane) + (LANE_H - NH) / 2 }
+    lastInLane[e.lane] = x
+    prevX = x
+  })
+  const needed = Math.max(...events.map((e) => pos[e.id]!.x + NW), LABEL_W) + 16
+  const spread = events.length > 1 && needed < width - 2 ? (width - 2 - needed) / (events.length - 1) : 0
+  events.forEach((e, i) => { pos[e.id]!.x += spread * i })
+  const W = Math.max(width - 2, needed)
+  const H = TOP + LANE_H * LANES.length + 8
   const edges = laneEdges(events)
   const programs = new Set(all.map((e) => e.programId)).size
   const clip = (t: string, n: number) => (t.length > n ? `${t.slice(0, n - 1)}…` : t)
@@ -81,7 +91,8 @@ export function LanesScreen() {
                     <g key={e.id} transform={`translate(${p.x},${p.y})`} tabIndex={0} role="button" aria-pressed={on} aria-label={`${e.lane} ${e.date} ${e.title} ${e.program}${e.warn ? `, ${e.warn}` : ''}`} data-event={e.id}
                       onClick={() => setEv(e.id)} onKeyDown={(k) => (k.key === 'Enter' || k.key === ' ') && setEv(e.id)} style={{ cursor: 'pointer' }}>
                       <rect width={NW} height={NH} rx={5} fill={e.warn ? 'var(--status-warn-bg)' : 'var(--bg-card)'} stroke={on ? 'var(--border-selected)' : e.warn ? 'var(--status-warn-fg)' : 'var(--border-strong)'} strokeWidth={on || e.warn ? 2 : 1} />
-                      <text x={10} y={20} style={{ font: 'var(--fw-medium) var(--text-badge) var(--font-data)', fill: e.warn ? 'var(--status-warn-fg)' : 'var(--fg-secondary)' }}>{e.lane} {e.date.slice(0, 7)}{e.warn ? ` · ${e.warn}` : ''}</text>
+                      <text x={10} y={20} style={{ font: 'var(--fw-medium) var(--text-badge) var(--font-data)', fill: e.warn ? 'var(--status-warn-fg)' : 'var(--fg-secondary)' }}>{e.lane} {e.date.slice(0, 7)}</text>
+                      {e.warn && <text x={NW - 10} y={20} textAnchor="end" style={{ font: 'var(--fw-medium) var(--text-badge) var(--font-ui)', fill: 'var(--status-warn-fg)' }}>{e.warn}</text>}
                       <text x={10} y={42} style={{ font: 'var(--fw-medium) var(--text-small) var(--font-ui)', fill: 'var(--fg-primary)' }}>{clip(e.title, 20)}</text>
                       <text x={10} y={62} style={{ font: 'var(--text-small) var(--font-ui)', fill: 'var(--fg-secondary)' }}>{e.program}{e.thisRfq ? ' · this RFQ' : ''}</text>
                     </g>
@@ -100,7 +111,7 @@ export function LanesScreen() {
           </>}>
           <span>{r.requirement_text}</span>
           <div className="row wrap"><SourceTag r={r} /><span className="data muted">{r.citation}</span></div>
-          <div className={s.tiles3}>
+          <div className={s.tiles3} style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
             <div className={s.tile}><span className="text-label-caps">Status</span><span><ConformancePill raw={r.conformance} /></span></div>
             <div className={s.tile}><span className="text-label-caps">Events</span><span className={s.stat} data-testid="stat-events">{all.length}</span></div>
             <div className={s.tile}><span className="text-label-caps">Programs</span><span className={s.stat} data-testid="stat-programs">{programs}</span></div>

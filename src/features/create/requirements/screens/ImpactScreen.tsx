@@ -113,7 +113,7 @@ export function ImpactScreen() {
                       <rect width={bw} height={BH} rx={5} fill="var(--bg-card)" stroke={on ? 'var(--border-selected)' : warn ? 'var(--status-warn-fg)' : 'var(--border-strong)'} strokeWidth={on || warn ? 2 : 1} strokeDasharray={n.id === anchor.req_id ? undefined : undefined} />
                       {warn && <rect width={4} height={BH} rx={2} fill="var(--status-warn-fg)" />}
                       <text x={10} y={19} style={{ font: 'var(--fw-medium) var(--text-badge) var(--font-data)', fill: 'var(--fg-secondary)' }}>{n.type}{warn ? (n.needsReview && !flag ? ' · Flagged' : ' · Re-review') : flag === 'check' ? ' · Check' : ''}</text>
-                      <text x={10} y={39} style={{ font: 'var(--text-small) var(--font-ui)', fill: 'var(--fg-primary)' }}>{clip(n.type === 'REQ' ? n.id : i.label)}</text>
+                      <text x={10} y={39} style={{ font: 'var(--text-small) var(--font-ui)', fill: 'var(--fg-primary)' }}>{clip(n.type === 'REQ' || n.type === 'PRT' || n.type === 'TST' ? n.id.replace(/^[A-Z]{3}:/, '') : i.label)}</text>
                     </g>
                   )
                 })}

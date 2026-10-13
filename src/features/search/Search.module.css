@@ -24,7 +24,7 @@
 .fname { font-family: var(--font-data); font-size: var(--text-data-sm); overflow-wrap: anywhere; }
 .sub { color: var(--fg-muted); font-size: var(--text-small); }
 .topbar { display: flex; align-items: center; gap: var(--gap-3); padding: var(--gap-3) var(--gap-4); border-bottom: 1px solid var(--border-default); }
-.topbar > :first-child { flex: 1; max-width: 520px; }
+.searchWrap { flex: 1; max-width: 520px; min-width: 200px; }
 .select { height: var(--input-height); border: 1px solid var(--border-strong); border-radius: var(--radius); background: var(--bg-card); color: var(--fg-primary); padding: 0 var(--gap-2); font: var(--fw-regular) var(--text-small)/var(--lh-small) var(--font-ui); min-width: 0; }
 .dl { display: grid; grid-template-columns: auto 1fr; gap: var(--gap-2) var(--gap-4); margin: 0; font-size: var(--text-small); }
 .dl dt { color: var(--fg-muted); }
@@ -41,8 +41,8 @@
 .stageHead { display: flex; align-items: center; gap: var(--gap-3); padding: var(--gap-3) var(--gap-4); border-bottom: 1px solid var(--border-default); flex-wrap: wrap; }
 .stageBody { flex: 1; min-height: 0; padding: var(--gap-3) var(--gap-4); display: flex; gap: var(--gap-3); }
 .vp { flex: 1; min-width: 0; min-height: 360px; display: flex; }
-.vp > * { flex: 1; min-width: 0; }
-.hint { position: absolute; top: var(--gap-2); left: 50%; transform: translateX(-50%); padding: var(--gap-1) var(--gap-3); background: var(--bg-card); border: 1px solid var(--border-default); border-radius: var(--radius); font-size: var(--text-small); white-space: nowrap; }
+.vp :global(figure) { flex: 1; min-width: 0; }
+.hint { position: absolute; top: 48px; left: var(--gap-2); padding: var(--gap-1) var(--gap-3); background: var(--bg-card); border: 1px solid var(--border-default); border-radius: var(--radius); font-size: var(--text-small); white-space: nowrap; }
 .readout { position: absolute; bottom: var(--gap-3); left: 50%; transform: translateX(-50%); padding: var(--gap-1) var(--gap-3); background: var(--bg-card); border: 1px solid var(--border-default); border-radius: var(--radius); font: var(--fw-regular) var(--text-data-sm)/var(--lh-data-sm) var(--font-data); }
 .rightPanel { flex: 0 0 320px; display: flex; flex-direction: column; border: 1px solid var(--border-default); border-radius: var(--radius); background: var(--bg-card); min-height: 0; }
 .rbody { flex: 1; overflow-y: auto; padding: var(--gap-3) var(--gap-4); display: flex; flex-direction: column; gap: var(--gap-3); }
@@ -107,3 +107,4 @@
 .lab { display: flex; flex-direction: column; gap: var(--gap-1); font-size: var(--text-small); }
 @media (max-width: 1400px) { .recents { grid-template-columns: repeat(2, minmax(0, 1fr)); } .left { flex-basis: 300px; } .rightPanel { flex-basis: 280px; } }
 .qcell { display: flex; flex-direction: column; gap: var(--gap-1); align-items: flex-start; min-width: 200px; }
+.nowrap { white-space: nowrap; }

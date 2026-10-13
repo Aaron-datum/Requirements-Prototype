@@ -67,10 +67,10 @@ export function Files() {
 
   const searchBar = (
     <div className={s.topbar}>
-      <Stub id="search-index" note="Client-side, part-number-first">
+      <Stub id="search-index" note="Client-side, part-number-first"><div className={s.searchWrap}>
         <SearchBox value={q} label="Search files" placeholder="Search file name, e.g. 7100490* or *RSB40*"
           onChange={(v) => { const n = new URLSearchParams(params); if (v) n.set('q', v); else n.delete('q'); setParams(n, { replace: true }) }} />
-      </Stub>
+      </div></Stub>
       <Button primary onClick={() => setUpload(true)}><Upload size={14} aria-hidden />Upload file</Button>
     </div>
   )

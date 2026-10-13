@@ -69,7 +69,7 @@ export function LinePanel({ row, tab, onTab, onClose, mode }: { row: BomViewRow;
           <span className="muted">Identical geometry and material on {programsUsing(row.partNumber).filter((p) => p !== 'PGM-CIV-SI').map(programShort).join(' · ') || 'no other program'}; differs only in PLM metadata. Directly replaceable.</span>
         </div>
       )}
-      {mode === 'propose' && top && (
+      {mode === 'propose' && row.similarTo && (
         <>
           <div className="row">
             <Badge tone={approval.tone} icon={row.confirmed ? <Check size={12} aria-hidden /> : undefined}>{row.confirmed ? 'Confirmed surrogate' : approval.label}</Badge>
@@ -85,7 +85,7 @@ export function LinePanel({ row, tab, onTab, onClose, mode }: { row: BomViewRow;
               <Button size="sm" disabled title={PLM_DISABLED_TIP}>PLM record</Button>
               {row.confirmed
                 ? <Button size="sm" onClick={() => undo(row)}>Undo</Button>
-                : <Button size="sm" primary onClick={() => accept(row, row.similarTo?.partId ?? top.partId)}>Accept as surrogate</Button>}
+                : <Button size="sm" primary onClick={() => accept(row, row.similarTo!.partId)}>Accept as surrogate</Button>}
             </div>
           </div>
           <MatchQuality quality={quality} variant="full" />

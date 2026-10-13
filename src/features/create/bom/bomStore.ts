@@ -41,6 +41,10 @@ interface BomState {
   reset: () => void
 }
 
+const STEP_KEY = 'datum-bom-step'
+/** The current step is a per-tab convenience, remembered in sessionStorage so a reload of /create/bom returns to it. */
+const savedStep = (): string => { try { return sessionStorage.getItem(STEP_KEY) ?? '01-intake' } catch { return '01-intake' } }
+
 const initial = () => ({
   routes: {} as RouteMap,
   sources: Object.fromEntries(SOURCES.map((s) => [s.id, true])) as Record<string, boolean>,
@@ -50,7 +54,7 @@ const initial = () => ({
   progress: 0,
   failedRetried: false,
   retrying: false,
-  lastStep: '01-intake',
+  lastStep: savedStep(),
   lastLine: null as string | null,
   cost: {} as Record<string, CostChoice>,
 })
@@ -74,7 +78,7 @@ export const useBomStore = create<BomState>((set, get) => ({
   finishSearch: () => set({ search: 'done' }),
   setRetrying: (retrying) => set({ retrying }),
   retryFailed: () => set({ failedRetried: true, retrying: false }),
-  setLastStep: (lastStep) => set({ lastStep }),
+  setLastStep: (lastStep) => { try { sessionStorage.setItem(STEP_KEY, lastStep) } catch { /* storage unavailable */ } set({ lastStep }) },
   setLastLine: (lastLine) => set({ lastLine }),
   setCost: (partId, patch) => set((s) => ({ cost: { ...s.cost, [partId]: { ...s.cost[partId], current: s.cost[partId]?.current ?? {}, ...patch } } })),
   reset: () => set(initial()),

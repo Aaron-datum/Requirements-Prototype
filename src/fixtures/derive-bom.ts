@@ -272,8 +272,8 @@ function datasetRow(t: TreeRow, ctx: BomContext): BomViewRow {
     const top = cands[0]
     const pair = pairSimilarity(base.part_id, decision.value)
     const prod = productionLine(decision.value)
-    const unitPrice = prod ? prod.unit_price_usd : base.unit_price_usd
     const manualMatch = !top || top.partId !== decision.value
+    const unitPrice = manualMatch && prod ? prod.unit_price_usd : base.unit_price_usd
     return {
       ...common, state: 'ready', certainty: CONFIRMED_AS, matchPct: pair.matchPct, breakdown: manualMatch ? pair.breakdown : top!.breakdown, similarTo: { partId: decision.value, programId: productionProgram(decision.value) },
       confirmed: true, confirmedBy: decision.by, confirmedAt: decision.at, manualMatch, unitPrice, extPrice: round2(unitPrice * base.quantity),

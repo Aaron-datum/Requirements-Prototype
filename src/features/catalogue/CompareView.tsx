@@ -71,7 +71,7 @@ function DualPane({ a, b, rows }: { a: CatalogueRowX; b: CatalogueRowX; rows: Co
     <section className={s.pane} aria-label={`Part ${TAGS[idx]}`} data-testid={`pane-${TAGS[idx]}`}>
       <div className={s.paneHead}><span className={s.tag}>{TAGS[idx]}</span><span className="data" style={{ fontWeight: 500 }}>{p.partNumber}</span><span className="muted right">{String(p.fields.source ?? '')}</span></div>
       <div className={s.paneView}>
-        <ViewerPlaceholder chip={`${TAGS[idx]} · ${p.partNumber}`} image={p.image} height={230}
+        <ViewerPlaceholder chip={`${TAGS[idx]} · ${p.partNumber}`} image={p.image} height={320}
           legend={[{ label: idx === 0 ? 'A · red overlay' : 'B · blue overlay', tone: idx === 0 ? 'query' : 'overlap' }]} />
       </div>
       {rows.map((r) => (
@@ -152,7 +152,7 @@ export function CompareView() {
           <div className="col">
             <SearchBox value={q} onChange={setQ} placeholder="Filter part numbers" />
             <div className={s.pickList}>
-              {candidates.map((c) => <button key={c.partNumber} type="button" className={s.pick} onClick={() => { setParts([...ids, c.partNumber]); patch({ form: 'table' }); setPicking(false); setQ('') }}><span className="data" style={{ fontWeight: 500 }}>{c.partNumber}</span><span className="muted">{c.description}</span></button>)}
+              {candidates.map((c) => <button key={c.partNumber} type="button" className={s.pick} onClick={() => { const next = [...ids, c.partNumber]; patch({ a: next[0] ?? null, b: next[1] ?? null, more: writeList(next.slice(2)), form: 'table' }); setPicking(false); setQ('') }}><span className="data" style={{ fontWeight: 500 }}>{c.partNumber}</span><span className="muted">{c.description}</span></button>)}
               {candidates.length === 0 && <span className="muted" style={{ padding: 'var(--gap-3)' }}>No more parts match.</span>}
             </div>
           </div>

@@ -1,0 +1,45 @@
+{
+  "rfqId": "RFQ-26-0512",
+  "title": "Civic Si 1.5T Engine, MY2026",
+  "received": "2026-10-01 14:08",
+  "due": "2026-10-23",
+  "builtOff": "Civic LX 1.5T · Sport 1.5T",
+  "files": [
+    { "id": "f-cad-asm", "name": "Civic_Si_1.5T_Engine_MY2026.CATProduct", "detectedAs": "CAD assembly", "sizeLabel": "42.6 MB", "found": "9 subassemblies · 58 parts", "route": "cad-bom", "kind": "cad-assembly", "subassemblies": 9, "parts": 58 },
+    { "id": "f-cad-ref", "name": "Civic_Si_Envelope_Reference.stp", "detectedAs": "CAD reference", "sizeLabel": "0.8 MB", "found": "2 reference bodies", "route": "cad-bom", "kind": "cad-reference", "referenceBodies": 2 },
+    { "id": "f-sor", "name": "SOR-CIV-26_revB.pdf", "detectedAs": "Statement of requirements", "sizeLabel": "6.1 MB", "found": "148 requirements · OEM code SOR-CIV-26", "route": "requirements", "kind": "document", "requirementCount": 148 },
+    { "id": "f-es", "name": "ES-CIV-2214_Engineering_Spec.docx", "detectedAs": "Engineering specification", "sizeLabel": "1.9 MB", "found": "96 requirements · OEM code ES-CIV-2214", "route": "requirements", "kind": "document", "requirementCount": 96 },
+    { "id": "f-dvp", "name": "OEM_DVP_Template.xlsx", "detectedAs": "Test plan template", "sizeLabel": "0.4 MB", "found": "112 test definitions", "route": "requirements", "kind": "document", "testDefinitions": 112 },
+    { "id": "f-commercial", "name": "RFQ-26-0512_Commercial.pdf", "detectedAs": "Commercial terms", "sizeLabel": "0.9 MB", "found": "pricing, volumes, Incoterms", "route": "kept", "kind": "other" },
+    { "id": "f-bom-template", "name": "OEM_BOM_Template.xlsx", "detectedAs": "Blank BOM template", "sizeLabel": "0.1 MB", "found": "1 header row · 21 columns · no parts", "route": "columns", "kind": "bom-template", "columns": 21 },
+    { "id": "f-photos", "name": "Packaging_Photos.zip", "detectedAs": "Images", "sizeLabel": "38.2 MB", "found": "24 photos", "route": "kept", "kind": "other" }
+  ],
+  "requirementCounts": { "inScopeAtFullExtract": 98, "olderDocuments": 571 },
+  "templateColumns": {
+    "matched": [
+      { "header": "Part Description", "key": "name" }, { "header": "Part No.", "key": "partNumber" }, { "header": "Qty / Unit", "key": "quantity" },
+      { "header": "Unit Price", "key": "price" }, { "header": "Price Source", "key": "source" }, { "header": "Currency", "key": "currency" },
+      { "header": "Supplier", "key": "supplier" }, { "header": "Source Region", "key": "region" }, { "header": "Mfg Method", "key": "method" },
+      { "header": "Material", "key": "material" }, { "header": "Complexity", "key": "cx" }, { "header": "Lead Time (wk)", "key": "leadTime" },
+      { "header": "Weight (kg)", "key": "weight" }
+    ],
+    "toConfirm": [
+      { "header": "Tool Cost", "suggestedKey": "tooling", "note": "Closest to Tooling" },
+      { "header": "Cavities / Faces", "suggestedKey": "toolingFaces", "note": "Closest to Tooling faces" },
+      { "header": "Part Volume", "suggestedKey": "volume", "note": "Closest to Volume" },
+      { "header": "MY", "suggestedKey": "modelYear", "note": "Closest to Model year" },
+      { "header": "Program MY Rev", "suggestedKey": "programMy", "note": "Closest to Program MY" }
+    ],
+    "custom": [
+      { "header": "Buyer", "values": ["A. Novak", "J. Lindqvist", "M. Okafor"] },
+      { "header": "Commodity Code", "values": ["MECH-CAST", "MECH-MACH", "ELEC-SENS", "THRM-HX"] },
+      { "header": "Plant Code", "values": ["P-101", "P-204", "P-310"] }
+    ]
+  },
+  "referenceBodies": [
+    { "id": "REF-ENV-01", "name": "Envelope reference body", "subassembly": "Cylinder Block & Bottom End" },
+    { "id": "REF-DTM-02", "name": "Mounting datum plane", "subassembly": "Turbocharger System" }
+  ],
+  "failedLineId": "BOML-0148",
+  "searchFailedReason": "Part body unreadable in the parsed assembly. Re-run the search for this line."
+}

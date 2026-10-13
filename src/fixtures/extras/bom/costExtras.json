@@ -1,0 +1,40 @@
+{
+  "note": "The dataset's cost_estimates carry 3 free-text lines per part. These extras re-express the same totals as the six canonical cost lines (Material, Machining, Setup and tooling, Finishing, Overhead and margin, Logistics and duty), add per-line confidence and the trace parameters. Totals equal the dataset's three-line sum.",
+  "parts": {
+    "TC-404-C": {
+      "amounts": [42.1, 63.8, 27.5, 9.4, 16.9, 8.3],
+      "confidence": [84, 76, 62, 70, 82, 90],
+      "datasetLines": "Material 42.10 · Casting & machining 98.40 · Tooling amortization 27.50",
+      "params": { "massKg": 3.1, "materialSpec": "Ni-resist cast iron", "materialPricePerKg": 8.6, "scrapPct": 11, "cycleMin": 21, "machineRate": "€58/h", "yieldPct": 91, "toolingCost": 412000, "lifetimeVolume": 150000, "surfaceDm2": 9.4, "ohPct": 14, "freight": 3.1, "dutyPct": 2.5, "plant": "Martinrea Vaughan", "faces": "6 machined faces, 4 tapped holes, 2 core pulls" },
+      "alternates": { "model": "supplier-quoted analog", "supplierIds": ["SUP-004", "SUP-005"] }
+    },
+    "INT-510-C": {
+      "amounts": [52.0, 74.0, 31.0, 9.0, 36.0, 13.0],
+      "confidence": [70, 58, 55, 60, 72, 80],
+      "datasetLines": "Core (brazed aluminum) 88.00 · Cast end tanks 71.00 · Coolant loop integration 56.00",
+      "params": { "massKg": 6.1, "materialSpec": "Aluminum core / cast end tanks", "materialPricePerKg": 5.9, "scrapPct": 9, "cycleMin": 34, "machineRate": "€52/h", "yieldPct": 94, "toolingCost": 360000, "lifetimeVolume": 150000, "surfaceDm2": 38.0, "ohPct": 16, "freight": 3.9, "dutyPct": 2.7, "plant": "Valeo Paris", "faces": "2 cast end tanks, 1 brazed core, 3 coolant ports" },
+      "alternates": { "model": "parametric", "supplierIds": ["SUP-004", "SUP-014"] }
+    },
+    "TC-401-C": {
+      "amounts": [61.0, 66.0, 38.0, 21.0, 66.0, 33.0],
+      "confidence": [94, 88, 82, 80, 90, 96],
+      "datasetLines": "Material 61.00 · Investment casting 158.00 · Finish machining 66.00",
+      "params": { "massKg": 0.44, "materialSpec": "Cast Inconel 713C", "materialPricePerKg": 138.0, "scrapPct": 8, "cycleMin": 26, "machineRate": "€72/h", "yieldPct": 88, "toolingCost": 520000, "lifetimeVolume": 150000, "surfaceDm2": 3.2, "ohPct": 18, "freight": 2.2, "dutyPct": 2.5, "plant": "BorgWarner Indiana", "faces": "12 machined faces, 14 vane blades, 1 bore" },
+      "alternates": { "model": "should-cost", "supplierIds": ["SUP-002", "SUP-003"] }
+    },
+    "EXH-710-C": {
+      "amounts": [38.0, 29.0, 19.0, 8.0, 22.0, 12.0],
+      "confidence": [78, 66, 60, 66, 78, 88],
+      "datasetLines": "Material 38.00 · Investment casting 71.00 · Tooling amortization 19.00",
+      "params": { "massKg": 3.9, "materialSpec": "Cast stainless steel", "materialPricePerKg": 5.1, "scrapPct": 12, "cycleMin": 17, "machineRate": "€55/h", "yieldPct": 90, "toolingCost": 286000, "lifetimeVolume": 150000, "surfaceDm2": 14.0, "ohPct": 15, "freight": 3.4, "dutyPct": 2.5, "plant": "Martinrea Vaughan", "faces": "5 machined faces, 4 flange bolt holes" },
+      "alternates": { "model": "supplier-quoted analog", "supplierIds": ["SUP-004", "SUP-005"] }
+    },
+    "ELEC-925-C": {
+      "amounts": [22.0, 7.0, 2.0, 1.0, 6.0, 3.0],
+      "confidence": [58, 52, 50, 55, 70, 80],
+      "datasetLines": "Thermocouple element 18.00 · Inconel sheath & housing 14.00 · Assembly & calibration 9.00",
+      "params": { "massKg": 0.08, "materialSpec": "Inconel sheath / thermocouple", "materialPricePerKg": 160.0, "scrapPct": 6, "cycleMin": 6, "machineRate": "¥6,200/h", "yieldPct": 97, "toolingCost": 48000, "lifetimeVolume": 150000, "surfaceDm2": 0.4, "ohPct": 12, "freight": 0.6, "dutyPct": 1.5, "plant": "Denso Aichi", "faces": "1 sheath, 1 ceramic insulator, 1 connector" },
+      "alternates": { "model": "should-cost", "supplierIds": ["SUP-008", "SUP-014"] }
+    }
+  }
+}

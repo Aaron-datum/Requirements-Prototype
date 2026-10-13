@@ -76,7 +76,7 @@ export const useBomStore = create<BomState>((set, get) => ({
   retryFailed: () => set({ failedRetried: true, retrying: false }),
   setLastStep: (lastStep) => set({ lastStep }),
   setLastLine: (lastLine) => set({ lastLine }),
-  setCost: (partId, patch) => set((s) => ({ cost: { ...s.cost, [partId]: { current: {}, ...s.cost[partId], ...patch } } })),
+  setCost: (partId, patch) => set((s) => ({ cost: { ...s.cost, [partId]: { ...s.cost[partId], current: s.cost[partId]?.current ?? {}, ...patch } } })),
   reset: () => set(initial()),
 }))
 

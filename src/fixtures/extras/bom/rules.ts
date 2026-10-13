@@ -99,3 +99,6 @@ export const PRICE_DATE = '2026-06'
 
 /** Requirement count scaling: how many extracted requirements are in scope for this BOM (docs/05 D-09). */
 export const EXTRACTED_REQUIREMENTS_FULL = 244
+
+/** Price source as displayed: quote sources read "Cached quote" while SAP is disconnected. */
+export const priceSourceLabel = (raw: string, sapConnected: boolean): string => (!sapConnected && raw === QUOTE_SOURCE_RAW ? CACHED_QUOTE_LABEL : raw)

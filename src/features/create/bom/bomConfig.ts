@@ -13,12 +13,12 @@ export type StepKey = '01-intake' | '02-tree' | '03-review' | '03b-compare' | '0
 export const BOM_STEPS: StepKey[] = ['01-intake', '02-tree', '03-review', '03b-compare', '03d-cost', '04-composition']
 export const isStepKey = (s: string | undefined): s is StepKey => !!s && (BOM_STEPS as string[]).includes(s)
 
-export interface PipelineStepDef { key: string; num: string; label: string; area: 'bom' | 'requirements'; subs?: Array<{ key: StepKey; label: string }> }
+export interface PipelineStepDef { key: string; num: string; label: string; area: 'bom' | 'requirements'; subs?: Array<{ key: StepKey; label: string; num: string }> }
 /** The seven-step Create pipeline. 01 to 04 are built by the BOM area; 05 to 07 link into the requirements area. */
 export const PIPELINE: PipelineStepDef[] = [
   { key: '01-intake', num: '01', label: 'RFQ intake', area: 'bom' },
   { key: '02-tree', num: '02', label: 'Assembly tree', area: 'bom' },
-  { key: '03-review', num: '03', label: 'BOM review', area: 'bom', subs: [{ key: '03b-compare', label: 'Compare parts' }, { key: '03d-cost', label: 'Cost estimate' }] },
+  { key: '03-review', num: '03', label: 'BOM review', area: 'bom', subs: [{ key: '03b-compare', num: '03b', label: 'Compare parts' }, { key: '03d-cost', num: '03d', label: 'Cost estimate' }] },
   { key: '04-composition', num: '04', label: 'Program composition', area: 'bom' },
   { key: '05-mapping', num: '05', label: 'Requirement mapping', area: 'requirements' },
   { key: '06-carryover', num: '06', label: 'Carryover review', area: 'requirements' },

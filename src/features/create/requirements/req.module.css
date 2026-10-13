@@ -58,3 +58,6 @@
 .popWrap { position: relative; display: inline-flex; }
 .pop { position: absolute; z-index: 5; top: 24px; left: 0; width: 260px; background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: var(--radius); padding: var(--gap-3); font-size: var(--text-small); font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--fg-primary); }
 .laneLabel { font: var(--fw-medium) var(--text-badge)/var(--lh-badge) var(--font-ui); text-transform: uppercase; letter-spacing: .4px; color: var(--fg-muted); }
+.tiles3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-2); }
+.tiles3 .tile { padding: var(--gap-2) var(--gap-3); }
+.select { height: var(--input-height); border: 1px solid var(--border-strong); border-radius: var(--radius); background: var(--bg-card); color: var(--fg-primary); font: var(--fw-regular) var(--text-small)/var(--lh-small) var(--font-ui); padding: 0 var(--gap-2); max-width: 280px; }

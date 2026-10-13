@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import type { PlanService } from '../../../domain/types'
 import { useConfig } from '../../../config/useConfig'
 import { KEYS, type EvidenceProvenance, type ReqView } from '../../../fixtures/derive-requirements'
 import { evidenceStore } from '../../../services/stubs/evidence'
@@ -19,7 +20,6 @@ export function RecordedNote() {
  */
 export function useReqActions() {
   const audit = useService('audit')
-  const plan = useService('plan')
   const config = useConfig()
   const by = config.currentUser.name
   return useMemo(() => {
@@ -57,14 +57,14 @@ export function useReqActions() {
         nodeIds.forEach((id) => { set(KEYS.flag(id), scenario); audit.record({ by, action: 'Flagged for re-review', subject: { type: 'impact-node', id }, note: `Impact of ${anchor}: ${scenarioLabel}` }) })
         toastSuccess(`${nodeIds.length} item${nodeIds.length === 1 ? '' : 's'} flagged for re-review`)
       },
-      async approvePlan(name: string) {
-        const { planId } = await plan.create({ name, owners: {} })
+      async approvePlan(name: string, create: PlanService['create']) {
+        const { planId } = await create({ name, owners: {} })
         set(KEYS.plan, JSON.stringify({ planId, name }))
         audit.record({ by, action: `Approved and created ${config.planLabel}`, subject: { type: 'plan', id: planId }, note: name })
         toastSuccess(`${config.planLabel} created: ${planId}`)
         return planId
       },
     }
-  }, [audit, plan, by, config.planLabel])
+  }, [audit, by, config.planLabel])
 }
 export type ReqActions = ReturnType<typeof useReqActions>

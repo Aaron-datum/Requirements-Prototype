@@ -222,7 +222,7 @@ function EvidenceSection({ r, m }: { r: ReqView; m: ReqModel }) {
             <input ref={file} type="file" hidden onChange={(e) => { const f = e.target.files?.[0]; if (f) { const rec = act.upload(r.req_id, f.name); setPicked(rec.id) } e.target.value = '' }} data-testid="upload-input" />
             <Button onClick={() => file.current?.click()}><Upload size={14} aria-hidden /> Upload Proof</Button>
           </div>
-          <span className="muted">Records you add or upload are tagged as asserted, not computed, until a reviewer verifies them.</span>
+          <span className="muted">Added records are tagged asserted until verified.</span>
         </Stub>
       </Section>
       {!r.carryDecision && (

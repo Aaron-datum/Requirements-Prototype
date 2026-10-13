@@ -98,7 +98,7 @@ export function MappingScreen() {
           </Stub>
         )}
         <SidePanel defaultWidth={360} title={selected ? selected.req_id : 'Requirement'} subtitle={selected?.linked_part_id} badge={selected ? <TextBadge state={selected.text_status} /> : undefined}
-          onClose={selected ? () => setSel(null) : undefined} empty={selected ? undefined : <>Select a requirement to see the clause, why this test was proposed and the candidate tests.</>}
+          onClose={selected ? () => setSel(null) : undefined} empty={selected ? undefined : <>Select a requirement to see its clause and candidate tests.</>}
           footer={selected ? <MappingFooter r={selected} /> : undefined}>
           {selected && <MappingPanel r={selected} cands={cands?.[selected.req_id] ?? []} />}
         </SidePanel>
@@ -132,7 +132,7 @@ function MappingPanel({ r, cands }: { r: ReqView; cands: TestCandidateRow[] }) {
     <>
       <ClauseSection r={r} />
       <DeltaLine r={r} />
-      {r.dangerous && <div className={`${s.banner} ${s.bannerFail}`}>Driver changed: the text is Unchanged but what it traces to has Changed. Review it individually.</div>}
+      {r.rowDanger && <div className={`${s.banner} ${s.bannerFail}`}>Driver changed. Text is unchanged; what it traces to has changed.</div>}
       <BomLineSection r={r} />
       <Section title="Why this test" right={<Badge tone="outline" title="The confidence and the candidate percent are the same figure">AI-inferred · <span className="data">{conf != null ? `${conf}%` : 'n/a'}</span></Badge>}>
         <div className="row wrap">{chosen?.tags.map((t) => <Badge key={t} tone="outline">{t}</Badge>)}</div>

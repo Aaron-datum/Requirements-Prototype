@@ -110,7 +110,7 @@ function PartsTab({ row, modality }: { row: ResultRowX; modality: SearchModality
 }
 
 export function MeasurementsTable({ row, state, onManual }: { row: ResultRowX; state: SearchState; onManual: () => void }) {
-  if (!state.measurements.length) return <EmptyState title="No measurements captured">Add up to five measurements in Define. Each one becomes a column here.</EmptyState>
+  if (!state.measurements.length) return <EmptyState title="No measurements captured">Add up to five measurements in Define.</EmptyState>
   return (
     <table className={s.mini} data-testid="measurements-table">
       <thead><tr><th>Measurement</th><th className={s.num}>Source</th><th className={s.num}>Candidate</th><th className={s.num}>Deviation</th></tr></thead>

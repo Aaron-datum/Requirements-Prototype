@@ -162,7 +162,7 @@ export function CostEstimate() {
                 <div className="row wrap"><span className="text-label-caps grow">Estimate · {est.family.label}{est.basisPartId ? ` · ${est.basisPartId}` : ''}</span><MatchQuality quality={{ dataType: { raw: row.certainty }, confidence: { score: est.landedConfidence, why: [`Range rule: ±${est.rangePct}% at confidence ${est.landedConfidence}`] } }} /></div>
                 <div className="row wrap" style={{ alignItems: 'baseline' }}><span className={s.statN} data-testid="landed">{money(est.landed)}</span><span className="data muted" data-testid="range">{money(est.low)} – {money(est.high)} · ±{est.rangePct}%</span></div>
                 <div className={s.stack} role="img" aria-label="Share of landed cost by line">{est.lines.map((l, i) => <i key={l.key} data-on={i === selLine} style={{ flex: l.amount }} title={`${l.line} ${share(est, l.amount)}%`} />)}</div>
-                {!est.seeded && <span className="muted row"><CircleAlert size={14} aria-hidden />Derived estimate: no routing record is seeded for this part, so lines are allocated from the BOM price.</span>}
+                {!est.seeded && <span className="muted row"><CircleAlert size={14} aria-hidden />Derived from BOM price. No routing record.</span>}
                 {est.datasetLines && <span className="muted">Re-expressed from the dataset lines: {est.datasetLines}.{est.varianceToBomPct != null ? ` BOM unit price ${money(est.bomUnitPrice)}; the two differ by ${Math.abs(est.varianceToBomPct)}%.` : ''}</span>}
               </div>
               <table className={s.tbl} data-testid="cost-lines"><thead><tr><th>Cost line</th><th className="num" style={{ textAlign: 'right' }}>Cost</th><th className="num" style={{ textAlign: 'right' }}>Share</th><th>Confidence</th></tr></thead><tbody>
@@ -217,7 +217,7 @@ export function CostEstimate() {
         )}
 
         <section className={s.card} ref={sourcingRef} id="sourcing" aria-label="Sourcing options" data-testid="sourcing">
-          <div className="row wrap"><h2 className="text-section">Sourcing options</h2><span className="muted">Other suppliers for this part. Select a row to preview the switch. Read-only.</span></div>
+          <div className="row wrap"><h2 className="text-section">Sourcing options</h2><span className="muted">Other suppliers. Select a row to preview.</span></div>
           <div className={s.tableWrap}>
             <table className={s.tbl}><thead><tr><th>Supplier</th><th>Region</th><th className="num" style={{ textAlign: 'right' }}>Landed cost</th><th className="num" style={{ textAlign: 'right' }}>Lead</th><th>Price source</th><th>Certainty</th></tr></thead><tbody>
               {opts.map((o) => (
@@ -251,7 +251,7 @@ export function CostEstimate() {
       {features && (
         <Modal title={`Detected features · ${line.line}`} onClose={() => setFeatures(false)} footer={<Button onClick={() => setFeatures(false)}>Close</Button>}>
           <ul style={{ margin: 0, paddingLeft: 'var(--gap-4)' }}>{est.features.map((f) => <li key={f}>{f}</li>)}</ul>
-          <p className="muted">Feature values are illustrative lookups. Real feature recognition comes from the CAD pipeline.</p>
+          <p className="muted">Feature values are illustrative.</p>
         </Modal>
       )}
     </div>

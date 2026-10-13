@@ -53,7 +53,7 @@ export function Files() {
 
   const columns = useMemo<Array<ColumnDef<SearchFile>>>(() => [
     { key: 'thumb', label: 'Preview', pinned: true, get: () => '', filter: 'none', width: 64, render: (r) => <FileThumb file={r} /> },
-    { key: 'name', label: 'File Name', pinned: true, get: (r) => r.name, filter: 'none', render: (r) => <span className={s.fname}>{r.name}</span> },
+    { key: 'name', label: 'File Name', pinned: true, get: (r) => r.name, filter: 'none', render: (r) => <span className={s.fname} title={r.name}>{r.name}</span> },
     { key: 'modified', label: 'Modified', get: (r) => r.updated, filter: 'none', render: (r) => <span className="data">{fmtDate(r.updated)}</span> },
     { key: 'synced', label: 'Last Synced', get: (r) => r.lastSynced, filter: 'none', render: (r) => <span className="data">{fmtDate(r.lastSynced)}</span> },
     ...schemaColumns<SearchFile>(config, (r) => r.plm),

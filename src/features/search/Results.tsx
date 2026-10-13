@@ -71,14 +71,14 @@ export function Results() {
       { key: 'name', label: 'File Name', group: 'File Metadata', pinned: true, filter: 'text-search', width: 300, get: (r) => r.name,
         render: (r) => {
           const f = fileById[r.fileId]
-          return <span className={s.nameCell}>{f && <FileThumb file={f} />}<span className="col" style={{ gap: 0 }}><span className={s.fname}>{r.name}</span>
+          return <span className={s.nameCell}>{f && <FileThumb file={f} />}<span className="col" style={{ gap: 0 }}><span className={s.fname} title={r.name}>{r.name}</span>
             <span className={s.sub}>{r.isSourcePart && <Badge tone="info">Source Part</Badge>} {r.fileKind === 'assembly' ? `Assembly · ${f ? activeLeaves(f).length : 0} parts` : f ? `${f.partNumber} · Rev ${f.revision}` : ''}</span></span></span>
         } },
       { key: 'source', label: 'Source', group: 'File Metadata', filter: 'multi-tag', get: (r) => r.source, render: (r) => <span className={s.nowrap}>{r.source}</span> },
       { key: 'created', label: 'Created', group: 'File Metadata', filter: 'date-preset', get: (r) => r.created, render: (r) => <span className={`data ${s.nowrap}`}>{fmtDate(r.created)}</span> },
       { key: 'lastEdited', label: 'Last Edited', group: 'File Metadata', filter: 'date-preset', get: (r) => r.lastEdited, render: (r) => <span className={`data ${s.nowrap}`}>{fmtDate(r.lastEdited)}</span> },
     ]
-    if (st.modality === 'part-in-assembly-to-part') cols.push({ key: 'parent', label: 'Parent assembly', group: 'File Metadata', filter: 'multi-search', get: (r) => (r.parentAssemblyId ? fileById[r.parentAssemblyId]?.name : undefined), render: (r) => <span className={s.fname}>{r.parentAssemblyId ? fileById[r.parentAssemblyId]?.name : '—'}</span> })
+    if (st.modality === 'part-in-assembly-to-part') cols.push({ key: 'parent', label: 'Parent assembly', group: 'File Metadata', filter: 'multi-search', get: (r) => (r.parentAssemblyId ? fileById[r.parentAssemblyId]?.name : undefined), render: (r) => <span className={s.fname} title={r.parentAssemblyId ? fileById[r.parentAssemblyId]?.name : undefined}>{r.parentAssemblyId ? fileById[r.parentAssemblyId]?.name : '—'}</span> })
     cols.push(
       { key: 'similarity', label: 'Geometric Similarity', group: 'Match Quality', filter: 'range-units', unit: '%', get: (r) => r.quality.similarity?.percent ?? null,
         render: (r) => r.isSourcePart ? <span className={s.qcell}><Badge tone="info">Source Part</Badge><span className="data muted">0%</span></span> : (

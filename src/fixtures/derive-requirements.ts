@@ -198,7 +198,8 @@ export function buildReqViews(th: Pick<Thresholds, 'autoAcceptAt' | 'testMatchFl
       proposedTestId: r.link.test_id, chosenTestId: chosen, chosenConfidence,
       carryDecision: carry, transferConfirmed: d.transfer[r.req_id] ?? null, openCarry,
       conformance, testStatus, flags,
-      rowDanger: r.dangerous && !confirmed,
+      // Alert tone only while it is an open action item: accepting or rejecting the mapping (or confirming the driver) clears it.
+      rowDanger: r.dangerous && !confirmed && mapping !== 'accepted' && mapping !== 'rejected',
     }
   })
 }

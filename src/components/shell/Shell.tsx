@@ -1,8 +1,9 @@
-import { Bell, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, CircleHelp, FolderOpen, Folder, Layers, MessageSquare, Plus, Search, Settings, Shield, Copy, GitBranch, Boxes, LayoutGrid, RefreshCw, Upload, User } from 'lucide-react'
+import { Bell, ChevronDown, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, CircleHelp, FolderOpen, Folder, Layers, MessageSquare, Plus, Search, Settings, Shield, Copy, GitBranch, Boxes, LayoutGrid, RefreshCw, Upload, User } from 'lucide-react'
 import { useEffect, useState, type ReactNode } from 'react'
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { useConfig } from '../../config/useConfig'
 import { useService } from '../../services/context'
+import { useAppStore } from '../../stores/appStore'
 import { useCrumbStore } from '../../stores/crumbStore'
 import { useLedger } from '../../stores/ledgerStore'
 import { useProjectStore } from '../../stores/projectStore'
@@ -56,6 +57,34 @@ function Item({ to, icon, label, collapsed, kid, count, end }: { to: string; ico
     <NavLink to={to} end={end} title={collapsed ? label : undefined} className={() => `${s.item} ${isOn(to, loc) ? s.itemOn : ''} ${kid ? s.itemKid : ''}`}>
       {icon}<span className={`grow ${s.lbl}`}>{label}</span>{count != null && !collapsed && <span className={s.navCount}>{count}</span>}
     </NavLink>
+  )
+}
+
+const SEARCH_ITEMS: [string, string][] = [
+  ['/search/files?modality=assembly-to-assembly', 'Assembly Search'], ['/search/files?modality=part-to-part', 'Part Search'],
+  ['/search/files?modality=part-to-part&mode=duplicates', 'Find Duplicates'], ['/search/files?modality=part-to-part&mode=revisions', 'Find Revisions'], ['/catalogue', 'Parts Catalogue'],
+]
+const CREATE_ITEMS: [string, string][] = [['/create/bom', 'BOM Creation'], ['/create/coming/warranty', 'Warranty Analysis'], ['/create/coming/replacement', 'Part Replacement']]
+
+/** Global top nav, shown instead of the left nav when Settings > Navigation is "Top bar only". */
+export function TopNav() {
+  const projects = useProjectStore((p) => p.projects)
+  const [open, setOpen] = useState<string | null>(null)
+  const loc = useLocation()
+  useEffect(() => setOpen(null), [loc.pathname, loc.search])
+  const groups: [string, [string, string][]][] = [
+    ['Search', SEARCH_ITEMS], ['Create', CREATE_ITEMS],
+    ['Projects', [['/projects', 'All projects'], ...projects.map((p): [string, string] => [`/projects/${p.id}`, p.name])]],
+  ]
+  return (
+    <nav className={s.topNav} aria-label="Global" data-testid="top-nav">
+      {groups.map(([label, items]) => (
+        <span key={label} className={s.menuWrap}>
+          <button type="button" className={`${s.topLink} ${items.some(([to]) => isOn(to, loc)) ? s.topLinkOn : ''}`} aria-expanded={open === label} aria-haspopup="menu" onClick={() => setOpen(open === label ? null : label)}>{label}<ChevronDown size={14} aria-hidden /></button>
+          {open === label && <div className={s.pop} role="menu" aria-label={label}>{items.map(([to, text]) => <Link key={to} to={to} role="menuitem" className={s.item}>{text}</Link>)}</div>}
+        </span>
+      ))}
+    </nav>
   )
 }
 
@@ -136,22 +165,24 @@ export function TopBar({ onFeedback }: { onFeedback: () => void }) {
   const [menu, setMenu] = useState<'user' | 'bell' | 'help' | null>(null)
   const audit = useLedger((l) => l.audit)
   const { pathname } = useLocation()
+  const navMode = useAppStore((a) => a.navMode)
   useEffect(() => setMenu(null), [pathname])
   return (
     <header className={s.top}>
       <Link to="/" className={s.brand} aria-label="Datum home"><img src="/datum-icon.png" alt="" />Datum</Link>
       {config.tenantLabel && <span className={s.tenant} data-testid="tenant-badge">{config.tenantLabel}</span>}
+      {navMode === 'topbar' && <TopNav />}
       <span className="right row">
         <Button size="sm" onClick={onFeedback}><MessageSquare size={14} aria-hidden />Feedback</Button>
         <span className={s.menuWrap}>
           <IconButton label="Help" onClick={() => setMenu(menu === 'help' ? null : 'help')}><CircleHelp size={16} /></IconButton>
-          {menu === 'help' && <div className={s.pop} role="dialog" aria-label="Help"><b>Prototype help</b><span className="secondary">Everything here runs on fake data. Simulated parts are listed at <Link to="/dev/stubs">/dev/stubs</Link>; add <span className="data">?showStubs=1</span> to outline them.</span></div>}
+          {menu === 'help' && <div className={s.pop} role="dialog" aria-label="Help"><b>Prototype help</b><span className="secondary">All data is fake. Simulated parts: <Link to="/dev/stubs">/dev/stubs</Link>; add <span className="data">?showStubs=1</span> to outline them.</span></div>}
         </span>
         <span className={s.menuWrap}>
           <IconButton label="Notifications" onClick={() => setMenu(menu === 'bell' ? null : 'bell')}><Bell size={16} /></IconButton>
           {menu === 'bell' && (
             <div className={s.pop} role="dialog" aria-label="Notifications"><b>Notifications</b>
-              {audit.length ? audit.slice(0, 5).map((e) => <AuditEntryRow key={e.id} entry={e} />) : <span className="muted">Nothing new. Notifications have no service behind them in the prototype.</span>}
+              {audit.length ? audit.slice(0, 5).map((e) => <AuditEntryRow key={e.id} entry={e} />) : <span className="muted">No new notifications.</span>}
             </div>)}
         </span>
         <span className={s.menuWrap}>
@@ -172,12 +203,13 @@ export function TopBar({ onFeedback }: { onFeedback: () => void }) {
 export function AppShell() {
   const [feedback, setFeedback] = useState(false)
   useSearchShortcut()
+  const navMode = useAppStore((a) => a.navMode)
   return (
     <div className="app-frame">
       <TopBar onFeedback={() => setFeedback(true)} />
       <BreadcrumbStrip />
       <div className={s.body}>
-        <LeftNav />
+        {navMode === 'sidebar' && <LeftNav />}
         <main className={s.main}><Outlet /></main>
       </div>
       {feedback && <FeedbackModal onClose={() => setFeedback(false)} />}

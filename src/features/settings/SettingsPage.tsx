@@ -35,17 +35,20 @@ export function SettingsPage() {
   return (
     <div className={s.page}>
       <div className={s.wrap}>
-        <div><h1 className="text-page">System</h1><p className="secondary">Appearance, table defaults, schema and 3D CAD navigation controls. Changes apply across the whole app.</p></div>
+        <div><h1 className="text-page">System</h1><p className="secondary">Appearance, schema and 3D CAD controls.</p></div>
 
-        <section className={s.card} aria-label="Color theme"><h2 className="text-section">Color theme</h2><p className="muted">Minimum contrast ratios are maintained across all modes.</p>
+        <section className={s.card} aria-label="Color theme"><h2 className="text-section">Color theme</h2><p className="muted">Contrast stays accessible in every mode.</p>
           <Seg value={a.theme} onChange={(theme) => a.set({ theme })} label="Color theme" options={[['white', 'White'], ['tan', 'Tan'], ['dark', 'Dark']]} /></section>
 
-        <section className={s.card} aria-label="Info density"><h2 className="text-section">Info density</h2><p className="muted">Scales text, controls and spacing across the whole app, and sets row height in every table. Pick what suits your eyesight and monitor.</p>
+        <section className={s.card} aria-label="Info density"><h2 className="text-section">Info density</h2><p className="muted">Scales text, controls and table rows.</p>
           <Seg value={a.density} onChange={(density) => a.set({ density })} label="Info density" options={[['comfy', 'Comfortable'], ['default', 'Default'], ['compact', 'Compact']]} />
           <span className="data muted">{DENSITY_META[a.density]}</span></section>
 
+        <section className={s.card} aria-label="Navigation"><h2 className="text-section">Navigation</h2><p className="muted">Left sidebar, or a top bar with menus only.</p>
+          <Seg value={a.navMode} onChange={(navMode) => a.set({ navMode })} label="Navigation" options={[['sidebar', 'Sidebar'], ['topbar', 'Top bar only']]} /></section>
+
         <section className={s.card} aria-label="Schema"><h2 className="text-section">Data schema (tenant profile)</h2>
-          <p className="muted">Field names, groups, status vocabularies and tones come from configuration. Switching the schema changes filter sidebars, columns, detail tabs and status tones with no code change.</p>
+          <p className="muted">Changes fields, filters, columns and status tones.</p>
           <Seg value={a.tenantId} onChange={(tenantId) => a.set({ tenantId })} label="Schema" options={Object.values(TENANTS).map((t): [string, string] => [t.id, t.label])} />
           <div className="row wrap"><Badge tone="outline">{config.schema.fields.length} fields</Badge><Badge tone="outline">Requirement table label: {config.requirementTableLabel}</Badge>{config.tenantLabel && <Badge tone="outline">Tenant badge: {config.tenantLabel}</Badge>}</div></section>
 
@@ -53,7 +56,7 @@ export function SettingsPage() {
           <Seg value={a.planLabel} onChange={(planLabel) => a.set({ planLabel })} label="Plan label" options={['Test plan', 'ADV P&R']} /></section>
 
         <section className={s.card} aria-label="3D CAD controls">
-          <div className="row wrap" style={{ alignItems: 'flex-start' }}><div className="grow"><h2 className="text-section">3D CAD controls</h2><p className="muted">Mouse + modifier bindings for the CAD viewer. Presets load standard schemes; Custom is fully configurable. The viewer is a placeholder in the prototype, so these only record your preference.</p></div>
+          <div className="row wrap" style={{ alignItems: 'flex-start' }}><div className="grow"><h2 className="text-section">3D CAD controls</h2><p className="muted">Mouse and modifier bindings for the CAD viewer.</p></div>
             <Seg value={preset} onChange={setPreset} label="CAD preset" options={[['catia', 'CATIA'], ['nx', 'NX'], ['custom', 'Custom']]} /></div>
           {conflict && <div className={s.conflict} role="alert"><b>Conflict detected.</b> Two actions share the same binding. Resolve before saving.</div>}
           <div className={s.grid}>

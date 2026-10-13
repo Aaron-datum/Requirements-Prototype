@@ -95,7 +95,7 @@ export function Compare() {
                 <td data-match={match}><FieldValueView def={f} value={b} />{match && <span className={s.match} title="Matches the search part"> <Check size={12} aria-label="Match" /></span>}</td></tr>)
             })}</tbody></table>
         )}
-        {tab === 'measurements' && (st.measurements.length === 0 ? <EmptyState title="No measurements captured">Add measurements in Define to compare them here.</EmptyState> : (
+        {tab === 'measurements' && (st.measurements.length === 0 ? <EmptyState title="No measurements captured">Add measurements in Define.</EmptyState> : (
           <Stub id="matching-engine" note="Candidate values derived deterministically">
             <div className="col">{st.measurements.map((m) => { const t = measurementTypeByKey[m.typeKey]; const c = cand(m); return (
               <div key={m.id} className={s.mcard}><b>{t?.label ?? m.typeKey}</b>
@@ -124,16 +124,6 @@ export function Compare() {
             <Stub key={a.id} id="audit-trail" note="Decision is recorded in the ledger"><Button size="sm" primary onClick={() => { const to = applyDecisionAction(ctx, a, r.name, { audit, config }); toastSuccess(`${a.label}: ${r.name}`); nav(to) }}>{a.label}</Button></Stub>
           ))}
         </div>
-        {view === 'alignment' && (
-          <div className={s.pickBar}>
-            <span className="muted grow">Pick a face on each part to define a correspondence, then align.</span>
-            <label className={s.lab}><span>Query face</span><select className={s.select} value={qFace} aria-label="Query face" onChange={(e) => { setQFace(e.target.value); setOverride(null) }}><option value="">Click a face</option>{faces(q).map((g) => <option key={g.ref} value={g.ref}>{g.label}</option>)}</select></label>
-            <label className={s.lab}><span>Result face</span><select className={s.select} value={rFace} aria-label="Result face" onChange={(e) => { setRFace(e.target.value); setOverride(null) }}><option value="">Click a face</option>{faces(r).map((g) => <option key={g.ref} value={g.ref}>{g.label}</option>)}</select></label>
-            <div className={s.lab}><span>Constraint{inferred ? ` · suggested: ${CONSTRAINT_LABEL[inferred]}` : ''}</span>
-              <Seg value={chosen ?? 'coplanar'} onChange={setOverride} label="Constraint type" options={TYPES.map((t): [ConstraintType, string] => [t, CONSTRAINT_LABEL[t]])} /></div>
-            <Button disabled={!chosen} onClick={add}>Add constraint</Button>
-          </div>
-        )}
         <div className={s.stageBody}>
           {view !== 'overlay' && (
             <>
@@ -149,7 +139,14 @@ export function Compare() {
             <aside className={s.rightPanel} aria-label="Alignment and overlay">
               <div className={s.rbody}>
                 <b>Constraints</b>
-                {constraints.length === 0 && <span className="muted">No constraints yet. Pick a face on each part and add one.</span>}
+                <div className={s.picker}>
+                  <label className={s.lab}><span>Query face</span><select className={s.select} value={qFace} aria-label="Query face" onChange={(e) => { setQFace(e.target.value); setOverride(null) }}><option value="">Select face</option>{faces(q).map((g) => <option key={g.ref} value={g.ref}>{g.label}</option>)}</select></label>
+                  <label className={s.lab}><span>Result face</span><select className={s.select} value={rFace} aria-label="Result face" onChange={(e) => { setRFace(e.target.value); setOverride(null) }}><option value="">Select face</option>{faces(r).map((g) => <option key={g.ref} value={g.ref}>{g.label}</option>)}</select></label>
+                  <label className={s.lab}><span>Type{inferred ? ` · suggested ${CONSTRAINT_LABEL[inferred]}` : ''}</span>
+                    <select className={s.select} value={chosen ?? 'coplanar'} aria-label="Constraint type" onChange={(e) => setOverride(e.target.value as ConstraintType)}>{TYPES.map((t) => <option key={t} value={t}>{CONSTRAINT_LABEL[t]}</option>)}</select></label>
+                  <Button disabled={!chosen} onClick={add}>Add constraint</Button>
+                </div>
+                {constraints.length === 0 && <span className="muted">No constraints yet.</span>}
                 {constraints.map((c) => (
                   <div key={c.id} className={s.constraint} data-testid="constraint"><span className="grow"><b>{CONSTRAINT_LABEL[c.type]}</b><br /><span className="muted">{c.a} ↔ {c.b}</span></span>
                     <IconButton label={`Remove ${CONSTRAINT_LABEL[c.type]} constraint`} onClick={() => setConstraints(constraints.filter((x) => x.id !== c.id))}><Trash2 size={14} /></IconButton></div>
@@ -157,7 +154,7 @@ export function Compare() {
               </div>
               <div className={s.rfoot}>
                 <span className={s.dof} data-testid="dof">{dof} degree{dof === 1 ? '' : 's'} of freedom remaining</span>
-                {dof > 0 && <span className={s.warnBox} role="status"><AlertTriangle size={14} aria-hidden />Under-constrained. The overlap is still computed and may be inaccurate.</span>}
+                {dof > 0 && <span className={s.warnBox} role="status"><AlertTriangle size={14} aria-hidden />Under-constrained. Overlap may be inaccurate.</span>}
                 <Stub id="cad-viewer" note="Alignment solver is a placeholder"><Button primary onClick={() => setView('overlay')}>Align and compute overlap</Button></Stub>
               </div>
             </aside>
@@ -179,7 +176,6 @@ export function Compare() {
                     <div className={s.stat}><span className="grow">Max deviation</span><span className="data">{overlap.maxDeviationMm} mm</span></div>
                     <div className={s.stat}><span className="grow">Aligned by</span><span className="data" data-testid="aligned-by">{constraints.length} constraint{constraints.length === 1 ? '' : 's'}</span></div>
                     {dof > 0 && <span className={s.warnBox}><AlertTriangle size={14} aria-hidden />{dof} degree{dof === 1 ? '' : 's'} of freedom remained unconstrained.</span>}
-                    <span className="muted">Colored regions are always paired with these labeled readouts.</span>
                   </div>
                 </Stub>
               </div>

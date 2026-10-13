@@ -140,7 +140,7 @@ describe('06b impact map', () => {
     renderWithApp(<ImpactScreen />, 'company-a', '/?req=REC-20002&hops=2')
     fireEvent.click(screen.getByRole('button', { name: /Flag 1 for Re-review/ }))
     expect(useLedger.getState().audit.filter((a) => a.action === 'Flagged for re-review')).toHaveLength(1)
-    expect(screen.getByText(/No owner is notified/)).toBeInTheDocument()
+    expect(screen.getByText(/recorded in the audit trail only/)).toBeInTheDocument()
     expect(screen.queryByText(/owners notified/i)).toBeNull()
   })
 })

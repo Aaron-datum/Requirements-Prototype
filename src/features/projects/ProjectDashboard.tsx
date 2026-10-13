@@ -142,7 +142,7 @@ export function ProjectDashboard({ scope }: { scope: 'project' | 'output' }) {
           <VizSlot rows={rows} hasData={hasData} outputGroup={output?.group} />
 
           <ActionTable rows={sorted} scopeLabel={output ? outputName(output, planLabel) : project.name} />
-          <span className="muted">Due dates are inherited from the scope. Severity and owner come from the dataset (D-16).</span>
+          <span className="muted">Due dates follow the scope.</span>
         </>
       )}
     </div>

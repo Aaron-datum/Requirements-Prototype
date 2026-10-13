@@ -121,7 +121,7 @@ export function CompareView() {
   if (parts.length < 2) {
     return (
       <div className={s.cmp}>
-        <EmptyState title="Select at least two parts to compare" action={<Link to={from ?? catalogueUrl(`/catalogue/${root}`, params)}>Back to Bolts</Link>}>Compare needs two or more parts. Tick rows in the results table, then choose Compare.</EmptyState>
+        <EmptyState title="Select at least two parts to compare" action={<Link to={from ?? catalogueUrl(`/catalogue/${root}`, params)}>Back to Bolts</Link>}>Select two or more parts to compare.</EmptyState>
       </div>
     )
   }
@@ -142,7 +142,7 @@ export function CompareView() {
           ? <DualPane a={parts[0]!} b={parts[1]!} rows={shown} />
           : <AttributeTable parts={parts} rows={shown} onAdd={() => setPicking(true)} onRemove={(pn) => setParts(ids.filter((x) => x !== pn))} />}
       </Stub>
-      {shown.length === 0 && <EmptyState title="No differing fields">These parts match on every counted field.</EmptyState>}
+      {shown.length === 0 && <EmptyState title="No differing fields">These parts match on all fields.</EmptyState>}
       <div className={s.legend}>
         <span><Marker match /> Matching value</span><span><Marker match={false} /> Differs</span>
         <span className="muted">Not counted: {adminLabels}.</span>

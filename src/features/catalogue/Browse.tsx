@@ -78,7 +78,7 @@ export function CatalogueLanding() {
   }
   return (
     <CatalogueFrame selectedId={null}>
-      <div><h1 className="text-display-sm">Parts Catalogue</h1><p className={s.lead}>Browse what the company already has by category and spec. No CAD upload needed.</p></div>
+      <div><h1 className="text-display-sm">Parts Catalogue</h1><p className={s.lead}>Browse existing parts by category and spec.</p></div>
       <div className="col" style={{ gap: 'var(--gap-2)' }}>
         <span className={s.cap}>Search Catalogue</span>
         <CatalogueSearch big label="Search Catalogue" placeholder="Part number, description, or spec, e.g. M16 hex stainless" onSubmit={search} />

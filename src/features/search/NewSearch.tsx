@@ -33,7 +33,7 @@ export function NewSearch() {
         <div className="col" style={{ gap: 'var(--gap-2)' }}>
           <span className={`text-label-caps ${s.eyebrow}`}>New Search</span>
           <h1 className="text-display-md">What are you searching for?</h1>
-          <p className="secondary" style={{ maxWidth: 640 }}>Pick the modality that matches your input file and the kind of result you want. You can refine the results with filters and columns at any time.</p>
+          <p className="secondary" style={{ maxWidth: 640 }}>Choose what you are searching with and for.</p>
         </div>
         <div className={s.cards} data-testid="modality-cards">
           {MODALITIES.map((m) => { const I = ICON[m.id]; return (
@@ -47,7 +47,7 @@ export function NewSearch() {
           <Link to="/catalogue" className={s.card} style={{ gridColumn: '1 / -1', textDecoration: 'none' }}>
             <span className={s.cardTop}><span className={s.tile}><LayoutGrid size={20} aria-hidden /></span><span className="text-label-caps muted data">Search entry</span></span>
             <span className={s.cardTitle}>Parts Catalogue</span>
-            <span className="secondary">Browse what the company already has by category and spec. No CAD upload needed.</span>
+            <span className="secondary">Browse existing parts by category and spec.</span>
           </Link>
         </div>
         <div className="col" style={{ gap: 'var(--gap-3)' }}>

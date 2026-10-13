@@ -88,7 +88,7 @@ export function Intake() {
               )
             })}
           </div>
-          {Object.values(sources).some((v) => v === false) && <span className="muted">A source is off: quote sources now read "Cached quote" and the cost-risk band is wider in BOM review.</span>}
+          {Object.values(sources).some((v) => v === false) && <span className="muted">Source off. Quotes read "Cached quote"; cost-risk band widens.</span>}
         </section>
       </Stub>
 
@@ -138,7 +138,7 @@ export function Intake() {
         <Modal title={`Manage ${managed.label}`} onClose={() => setManage(null)}
           footer={<><Button onClick={() => setManage(null)}>Close</Button>
             <Button primary={sources[managed.id] === false} onClick={() => { toggleSource(managed.id); toastSuccess(sources[managed.id] === false ? `${managed.label} reconnected` : `${managed.label} disconnected`); setManage(null) }}>{sources[managed.id] === false ? 'Reconnect' : 'Disconnect'}</Button></>}>
-          <div className="col"><span>{managed.note}</span><span className="muted">The connector is simulated: only this local state changes.</span></div>
+          <div className="col"><span>{managed.note}</span><span className="muted">Simulated connector.</span></div>
         </Modal>
       )}
     </div>

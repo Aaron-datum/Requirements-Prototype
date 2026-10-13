@@ -93,7 +93,7 @@ export function HomePage() {
         </div>
         <Stub id="dashboard-services" note="Session recents come from the in-memory project store plus seed items">
           <div className={s.stripBody}>
-            {recents.length === 0 && <div className="muted">No recent searches yet. Run your first search and it appears here for the rest of this session.</div>}
+            {recents.length === 0 && <div className="muted">No recent searches.</div>}
             {recents.map((r) => {
               const o = r.outcome ? resolveValue({ vocabularies: [OUTCOME_VOCAB] }, 'recentOutcome', r.outcome) : null
               return (

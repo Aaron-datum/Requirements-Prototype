@@ -66,3 +66,18 @@ test.describe('Phase 0: foundations and kitchen sink', () => {
     expect(await h()).toBeLessThan(comfy)
   })
 })
+
+test.describe('Navigation setting', () => {
+  test('Top bar only hides the left nav and shows global menus; the choice persists', async ({ page }) => {
+    await page.goto('/settings')
+    await expect(page.getByTestId('left-nav')).toBeVisible()
+    await page.getByRole('group', { name: 'Navigation' }).getByRole('button', { name: 'Top bar only' }).click()
+    await expect(page.getByTestId('left-nav')).toHaveCount(0)
+    await page.getByTestId('top-nav').getByRole('button', { name: 'Search' }).click()
+    await page.getByRole('menuitem', { name: 'Part Search' }).click()
+    await expect(page).toHaveURL(/\/search\/files/)
+    await page.reload()
+    await expect(page.getByTestId('left-nav')).toHaveCount(0)
+    await expect(page.getByTestId('top-nav')).toBeVisible()
+  })
+})

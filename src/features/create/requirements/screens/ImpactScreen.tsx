@@ -148,7 +148,7 @@ export function ImpactScreen() {
             <div className={s.tile}><span className="text-label-caps">Programs</span><span className={s.stat} data-testid="count-programs">{programs.size}</span></div>
           </div>
           <Section title="Affected downstream">
-            {affected.length === 0 && <EmptyState title="Nothing moves for this change here.">Widen the hop depth or switch the scenario.</EmptyState>}
+            {affected.length === 0 && <EmptyState title="Nothing moves for this change here.">Widen the hop depth or change scenario.</EmptyState>}
             {affected.map((a) => {
               const i = info[a.id]
               return (
@@ -167,7 +167,7 @@ export function ImpactScreen() {
               {sel.type === 'TST' && sel.id.startsWith('TST:DV-') && <Link to={stepHref('test', `test=${sel.id.slice(4)}&from=${anchor.req_id}&back=06b-impact`)}>View Test</Link>}
             </div>
           </Section>
-          <span className="muted">Flags are recorded in the audit trail only. No owner is notified in the prototype.</span>
+          <span className="muted">Flags are recorded in the audit trail only.</span>
           <RecordedNote />
         </SidePanel>
       </div>

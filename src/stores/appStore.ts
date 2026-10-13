@@ -8,6 +8,8 @@ interface AppState {
   density: DensityId
   tenantId: string
   planLabel: 'Test plan' | 'ADV P&R'
+  /** Navigation experiment: left sidebar, or global top nav only. */
+  navMode: 'sidebar' | 'topbar'
   showStubs: boolean
   /** Dev option: artificial latency (ms) added to async stub services, to prove skeleton states. */
   latency: number
@@ -25,11 +27,12 @@ export const useAppStore = create<AppState>((set, get) => ({
   density: saved.density ?? 'default',
   tenantId: saved.tenantId ?? DEFAULT_TENANT,
   planLabel: saved.planLabel ?? 'Test plan',
+  navMode: saved.navMode ?? 'sidebar',
   showStubs: false,
   latency: 0,
   set: (patch) => {
     set(patch)
-    const { theme, density, tenantId, planLabel } = get()
-    try { localStorage.setItem(KEY, JSON.stringify({ theme, density, tenantId, planLabel })) } catch { /* storage unavailable */ }
+    const { theme, density, tenantId, planLabel, navMode } = get()
+    try { localStorage.setItem(KEY, JSON.stringify({ theme, density, tenantId, planLabel, navMode })) } catch { /* storage unavailable */ }
   },
 }))

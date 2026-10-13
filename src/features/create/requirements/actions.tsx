@@ -11,7 +11,7 @@ import { toastSuccess } from '../../../stores/toastStore'
 
 /** Shown beside actions: the record of a decision is the audit entry, the toast is only the feedback. */
 export function RecordedNote() {
-  return <Stub id="audit-trail" note="In-memory ledger"><span className="muted">Every decision is written to the audit trail with time and actor.</span></Stub>
+  return <Stub id="audit-trail" note="In-memory ledger"><span className="muted">Decisions are recorded in the audit trail.</span></Stub>
 }
 
 /**

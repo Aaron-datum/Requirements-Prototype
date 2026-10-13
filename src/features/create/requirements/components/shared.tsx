@@ -71,7 +71,7 @@ export function ReqTitle({ r }: { r: ReqView }) {
       <span className={s.id}>{r.req_id} · {r.linked_part_id}</span>
       {r.dangerous && (r.rowDanger
         ? <span><Badge tone="fail" icon={<AlertTriangle size={12} aria-hidden />} title="Text is Unchanged but what it traces to has Changed">Driver changed</Badge></span>
-        : <span><Badge tone="neutral" title="Text is Unchanged and the changed driver is confirmed">Driver changed · confirmed</Badge></span>)}
+        : <span><Badge tone="neutral" title="Text is Unchanged; the changed driver has been reviewed">Driver changed · reviewed</Badge></span>)}
     </div>
   )
 }

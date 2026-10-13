@@ -111,7 +111,7 @@ export function BoltsView() {
   )
   const idle = (
     <div className={s.idle} data-testid="bolts-tiles">
-      <p className="secondary">Pick a Thread Size in Filters to see parts, or start from a bolt type.</p>
+      <p className="secondary">Pick a thread size in Filters, or a bolt type.</p>
       <div className={s.tiles}>
         {svc.headTypes().map((h) => (
           <button key={h.value} type="button" className={`${s.tile} ${s.typeTile}`} data-testid={`type-${h.value}`} onClick={() => modelRef.current?.setFilter('head', { values: [h.value] })}>

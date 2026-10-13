@@ -218,7 +218,7 @@ export function FilterSidebar<R>({ model, noun = 'rows', groupOptions = [], show
           </div>
           <div className={s.block}>
             <Button onClick={() => { setDraft(model.fields); setPicker(true) }}>Add / Remove Columns</Button>
-            <span className="muted">Adding a column adds its filter, even if the column stays hidden.</span>
+            <span className="muted">Each column adds its filter.</span>
           </div>
           <div className={s.block}>
             <span className="text-label-caps">Row density</span>

@@ -77,7 +77,7 @@ test.describe('Requirements and traceability (flow 6, second half)', () => {
     await expect(page.getByTestId('created').getByTestId('audit-entry').first()).toContainText('Aaron Keller')
     await expect(page.getByRole('button', { name: 'Export TDM' })).toBeDisabled()
     await expect(page.getByRole('button', { name: 'Open in PLM' })).toBeDisabled()
-    await expect(page.getByText(/inert in the prototype/)).toBeVisible()
+    await expect(page.getByText(/not connected/)).toBeVisible()
     expect(errs).toEqual([])
   })
 
@@ -132,4 +132,13 @@ test.describe('Requirements and traceability (flow 6, second half)', () => {
       expect(errs).toEqual([])
     })
   }
+})
+
+test('accepting a mapping clears the alert tone: red is for open action items only', async ({ page }) => {
+  await page.goto(`${base}/05-mapping`)
+  const row = page.locator('tr[data-row-id="REC-20001"]')
+  await expect(row.getByText('Driver changed', { exact: true })).toBeVisible()
+  await page.getByRole('button', { name: 'Accept REC-20001', exact: true }).click()
+  await expect(row.getByText('Driver changed', { exact: true })).toHaveCount(0)
+  await expect(row.getByText('Driver changed · reviewed')).toBeVisible()
 })

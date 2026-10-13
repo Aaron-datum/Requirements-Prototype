@@ -116,7 +116,7 @@ export function VizSlot({ rows, hasData, outputGroup }: { rows: ActionRow[]; has
         </section>
 
         <section className={`${s.box} ${s.vizMain}`} aria-label="Visualisation">
-          {!series ? <EmptyState title="No program data for this project yet">Connect a program or run a workflow to see certainty, price, diversity and timeline here.</EmptyState> : (
+          {!series ? <EmptyState title="No program data for this project yet">Run a workflow to see results here.</EmptyState> : (
             <>
               <div className={s.vizTitle} data-testid="viz-title">{series.title}</div>
               {form === 'chart' && (series.kind === 'timeline' ? <Timeline series={series} /> : <Bars series={series} />)}
@@ -144,7 +144,7 @@ export function VizSlot({ rows, hasData, outputGroup }: { rows: ActionRow[]; has
                 <div key={k} className={s.legendRow}><span className={`${s.sw} ${s[`f_${series.tones[i] ?? 'neutral'}`]}`} aria-hidden /><span>{k}</span>{series.kind === 'stacked' && <span className="data">{fmt(series.unit, total(series.rows.map((r) => r.values[i] ?? 0)))}</span>}</div>
               ))}
               <span className="muted">Unit: {series.unit}</span>
-              <span className="muted">Values are printed on the bars; Table shows the same numbers; Action items lists what to do about them.</span>
+              <span className="muted">Same numbers in Table. Next steps in Action items.</span>
             </div>
           ) : <span className="muted">Nothing to plot.</span>}
         </section>

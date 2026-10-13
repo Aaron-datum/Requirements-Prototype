@@ -32,7 +32,7 @@ function MatchManually({ row, onPick }: { row: BomViewRow; onPick: (partId: stri
     <div className="col" data-testid="match-manually">
       <SearchBox value={q} onChange={setQ} placeholder="Search production parts by number or name" />
       {hits.map((p) => <div key={p.part_id} className="row"><span className="grow trunc">{p.name} <span className="data muted">{p.part_id}</span></span><Button size="sm" onClick={() => onPick(p.part_id)}>Use</Button></div>)}
-      <span className="muted">Manual matches are tagged Provenance: manual and carry no computed score.</span>
+      <span className="muted">Provenance: manual. No computed score.</span>
     </div>
   )
 }
@@ -60,7 +60,7 @@ export function LinePanel({ row, tab, onTab, onClose, mode }: { row: BomViewRow;
 
   const similar = (
     <>
-      {mode === 'pending' && <EmptyState title="Run the surrogate search first">Similarity appears once the line has been matched against production parts.</EmptyState>}
+      {mode === 'pending' && <EmptyState title="Run the surrogate search first">Similarity appears after matching.</EmptyState>}
       {mode === 'carry' && (
         <div className={s.panelCard}>
           <span className="text-label-caps">Provenance</span>

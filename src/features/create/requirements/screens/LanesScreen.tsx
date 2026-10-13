@@ -70,7 +70,7 @@ export function LanesScreen() {
       <div className={s.workspace}>
         <div className={s.scroll}><div className={s.page}>
           {all.length === 0 ? (
-            <EmptyState title="No carryover history for this requirement.">It is new to this program, so there are no earlier events to show. Pick another requirement.</EmptyState>
+            <EmptyState title="No carryover history for this requirement.">New to this program. No earlier events.</EmptyState>
           ) : (
             <div className={s.svgWrap} ref={ref} data-testid="lanes-wrap">
               <svg width={W} height={H} role="img" aria-label={`Event lanes for ${r.req_id}`} data-testid="lanes">

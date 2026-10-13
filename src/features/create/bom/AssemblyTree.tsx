@@ -114,7 +114,7 @@ export function AssemblyTree() {
               <select value={draft.subassembly} onChange={(e) => setDraft({ ...draft, subassembly: e.target.value })} aria-label="Subassembly" style={{ height: 'var(--input-height)', background: 'var(--bg-card)', color: 'var(--fg-primary)', border: '1px solid var(--border-strong)', borderRadius: 'var(--radius)' }}>
                 {SUBASSEMBLY_ORDER.map((x) => <option key={x}>{x}</option>)}</select></label>
             <label className="col" style={{ gap: 4 }}><span className="text-label-caps">Quantity</span><TextInput type="number" min={1} value={draft.quantity} onChange={(e) => setDraft({ ...draft, quantity: Math.max(1, Number(e.target.value) || 1) })} aria-label="Quantity" style={{ width: 96 }} /></label>
-            <span className="muted">Manual lines start with No CAD, so certainty is capped at Estimated until CAD is attached.</span>
+            <span className="muted">Manual lines have no CAD. Certainty is capped at Estimated.</span>
           </div>
         </Modal>
       )}

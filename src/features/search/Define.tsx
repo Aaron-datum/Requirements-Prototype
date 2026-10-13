@@ -97,7 +97,7 @@ export function Define() {
             <Stub id="cad-parser" note="Fixed assembly tree from fixtures">
               <TreeView roots={roots} filter={filter} selectedId={node?.id} onSelect={(n) => write({ part: n.id })} />
             </Stub>
-            <span className="muted">Active parts can be searched. Reference parts are shown for context and cannot be selected.</span>
+            <span className="muted">Reference parts can't be selected.</span>
           </>)}
           {tab === 'plm' && (
             <>
@@ -136,7 +136,7 @@ export function Define() {
                 <div className="row"><span className="text-label-caps muted">Measured</span><span className={s.mval}>{fmtNum(m.value)} <span className="muted">{unit(m.typeKey)}</span></span></div>
               </div>
             ))}
-            {!st.measurements.length && !adding && <span className="muted">Each measurement becomes a search constraint and a column in Results. Add up to {max}.</span>}
+            {!st.measurements.length && !adding && <span className="muted">Select geometry in the viewer, then add up to {max} measurements.</span>}
           </>)}
         </div>
       </aside>

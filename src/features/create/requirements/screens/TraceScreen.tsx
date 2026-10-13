@@ -79,7 +79,7 @@ export function TraceScreen() {
           rowTone={(r) => (r.rowDanger ? 'danger' : undefined)}
           toolbar={<span className="row" role="group" aria-label="Saved views">{SAVED_VIEWS.map((v) => <LinkButton key={v.name} onClick={() => modelRef.current?.setFilters(v.filters)}>{v.name}</LinkButton>)}</span>} />
         <SidePanel defaultWidth={380} title={selected ? selected.req_id : 'Requirement'} subtitle={selected?.title} badge={selected ? <ConformancePill raw={selected.conformance} /> : undefined}
-          onClose={selected ? () => setSel(null) : undefined} empty={selected ? undefined : <>Select a requirement. Rows marked Driver changed are dangerous cases: the text is Unchanged but the driver has Changed.</>}
+          onClose={selected ? () => setSel(null) : undefined} empty={selected ? undefined : <>Select a requirement. Driver changed: text is unchanged, driver has changed.</>}
           footer={selected ? <TraceActions r={selected} rows={m.rows} /> : undefined}>
           {selected && <TracePanel r={selected} openDrawer={() => setDrawer(true)} />}
         </SidePanel>
@@ -94,7 +94,7 @@ function TracePanel({ r, openDrawer }: { r: ReqView; openDrawer: () => void }) {
   const conf = r.driven.confirmed
   return (
     <>
-      {r.rowDanger && <div className={`${s.banner} ${s.bannerFail}`} role="note">Driver changed: the text is Unchanged but the interface it verifies has Changed.</div>}
+      {r.rowDanger && <div className={`${s.banner} ${s.bannerFail}`} role="note">Driver changed. Text is unchanged; its interface has changed.</div>}
       <ClauseSection r={r} />
       <Section title="Driven by">
         <span className={s.strong}>{r.interfaceLabel}</span>

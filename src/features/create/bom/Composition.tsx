@@ -22,7 +22,7 @@ export function Composition() {
   const scope = requirementScope(routes)
 
   if (search !== 'done') {
-    return <div className={s.page}><EmptyState title="Composition needs a matched BOM" action={<Link to="/create/bom/03-review"><Button primary>Go to BOM review</Button></Link>}>Run the surrogate search first, then lines are sorted into New, Carryover and Uncertain.</EmptyState></div>
+    return <div className={s.page}><EmptyState title="Composition needs a matched BOM" action={<Link to="/create/bom/03-review"><Button primary>Go to BOM review</Button></Link>}>Run the surrogate search to sort lines.</EmptyState></div>
   }
   const buckets = composition(rows, config.matchRules.noSimilarityTypes)
   const label = (a: 'generate' | 'carryover' | 'resolve') => (a === 'generate' ? `Generate ${titleCase(config.planLabel)}` : a === 'carryover' ? 'Review Carryover' : 'Resolve Evidence')
@@ -30,7 +30,7 @@ export function Composition() {
   return (
     <div className={s.page} data-testid="composition">
       <div className={s.pageHead}>
-        <div className="col" style={{ gap: 4 }}><h1 className="text-page">Program composition</h1><span className="secondary">Civic Si 1.5T · what is new, what carries over, what is still uncertain</span></div>
+        <div className="col" style={{ gap: 4 }}><h1 className="text-page">Program composition</h1><span className="secondary">Civic Si 1.5T · new, carryover, uncertain</span></div>
         <div className={s.stats} data-testid="composition-counts">
           <div className={s.stat}><span className="text-label-caps">Extracted</span><span className={s.statN}>{scope.extracted}</span></div>
           <div className={s.stat}><span className="text-label-caps">Implicated by this BOM</span><span className={s.statN}>{scope.inScope}</span></div>

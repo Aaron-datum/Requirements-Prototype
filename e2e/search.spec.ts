@@ -190,11 +190,19 @@ test.describe('Search: flows', () => {
     await expect(page.getByRole('status').getByText(/Search saved/)).toBeVisible()
   })
 
+  test('Results rows stay on one line', async ({ page }) => {
+    await page.goto(RESULTS)
+    const heights = await page.locator('tr[data-row-id]').evaluateAll((rows) => rows.map((r) => r.getBoundingClientRect().height))
+    expect(Math.max(...heights)).toBeLessThan(90)
+    await expect(page.locator('tr[data-row-id]').first().locator('[title]').first()).toBeVisible()
+  })
+
   test('Compare: alignment constraints, DOF counter, warning, overlay reached only through Align and compute overlap', async ({ page }) => {
     await page.goto(`/search/compare?query=f10&result=f12&file=f10&modality=part-to-part&${M}`)
     await expect(page.getByRole('tab', { name: 'Overlay' })).toHaveCount(0)
     await page.getByRole('button', { name: 'Alignment' }).click()
     await expect(page.getByTestId('dof')).toContainText('6 degrees of freedom remaining')
+    await expect(page.getByRole('complementary', { name: 'Alignment and overlay' }).getByRole('combobox', { name: 'Query face' })).toBeVisible()
     await page.getByRole('combobox', { name: 'Query face' }).selectOption({ index: 1 })
     await page.getByRole('combobox', { name: 'Result face' }).selectOption({ index: 1 })
     await page.getByRole('button', { name: 'Add constraint' }).click()

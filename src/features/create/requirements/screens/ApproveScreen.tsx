@@ -53,7 +53,7 @@ export function ApproveScreen() {
               <div className="muted" style={{ padding: 'var(--gap-3) var(--gap-4)', borderTop: '1px solid var(--border-default)' }} data-testid="auto-line">+ auto-accepted mappings covering {sum.autoReqs.length} requirements in {sum.autoTests} tests</div>
             </section>
             <section className={s.list} aria-label="Still open"><div className={s.listHead}><span className="grow">Still open</span><span className="data" data-testid="open-count">{open}</span></div>
-              {open === 0 && <EmptyState title="Nothing is open.">Every requirement is carried over or routed to a test.</EmptyState>}
+              {open === 0 && <EmptyState title="Nothing is open.">All requirements are carried over or routed.</EmptyState>}
               {sum.open.map(({ req, reasons }) => (
                 <Link key={req.req_id} to={reasons.includes('evidence') ? stepHref('06-carryover', `req=${req.req_id}`) : stepHref('05-mapping', `req=${req.req_id}`)} className={s.item} style={{ color: 'inherit', textDecoration: 'none' }} data-testid="open-row" data-req={req.req_id}>
                   <span className={s.cell} style={{ flex: 1 }}>
@@ -77,7 +77,7 @@ export function ApproveScreen() {
                     <span title={PLAN_INERT.exportTdm}><Button disabled aria-describedby="plan-inert">Export TDM</Button></span>
                     <span title={PLAN_INERT.openInPlm}><Button disabled aria-describedby="plan-inert">Open in PLM</Button></span>
                   </div>
-                  <span className="muted" id="plan-inert">Export TDM and Open in PLM are inert in the prototype. No TDM writer or PLM connector exists, and nothing is written back.</span>
+                  <span className="muted" id="plan-inert">Export TDM and Open in PLM are not connected.</span>
                 </section>
               </Stub>
             ) : (

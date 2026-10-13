@@ -8,5 +8,5 @@ export function ComingSoon() {
   const { id = '' } = useParams()
   const name = NAMES[id] ?? 'Workflow'
   useBreadcrumbs([{ label: 'Home', to: '/' }, { label: 'Create' }, { label: name }])
-  return <div style={{ flex: 1 }}><EmptyState title={name}>This workflow is not part of the prototype. BOM Creation is the fully built Create flow.</EmptyState></div>
+  return <div style={{ flex: 1 }}><EmptyState title={name}>Not available yet. Try BOM Creation.</EmptyState></div>
 }

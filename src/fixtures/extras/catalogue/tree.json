@@ -1,0 +1,33 @@
+{
+  "_note": "Category tree. Nodes with rowBacked=true get their counts computed from rows (bolts.json); other counts are typed, catalogue-wide and not backed by rows in the prototype. Fasteners is the sum of its children.",
+  "categories": [
+    { "id": "fasteners", "label": "Fasteners", "description": "Bolts, nuts, washers, screws.", "types": 4, "children": [
+      { "id": "bolts", "label": "Bolts", "description": "Hex, socket head, flange, countersunk.", "types": 4, "rowBacked": true, "scopeAxis": "thread", "axes": ["thread", "head", "grade"],
+        "children": [
+          { "id": "bolts-m6", "label": "M6", "rowBacked": true, "scope": { "thread": ["M6"] } },
+          { "id": "bolts-m8", "label": "M8", "rowBacked": true, "scope": { "thread": ["M8"] } },
+          { "id": "bolts-m10", "label": "M10", "rowBacked": true, "scope": { "thread": ["M10"] } },
+          { "id": "bolts-m12", "label": "M12", "rowBacked": true, "scope": { "thread": ["M12"] } },
+          { "id": "bolts-m16", "label": "M16", "rowBacked": true, "scope": { "thread": ["M16"] } },
+          { "id": "bolts-m20", "label": "M20", "rowBacked": true, "scope": { "thread": ["M20"] } },
+          { "id": "bolts-m24", "label": "M24", "rowBacked": true, "scope": { "thread": ["M24"] } }
+        ] },
+      { "id": "screws", "label": "Screws", "description": "Machine, self-tapping, thread-forming.", "types": 4, "count": 958 },
+      { "id": "nuts", "label": "Nuts", "description": "Hex, nyloc, flange, weld.", "types": 5, "count": 804 },
+      { "id": "washers", "label": "Washers", "description": "Flat, spring, serrated.", "types": 3, "count": 612 }
+    ] },
+    { "id": "bearings", "label": "Bearings", "description": "Ball, roller, thrust, bushings.", "types": 4, "count": 2310 },
+    { "id": "seals", "label": "Seals & Gaskets", "description": "O-rings, lip seals, flat gaskets.", "types": 5, "count": 1864 },
+    { "id": "housings", "label": "Housings", "description": "Cast and machined enclosures, covers.", "types": 3, "count": 976 },
+    { "id": "electrical", "label": "Electrical", "description": "Connectors, terminals, harness clips.", "types": 7, "count": 3405 },
+    { "id": "fittings", "label": "Fittings & Connectors", "description": "Hydraulic, pneumatic, quick-connect.", "types": 5, "count": 1502 },
+    { "id": "springs", "label": "Springs", "description": "Compression, extension, torsion, wave.", "types": 4, "count": 712 },
+    { "id": "tooling", "label": "Tooling & Fixtures", "description": "Jigs, clamps, locating pins.", "types": 3, "count": 388 }
+  ],
+  "headTypes": [
+    { "value": "Hex", "label": "Hex Bolts", "description": "Externally driven hex head, ISO 4014 / 4017.", "image": "/cad-preview-2.png" },
+    { "value": "Socket head", "label": "Socket Head", "description": "Internal hex drive, ISO 4762.", "image": "/cad-preview-3.png" },
+    { "value": "Flange", "label": "Flange Bolts", "description": "Integrated washer face, DIN 6921.", "image": "/cad-preview-4.png" },
+    { "value": "Countersunk", "label": "Countersunk", "description": "Flush-fit conical head, ISO 10642.", "image": "/cad-preview-5.png" }
+  ]
+}

@@ -1,0 +1,5183 @@
+{
+ "_note": "Generated, deterministic, fake data. Units: mm, MPa, kg.",
+ "rows": [
+  {
+   "partNumber": "CS-M6-16-A2",
+   "reuseStatus": "Preferred",
+   "description": "Countersunk bolt · M6 × 16 mm",
+   "image": "/cad-preview-5.png",
+   "fields": {
+    "thread": "M6",
+    "threadSpec": "M6 × 1.0",
+    "pitchClass": "Coarse",
+    "length": 16,
+    "head": "Countersunk",
+    "drive": "Hex key 4 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Full thread",
+    "standard": "ISO 10642",
+    "corrosion": "C4",
+    "supplier": "Norvik Industrial",
+    "source": "CAD Library",
+    "leadTime": "Stock",
+    "plmId": "TC-4996-111",
+    "revision": "D",
+    "owner": "T. Moreau"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.005,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-01-11",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 7
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M6-16-88",
+   "reuseStatus": "Preferred",
+   "description": "Hex bolt · M6 × 16 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M6",
+    "threadSpec": "M6 × 1.0",
+    "pitchClass": "Coarse",
+    "length": 16,
+    "head": "Hex",
+    "drive": "Wrench 10 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Full thread",
+    "standard": "ISO 4017",
+    "corrosion": "C3",
+    "supplier": "Brightline Supply",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-6797-101",
+    "revision": "B",
+    "owner": "S. Iyer"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.005,
+    "releaseStatus": "WIP",
+    "lifecycleState": "In Work",
+    "releasedDate": "",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Door Hinge Assembly",
+     "program": "Civic Si 1.5T",
+     "uses": 2
+    }
+   ]
+  },
+  {
+   "partNumber": "CS-M6-20-A2",
+   "reuseStatus": "Restricted",
+   "description": "Countersunk bolt · M6 × 20 mm",
+   "image": "/cad-preview-5.png",
+   "fields": {
+    "thread": "M6",
+    "threadSpec": "M6 × 1.0",
+    "pitchClass": "Coarse",
+    "length": 20,
+    "head": "Countersunk",
+    "drive": "Hex key 4 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Full thread",
+    "standard": "ISO 10642",
+    "corrosion": "C4",
+    "supplier": "Castor & Pike",
+    "source": "SharePoint",
+    "leadTime": "2 wk",
+    "plmId": "TC-5077-122",
+    "revision": "C",
+    "owner": "S. Iyer"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.006,
+    "releaseStatus": "WIP",
+    "lifecycleState": "In Work",
+    "releasedDate": "",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 20
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M6-20-88",
+   "reuseStatus": "Preferred",
+   "description": "Hex bolt · M6 × 20 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M6",
+    "threadSpec": "M6 × 1.0",
+    "pitchClass": "Coarse",
+    "length": 20,
+    "head": "Hex",
+    "drive": "Wrench 10 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc-nickel",
+    "shank": "Full thread",
+    "standard": "ISO 4017",
+    "corrosion": "C4",
+    "supplier": "Castor & Pike",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-7759-112",
+    "revision": "D",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.006,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-02-15",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 20
+    },
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 15
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M8-20-A4",
+   "reuseStatus": "Restricted",
+   "description": "Hex bolt · M8 × 20 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M8",
+    "threadSpec": "M8 × 1.25",
+    "pitchClass": "Coarse",
+    "length": 20,
+    "head": "Hex",
+    "drive": "Wrench 13 mm",
+    "grade": "A4-80",
+    "tensile": 800,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Full thread",
+    "standard": "ISO 4017",
+    "corrosion": "C5",
+    "supplier": "Norvik Industrial",
+    "source": "SharePoint",
+    "leadTime": "2 wk",
+    "plmId": "TC-9493-169",
+    "revision": "B",
+    "owner": "T. Moreau"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.011,
+    "releaseStatus": "WIP",
+    "lifecycleState": "In Work",
+    "releasedDate": "",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 10
+    },
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 12
+    }
+   ]
+  },
+  {
+   "partNumber": "CS-M6-25-109",
+   "reuseStatus": "Approved",
+   "description": "Countersunk bolt · M6 × 25 mm",
+   "image": "/cad-preview-5.png",
+   "fields": {
+    "thread": "M6",
+    "threadSpec": "M6 × 1.0",
+    "pitchClass": "Coarse",
+    "length": 25,
+    "head": "Countersunk",
+    "drive": "Hex key 4 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Full thread",
+    "standard": "ISO 10642",
+    "corrosion": "C4",
+    "supplier": "Norvik Industrial",
+    "source": "CAD Library",
+    "leadTime": "4 wk",
+    "plmId": "TC-6432-132",
+    "revision": "A",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.007,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-06-20",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 15
+    },
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 15
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M6-25-88",
+   "reuseStatus": "Preferred",
+   "description": "Hex bolt · M6 × 25 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M6",
+    "threadSpec": "M6 × 1.0",
+    "pitchClass": "Coarse",
+    "length": 25,
+    "head": "Hex",
+    "drive": "Wrench 10 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc-nickel",
+    "shank": "Full thread",
+    "standard": "ISO 4017",
+    "corrosion": "C4",
+    "supplier": "Halden Fasteners",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-8756-123",
+    "revision": "D",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.007,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-05-19",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 19
+    },
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 28
+    }
+   ]
+  },
+  {
+   "partNumber": "CS-M8-25-A2",
+   "reuseStatus": "Approved",
+   "description": "Countersunk bolt · M8 × 25 mm",
+   "image": "/cad-preview-5.png",
+   "fields": {
+    "thread": "M8",
+    "threadSpec": "M8 × 1.25",
+    "pitchClass": "Coarse",
+    "length": 25,
+    "head": "Countersunk",
+    "drive": "Hex key 4 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Full thread",
+    "standard": "ISO 10642",
+    "corrosion": "C4",
+    "supplier": "Halden Fasteners",
+    "source": "Teamcenter",
+    "leadTime": "2 wk",
+    "plmId": "TC-2405-188",
+    "revision": "D",
+    "owner": "T. Moreau"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.013,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-01-09",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 31
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M8-25-129",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M8 × 25 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M8",
+    "threadSpec": "M8 × 1.25",
+    "pitchClass": "Coarse",
+    "length": 25,
+    "head": "Socket head",
+    "drive": "Hex key 6 mm",
+    "grade": "12.9",
+    "tensile": 1220,
+    "material": "Alloy steel",
+    "finish": "Black oxide",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C2",
+    "supplier": "Brightline Supply",
+    "source": "CAD Library",
+    "leadTime": "2 wk",
+    "plmId": "TC-3182-183",
+    "revision": "D",
+    "owner": "T. Moreau"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.013,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-07-27",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 19
+    },
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 18
+    },
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 36
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M8-25-A2",
+   "reuseStatus": "Obsolete",
+   "description": "Socket head bolt · M8 × 25 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M8",
+    "threadSpec": "M8 × 1.25",
+    "pitchClass": "Coarse",
+    "length": 25,
+    "head": "Socket head",
+    "drive": "Hex key 6 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Brightline Supply",
+    "source": "SharePoint",
+    "leadTime": "2 wk",
+    "plmId": "TC-3419-184",
+    "revision": "C",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.013,
+    "releaseStatus": "Obsolete",
+    "lifecycleState": "Superseded",
+    "releasedDate": "2026-09-23",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 26
+    },
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 10
+    }
+   ]
+  },
+  {
+   "partNumber": "FL-M10-25-109",
+   "reuseStatus": "Preferred",
+   "description": "Flange bolt · M10 × 25 mm",
+   "image": "/cad-preview-4.png",
+   "fields": {
+    "thread": "M10",
+    "threadSpec": "M10 × 1.5",
+    "pitchClass": "Coarse",
+    "length": 25,
+    "head": "Flange",
+    "drive": "Wrench 16 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "DIN 6921",
+    "corrosion": "C4",
+    "supplier": "Castor & Pike",
+    "source": "SharePoint",
+    "leadTime": "Stock",
+    "plmId": "TC-1242-252",
+    "revision": "D",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.021,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-07-14",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 18
+    },
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 34
+    }
+   ]
+  },
+  {
+   "partNumber": "CS-M6-30-109",
+   "reuseStatus": "Restricted",
+   "description": "Countersunk bolt · M6 × 30 mm",
+   "image": "/cad-preview-5.png",
+   "fields": {
+    "thread": "M6",
+    "threadSpec": "M6 × 1.0",
+    "pitchClass": "Coarse",
+    "length": 30,
+    "head": "Countersunk",
+    "drive": "Hex key 4 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Full thread",
+    "standard": "ISO 10642",
+    "corrosion": "C4",
+    "supplier": "Norvik Industrial",
+    "source": "Teamcenter",
+    "leadTime": "4 wk",
+    "plmId": "TC-4773-143",
+    "revision": "B",
+    "owner": "S. Iyer"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.009,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-07-26",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 37
+    }
+   ]
+  },
+  {
+   "partNumber": "FL-M8-30-109",
+   "reuseStatus": "Review",
+   "description": "Flange bolt · M8 × 30 mm",
+   "image": "/cad-preview-4.png",
+   "fields": {
+    "thread": "M8",
+    "threadSpec": "M8 × 1.25",
+    "pitchClass": "Coarse",
+    "length": 30,
+    "head": "Flange",
+    "drive": "Wrench 13 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "DIN 6921",
+    "corrosion": "C4",
+    "supplier": "Norvik Industrial",
+    "source": "Teamcenter",
+    "leadTime": "4 wk",
+    "plmId": "TC-5912-197",
+    "revision": "C",
+    "owner": "J. Okafor"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.016,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-04-09",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 11
+    }
+   ]
+  },
+  {
+   "partNumber": "FL-M8-30-88",
+   "reuseStatus": "Approved",
+   "description": "Flange bolt · M8 × 30 mm",
+   "image": "/cad-preview-4.png",
+   "fields": {
+    "thread": "M8",
+    "threadSpec": "M8 × 1.25",
+    "pitchClass": "Coarse",
+    "length": 30,
+    "head": "Flange",
+    "drive": "Wrench 13 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "DIN 6921",
+    "corrosion": "C3",
+    "supplier": "Norvik Industrial",
+    "source": "SharePoint",
+    "leadTime": "2 wk",
+    "plmId": "TC-8858-196",
+    "revision": "A",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.016,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-05-27",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 15
+    },
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 15
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M8-30-109",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M8 × 30 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M8",
+    "threadSpec": "M8 × 1.25",
+    "pitchClass": "Coarse",
+    "length": 30,
+    "head": "Socket head",
+    "drive": "Hex key 6 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Brightline Supply",
+    "source": "Teamcenter",
+    "leadTime": "4 wk",
+    "plmId": "TC-3474-193",
+    "revision": "A",
+    "owner": "S. Iyer"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.016,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-08-26",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 37
+    },
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 6
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M8-30-88",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M8 × 30 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M8",
+    "threadSpec": "M8 × 1.25",
+    "pitchClass": "Coarse",
+    "length": 30,
+    "head": "Socket head",
+    "drive": "Hex key 6 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C3",
+    "supplier": "Norvik Industrial",
+    "source": "Teamcenter",
+    "leadTime": "4 wk",
+    "plmId": "TC-7233-192",
+    "revision": "B",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.016,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-01-21",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 27
+    },
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 13
+    }
+   ]
+  },
+  {
+   "partNumber": "CS-M10-30-A2",
+   "reuseStatus": "Approved",
+   "description": "Countersunk bolt · M10 × 30 mm",
+   "image": "/cad-preview-5.png",
+   "fields": {
+    "thread": "M10",
+    "threadSpec": "M10 × 1.5",
+    "pitchClass": "Coarse",
+    "length": 30,
+    "head": "Countersunk",
+    "drive": "Hex key 4 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Full thread",
+    "standard": "ISO 10642",
+    "corrosion": "C4",
+    "supplier": "Brightline Supply",
+    "source": "SharePoint",
+    "leadTime": "2 wk",
+    "plmId": "TC-5596-265",
+    "revision": "C",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.025,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-01-12",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 39
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M10-30-A4",
+   "reuseStatus": "Approved",
+   "description": "Hex bolt · M10 × 30 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M10",
+    "threadSpec": "M10 × 1.5",
+    "pitchClass": "Coarse",
+    "length": 30,
+    "head": "Hex",
+    "drive": "Wrench 16 mm",
+    "grade": "A4-80",
+    "tensile": 800,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Full thread",
+    "standard": "ISO 4017",
+    "corrosion": "C5",
+    "supplier": "Castor & Pike",
+    "source": "SharePoint",
+    "leadTime": "4 wk",
+    "plmId": "TC-8396-257",
+    "revision": "D",
+    "owner": "T. Moreau"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.025,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-08-23",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 15
+    },
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 38
+    },
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 10
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M10-30-129",
+   "reuseStatus": "Preferred",
+   "description": "Socket head bolt · M10 × 30 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M10",
+    "threadSpec": "M10 × 1.5",
+    "pitchClass": "Coarse",
+    "length": 30,
+    "head": "Socket head",
+    "drive": "Hex key 8 mm",
+    "grade": "12.9",
+    "tensile": 1220,
+    "material": "Alloy steel",
+    "finish": "Black oxide",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C2",
+    "supplier": "Brightline Supply",
+    "source": "CAD Library",
+    "leadTime": "Stock",
+    "plmId": "TC-6510-260",
+    "revision": "B",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.025,
+    "releaseStatus": "WIP",
+    "lifecycleState": "In Work",
+    "releasedDate": "",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 16
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M6-40-129",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M6 × 40 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M6",
+    "threadSpec": "M6 × 1.0",
+    "pitchClass": "Coarse",
+    "length": 40,
+    "head": "Socket head",
+    "drive": "Hex key 5 mm",
+    "grade": "12.9",
+    "tensile": 1220,
+    "material": "Alloy steel",
+    "finish": "Black oxide",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C2",
+    "supplier": "Norvik Industrial",
+    "source": "SharePoint",
+    "leadTime": "2 wk",
+    "plmId": "TC-8619-150",
+    "revision": "B",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.012,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-07-06",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Door Hinge Assembly",
+     "program": "Civic Si 1.5T",
+     "uses": 37
+    },
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 16
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M6-40-A2",
+   "reuseStatus": "Preferred",
+   "description": "Socket head bolt · M6 × 40 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M6",
+    "threadSpec": "M6 × 1.0",
+    "pitchClass": "Coarse",
+    "length": 40,
+    "head": "Socket head",
+    "drive": "Hex key 5 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Castor & Pike",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-9060-151",
+    "revision": "D",
+    "owner": "T. Moreau"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.012,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-08-04",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 17
+    },
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 35
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M10-40-109",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M10 × 40 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M10",
+    "threadSpec": "M10 × 1.5",
+    "pitchClass": "Coarse",
+    "length": 40,
+    "head": "Socket head",
+    "drive": "Hex key 8 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Brightline Supply",
+    "source": "Teamcenter",
+    "leadTime": "2 wk",
+    "plmId": "TC-2100-270",
+    "revision": "D",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.033,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-03-25",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 7
+    },
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 3
+    },
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 35
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M6-50-129",
+   "reuseStatus": "Obsolete",
+   "description": "Socket head bolt · M6 × 50 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M6",
+    "threadSpec": "M6 × 1.0",
+    "pitchClass": "Coarse",
+    "length": 50,
+    "head": "Socket head",
+    "drive": "Hex key 5 mm",
+    "grade": "12.9",
+    "tensile": 1220,
+    "material": "Alloy steel",
+    "finish": "Black oxide",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C2",
+    "supplier": "Castor & Pike",
+    "source": "SharePoint",
+    "leadTime": "2 wk",
+    "plmId": "TC-7474-161",
+    "revision": "C",
+    "owner": "J. Okafor"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.015,
+    "releaseStatus": "Obsolete",
+    "lifecycleState": "Superseded",
+    "releasedDate": "2026-07-01",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 30
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M8-50-129",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M8 × 50 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M8",
+    "threadSpec": "M8 × 1.25",
+    "pitchClass": "Coarse",
+    "length": 50,
+    "head": "Socket head",
+    "drive": "Hex key 6 mm",
+    "grade": "12.9",
+    "tensile": 1220,
+    "material": "Alloy steel",
+    "finish": "Black oxide",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C2",
+    "supplier": "Halden Fasteners",
+    "source": "CAD Library",
+    "leadTime": "2 wk",
+    "plmId": "TC-4078-216",
+    "revision": "C",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.027,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-06-26",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 10
+    },
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 22
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M10-50-A2",
+   "reuseStatus": "Preferred",
+   "description": "Hex bolt · M10 × 50 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M10",
+    "threadSpec": "M10 × 1.5",
+    "pitchClass": "Coarse",
+    "length": 50,
+    "head": "Hex",
+    "drive": "Wrench 16 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Full thread",
+    "standard": "ISO 4017",
+    "corrosion": "C4",
+    "supplier": "Norvik Industrial",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-4045-278",
+    "revision": "D",
+    "owner": "J. Okafor"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.042,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-09-16",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 19
+    },
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 20
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M10-50-88",
+   "reuseStatus": "Preferred",
+   "description": "Socket head bolt · M10 × 50 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M10",
+    "threadSpec": "M10 × 1.5",
+    "pitchClass": "Coarse",
+    "length": 50,
+    "head": "Socket head",
+    "drive": "Hex key 8 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Norvik Industrial",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-4176-280",
+    "revision": "D",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.042,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-05-21",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 20
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M12-50-88",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M12 × 50 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M12",
+    "threadSpec": "M12 × 1.75",
+    "pitchClass": "Coarse",
+    "length": 50,
+    "head": "Socket head",
+    "drive": "Hex key 10 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Brightline Supply",
+    "source": "SharePoint",
+    "leadTime": "2 wk",
+    "plmId": "TC-6409-346",
+    "revision": "D",
+    "owner": "S. Iyer"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.06,
+    "releaseStatus": "WIP",
+    "lifecycleState": "In Work",
+    "releasedDate": "",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 36
+    },
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 31
+    }
+   ]
+  },
+  {
+   "partNumber": "CS-M16-50-A2",
+   "reuseStatus": "Approved",
+   "description": "Countersunk bolt · M16 × 50 mm",
+   "image": "/cad-preview-5.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 50,
+    "head": "Countersunk",
+    "drive": "Hex key 10 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Full thread",
+    "standard": "ISO 10642",
+    "corrosion": "C4",
+    "supplier": "Norvik Industrial",
+    "source": "CAD Library",
+    "leadTime": "2 wk",
+    "plmId": "TC-5809-408",
+    "revision": "D",
+    "owner": "S. Iyer"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.107,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-06-04",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 7
+    },
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 38
+    }
+   ]
+  },
+  {
+   "partNumber": "FL-M16-50-88",
+   "reuseStatus": "Restricted",
+   "description": "Flange bolt · M16 × 50 mm",
+   "image": "/cad-preview-4.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 50,
+    "head": "Flange",
+    "drive": "Wrench 24 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "DIN 6921",
+    "corrosion": "C3",
+    "supplier": "Castor & Pike",
+    "source": "CAD Library",
+    "leadTime": "2 wk",
+    "plmId": "TC-7023-405",
+    "revision": "A",
+    "owner": "S. Iyer"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.107,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-09-02",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 2
+    },
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 9
+    },
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 26
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M16-50-A2",
+   "reuseStatus": "Approved",
+   "description": "Hex bolt · M16 × 50 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 50,
+    "head": "Hex",
+    "drive": "Wrench 24 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Full thread",
+    "standard": "ISO 4017",
+    "corrosion": "C4",
+    "supplier": "Halden Fasteners",
+    "source": "SharePoint",
+    "leadTime": "4 wk",
+    "plmId": "TC-5110-399",
+    "revision": "B",
+    "owner": "J. Okafor"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.107,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-05-10",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 36
+    },
+    {
+     "name": "Door Hinge Assembly",
+     "program": "Civic Si 1.5T",
+     "uses": 3
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M16-50-129",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M16 × 50 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 50,
+    "head": "Socket head",
+    "drive": "Hex key 14 mm",
+    "grade": "12.9",
+    "tensile": 1220,
+    "material": "Alloy steel",
+    "finish": "Black oxide",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C2",
+    "supplier": "Castor & Pike",
+    "source": "Teamcenter",
+    "leadTime": "2 wk",
+    "plmId": "TC-1831-403",
+    "revision": "B",
+    "owner": "J. Okafor"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.107,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-03-18",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 9
+    },
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 37
+    },
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 4
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M8-60-88",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M8 × 60 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M8",
+    "threadSpec": "M8 × 1.25",
+    "pitchClass": "Coarse",
+    "length": 60,
+    "head": "Socket head",
+    "drive": "Hex key 6 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C3",
+    "supplier": "Halden Fasteners",
+    "source": "SharePoint",
+    "leadTime": "2 wk",
+    "plmId": "TC-5291-225",
+    "revision": "A",
+    "owner": "J. Okafor"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.032,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-02-11",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 14
+    }
+   ]
+  },
+  {
+   "partNumber": "FL-M10-60-109",
+   "reuseStatus": "Approved",
+   "description": "Flange bolt · M10 × 60 mm",
+   "image": "/cad-preview-4.png",
+   "fields": {
+    "thread": "M10",
+    "threadSpec": "M10 × 1.5",
+    "pitchClass": "Coarse",
+    "length": 60,
+    "head": "Flange",
+    "drive": "Wrench 16 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "DIN 6921",
+    "corrosion": "C4",
+    "supplier": "Brightline Supply",
+    "source": "Teamcenter",
+    "leadTime": "4 wk",
+    "plmId": "TC-6318-296",
+    "revision": "D",
+    "owner": "T. Moreau"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.05,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-04-25",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 16
+    }
+   ]
+  },
+  {
+   "partNumber": "CS-M12-60-A2",
+   "reuseStatus": "Preferred",
+   "description": "Countersunk bolt · M12 × 60 mm",
+   "image": "/cad-preview-5.png",
+   "fields": {
+    "thread": "M12",
+    "threadSpec": "M12 × 1.75",
+    "pitchClass": "Coarse",
+    "length": 60,
+    "head": "Countersunk",
+    "drive": "Hex key 6 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Full thread",
+    "standard": "ISO 10642",
+    "corrosion": "C4",
+    "supplier": "Halden Fasteners",
+    "source": "CAD Library",
+    "leadTime": "Stock",
+    "plmId": "TC-6561-364",
+    "revision": "A",
+    "owner": "J. Okafor"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.072,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-02-10",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 27
+    },
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 23
+    }
+   ]
+  },
+  {
+   "partNumber": "FL-M12-60-109",
+   "reuseStatus": "Approved",
+   "description": "Flange bolt · M12 × 60 mm",
+   "image": "/cad-preview-4.png",
+   "fields": {
+    "thread": "M12",
+    "threadSpec": "M12 × 1.75",
+    "pitchClass": "Coarse",
+    "length": 60,
+    "head": "Flange",
+    "drive": "Wrench 18 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "DIN 6921",
+    "corrosion": "C4",
+    "supplier": "Norvik Industrial",
+    "source": "Teamcenter",
+    "leadTime": "2 wk",
+    "plmId": "TC-6410-362",
+    "revision": "B",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.072,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-08-11",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 25
+    },
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 6
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M12-60-88",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M12 × 60 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M12",
+    "threadSpec": "M12 × 1.75",
+    "pitchClass": "Coarse",
+    "length": 60,
+    "head": "Socket head",
+    "drive": "Hex key 10 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C3",
+    "supplier": "Halden Fasteners",
+    "source": "Teamcenter",
+    "leadTime": "4 wk",
+    "plmId": "TC-3667-357",
+    "revision": "B",
+    "owner": "S. Iyer"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.072,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-04-01",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 29
+    }
+   ]
+  },
+  {
+   "partNumber": "CS-M16-60-A2",
+   "reuseStatus": "Approved",
+   "description": "Countersunk bolt · M16 × 60 mm",
+   "image": "/cad-preview-5.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 60,
+    "head": "Countersunk",
+    "drive": "Hex key 10 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Full thread",
+    "standard": "ISO 10642",
+    "corrosion": "C4",
+    "supplier": "Brightline Supply",
+    "source": "SharePoint",
+    "leadTime": "2 wk",
+    "plmId": "TC-6060-419",
+    "revision": "D",
+    "owner": "J. Okafor"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.128,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-05-07",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Door Hinge Assembly",
+     "program": "Civic Si 1.5T",
+     "uses": 39
+    },
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 38
+    },
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 20
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M16-60-88",
+   "reuseStatus": "Preferred",
+   "description": "Hex bolt · M16 × 60 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 60,
+    "head": "Hex",
+    "drive": "Wrench 24 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C3",
+    "supplier": "Halden Fasteners",
+    "source": "CAD Library",
+    "leadTime": "Stock",
+    "plmId": "TC-8365-409",
+    "revision": "D",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.128,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-05-11",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 18
+    },
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 22
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M16-60-A2",
+   "reuseStatus": "Approved",
+   "description": "Hex bolt · M16 × 60 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 60,
+    "head": "Hex",
+    "drive": "Wrench 24 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C4",
+    "supplier": "Halden Fasteners",
+    "source": "CAD Library",
+    "leadTime": "4 wk",
+    "plmId": "TC-6726-410",
+    "revision": "D",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.128,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-09-09",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 23
+    },
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 18
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M16-60-109",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M16 × 60 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 60,
+    "head": "Socket head",
+    "drive": "Hex key 14 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Norvik Industrial",
+    "source": "SharePoint",
+    "leadTime": "2 wk",
+    "plmId": "TC-3720-413",
+    "revision": "D",
+    "owner": "T. Moreau"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.128,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-08-01",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 24
+    },
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 39
+    }
+   ]
+  },
+  {
+   "partNumber": "CS-M20-60-A2",
+   "reuseStatus": "Preferred",
+   "description": "Countersunk bolt · M20 × 60 mm",
+   "image": "/cad-preview-5.png",
+   "fields": {
+    "thread": "M20",
+    "threadSpec": "M20 × 2.5",
+    "pitchClass": "Coarse",
+    "length": 60,
+    "head": "Countersunk",
+    "drive": "Hex key 13 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Full thread",
+    "standard": "ISO 10642",
+    "corrosion": "C4",
+    "supplier": "Castor & Pike",
+    "source": "SharePoint",
+    "leadTime": "Stock",
+    "plmId": "TC-1547-490",
+    "revision": "B",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.2,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-06-20",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 9
+    },
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 17
+    },
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 35
+    }
+   ]
+  },
+  {
+   "partNumber": "CS-M8-80-109",
+   "reuseStatus": "Preferred",
+   "description": "Countersunk bolt · M8 × 80 mm",
+   "image": "/cad-preview-5.png",
+   "fields": {
+    "thread": "M8",
+    "threadSpec": "M8 × 1.25",
+    "pitchClass": "Coarse",
+    "length": 80,
+    "head": "Countersunk",
+    "drive": "Hex key 4 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Full thread",
+    "standard": "ISO 10642",
+    "corrosion": "C4",
+    "supplier": "Brightline Supply",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-2391-242",
+    "revision": "B",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.043,
+    "releaseStatus": "WIP",
+    "lifecycleState": "In Work",
+    "releasedDate": "",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 9
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M10-80-88",
+   "reuseStatus": "Restricted",
+   "description": "Hex bolt · M10 × 80 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M10",
+    "threadSpec": "M10 × 1.5",
+    "pitchClass": "Coarse",
+    "length": 80,
+    "head": "Hex",
+    "drive": "Wrench 16 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C3",
+    "supplier": "Brightline Supply",
+    "source": "SharePoint",
+    "leadTime": "4 wk",
+    "plmId": "TC-6079-299",
+    "revision": "D",
+    "owner": "S. Iyer"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.067,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-04-05",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 33
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M10-80-A2",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M10 × 80 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M10",
+    "threadSpec": "M10 × 1.5",
+    "pitchClass": "Coarse",
+    "length": 80,
+    "head": "Socket head",
+    "drive": "Hex key 8 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Brightline Supply",
+    "source": "CAD Library",
+    "leadTime": "4 wk",
+    "plmId": "TC-1053-305",
+    "revision": "C",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.067,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-04-08",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 28
+    },
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 28
+    },
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 12
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M12-80-A2",
+   "reuseStatus": "Restricted",
+   "description": "Hex bolt · M12 × 80 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M12",
+    "threadSpec": "M12 × 1.75",
+    "pitchClass": "Coarse",
+    "length": 80,
+    "head": "Hex",
+    "drive": "Wrench 18 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C4",
+    "supplier": "Norvik Industrial",
+    "source": "Teamcenter",
+    "leadTime": "2 wk",
+    "plmId": "TC-8477-366",
+    "revision": "D",
+    "owner": "S. Iyer"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.096,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-06-04",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 37
+    }
+   ]
+  },
+  {
+   "partNumber": "CS-M16-80-109",
+   "reuseStatus": "Approved",
+   "description": "Countersunk bolt · M16 × 80 mm",
+   "image": "/cad-preview-5.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 80,
+    "head": "Countersunk",
+    "drive": "Hex key 10 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Full thread",
+    "standard": "ISO 10642",
+    "corrosion": "C4",
+    "supplier": "Halden Fasteners",
+    "source": "CAD Library",
+    "leadTime": "2 wk",
+    "plmId": "TC-4372-429",
+    "revision": "C",
+    "owner": "T. Moreau"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.17,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-03-09",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Door Hinge Assembly",
+     "program": "Civic Si 1.5T",
+     "uses": 2
+    },
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 17
+    },
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 4
+    }
+   ]
+  },
+  {
+   "partNumber": "CS-M16-80-A2",
+   "reuseStatus": "Preferred",
+   "description": "Countersunk bolt · M16 × 80 mm",
+   "image": "/cad-preview-5.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 80,
+    "head": "Countersunk",
+    "drive": "Hex key 10 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Full thread",
+    "standard": "ISO 10642",
+    "corrosion": "C4",
+    "supplier": "Castor & Pike",
+    "source": "CAD Library",
+    "leadTime": "Stock",
+    "plmId": "TC-4714-430",
+    "revision": "B",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.17,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-01-02",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 35
+    },
+    {
+     "name": "Door Hinge Assembly",
+     "program": "Civic Si 1.5T",
+     "uses": 32
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M16-80-88",
+   "reuseStatus": "Preferred",
+   "description": "Hex bolt · M16 × 80 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 80,
+    "head": "Hex",
+    "drive": "Wrench 24 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C3",
+    "supplier": "Brightline Supply",
+    "source": "SharePoint",
+    "leadTime": "Stock",
+    "plmId": "TC-1706-420",
+    "revision": "A",
+    "owner": "T. Moreau"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.17,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-07-15",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 23
+    },
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 23
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M16-80-A2",
+   "reuseStatus": "Approved",
+   "description": "Hex bolt · M16 × 80 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 80,
+    "head": "Hex",
+    "drive": "Wrench 24 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C4",
+    "supplier": "Halden Fasteners",
+    "source": "SharePoint",
+    "leadTime": "2 wk",
+    "plmId": "TC-8798-421",
+    "revision": "B",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.17,
+    "releaseStatus": "WIP",
+    "lifecycleState": "In Work",
+    "releasedDate": "",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 23
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M16-80-109",
+   "reuseStatus": "Preferred",
+   "description": "Socket head bolt · M16 × 80 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 80,
+    "head": "Socket head",
+    "drive": "Hex key 14 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Castor & Pike",
+    "source": "CAD Library",
+    "leadTime": "Stock",
+    "plmId": "TC-2236-424",
+    "revision": "C",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.17,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-09-01",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 12
+    },
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 2
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M16-80-88",
+   "reuseStatus": "Preferred",
+   "description": "Socket head bolt · M16 × 80 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 80,
+    "head": "Socket head",
+    "drive": "Hex key 14 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C3",
+    "supplier": "Halden Fasteners",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-7777-423",
+    "revision": "C",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.17,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-06-07",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 21
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M24-80-88",
+   "reuseStatus": "Preferred",
+   "description": "Hex bolt · M24 × 80 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M24",
+    "threadSpec": "M24 × 3.0",
+    "pitchClass": "Coarse",
+    "length": 80,
+    "head": "Hex",
+    "drive": "Wrench 36 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C3",
+    "supplier": "Norvik Industrial",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-3018-532",
+    "revision": "D",
+    "owner": "T. Moreau"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.384,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-02-08",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 22
+    },
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 23
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M24-80-A2",
+   "reuseStatus": "Restricted",
+   "description": "Socket head bolt · M24 × 80 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M24",
+    "threadSpec": "M24 × 3.0",
+    "pitchClass": "Coarse",
+    "length": 80,
+    "head": "Socket head",
+    "drive": "Hex key 19 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Castor & Pike",
+    "source": "SharePoint",
+    "leadTime": "2 wk",
+    "plmId": "TC-1955-538",
+    "revision": "A",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.384,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-04-07",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 28
+    },
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 34
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M10-100-129",
+   "reuseStatus": "Preferred",
+   "description": "Socket head bolt · M10 × 100 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M10",
+    "threadSpec": "M10 × 1.5",
+    "pitchClass": "Coarse",
+    "length": 100,
+    "head": "Socket head",
+    "drive": "Hex key 8 mm",
+    "grade": "12.9",
+    "tensile": 1220,
+    "material": "Alloy steel",
+    "finish": "Black oxide",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C2",
+    "supplier": "Norvik Industrial",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-1230-315",
+    "revision": "D",
+    "owner": "J. Okafor"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.083,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-03-09",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 7
+    },
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 3
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M10-100-A2",
+   "reuseStatus": "Preferred",
+   "description": "Socket head bolt · M10 × 100 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M10",
+    "threadSpec": "M10 × 1.5",
+    "pitchClass": "Coarse",
+    "length": 100,
+    "head": "Socket head",
+    "drive": "Hex key 8 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Brightline Supply",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-2579-316",
+    "revision": "A",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.083,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-03-02",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 6
+    },
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 20
+    },
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 20
+    }
+   ]
+  },
+  {
+   "partNumber": "FL-M12-100-88",
+   "reuseStatus": "Approved",
+   "description": "Flange bolt · M12 × 100 mm",
+   "image": "/cad-preview-4.png",
+   "fields": {
+    "thread": "M12",
+    "threadSpec": "M12 × 1.75",
+    "pitchClass": "Coarse",
+    "length": 100,
+    "head": "Flange",
+    "drive": "Wrench 18 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "DIN 6921",
+    "corrosion": "C3",
+    "supplier": "Brightline Supply",
+    "source": "Teamcenter",
+    "leadTime": "2 wk",
+    "plmId": "TC-7019-383",
+    "revision": "B",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.12,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-08-20",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 32
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M12-100-109",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M12 × 100 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M12",
+    "threadSpec": "M12 × 1.75",
+    "pitchClass": "Coarse",
+    "length": 100,
+    "head": "Socket head",
+    "drive": "Hex key 10 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Castor & Pike",
+    "source": "Teamcenter",
+    "leadTime": "4 wk",
+    "plmId": "TC-9396-380",
+    "revision": "D",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.12,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-07-06",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Door Hinge Assembly",
+     "program": "Civic Si 1.5T",
+     "uses": 9
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M12-100-129",
+   "reuseStatus": "Preferred",
+   "description": "Socket head bolt · M12 × 100 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M12",
+    "threadSpec": "M12 × 1.75",
+    "pitchClass": "Coarse",
+    "length": 100,
+    "head": "Socket head",
+    "drive": "Hex key 10 mm",
+    "grade": "12.9",
+    "tensile": 1220,
+    "material": "Alloy steel",
+    "finish": "Black oxide",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C2",
+    "supplier": "Castor & Pike",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-6593-381",
+    "revision": "A",
+    "owner": "J. Okafor"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.12,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-06-27",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 20
+    },
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 32
+    },
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 29
+    }
+   ]
+  },
+  {
+   "partNumber": "CS-M16-100-A2",
+   "reuseStatus": "Approved",
+   "description": "Countersunk bolt · M16 × 100 mm",
+   "image": "/cad-preview-5.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 100,
+    "head": "Countersunk",
+    "drive": "Hex key 10 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Full thread",
+    "standard": "ISO 10642",
+    "corrosion": "C4",
+    "supplier": "Norvik Industrial",
+    "source": "Teamcenter",
+    "leadTime": "4 wk",
+    "plmId": "TC-4759-441",
+    "revision": "A",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.213,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-04-16",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 15
+    },
+    {
+     "name": "Door Hinge Assembly",
+     "program": "Civic Si 1.5T",
+     "uses": 11
+    },
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 2
+    }
+   ]
+  },
+  {
+   "partNumber": "FL-M16-100-109",
+   "reuseStatus": "Approved",
+   "description": "Flange bolt · M16 × 100 mm",
+   "image": "/cad-preview-4.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 100,
+    "head": "Flange",
+    "drive": "Wrench 24 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "DIN 6921",
+    "corrosion": "C4",
+    "supplier": "Halden Fasteners",
+    "source": "CAD Library",
+    "leadTime": "4 wk",
+    "plmId": "TC-5171-439",
+    "revision": "D",
+    "owner": "J. Okafor"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.213,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-05-19",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 7
+    }
+   ]
+  },
+  {
+   "partNumber": "FL-M16-100-88",
+   "reuseStatus": "Approved",
+   "description": "Flange bolt · M16 × 100 mm",
+   "image": "/cad-preview-4.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 100,
+    "head": "Flange",
+    "drive": "Wrench 24 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "DIN 6921",
+    "corrosion": "C3",
+    "supplier": "Norvik Industrial",
+    "source": "SharePoint",
+    "leadTime": "4 wk",
+    "plmId": "TC-7112-438",
+    "revision": "B",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.213,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-05-19",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 16
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M16-100-88",
+   "reuseStatus": "Preferred",
+   "description": "Hex bolt · M16 × 100 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 100,
+    "head": "Hex",
+    "drive": "Wrench 24 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C3",
+    "supplier": "Castor & Pike",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-2360-431",
+    "revision": "A",
+    "owner": "T. Moreau"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.213,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-04-02",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 7
+    },
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 35
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M16-100-A2",
+   "reuseStatus": "Approved",
+   "description": "Hex bolt · M16 × 100 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 100,
+    "head": "Hex",
+    "drive": "Wrench 24 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C4",
+    "supplier": "Halden Fasteners",
+    "source": "CAD Library",
+    "leadTime": "4 wk",
+    "plmId": "TC-0094-130",
+    "revision": "A",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.213,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-08-22",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 31
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M16-100-A4",
+   "reuseStatus": "Review",
+   "description": "Hex bolt · M16 × 100 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 100,
+    "head": "Hex",
+    "drive": "Wrench 24 mm",
+    "grade": "A4-80",
+    "tensile": 800,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C5",
+    "supplier": "Castor & Pike",
+    "source": "CAD Library",
+    "plmId": "TC-0094-131",
+    "revision": "B",
+    "owner": "S. Iyer"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.213,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-08-09"
+   },
+   "usedOn": [
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 20
+    },
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 10
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M16-100-88",
+   "reuseStatus": "Preferred",
+   "description": "Socket head bolt · M16 × 100 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 100,
+    "head": "Socket head",
+    "drive": "Hex key 14 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C3",
+    "supplier": "Castor & Pike",
+    "source": "CAD Library",
+    "leadTime": "Stock",
+    "plmId": "TC-7728-434",
+    "revision": "D",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.213,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-07-16",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 12
+    },
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 17
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M20-100-A4",
+   "reuseStatus": "Obsolete",
+   "description": "Hex bolt · M20 × 100 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M20",
+    "threadSpec": "M20 × 2.5",
+    "pitchClass": "Coarse",
+    "length": 100,
+    "head": "Hex",
+    "drive": "Wrench 30 mm",
+    "grade": "A4-80",
+    "tensile": 800,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C5",
+    "supplier": "Brightline Supply",
+    "source": "Teamcenter",
+    "leadTime": "2 wk",
+    "plmId": "TC-7219-502",
+    "revision": "A",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.333,
+    "releaseStatus": "Obsolete",
+    "lifecycleState": "Superseded",
+    "releasedDate": "2026-02-10",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 9
+    },
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 24
+    },
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 34
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M20-100-109",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M20 × 100 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M20",
+    "threadSpec": "M20 × 2.5",
+    "pitchClass": "Coarse",
+    "length": 100,
+    "head": "Socket head",
+    "drive": "Hex key 17 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Norvik Industrial",
+    "source": "CAD Library",
+    "leadTime": "2 wk",
+    "plmId": "TC-3034-504",
+    "revision": "D",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.333,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-06-23",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 5
+    },
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 32
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M20-100-88",
+   "reuseStatus": "Preferred",
+   "description": "Socket head bolt · M20 × 100 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M20",
+    "threadSpec": "M20 × 2.5",
+    "pitchClass": "Coarse",
+    "length": 100,
+    "head": "Socket head",
+    "drive": "Hex key 17 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Halden Fasteners",
+    "source": "SharePoint",
+    "leadTime": "Stock",
+    "plmId": "TC-3314-503",
+    "revision": "C",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.333,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-07-20",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 21
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M24-100-A4",
+   "reuseStatus": "Preferred",
+   "description": "Hex bolt · M24 × 100 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M24",
+    "threadSpec": "M24 × 3.0",
+    "pitchClass": "Coarse",
+    "length": 100,
+    "head": "Hex",
+    "drive": "Wrench 36 mm",
+    "grade": "A4-80",
+    "tensile": 800,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C5",
+    "supplier": "Norvik Industrial",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-1908-541",
+    "revision": "D",
+    "owner": "J. Okafor"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.479,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-01-19",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 24
+    },
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 22
+    },
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 24
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M24-100-88",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M24 × 100 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M24",
+    "threadSpec": "M24 × 3.0",
+    "pitchClass": "Coarse",
+    "length": 100,
+    "head": "Socket head",
+    "drive": "Hex key 19 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C3",
+    "supplier": "Norvik Industrial",
+    "source": "Teamcenter",
+    "leadTime": "2 wk",
+    "plmId": "TC-1397-542",
+    "revision": "C",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.479,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-02-04",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 26
+    },
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 4
+    },
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 12
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M16-110-129",
+   "reuseStatus": "Preferred",
+   "description": "Socket head bolt · M16 × 110 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 110,
+    "head": "Socket head",
+    "drive": "Hex key 14 mm",
+    "grade": "12.9",
+    "tensile": 1220,
+    "material": "Alloy steel",
+    "finish": "Black oxide",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C2",
+    "supplier": "Brightline Supply",
+    "source": "SharePoint",
+    "leadTime": "Stock",
+    "plmId": "TC-3966-447",
+    "revision": "A",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.234,
+    "releaseStatus": "WIP",
+    "lifecycleState": "In Work",
+    "releasedDate": "",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 30
+    },
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 3
+    },
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 37
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M16-110-88",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M16 × 110 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 110,
+    "head": "Socket head",
+    "drive": "Hex key 14 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Norvik Industrial",
+    "source": "Teamcenter",
+    "leadTime": "4 wk",
+    "plmId": "TC-0094-120",
+    "revision": "B",
+    "owner": "J. Okafor"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.234,
+    "releaseStatus": "WIP",
+    "lifecycleState": "In Work",
+    "releasedDate": "2026-06-16",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 37
+    },
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 39
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M16-110-A2",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M16 × 110 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 110,
+    "head": "Socket head",
+    "drive": "Hex key 14 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Halden Fasteners",
+    "source": "SharePoint",
+    "leadTime": "2 wk",
+    "plmId": "TC-9576-448",
+    "revision": "D",
+    "owner": "S. Iyer"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.234,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-06-26",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 25
+    }
+   ]
+  },
+  {
+   "partNumber": "FL-M12-120-88",
+   "reuseStatus": "Preferred",
+   "description": "Flange bolt · M12 × 120 mm",
+   "image": "/cad-preview-4.png",
+   "fields": {
+    "thread": "M12",
+    "threadSpec": "M12 × 1.75",
+    "pitchClass": "Coarse",
+    "length": 120,
+    "head": "Flange",
+    "drive": "Wrench 18 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "DIN 6921",
+    "corrosion": "C3",
+    "supplier": "Norvik Industrial",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-9496-394",
+    "revision": "C",
+    "owner": "S. Iyer"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.144,
+    "releaseStatus": "WIP",
+    "lifecycleState": "In Work",
+    "releasedDate": "",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 7
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M12-120-109",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M12 × 120 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M12",
+    "threadSpec": "M12 × 1.75",
+    "pitchClass": "Coarse",
+    "length": 120,
+    "head": "Socket head",
+    "drive": "Hex key 10 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Castor & Pike",
+    "source": "CAD Library",
+    "leadTime": "2 wk",
+    "plmId": "TC-4546-391",
+    "revision": "A",
+    "owner": "T. Moreau"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.144,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-05-18",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 20
+    },
+    {
+     "name": "Door Hinge Assembly",
+     "program": "Civic Si 1.5T",
+     "uses": 36
+    },
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 12
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M12-120-129",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M12 × 120 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M12",
+    "threadSpec": "M12 × 1.75",
+    "pitchClass": "Coarse",
+    "length": 120,
+    "head": "Socket head",
+    "drive": "Hex key 10 mm",
+    "grade": "12.9",
+    "tensile": 1220,
+    "material": "Alloy steel",
+    "finish": "Black oxide",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C2",
+    "supplier": "Halden Fasteners",
+    "source": "SharePoint",
+    "leadTime": "2 wk",
+    "plmId": "TC-5233-392",
+    "revision": "C",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.144,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-07-17",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 38
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M12-120-88",
+   "reuseStatus": "Restricted",
+   "description": "Socket head bolt · M12 × 120 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M12",
+    "threadSpec": "M12 × 1.75",
+    "pitchClass": "Coarse",
+    "length": 120,
+    "head": "Socket head",
+    "drive": "Hex key 10 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C3",
+    "supplier": "Halden Fasteners",
+    "source": "Teamcenter",
+    "leadTime": "4 wk",
+    "plmId": "TC-4309-390",
+    "revision": "D",
+    "owner": "T. Moreau"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.144,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-02-18",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 35
+    }
+   ]
+  },
+  {
+   "partNumber": "FL-M16-120-109",
+   "reuseStatus": "Restricted",
+   "description": "Flange bolt · M16 × 120 mm",
+   "image": "/cad-preview-4.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 120,
+    "head": "Flange",
+    "drive": "Wrench 24 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "DIN 6921",
+    "corrosion": "C4",
+    "supplier": "Norvik Industrial",
+    "source": "SharePoint",
+    "leadTime": "4 wk",
+    "plmId": "TC-9775-461",
+    "revision": "A",
+    "owner": "J. Okafor"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.256,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-04-26",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 17
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M16-120-A2",
+   "reuseStatus": "Approved",
+   "description": "Hex bolt · M16 × 120 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 120,
+    "head": "Hex",
+    "drive": "Wrench 24 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C4",
+    "supplier": "Halden Fasteners",
+    "source": "CAD Library",
+    "leadTime": "4 wk",
+    "plmId": "TC-0094-118",
+    "revision": "C",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.256,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-07-06",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 7
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M16-120-A4",
+   "reuseStatus": "Preferred",
+   "description": "Hex bolt · M16 × 120 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 120,
+    "head": "Hex",
+    "drive": "Wrench 24 mm",
+    "grade": "A4-80",
+    "tensile": 800,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C5",
+    "supplier": "Norvik Industrial",
+    "source": "CAD Library",
+    "leadTime": "Stock",
+    "plmId": "TC-5274-455",
+    "revision": "C",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.256,
+    "releaseStatus": "WIP",
+    "lifecycleState": "In Work",
+    "releasedDate": "",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Door Hinge Assembly",
+     "program": "Civic Si 1.5T",
+     "uses": 23
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M16-120-109",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M16 × 120 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 120,
+    "head": "Socket head",
+    "drive": "Hex key 14 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Brightline Supply",
+    "source": "SharePoint",
+    "leadTime": "4 wk",
+    "plmId": "TC-6815-457",
+    "revision": "A",
+    "owner": "S. Iyer"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.256,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-02-23",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 27
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M16-120-129",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M16 × 120 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 120,
+    "head": "Socket head",
+    "drive": "Hex key 14 mm",
+    "grade": "12.9",
+    "tensile": 1220,
+    "material": "Alloy steel",
+    "finish": "Black oxide",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C2",
+    "supplier": "Halden Fasteners",
+    "source": "SharePoint",
+    "leadTime": "4 wk",
+    "plmId": "TC-9470-458",
+    "revision": "C",
+    "owner": "S. Iyer"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.256,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-07-22",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 8
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M16-120-A2",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M16 × 120 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 120,
+    "head": "Socket head",
+    "drive": "Hex key 14 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Halden Fasteners",
+    "source": "CAD Library",
+    "leadTime": "4 wk",
+    "plmId": "TC-5348-459",
+    "revision": "A",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.256,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-09-15",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 32
+    },
+    {
+     "name": "Door Hinge Assembly",
+     "program": "Civic Si 1.5T",
+     "uses": 17
+    }
+   ]
+  },
+  {
+   "partNumber": "CS-M20-120-109",
+   "reuseStatus": "Approved",
+   "description": "Countersunk bolt · M20 × 120 mm",
+   "image": "/cad-preview-5.png",
+   "fields": {
+    "thread": "M20",
+    "threadSpec": "M20 × 2.5",
+    "pitchClass": "Coarse",
+    "length": 120,
+    "head": "Countersunk",
+    "drive": "Hex key 13 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Full thread",
+    "standard": "ISO 10642",
+    "corrosion": "C4",
+    "supplier": "Halden Fasteners",
+    "source": "CAD Library",
+    "leadTime": "2 wk",
+    "plmId": "TC-9400-516",
+    "revision": "C",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.4,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-05-18",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 9
+    }
+   ]
+  },
+  {
+   "partNumber": "CS-M20-120-A2",
+   "reuseStatus": "Approved",
+   "description": "Countersunk bolt · M20 × 120 mm",
+   "image": "/cad-preview-5.png",
+   "fields": {
+    "thread": "M20",
+    "threadSpec": "M20 × 2.5",
+    "pitchClass": "Coarse",
+    "length": 120,
+    "head": "Countersunk",
+    "drive": "Hex key 13 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Full thread",
+    "standard": "ISO 10642",
+    "corrosion": "C4",
+    "supplier": "Castor & Pike",
+    "source": "CAD Library",
+    "leadTime": "4 wk",
+    "plmId": "TC-9058-517",
+    "revision": "B",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.4,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-02-06",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 24
+    },
+    {
+     "name": "Door Hinge Assembly",
+     "program": "Civic Si 1.5T",
+     "uses": 19
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M24-120-A4",
+   "reuseStatus": "Approved",
+   "description": "Hex bolt · M24 × 120 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M24",
+    "threadSpec": "M24 × 3.0",
+    "pitchClass": "Coarse",
+    "length": 120,
+    "head": "Hex",
+    "drive": "Wrench 36 mm",
+    "grade": "A4-80",
+    "tensile": 800,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C5",
+    "supplier": "Castor & Pike",
+    "source": "Teamcenter",
+    "leadTime": "4 wk",
+    "plmId": "TC-4035-548",
+    "revision": "C",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.575,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-05-20",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 16
+    },
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 12
+    },
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 33
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M16-130-88",
+   "reuseStatus": "Approved",
+   "description": "Hex bolt · M16 × 130 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 130,
+    "head": "Hex",
+    "drive": "Wrench 24 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C3",
+    "supplier": "Halden Fasteners",
+    "source": "SharePoint",
+    "leadTime": "4 wk",
+    "plmId": "TC-6019-464",
+    "revision": "C",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Atlas EV",
+    "modelYear": "MY24",
+    "programType": "BEV",
+    "customerGroup": "OEM-A",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.277,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-01-15",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 7
+    },
+    {
+     "name": "Battery Tray",
+     "program": "Atlas EV",
+     "uses": 39
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M16-130-A2",
+   "reuseStatus": "Approved",
+   "description": "Hex bolt · M16 × 130 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 130,
+    "head": "Hex",
+    "drive": "Wrench 24 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C4",
+    "supplier": "Halden Fasteners",
+    "source": "CAD Library",
+    "leadTime": "4 wk",
+    "plmId": "TC-4819-465",
+    "revision": "A",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.277,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-03-22",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 23
+    },
+    {
+     "name": "Door Hinge Assembly",
+     "program": "Civic Si 1.5T",
+     "uses": 11
+    },
+    {
+     "name": "Seat Track Bracket",
+     "program": "Atlas EV",
+     "uses": 35
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M16-130-A4",
+   "reuseStatus": "Approved",
+   "description": "Hex bolt · M16 × 130 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 130,
+    "head": "Hex",
+    "drive": "Wrench 24 mm",
+    "grade": "A4-80",
+    "tensile": 800,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C5",
+    "supplier": "Halden Fasteners",
+    "source": "CAD Library",
+    "leadTime": "2 wk",
+    "plmId": "TC-7331-466",
+    "revision": "B",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.277,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-09-15",
+    "supplierLeadTime": 2
+   },
+   "usedOn": [
+    {
+     "name": "Steering Column Support",
+     "program": "Orion LCV",
+     "uses": 37
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M16-130-88",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M16 × 130 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 130,
+    "head": "Socket head",
+    "drive": "Hex key 14 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C3",
+    "supplier": "Halden Fasteners",
+    "source": "CAD Library",
+    "leadTime": "4 wk",
+    "plmId": "TC-8870-467",
+    "revision": "D",
+    "owner": "T. Moreau"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.277,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-03-24",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 27
+    }
+   ]
+  },
+  {
+   "partNumber": "FL-M16-140-109",
+   "reuseStatus": "Review",
+   "description": "Flange bolt · M16 × 140 mm",
+   "image": "/cad-preview-4.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 140,
+    "head": "Flange",
+    "drive": "Wrench 24 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "DIN 6921",
+    "corrosion": "C4",
+    "supplier": "Halden Fasteners",
+    "source": "CAD Library",
+    "leadTime": "4 wk",
+    "plmId": "TC-6323-481",
+    "revision": "A",
+    "owner": "T. Moreau"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.298,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-03-11",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 21
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M16-140-109",
+   "reuseStatus": "Preferred",
+   "description": "Socket head bolt · M16 × 140 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M16",
+    "threadSpec": "M16 × 2.0",
+    "pitchClass": "Coarse",
+    "length": 140,
+    "head": "Socket head",
+    "drive": "Hex key 14 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Norvik Industrial",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-6732-477",
+    "revision": "A",
+    "owner": "J. Okafor"
+   },
+   "plm": {
+    "program": "Vega PHEV",
+    "modelYear": "MY25",
+    "programType": "PHEV",
+    "customerGroup": "OEM-B",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.298,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-09-17",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 2
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M20-140-88",
+   "reuseStatus": "Preferred",
+   "description": "Hex bolt · M20 × 140 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M20",
+    "threadSpec": "M20 × 2.5",
+    "pitchClass": "Coarse",
+    "length": 140,
+    "head": "Hex",
+    "drive": "Wrench 30 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C3",
+    "supplier": "Brightline Supply",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-9733-518",
+    "revision": "D",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.466,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-07-02",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Door Hinge Assembly",
+     "program": "Civic Si 1.5T",
+     "uses": 29
+    },
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 23
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M20-140-A2",
+   "reuseStatus": "Preferred",
+   "description": "Socket head bolt · M20 × 140 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M20",
+    "threadSpec": "M20 × 2.5",
+    "pitchClass": "Coarse",
+    "length": 140,
+    "head": "Socket head",
+    "drive": "Hex key 17 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Norvik Industrial",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-2265-524",
+    "revision": "C",
+    "owner": "S. Iyer"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.466,
+    "releaseStatus": "WIP",
+    "lifecycleState": "In Work",
+    "releasedDate": "",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 9
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M20-160-A4",
+   "reuseStatus": "Preferred",
+   "description": "Hex bolt · M20 × 160 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M20",
+    "threadSpec": "M20 × 2.5",
+    "pitchClass": "Coarse",
+    "length": 160,
+    "head": "Hex",
+    "drive": "Wrench 30 mm",
+    "grade": "A4-80",
+    "tensile": 800,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C5",
+    "supplier": "Brightline Supply",
+    "source": "SharePoint",
+    "leadTime": "Stock",
+    "plmId": "TC-2874-527",
+    "revision": "C",
+    "owner": "J. Okafor"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.533,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-03-15",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 29
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M20-160-A2",
+   "reuseStatus": "Approved",
+   "description": "Socket head bolt · M20 × 160 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M20",
+    "threadSpec": "M20 × 2.5",
+    "pitchClass": "Coarse",
+    "length": 160,
+    "head": "Socket head",
+    "drive": "Hex key 17 mm",
+    "grade": "A2-70",
+    "tensile": 700,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Castor & Pike",
+    "source": "SharePoint",
+    "leadTime": "4 wk",
+    "plmId": "TC-2665-531",
+    "revision": "C",
+    "owner": "R. Nakamura"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.533,
+    "releaseStatus": "WIP",
+    "lifecycleState": "In Work",
+    "releasedDate": "",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Door Hinge Assembly",
+     "program": "Civic Si 1.5T",
+     "uses": 35
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M24-160-88",
+   "reuseStatus": "Approved",
+   "description": "Hex bolt · M24 × 160 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M24",
+    "threadSpec": "M24 × 3.0",
+    "pitchClass": "Coarse",
+    "length": 160,
+    "head": "Hex",
+    "drive": "Wrench 36 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C3",
+    "supplier": "Brightline Supply",
+    "source": "Teamcenter",
+    "leadTime": "4 wk",
+    "plmId": "TC-6954-553",
+    "revision": "C",
+    "owner": "S. Iyer"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.767,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-02-20",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "Door Hinge Assembly",
+     "program": "Civic Si 1.5T",
+     "uses": 25
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M24-200-88",
+   "reuseStatus": "Approved",
+   "description": "Hex bolt · M24 × 200 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M24",
+    "threadSpec": "M24 × 3.0",
+    "pitchClass": "Coarse",
+    "length": 200,
+    "head": "Hex",
+    "drive": "Wrench 36 mm",
+    "grade": "8.8",
+    "tensile": 800,
+    "material": "Carbon steel",
+    "finish": "Zinc flake",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C3",
+    "supplier": "Norvik Industrial",
+    "source": "SharePoint",
+    "leadTime": "4 wk",
+    "plmId": "TC-9733-560",
+    "revision": "A",
+    "owner": "L. Brandt"
+   },
+   "plm": {
+    "program": "Orion LCV",
+    "modelYear": "MY24",
+    "programType": "LCV",
+    "customerGroup": "OEM-C",
+    "region": "EU",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.959,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-08-09",
+    "supplierLeadTime": 4
+   },
+   "usedOn": [
+    {
+     "name": "T3 Heat Exchanger",
+     "program": "Orion LCV",
+     "uses": 9
+    },
+    {
+     "name": "Cross Member",
+     "program": "Vega PHEV",
+     "uses": 21
+    }
+   ]
+  },
+  {
+   "partNumber": "HX-M24-200-A4",
+   "reuseStatus": "Preferred",
+   "description": "Hex bolt · M24 × 200 mm",
+   "image": "/cad-preview-2.png",
+   "fields": {
+    "thread": "M24",
+    "threadSpec": "M24 × 3.0",
+    "pitchClass": "Coarse",
+    "length": 200,
+    "head": "Hex",
+    "drive": "Wrench 36 mm",
+    "grade": "A4-80",
+    "tensile": 800,
+    "material": "Stainless steel",
+    "finish": "Passivated",
+    "shank": "Partial",
+    "standard": "ISO 4014",
+    "corrosion": "C5",
+    "supplier": "Norvik Industrial",
+    "source": "SharePoint",
+    "leadTime": "Stock",
+    "plmId": "TC-6253-562",
+    "revision": "A",
+    "owner": "J. Okafor"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.959,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-05-04",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Door Hinge Assembly",
+     "program": "Civic Si 1.5T",
+     "uses": 4
+    }
+   ]
+  },
+  {
+   "partNumber": "SH-M24-200-109",
+   "reuseStatus": "Preferred",
+   "description": "Socket head bolt · M24 × 200 mm",
+   "image": "/cad-preview-3.png",
+   "fields": {
+    "thread": "M24",
+    "threadSpec": "M24 × 3.0",
+    "pitchClass": "Coarse",
+    "length": 200,
+    "head": "Socket head",
+    "drive": "Hex key 19 mm",
+    "grade": "10.9",
+    "tensile": 1040,
+    "material": "Alloy steel",
+    "finish": "Zinc-nickel",
+    "shank": "Partial",
+    "standard": "ISO 4762",
+    "corrosion": "C4",
+    "supplier": "Norvik Industrial",
+    "source": "Teamcenter",
+    "leadTime": "Stock",
+    "plmId": "TC-3204-564",
+    "revision": "A",
+    "owner": "T. Moreau"
+   },
+   "plm": {
+    "program": "Civic Si 1.5T",
+    "modelYear": "MY23",
+    "programType": "ICE",
+    "customerGroup": "OEM-D",
+    "region": "NA",
+    "productGroup": "Fasteners",
+    "productLine": "Bolts",
+    "calcWeight": 0.959,
+    "releaseStatus": "Released",
+    "lifecycleState": "Released",
+    "releasedDate": "2026-05-09",
+    "supplierLeadTime": 0
+   },
+   "usedOn": [
+    {
+     "name": "Seat Frame Rail",
+     "program": "Civic Si 1.5T",
+     "uses": 24
+    },
+    {
+     "name": "Rear Subframe Mount",
+     "program": "Vega PHEV",
+     "uses": 23
+    }
+   ]
+  }
+ ]
+}

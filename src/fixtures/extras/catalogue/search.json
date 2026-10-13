@@ -1,0 +1,15 @@
+{
+  "_note": "Search-index fixtures: recent searches and the synonym table that turns a spec query into facets. Facet option values themselves (M16, 8.8, A2-70, ISO 4014 ...) are matched automatically against the rows.",
+  "recent": ["M16 hex stainless", "M10 socket 10.9", "M8 flange 30"],
+  "synonyms": [
+    { "tokens": ["hex", "hexagon"], "facet": "head", "values": ["Hex"] },
+    { "tokens": ["socket", "shcs", "cap"], "facet": "head", "values": ["Socket head"] },
+    { "tokens": ["flange", "flanged"], "facet": "head", "values": ["Flange"] },
+    { "tokens": ["countersunk", "csk"], "facet": "head", "values": ["Countersunk"] },
+    { "tokens": ["stainless", "ss"], "facet": "grade", "values": ["A2-70", "A4-80"] },
+    { "tokens": ["a2"], "facet": "grade", "values": ["A2-70"] },
+    { "tokens": ["a4"], "facet": "grade", "values": ["A4-80"] },
+    { "tokens": ["preferred"], "facet": "reuseStatus", "values": ["Preferred"] }
+  ],
+  "ignore": ["bolt", "bolts", "mm"]
+}

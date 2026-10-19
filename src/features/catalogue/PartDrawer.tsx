@@ -61,7 +61,7 @@ export function PartDrawer({ part, inCompare, onToggleCompare, onClose, emptyTex
       </div>
       {viewer && (
         <Modal title={`Viewer · ${part.partNumber}`} width={760} onClose={() => setViewer(false)}>
-          <ViewerPlaceholder chip={part.partNumber} image={part.image} height={380} />
+          <ViewerPlaceholder chip={part.partNumber} height={380} />
         </Modal>
       )}
     </SidePanel>

@@ -71,7 +71,7 @@ function DualPane({ a, b, rows }: { a: CatalogueRowX; b: CatalogueRowX; rows: Co
     <section className={s.pane} aria-label={`Part ${TAGS[idx]}`} data-testid={`pane-${TAGS[idx]}`}>
       <div className={s.paneHead}><span className={s.tag}>{TAGS[idx]}</span><span className="data" style={{ fontWeight: 500 }}>{p.partNumber}</span><span className="muted right">{String(p.fields.source ?? '')}</span></div>
       <div className={s.paneView}>
-        <ViewerPlaceholder chip={`${TAGS[idx]} · ${p.partNumber}`} image={p.image} height={320}
+        <ViewerPlaceholder chip={`${TAGS[idx]} · ${p.partNumber}`} height={320}
           legend={[{ label: idx === 0 ? 'A · red overlay' : 'B · blue overlay', tone: idx === 0 ? 'query' : 'overlap' }]} />
       </div>
       {rows.map((r) => (

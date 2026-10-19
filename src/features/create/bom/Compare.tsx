@@ -107,7 +107,7 @@ export function Compare() {
           {mode === 'comparison' ? (
             <div className={s.viewers}>
               <ViewerPlaceholder chip={`BOM line · ${row.partNumber}`} height={260} linkedCameras={linked} onLinkedChange={setLinked} />
-              <ViewerPlaceholder chip={`Surrogate · ${candId}`} image="/cad-preview-4.png" height={260} linkedCameras={linked} onLinkedChange={setLinked} />
+              <ViewerPlaceholder chip={`Surrogate · ${candId}`} height={260} linkedCameras={linked} onLinkedChange={setLinked} />
             </div>
           ) : (
             <div className="col">

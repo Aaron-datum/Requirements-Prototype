@@ -1,4 +1,4 @@
-import { Box, Link2, Maximize, Camera, RotateCcw } from 'lucide-react'
+import { Box, BoxSelect, Link2, Maximize, Camera, RotateCcw } from 'lucide-react'
 import { useState, type ReactNode } from 'react'
 import type { ViewerController } from '../../domain/types'
 import { Stub } from '../stub/Stub'
@@ -10,12 +10,12 @@ export const VIEW_MODES: Array<[ViewerController['viewMode'], string]> = [['shad
 export interface OverlayLegendItem { label: string; tone: 'query' | 'overlap' | 'result'; value?: string }
 
 /**
- * Placeholder CAD viewport with the real toolbar state. There is no real viewer: StubId cad-viewer.
+ * Placeholder CAD viewport with the real toolbar state. It shows the No CAD found state until a real viewer exists. There is no real viewer: StubId cad-viewer.
  * View modes, linked cameras and the overlay legend are visual state only. Overlay colors are always labelled.
  *   Search compare: query only = red, overlap = blue, result only = green (labelled A red, B blue in catalogue compare).
  */
-export function ViewerPlaceholder({ chip, image = '/cad-preview-2.png', legend, linkedCameras, onLinkedChange, children, height = 320 }: {
-  chip: string; image?: string; legend?: OverlayLegendItem[]; linkedCameras?: boolean; onLinkedChange?: (v: boolean) => void; children?: ReactNode; height?: number | string
+export function ViewerPlaceholder({ chip, legend, linkedCameras, onLinkedChange, children, height = 320 }: {
+  chip: string; legend?: OverlayLegendItem[]; linkedCameras?: boolean; onLinkedChange?: (v: boolean) => void; children?: ReactNode; height?: number | string
 }) {
   const [mode, setMode] = useState<ViewerController['viewMode']>('shaded')
   return (
@@ -31,7 +31,7 @@ export function ViewerPlaceholder({ chip, image = '/cad-preview-2.png', legend, 
           </span>
         </div>
         <div className={s.stage}>
-          <img src={image} alt="" className={`${s.model} ${mode === 'wireframe' ? s.wire : ''} ${mode === 'x-ray' ? s.xray : ''}`} />
+          <span className={s.empty} data-testid="no-cad"><BoxSelect size={28} aria-hidden /><b>No CAD found</b></span>
           <span className={s.chip}>{chip}</span>
           <span className={s.cube} aria-hidden><Box size={20} /></span>
           <span className={s.axis} aria-hidden>X Y Z</span>

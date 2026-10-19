@@ -11,3 +11,4 @@
 .lg { display: inline-flex; align-items: center; gap: var(--gap-2); }
 .lg i { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
 .query { background: var(--overlay-a); } .overlap { background: var(--overlay-b); } .result { background: var(--overlay-shared); }
+.empty { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--gap-2); color: var(--fg-muted); }

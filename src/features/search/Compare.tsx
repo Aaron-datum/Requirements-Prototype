@@ -127,12 +127,12 @@ export function Compare() {
         <div className={s.stageBody}>
           {view !== 'overlay' && (
             <>
-              <div className={s.vp}><ViewerPlaceholder chip={chip('Query', q)} image={q.thumbnail} height="100%" linkedCameras={linked} onLinkedChange={setLinked} /></div>
-              <div className={s.vp}><ViewerPlaceholder chip={chip('Result', r)} image={r.thumbnail} height="100%" linkedCameras={linked} onLinkedChange={setLinked} /></div>
+              <div className={s.vp}><ViewerPlaceholder chip={chip('Query', q)} height="100%" linkedCameras={linked} onLinkedChange={setLinked} /></div>
+              <div className={s.vp}><ViewerPlaceholder chip={chip('Result', r)} height="100%" linkedCameras={linked} onLinkedChange={setLinked} /></div>
             </>
           )}
           {view === 'overlay' && overlap && (
-            <div className={s.vp}><ViewerPlaceholder chip={`${q.name} vs ${r.name}`} image={q.thumbnail} height="100%"
+            <div className={s.vp}><ViewerPlaceholder chip={`${q.name} vs ${r.name}`} height="100%"
               legend={[{ label: 'Query only', tone: 'query', value: `${overlap.queryOnly}%` }, { label: 'Overlap', tone: 'overlap', value: `${overlap.overlap}%` }, { label: 'Result only', tone: 'result', value: `${overlap.resultOnly}%` }]} /></div>
           )}
           {view === 'alignment' && (

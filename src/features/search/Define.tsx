@@ -147,7 +147,7 @@ export function Define() {
         </div>
         <div className={s.stageBody}>
           <div className={s.vp}>
-            <ViewerPlaceholder chip={file.name} image={file.thumbnail} height="100%">
+            <ViewerPlaceholder chip={file.name} height="100%">
               <span className={s.hint}>Selection mode: FACE / EDGE · Hold Shift for body</span>
               {picked && <span className={s.readout}>Selected: {picked.label}</span>}
               {!picked && latest && <span className={s.readout}>{fmtNum(latest.value)} {unit(latest.typeKey)}</span>}

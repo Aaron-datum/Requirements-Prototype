@@ -24,5 +24,5 @@ export const SERVICE_STUB: Record<keyof Services, string[]> = {
   engine: ['matching-engine'], viewer: ['cad-viewer'], compare: ['cad-viewer', 'matching-engine'], catalogue: ['search-index'],
   plm: ['plm-connectors'], mapping: ['mapping-agent'], docs: ['doc-extraction'], cost: ['cost-model'], tests: ['test-matcher'],
   diff: ['diff-engine'], evidence: ['evidence-engine', 'evidence-store'], impact: ['impact-graph'], gate: ['autonomy-gate'],
-  audit: ['audit-trail'], plan: ['plan-service'], persistence: ['persistence'], dashboard: ['dashboard-services'],
+  audit: ['audit-trail'], plan: ['plan-service'], persistence: ['persistence'], dashboard: ['dashboard-services'], nlAgent: ['nl-agent'],
 }

@@ -1,5 +1,6 @@
+import { registerTable, type RegisteredTable } from '../../features/chat/tableRegistry'
 import { ChevronDown, ChevronRight } from 'lucide-react'
-import { Fragment, useMemo, useState, type ReactNode } from 'react'
+import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { useConfig } from '../../config/useConfig'
 import { useAppStore } from '../../stores/appStore'
 import { Button, Checkbox, EmptyState, InlineError, SkeletonRows } from '../ui'
@@ -73,6 +74,9 @@ export function TableShell<R>(p: TableShellProps<R>) {
   const config = useConfig()
   const density = useAppStore((a) => a.density)
   const model = useTableModel<R>({ id: p.id, columns: p.columns, rows: p.rows, urlSync: p.urlSync, defaultGroup: p.defaultGroup, defaultLayout: p.defaultLayout, maxExtraColumns: config.limits.maxExtraColumns, initialFilters: p.initialFilters })
+  const modelRef = useRef(model)
+  modelRef.current = model
+  useEffect(() => registerTable({ id: p.id, rowId: p.rowId as (row: unknown) => string, get model() { return modelRef.current } } as RegisteredTable), [p.id]) // eslint-disable-line react-hooks/exhaustive-deps
   p.onModel?.(model)
   const [closed, setClosed] = useState<Record<string, boolean>>({})
   const [expanded, setExpanded] = useState<Record<string, boolean>>({})

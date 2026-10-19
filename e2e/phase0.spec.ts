@@ -51,7 +51,7 @@ test.describe('Phase 0: foundations and kitchen sink', () => {
 
   test('/dev/stubs lists every stub and ?showStubs=1 outlines simulated output', async ({ page }) => {
     await page.goto('/dev/stubs')
-    await expect(page.getByTestId('stub-table').locator('tr[data-stub-row]')).toHaveCount(19)
+    await expect(page.getByTestId('stub-table').locator('tr[data-stub-row]')).toHaveCount(20)
     await page.goto('/dev/kitchen-sink?showStubs=1')
     await expect(page.locator('[data-stub="matching-engine"]').first()).toBeVisible()
   })

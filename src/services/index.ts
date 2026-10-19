@@ -10,6 +10,7 @@ import { engineStub } from './stubs/matchingEngine'
 import { evidenceStub } from './stubs/evidence'
 import { gateStub } from './stubs/gate'
 import { impactStub } from './stubs/impact'
+import { nlAgentStub } from './stubs/nlAgent'
 import { mappingStub } from './stubs/mapping'
 import { persistenceStub } from './stubs/persistence'
 import { planStub } from './stubs/plan'
@@ -22,6 +23,6 @@ export function createServices(): Services {
   return {
     engine: engineStub, viewer: viewerStub, compare: compareStub, catalogue: catalogueStub, plm: plmStub,
     mapping: mappingStub, docs: docsStub, cost: costStub, tests: testsStub, diff: diffStub, evidence: evidenceStub,
-    impact: impactStub, gate: gateStub, audit: auditStub, plan: planStub, persistence: persistenceStub, dashboard: dashboardStub,
+    impact: impactStub, gate: gateStub, audit: auditStub, plan: planStub, persistence: persistenceStub, dashboard: dashboardStub, nlAgent: nlAgentStub,
   }
 }

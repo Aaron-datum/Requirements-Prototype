@@ -3,7 +3,7 @@ export const THEMES = ['white', 'tan', 'dark'] as const
 export const DENSITIES = ['compact', 'default', 'comfy'] as const
 
 /** Set theme / density / schema through the persisted preference store, then reload. */
-export async function setPrefs(page: Page, prefs: { theme?: string; density?: string; tenantId?: string }) {
+export async function setPrefs(page: Page, prefs: { theme?: string; density?: string; tenantId?: string; navMode?: string }) {
   await page.addInitScript((p) => {
     const cur = JSON.parse(localStorage.getItem('datum-fe-prefs') ?? '{}')
     localStorage.setItem('datum-fe-prefs', JSON.stringify({ ...cur, ...p }))

@@ -56,6 +56,12 @@ export function BomReview() {
   // A deep link to a line (or tab) implies the search has been run: results are shown, not a blank BOM.
   useEffect(() => { if ((selectedId || params.get('tab')) && useBomStore.getState().search === 'idle') useBomStore.getState().finishSearch() }, [selectedId, params])
   useEffect(() => { useBomStore.getState().setLastStep('03-review') }, [])
+  // ?autorun=1 (from the chat) starts the surrogate search once the rows are ready.
+  useEffect(() => {
+    if (params.get('autorun') !== '1' || rows.length === 0 || useBomStore.getState().search !== 'idle') return
+    const next = new URLSearchParams(params); next.delete('autorun'); setParams(next, { replace: true })
+    void run(rows)
+  }, [params, rows.length]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const setSel = (id: string | null, t: ReviewTab = tab) => {
     const next = new URLSearchParams(params)

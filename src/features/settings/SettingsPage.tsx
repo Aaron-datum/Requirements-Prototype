@@ -44,8 +44,8 @@ export function SettingsPage() {
           <Seg value={a.density} onChange={(density) => a.set({ density })} label="Info density" options={[['comfy', 'Comfortable'], ['default', 'Default'], ['compact', 'Compact']]} />
           <span className="data muted">{DENSITY_META[a.density]}</span></section>
 
-        <section className={s.card} aria-label="Navigation"><h2 className="text-section">Navigation</h2><p className="muted">Left sidebar, or a top bar with menus only.</p>
-          <Seg value={a.navMode} onChange={(navMode) => a.set({ navMode })} label="Navigation" options={[['sidebar', 'Sidebar'], ['topbar', 'Top bar only']]} /></section>
+        <section className={s.card} aria-label="Navigation"><h2 className="text-section">Navigation</h2><p className="muted">Sidebar, top bar menus, or a chat assistant.</p>
+          <Seg value={a.navMode} onChange={(navMode) => a.set({ navMode })} label="Navigation" options={[['sidebar', 'Sidebar'], ['topbar', 'Top bar only'], ['chat', 'Chat']]} /></section>
 
         <section className={s.card} aria-label="Schema"><h2 className="text-section">Data schema (tenant profile)</h2>
           <p className="muted">Changes fields, filters, columns and status tones.</p>

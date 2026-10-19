@@ -9,7 +9,7 @@ interface AppState {
   tenantId: string
   planLabel: 'Test plan' | 'ADV P&R'
   /** Navigation experiment: left sidebar, or global top nav only. */
-  navMode: 'sidebar' | 'topbar'
+  navMode: 'sidebar' | 'topbar' | 'chat'
   showStubs: boolean
   /** Dev option: artificial latency (ms) added to async stub services, to prove skeleton states. */
   latency: number

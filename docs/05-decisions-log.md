@@ -42,6 +42,7 @@ Status key: **Open** (needs Aaron), **Assumed** (default chosen, safe to build),
 | D-27 | Left nav is decided (D-01), but the user wants to try a layout without it. | Settings > Navigation: Sidebar (default) or Top bar only, with Search, Create and Projects menus in the top bar. Persisted in prefs. | Assumed (experiment). |
 | D-28 | Helper text length. | Keep copy short and direct: no explanations of how the prototype works, one line where possible. | Product direction. |
 | D-29 | Alert tone after a decision. | Red row tone and banners show only while an item is an open action item; accepting or rejecting clears them. | Product direction. |
+| D-30 | NL interface replacing the left nav (branch nl-integration). | Settings > Navigation > Chat: slim icon rail plus a chat panel, one thread per project (saved locally). The agent is a Stub (`nl-agent`): loose phrase matching to a fixed set of actions (create BOM from an attached assembly, find similar parts, catalogue lookup and compare, open any screen, filter the table on screen). Filters are applied to the real table so they show in the sidebar and stay editable. Attach uses the existing fake upload by file name. Review-and-decide through chat is not built; screens stay the place for decisions. | Assumed. |
 
 ## Resolved (do not reopen)
 

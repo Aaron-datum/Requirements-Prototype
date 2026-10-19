@@ -11,6 +11,7 @@ import { toastSuccess } from '../../stores/toastStore'
 import { AuditEntryRow } from '../audit/Audit'
 import { Button, IconButton, Modal, TextInput, Toasts } from '../ui'
 import { DevToolbar } from '../../dev/DevToolbar'
+import { ChatDock } from '../../features/chat/ChatPanel'
 import { useSearchShortcut } from '../../features/home/useSearchShortcut'
 import s from './Shell.module.css'
 
@@ -211,6 +212,7 @@ export function AppShell() {
       <BreadcrumbStrip />
       <div className={s.body}>
         {navMode === 'sidebar' && <LeftNav />}
+        {navMode === 'chat' && <ChatDock />}
         <main className={s.main}><Outlet /></main>
       </div>
       {feedback && <FeedbackModal onClose={() => setFeedback(false)} />}

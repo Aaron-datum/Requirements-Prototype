@@ -25,6 +25,7 @@ export const STUB_REGISTRY: StubInfo[] = [
   { id: 'persistence', owner: 'BE', does: 'In-memory. Save buttons add to the visible Project tree and show a success toast. Reset in the dev toolbar.', screens: ['Results (Save Search)', 'Filter sidebar (Save View)', 'Catalogue'] },
   { id: 'dashboard-services', owner: 'BE', does: 'Fixtures for activity, aggregation and connection health.', screens: ['Home', 'Projects dashboard'] },
   { id: 'search-index', owner: 'BE', does: 'Client-side filter with part-number-first matching (case, spacing and wildcard tolerant).', screens: ['Files', 'Catalogue'] },
+  { id: 'nl-agent', owner: 'AI', does: 'Phrase matching, not a model. Loose wording maps to a fixed set of actions (open a screen, filter a table, walk the BOM flow, catalogue lookup, compare). Unknown requests get a fallback with suggestions.', screens: ['Chat panel'] },
   { id: 'dfmea-retrieval', owner: 'AI/BE', does: 'Not built. Direction only.', screens: [] },
 ]
 export const STUB_IDS = STUB_REGISTRY.map((s) => s.id)

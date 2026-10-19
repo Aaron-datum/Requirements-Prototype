@@ -37,6 +37,7 @@ export type StubId =
   | 'persistence'           // BE  projects, saved searches, saved views
   | 'dashboard-services'    // BE  activity log, aggregation, connection health
   | 'search-index'          // BE  part-number-first file and catalogue search
+  | 'nl-agent'             // AI  natural-language interface: turns a request into navigation, filters and workflow steps
   | 'dfmea-retrieval';      // AI/BE  not in v2; direction only
 
 /* ------------------------------------------------------------------ */
@@ -249,4 +250,25 @@ export interface Services {
   engine: GeometricEngine; viewer: ViewerController; compare: CompareService; catalogue: CatalogueService; plm: PlmConnector;
   mapping: MappingAgent; docs: DocExtraction; cost: CostModelService; tests: TestMatcher; diff: DiffEngine; evidence: EvidenceEngine;
   impact: ImpactGraph; gate: AutonomyGate; audit: AuditService; plan: PlanService; persistence: PersistenceService; dashboard: DashboardService;
+  nlAgent: NlAgent;
 }
+
+/* NL interface (StubId: nl-agent). Real: a model that plans over the same actions the UI already offers. */
+export type NlFlowId = 'create-bom'
+export interface NlFlow { id: NlFlowId; step: 'attach' | 'program' | 'reference' | 'run' | 'after'; attachment?: string; program?: string }
+export type NlEffect =
+  | { type: 'navigate'; to: string; label: string }
+  | { type: 'filter'; text: string }
+  | { type: 'clear-filters' }
+  | { type: 'catalogue'; text: string }
+  | { type: 'compare'; count: number }
+  | { type: 'include-reference'; on: boolean }
+  | { type: 'await-bom-search' }
+  | { type: 'audit'; action: string; subject: { type: string; id: string }; note?: string };
+export interface NlInput {
+  text: string; attachment?: string; flow: NlFlow | null;
+  here: { pathname: string; search: string; table?: string };
+  projects: Array<{ id: string; name: string }>;
+}
+export interface NlTurn { reply: string; effects: NlEffect[]; quick?: string[]; flow: NlFlow | null }
+export interface NlAgent { interpret(input: NlInput): Promise<NlTurn> }

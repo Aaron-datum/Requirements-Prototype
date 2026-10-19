@@ -79,4 +79,28 @@ test.describe('Chat navigation', () => {
     await say(page, 'what is the weather')
     await expect(page.getByTestId('chat-quick')).toBeVisible()
   })
+
+  test('answers questions about the table on screen, and follow-ups use the answer', async ({ page }) => {
+    await page.goto('/catalogue/bolts?t_catalogue=' + encodeURIComponent(JSON.stringify({ f: { thread: { values: ['M16'] } }, s: null })))
+    await expect(page.locator('tr[data-row-id]').first()).toBeVisible()
+    await say(page, 'how many of these are hex?')
+    await expect(lastBot(page)).toContainText(/\d+ of \d+/)
+    await say(page, 'which one is the longest?')
+    await expect(page.getByTestId('chat-log')).toContainText(/Highest Length|Length/)
+    await page.getByTestId('chat-quick').getByRole('button', { name: 'Open it' }).click()
+    await expect(page).toHaveURL(/part=/)
+  })
+
+  test('acts on the table: sort, group, hide a column, open the first row, undo', async ({ page }) => {
+    await page.goto('/catalogue/bolts?t_catalogue=' + encodeURIComponent(JSON.stringify({ f: { thread: { values: ['M16'] } }, s: null })))
+    await expect(page.locator('tr[data-row-id]').first()).toBeVisible()
+    await say(page, 'sort by length, longest first')
+    await expect(page.locator('th', { hasText: 'Length' })).toHaveAttribute('aria-sort', 'descending')
+    await say(page, 'hide the material column')
+    await expect(page.locator('th', { hasText: 'Material' })).toHaveCount(0)
+    await say(page, 'undo')
+    await expect(page.locator('th', { hasText: 'Material' })).toHaveCount(1)
+    await say(page, 'open the first one')
+    await expect(page).toHaveURL(/part=/)
+  })
 })

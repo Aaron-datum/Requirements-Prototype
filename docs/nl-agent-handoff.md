@@ -12,7 +12,7 @@ Branch: `nl-integration`. Written to guide research before more agent work is bu
   - App state lives in the URL (route, filters, selection, search state), so navigation and filtering are single actions.
   - A table registry (`src/features/chat/tableRegistry.ts`) lets the chat read and drive the table on screen.
   - The autonomy gate and audit trail already model "what an agent may do alone" and "what a human confirms".
-- **Groundwork not yet wired (commit `c9d384d`):** `ScreenSnapshot` and `NlMemory` types, `src/services/stubs/nlScreen.ts` (questions and actions over visible rows), extra effect kinds (select, sort, group, columns, layout, undo). The chat panel does not send snapshots yet.
+- **Screen-aware (wired):** the panel sends a `ScreenSnapshot` of the table on screen and an `NlMemory` of the last answer. `src/services/stubs/nlScreen.ts` answers questions (counts, lists, highest/lowest, totals, a named row) and acts on the table (sort, group, show/hide column, gallery, open or select rows, undo). Follow-ups like "open it", "the second of those", "show them" and "compare them" work.
 
 ## 2. The model we sketched
 

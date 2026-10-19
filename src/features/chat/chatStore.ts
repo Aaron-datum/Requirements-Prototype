@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import type { NlFlow } from '../../domain/types'
+import type { NlFlow, NlMemory } from '../../domain/types'
 
 /** One conversation per project, kept locally so it survives a reload. */
 export interface ChatMessage {
@@ -9,7 +9,7 @@ export interface ChatMessage {
   did?: string[]
   quick?: string[]
 }
-export interface Thread { messages: ChatMessage[]; flow: NlFlow | null }
+export interface Thread { messages: ChatMessage[]; flow: NlFlow | null; memory?: NlMemory | null }
 
 const KEY = 'datum-fe-chat'
 const load = (): Record<string, Thread> => { try { return JSON.parse(localStorage.getItem(KEY) ?? '{}') as Record<string, Thread> } catch { return {} } }
@@ -23,6 +23,7 @@ interface ChatState {
   setOpen: (o: boolean) => void
   push: (m: Omit<ChatMessage, 'id' | 'at'> & { at: string }) => void
   setFlow: (f: NlFlow | null) => void
+  setMemory: (m: NlMemory | null) => void
   clear: () => void
 }
 const EMPTY: Thread = { messages: [], flow: null }
@@ -44,8 +45,12 @@ export const useChat = create<ChatState>((set, get) => ({
     const threads = { ...get().threads, [get().projectId]: { ...threadOf(get()), flow } }
     save(threads); set({ threads })
   },
+  setMemory: (memory) => {
+    const threads = { ...get().threads, [get().projectId]: { ...threadOf(get()), memory } }
+    save(threads); set({ threads })
+  },
   clear: () => {
-    const threads = { ...get().threads, [get().projectId]: { messages: [], flow: null } }
+    const threads = { ...get().threads, [get().projectId]: { messages: [], flow: null, memory: null } }
     save(threads); set({ threads })
   },
 }))

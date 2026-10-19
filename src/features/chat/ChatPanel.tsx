@@ -15,7 +15,10 @@ import { compareUrl, filtersFromFacets, mergeFilters, writeTable } from '../cata
 import { useBomStore } from '../create/bom/bomStore'
 import { threadOf, useChat, type ChatMessage } from './chatStore'
 import { activeTable } from './tableRegistry'
+import { snapshotOf } from './snapshot'
 import { applyTextFilter, filterHints } from './tableFilter'
+import type { FilterState } from '../../components/table/types'
+import type { SortState } from '../../components/table/useTableModel'
 import s from './Chat.module.css'
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
@@ -55,6 +58,14 @@ export function ChatPanel() {
   const [busy, setBusy] = useState(false)
   const log = useRef<HTMLDivElement>(null)
   const input = useRef<HTMLTextAreaElement>(null)
+  /** What the table looked like before the chat changed it, so "undo" can put it back. */
+  const history = useRef<Array<{ id: string; filters: FilterState; sort: SortState | null; group: string; visible: string[] }>>([])
+  const remember = () => {
+    const t = activeTable(); if (!t) return
+    const m = t.model
+    history.current.push({ id: t.id, filters: m.filters, sort: m.sort, group: m.group, visible: m.visible })
+    history.current.splice(0, Math.max(0, history.current.length - 10))
+  }
 
   // On a project page, the chat follows the project.
   useEffect(() => { const m = /^\/projects\/([^/]+)/.exec(loc.pathname); if (m && projects.some((p) => p.id === m[1])) chat.setProject(m[1]!) }, [loc.pathname]) // eslint-disable-line react-hooks/exhaustive-deps
@@ -87,20 +98,42 @@ export function ChatPanel() {
           for (let i = 0; i < 400 && useBomStore.getState().search !== 'done'; i++) await sleep(50)
           if (useBomStore.getState().search === 'done') say({ role: 'assistant', text: 'Surrogate search finished. Review the lines in the table, or open composition.', quick: ['Open composition', 'Go to test mapping'] })
         })()
-      } else if (e.type === 'clear-filters') { activeTable()?.model.clearAll(); did.push('Cleared filters') }
+      } else if (e.type === 'clear-filters') { remember(); activeTable()?.model.clearAll(); did.push('Cleared filters') }
       else if (e.type === 'filter') {
         const t = activeTable()
         if (!t) say({ role: 'assistant', text: 'There is no table here to filter.' })
-        else if (t.id === 'catalogue') did.push(...lookUp(e.text))
+        else if (t.id === 'catalogue') { remember(); did.push(...lookUp(e.text)) }
         else {
+          remember()
           const r = applyTextFilter(t, e.text)
           say({ role: 'assistant', text: r.applied.length ? `${r.applied.join('; ')}. ${r.count} of ${r.total} rows.` : `I could not match that to a filter here. Try: ${filterHints(t).join(', ')}.` })
         }
-      } else if (e.type === 'catalogue') did.push(...lookUp(e.text))
+      } else if (e.type === 'catalogue') { remember(); did.push(...lookUp(e.text)) }
+      else if (e.type === 'select') {
+        const t = activeTable()
+        if (!t) continue
+        if (e.ids.length === 1 && t.select) t.select(e.ids[0]!)
+        else t.onCheck?.(e.ids)
+      } else if (e.type === 'sort') { remember(); activeTable()?.model.setSort({ key: e.key, dir: e.dir }) }
+      else if (e.type === 'group') { remember(); activeTable()?.model.setGroup(e.key) }
+      else if (e.type === 'layout') activeTable()?.model.setLayout(e.value)
+      else if (e.type === 'columns') {
+        const t = activeTable()
+        if (!t) continue
+        remember()
+        const m = t.model
+        if (e.show) { if (!m.fields.includes(e.key)) m.applyFields([...m.fields, e.key]); else if (!m.visible.includes(e.key)) m.setVisible([...m.visible, e.key]) }
+        else m.setVisible(m.visible.filter((k: string) => k !== e.key))
+      } else if (e.type === 'undo') {
+        const t = activeTable(); const h = history.current.pop()
+        if (!t || !h || h.id !== t.id) { say({ role: 'assistant', text: 'Nothing to undo here.' }); continue }
+        t.model.setFilters(h.filters); t.model.setSort(h.sort); t.model.setGroup(h.group); t.model.setVisible(h.visible)
+        did.push('Undid the last change')
+      }
       else if (e.type === 'compare') {
         const t = activeTable()
         if (t?.id !== 'catalogue') { say({ role: 'assistant', text: 'Open the Catalogue and filter to the parts first, then ask me to compare.' }); continue }
-        const ids = (t.model.sorted as unknown[]).slice(0, Math.min(e.count, 6)).map(t.rowId)
+        const ids = e.ids?.length ? e.ids.slice(0, 6) : (t.model.sorted as unknown[]).slice(0, Math.min(e.count, 6)).map(t.rowId)
         if (ids.length < 2) { say({ role: 'assistant', text: 'There are fewer than two parts to compare. Widen the filters.' }); continue }
         nav(compareUrl({ a: ids[0]!, b: ids[1]!, more: ids.slice(2), form: ids.length > 2 ? 'table' : 'dual', from: loc.pathname + loc.search }, new URLSearchParams()))
         did.push(`Comparing ${ids.length} parts`)
@@ -117,11 +150,13 @@ export function ChatPanel() {
     say({ role: 'user', text: t || `Attached ${att}`, attachment: att })
     setBusy(true)
     await sleep(350)
-    const turn = await agent.interpret({ text: t, attachment: att, flow: thread.flow, here: { pathname: loc.pathname, search: loc.search, table: activeTable()?.id }, projects: projects.map((p) => ({ id: p.id, name: p.name })) })
+    const table = activeTable()
+    const turn = await agent.interpret({ text: t, attachment: att, flow: thread.flow, memory: thread.memory ?? undefined, screen: table ? snapshotOf(table) : undefined, here: { pathname: loc.pathname, search: loc.search, table: table?.id }, projects: projects.map((p) => ({ id: p.id, name: p.name })) })
     say({ role: 'assistant', text: turn.reply, quick: turn.quick })
     const did = await run(turn.effects)
     if (did.length) say({ role: 'assistant', text: did.join(' · '), did })
     chat.setFlow(turn.flow)
+    if (turn.memory !== undefined) chat.setMemory(turn.memory)
     setBusy(false)
     input.current?.focus()
   }

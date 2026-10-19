@@ -78,6 +78,12 @@ export function resolveRows(text: string, snap: ScreenSnapshot, mem?: NlMemory):
   return null
 }
 
+/** Superlatives: which direction they point, and which column words they hint at ("longest" is about length). */
+const HI = /\b(highest|largest|biggest|most|max(imum)?|top|greatest|longest|heaviest|tallest|widest|thickest|strongest|newest|latest|best|priciest|most expensive)\b/
+const LO = /\b(lowest|smallest|least|min(imum)?|shortest|lightest|thinnest|weakest|cheapest|oldest|earliest|worst)\b/
+const HINTS: Array<[RegExp, RegExp]> = [[/long|short/, /length/], [/heav|light/, /weight|mass/], [/tall/, /height/], [/wid/, /width/], [/thick|thin/, /thick/], [/cheap|expens|pric/, /price|cost/], [/new|old|late|early/, /date|edited|created|modified|released/]]
+const hinted = (t: string, cols: ScreenColumn[]): ScreenColumn | undefined => { const h = HINTS.find(([w]) => w.test(t)); return h ? cols.find((c) => h[1].test(norm(c.label))) : undefined }
+
 const done = (reply: string, extra: Partial<NlTurn> = {}): NlTurn => ({ reply, effects: [], flow: null, ...extra })
 const remember = (rows: ScreenRow[], snap: ScreenSnapshot, label?: string, cond?: string): NlMemory => ({ ids: rows.map((r) => r.id), table: snap.table, label, cond })
 
@@ -103,11 +109,11 @@ export function answer(text: string, snap: ScreenSnapshot, mem?: NlMemory): NlTu
   }
 
   const nums = snap.columns.filter((c) => c.kind === 'number')
-  const ext = /\b(highest|largest|biggest|most|max(imum)?|top|greatest|lowest|smallest|least|min(imum)?|cheapest|best|worst|oldest|newest)\b/.exec(t)
-  if (ext && !/\btop \d|\bfirst \d/.test(t)) {
-    const col = findColumn(t, nums) ?? (/\b(cheapest)\b/.test(t) ? nums.find((c) => /price|cost/.test(norm(c.label))) : undefined) ?? (nums.length === 1 ? nums[0] : undefined) ?? nums.find((c) => c.visible)
+  const ext = HI.exec(t) ?? LO.exec(t)
+  if (ext && !/\btop \d|\bfirst \d|\bmost of\b/.test(t)) {
+    const col = findColumn(t, nums) ?? hinted(t, nums) ?? (nums.length === 1 ? nums[0] : undefined) ?? nums.find((c) => c.visible)
     if (col) {
-      const hi = !/\b(lowest|smallest|least|min(imum)?|cheapest|worst)\b/.test(t)
+      const hi = !LO.test(t)
       const pool = matching.filter((r) => typeof r.v[col.key] === 'number')
       if (!pool.length) return done(`No rows have a ${col.label}.`)
       const best = [...pool].sort((a, b) => (hi ? 1 : -1) * ((b.v[col.key] as number) - (a.v[col.key] as number)))[0]!
@@ -148,10 +154,10 @@ export function act(text: string, snap: ScreenSnapshot, mem?: NlMemory): NlTurn 
   if (/\b(table|list|rows?)\b/.test(t) && /\b(back to|switch to|show as|as a) (the )?(table|list)\b/.test(t)) return done('Back to the table.', { effects: [{ type: 'layout', value: 'table' }] })
 
   if (/\b(sort|order|rank|arrange)\b/.test(t)) {
-    const col = findColumn(t, snap.columns)
+    const col = findColumn(t, snap.columns) ?? hinted(t, snap.columns)
     if (!col) return done(`Sort by which column? ${snap.columns.filter((c) => c.visible).slice(0, 4).map((c) => c.label).join(', ')}.`, { quick: snap.columns.filter((c) => c.visible).slice(0, 3).map((c) => `Sort by ${c.label}`) })
-    const asc = /\b(asc(ending)?|lowest|smallest|oldest|earliest|low to high|a to z|least|cheapest)\b/.test(t)
-    const desc = !asc && /\b(desc(ending)?|highest|largest|biggest|newest|latest|z to a|high to low|most|best|top)\b/.test(t)
+    const asc = LO.test(t) || /\b(asc(ending)?|low to high|a to z)\b/.test(t)
+    const desc = !asc && (HI.test(t) || /\b(desc(ending)?|z to a|high to low|latest)\b/.test(t))
     return done(`Sorted by ${col.label}, ${desc ? 'high to low' : 'low to high'}.`, { effects: [{ type: 'sort', key: col.key, dir: desc ? 'desc' : 'asc' }] })
   }
   if (/\bgroup\b/.test(t)) {

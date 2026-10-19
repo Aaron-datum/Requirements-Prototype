@@ -76,7 +76,9 @@ export function TableShell<R>(p: TableShellProps<R>) {
   const model = useTableModel<R>({ id: p.id, columns: p.columns, rows: p.rows, urlSync: p.urlSync, defaultGroup: p.defaultGroup, defaultLayout: p.defaultLayout, maxExtraColumns: config.limits.maxExtraColumns, initialFilters: p.initialFilters })
   const modelRef = useRef(model)
   modelRef.current = model
-  useEffect(() => registerTable({ id: p.id, rowId: p.rowId as (row: unknown) => string, get model() { return modelRef.current } } as RegisteredTable), [p.id]) // eslint-disable-line react-hooks/exhaustive-deps
+  const propsRef = useRef(p)
+  propsRef.current = p
+  useEffect(() => registerTable({ id: p.id, rowId: p.rowId as (row: unknown) => string, get model() { return modelRef.current }, get select() { return propsRef.current.onSelect }, get selectedId() { return propsRef.current.selectedId }, get checked() { return propsRef.current.checkedIds }, get onCheck() { return propsRef.current.onCheckedChange } } as RegisteredTable), [p.id]) // eslint-disable-line react-hooks/exhaustive-deps
   p.onModel?.(model)
   const [closed, setClosed] = useState<Record<string, boolean>>({})
   const [expanded, setExpanded] = useState<Record<string, boolean>>({})

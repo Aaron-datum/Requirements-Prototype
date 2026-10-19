@@ -261,14 +261,30 @@ export type NlEffect =
   | { type: 'filter'; text: string }
   | { type: 'clear-filters' }
   | { type: 'catalogue'; text: string }
-  | { type: 'compare'; count: number }
+  | { type: 'compare'; count: number; ids?: string[] }
   | { type: 'include-reference'; on: boolean }
   | { type: 'await-bom-search' }
+  | { type: 'select'; ids: string[] }
+  | { type: 'sort'; key: string; dir: 'asc' | 'desc' }
+  | { type: 'group'; key: string }
+  | { type: 'columns'; key: string; show: boolean }
+  | { type: 'layout'; value: 'table' | 'gallery' }
+  | { type: 'undo' }
   | { type: 'audit'; action: string; subject: { type: string; id: string }; note?: string };
+/** What the chat can see of the table on screen: enough to answer questions and resolve "the second one". */
+export interface ScreenColumn { key: string; label: string; kind: 'text' | 'number' | 'enum' | 'date'; unit?: string; visible: boolean }
+export interface ScreenRow { id: string; label: string; v: Record<string, string | number | null> }
+export interface ScreenSnapshot {
+  table: string; columns: ScreenColumn[]; rows: ScreenRow[]; total: number
+  selected?: string | null; checked: string[]; sort?: { key: string; dir: 'asc' | 'desc' }; group: string; layout: string; filters: string[]
+}
+/** Short-term memory so follow-ups work: "open the second one", "show them", "that part". */
+export interface NlMemory { ids: string[]; label?: string; table?: string; cond?: string }
 export interface NlInput {
   text: string; attachment?: string; flow: NlFlow | null;
+  screen?: ScreenSnapshot; memory?: NlMemory;
   here: { pathname: string; search: string; table?: string };
   projects: Array<{ id: string; name: string }>;
 }
-export interface NlTurn { reply: string; effects: NlEffect[]; quick?: string[]; flow: NlFlow | null }
+export interface NlTurn { reply: string; effects: NlEffect[]; quick?: string[]; flow: NlFlow | null; memory?: NlMemory | null }
 export interface NlAgent { interpret(input: NlInput): Promise<NlTurn> }

@@ -5,7 +5,10 @@ import type { TableModel } from '../../components/table/useTableModel'
  * TableShell registers its model on mount and removes it on unmount.
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export interface RegisteredTable { id: string; model: TableModel<any>; rowId: (row: any) => string }
+export interface RegisteredTable {
+  id: string; model: TableModel<any>; rowId: (row: any) => string
+  select?: (id: string) => void; selectedId?: string | null; checked?: string[]; onCheck?: (ids: string[]) => void
+}
 const tables: RegisteredTable[] = []
 
 export function registerTable(t: RegisteredTable): () => void {

@@ -4,6 +4,7 @@ import { engineStub } from './matchingEngine'
 import { INTAKE } from '../../fixtures/derive-bom'
 import { searchFiles } from '../../fixtures/derive-search'
 import { normalizeName } from '../../fixtures/derive-search'
+import { act, answer } from './nlScreen'
 
 /**
  * StubId: nl-agent. Phrase matching, not a model. Loose wording is mapped to a fixed set of actions by keyword groups,
@@ -141,11 +142,28 @@ export const nlAgentStub: NlAgent = {
     if (any(t, /\b(compare|side by side|versus|vs|differences between|diff)\b/)) {
       const digits = /\b(\d+)\b/.exec(t)?.[1]
       const n = /\b(all|every)\b/.test(t) ? 99 : digits ? Math.max(2, Number(digits)) : /\bthree\b/.test(t) ? 3 : /\bfour\b/.test(t) ? 4 : 2
-      return { reply: `Comparing the first ${n > 50 ? 'selection' : `${n}`} in the table.`, effects: [{ type: 'compare', count: n }], flow }
+      const ids = i.memory && /\b(them|those|these|that)\b/.test(t) && i.memory.ids.length >= 2 ? i.memory.ids : undefined
+      return { reply: ids ? `Comparing those ${ids.length}.` : `Comparing the first ${n > 50 ? 'selection' : `${n}`} in the table.`, effects: [{ type: 'compare', count: ids?.length ?? n, ids }], flow }
     }
 
     // 5. Clear filters.
     if (CLEAR.test(t) && here.table) return { reply: 'Cleared the filters.', effects: [{ type: 'clear-filters' }], flow }
+
+    // 5b. Follow-ups that lean on the last turn.
+    if (i.memory?.cond && /\b(show|filter( to)?|only|just|narrow( to)?|keep)\b.*\b(them|those|these|that)\b/.test(t) && here.table) return { reply: 'Filtering to those.', effects: [{ type: 'filter', text: i.memory.cond }], flow }
+    if (/^(undo|go back|revert|put it back)( that| the last( one)?)?$/.test(t)) return { reply: 'Undone.', effects: [{ type: 'undo' }], flow }
+
+    // 5c. Act on, and answer questions about, the table on screen.
+    if (i.screen) {
+      const doing = act(i.text, i.screen, i.memory)
+      if (doing) return { ...doing, flow }
+      const asked = answer(i.text, i.screen, i.memory)
+      if (asked) return { ...asked, flow }
+      if (i.memory?.ids.length && /\b(list|name)\b.*\b(them|those|these)\b/.test(t)) {
+        const rows = i.memory.ids.map((id) => i.screen!.rows.find((r) => r.id === id)?.label ?? id)
+        return { reply: `${rows.slice(0, 8).join(', ')}${rows.length > 8 ? ` and ${rows.length - 8} more` : ''}.`, effects: [], flow }
+      }
+    }
 
     // 6. Catalogue lookup.
     if (CATALOGUE.test(t) && (here.table === 'catalogue' || !FILTER_WORDS.test(t) || /\b(catalog(ue)?|bolts?)\b/.test(t))) {
